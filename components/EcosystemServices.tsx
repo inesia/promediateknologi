@@ -173,58 +173,146 @@ function DigitalPenIllustration() {
   )
 }
 
-// Social Media Icons Visualization
+// Social Media Icons Cloud Visualization
 function SocialMediaVisualization() {
   const socialIcons = [
-    { name: 'Facebook', color: '#1877F2', delay: 0 },
-    { name: 'Instagram', color: '#E4405F', delay: 0.2 },
-    { name: 'Twitter', color: '#1DA1F2', delay: 0.4 },
-    { name: 'TikTok', color: '#000000', delay: 0.6 },
-    { name: 'YouTube', color: '#FF0000', delay: 0.8 },
-    { name: 'LinkedIn', color: '#0077B5', delay: 1.0 },
+    { name: 'Facebook', color: '#1877F2', x: '20%', y: '15%', delay: 0 },
+    { name: 'Instagram', color: '#E4405F', x: '70%', y: '20%', delay: 0.2 },
+    { name: 'Twitter', color: '#1DA1F2', x: '15%', y: '50%', delay: 0.4 },
+    { name: 'TikTok', color: '#000000', x: '75%', y: '55%', delay: 0.6 },
+    { name: 'YouTube', color: '#FF0000', x: '45%', y: '75%', delay: 0.8 },
+    { name: 'LinkedIn', color: '#0077B5', x: '50%', y: '35%', delay: 1.0 },
   ]
 
   return (
-    <div className="relative w-full max-w-lg mx-auto h-[400px] flex items-center justify-start">
-      <div className="flex flex-col gap-6">
-        {socialIcons.map((social, index) => (
+    <div className="relative w-full max-w-lg mx-auto h-[400px]">
+      {/* Cloud Background */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Cloud Shape */}
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 400 400"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          {/* Cloud Path */}
+          <motion.path
+            d="M100,200 Q80,150 120,150 Q140,100 180,120 Q220,80 260,100 Q300,90 320,130 Q360,120 360,160 Q380,180 360,200 Q380,240 340,250 Q320,280 280,270 Q240,300 200,280 Q160,300 120,280 Q100,250 100,200 Z"
+            fill="url(#cloudGradient)"
+            opacity="0.1"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2 }}
+          />
+          <defs>
+            <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#00AEEF" />
+              <stop offset="100%" stopColor="#2D74B3" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </motion.div>
+
+      {/* Floating Social Media Icons */}
+      {socialIcons.map((social, index) => (
+        <motion.div
+          key={social.name}
+          className="absolute"
+          style={{
+            left: social.x,
+            top: social.y,
+          }}
+          initial={{ opacity: 0, scale: 0, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: social.delay }}
+        >
           <motion.div
-            key={social.name}
-            className="flex items-center gap-4"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: social.delay }}
+            className="relative"
+            animate={{
+              y: [0, -10, 0],
+              rotate: [0, 5, -5, 0],
+            }}
+            transition={{
+              duration: 3 + index * 0.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: social.delay,
+            }}
+            whileHover={{ scale: 1.2, zIndex: 10 }}
           >
             {/* Icon Circle */}
-            <motion.div
-              className="w-16 h-16 rounded-full shadow-lg flex items-center justify-center"
+            <div
+              className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center cursor-pointer"
               style={{ backgroundColor: social.color }}
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: social.delay,
-              }}
-              whileHover={{ scale: 1.15 }}
             >
-              <Share2 className="w-8 h-8 text-white" />
-            </motion.div>
+              <Share2 className="w-7 h-7 text-white" />
+            </div>
             
-            {/* Platform Name */}
-            <motion.span
-              className="text-lg font-semibold text-[#001A2C]"
+            {/* Platform Name Tooltip */}
+            <motion.div
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: social.delay + 0.3 }}
+              whileHover={{ opacity: 1 }}
             >
-              {social.name}
-            </motion.span>
+              <span className="text-xs font-semibold text-[#001A2C] bg-white px-2 py-1 rounded shadow">
+                {social.name}
+              </span>
+            </motion.div>
+
+            {/* Connection Lines (subtle) */}
+            {index > 0 && (
+              <motion.svg
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                style={{
+                  width: '200px',
+                  height: '200px',
+                  left: '50%',
+                  top: '50%',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.1 }}
+                transition={{ delay: social.delay + 0.5 }}
+              >
+                <line
+                  x1="0"
+                  y1="0"
+                  x2={parseFloat(socialIcons[0].x) - parseFloat(social.x)}
+                  y2={parseFloat(socialIcons[0].y) - parseFloat(social.y)}
+                  stroke="#00AEEF"
+                  strokeWidth="1"
+                />
+              </motion.svg>
+            )}
           </motion.div>
-        ))}
-      </div>
+        </motion.div>
+      ))}
+
+      {/* Floating particles */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1.5 h-1.5 bg-[#00AEEF] rounded-full"
+          style={{
+            left: `${Math.random() * 80 + 10}%`,
+            top: `${Math.random() * 80 + 10}%`,
+          }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.2, 0.6, 0.2],
+            scale: [1, 1.5, 1],
+          }}
+          transition={{
+            duration: 2 + Math.random() * 2,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: i * 0.2,
+          }}
+        />
+      ))}
     </div>
   )
 }
