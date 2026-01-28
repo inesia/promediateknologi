@@ -59,7 +59,7 @@ interface FloatingCardProps {
 function FloatingCard({ icon, value, label, delay, duration, className }: FloatingCardProps) {
   return (
     <motion.div
-      className={`absolute ${className}`}
+      className={`absolute ${className} hidden md:block`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6 }}
@@ -150,17 +150,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-0"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-12 md:pb-0"
     >
-      {/* Animated Ambient Glow */}
+      {/* Animated Ambient Glow - Reduced for mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#00AEEF]/5 rounded-full blur-3xl ambient-glow" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2D74B3]/5 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#00AEEF]/3 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[800px] md:h-[800px] bg-[#00AEEF]/5 rounded-full blur-3xl ambient-glow" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#2D74B3]/5 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] bg-[#00AEEF]/3 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '4s' }} />
       </div>
 
-      {/* Optimized Waves Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Optimized Waves Background - Hidden on mobile for performance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         {/* Wave 1 */}
         <Wave 
           pathColor="url(#gradient1)"
@@ -216,46 +216,46 @@ export default function Hero() {
           <motion.div
             {...blurIn}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="inline-flex items-center justify-center mb-6 lg:mb-8"
+            className="inline-flex items-center justify-center mb-4 md:mb-6 lg:mb-8"
           >
-            <div className="px-4 py-2 bg-[#00AEEF]/5 border border-[#00AEEF]/20 rounded-full backdrop-blur-sm">
-              <span className="text-xs font-semibold text-[#00AEEF] tracking-wide uppercase">
+            <div className="px-3 py-1.5 md:px-4 md:py-2 bg-[#00AEEF]/5 border border-[#00AEEF]/20 rounded-full backdrop-blur-sm">
+              <span className="text-[10px] md:text-xs font-semibold text-[#00AEEF] tracking-wide uppercase">
                 Mavericks & Ahead
               </span>
             </div>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline - Optimized for mobile */}
           <motion.h1
             {...blurIn}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 lg:mb-8 leading-[1.1]"
-            style={{ letterSpacing: '-0.05em' }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#001A2C] mb-4 md:mb-6 lg:mb-8 leading-[1.15] md:leading-[1.1] px-2"
+            style={{ letterSpacing: '-0.03em' }}
           >
             Ekosistem Media Digital{' '}
-            <span className="bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent block md:inline">
               Terintegrasi
             </span>
           </motion.h1>
 
-          {/* Sub-headline */}
+          {/* Sub-headline - Optimized for mobile */}
           <motion.p
             {...blurIn}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#64748b] mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed font-normal"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#64748b] mb-6 md:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed font-normal px-2"
           >
             Memberdayakan Mediapreneur & Contentpreneur melalui teknologi media yang inklusif dan berkelanjutan.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Full width on mobile */}
           <motion.div
             {...blurIn}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 md:gap-4 lg:gap-6 px-4"
           >
-            <Link href="/register">
+            <Link href="/register" className="w-full sm:w-auto">
               <motion.div
-                className="btn-shimmer px-8 py-4 lg:px-10 lg:py-4 text-base lg:text-lg font-semibold text-white rounded-xl shadow-xl shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 relative overflow-hidden cursor-pointer"
+                className="btn-shimmer px-6 py-3.5 md:px-8 md:py-4 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg font-semibold text-white rounded-xl shadow-xl shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 relative overflow-hidden cursor-pointer w-full sm:w-auto text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -264,22 +264,48 @@ export default function Hero() {
             </Link>
 
             <motion.button
-              className="px-8 py-4 lg:px-10 lg:py-4 text-base lg:text-lg font-semibold text-[#001A2C] bg-transparent border-2 border-[#00AEEF]/30 rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300"
+              className="px-6 py-3.5 md:px-8 md:py-4 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg font-semibold text-[#001A2C] bg-transparent border-2 border-[#00AEEF]/30 rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Pelajari Lebih Lanjut
             </motion.button>
           </motion.div>
+
+          {/* Mobile Stats Grid - Show stats in grid on mobile */}
+          <motion.div
+            {...blurIn}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="mt-8 md:hidden grid grid-cols-2 gap-4 px-4"
+          >
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-xl p-4 shadow-lg"
+              >
+                <div className="flex items-center justify-center w-10 h-10 mb-2 rounded-lg bg-gradient-to-br from-[#00AEEF]/10 to-[#2D74B3]/10">
+                  <div className="text-[#00AEEF]">
+                    {stat.icon}
+                  </div>
+                </div>
+                <div className="text-2xl font-extrabold text-[#001A2C] mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-[#64748b] font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
