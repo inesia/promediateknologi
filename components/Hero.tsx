@@ -1,0 +1,298 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Users, TrendingUp, Zap, Globe } from 'lucide-react'
+import Link from 'next/link'
+
+// Wave Component - Elegant Background Animation
+interface WaveProps {
+  className?: string
+  pathColor: string
+  duration?: number
+  delay?: number
+  reverse?: boolean
+}
+
+function Wave({ className = '', pathColor, duration = 20, delay = 0, reverse = false }: WaveProps) {
+  return (
+    <motion.svg
+      className={`absolute inset-0 w-full h-full ${className}`}
+      viewBox="0 0 1440 800"
+      preserveAspectRatio="none"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay }}
+    >
+      <motion.path
+        d="M0,400 C320,300 420,500 720,400 C1020,300 1120,500 1440,400 L1440,800 L0,800 Z"
+        fill={pathColor}
+        initial={{ d: "M0,400 C320,300 420,500 720,400 C1020,300 1120,500 1440,400 L1440,800 L0,800 Z" }}
+        animate={{
+          d: [
+            "M0,400 C320,300 420,500 720,400 C1020,300 1120,500 1440,400 L1440,800 L0,800 Z",
+            "M0,380 C320,480 420,280 720,380 C1020,480 1120,280 1440,380 L1440,800 L0,800 Z",
+            "M0,420 C320,320 420,520 720,420 C1020,320 1120,520 1440,420 L1440,800 L0,800 Z",
+            "M0,400 C320,300 420,500 720,400 C1020,300 1120,500 1440,400 L1440,800 L0,800 Z",
+          ]
+        }}
+        transition={{
+          duration,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          direction: reverse ? 'reverse' : 'normal',
+        }}
+      />
+    </motion.svg>
+  )
+}
+
+// Floating Card Component dengan Statistik
+interface FloatingCardProps {
+  icon: React.ReactNode
+  value: string
+  label: string
+  delay: number
+  duration: number
+  className?: string
+}
+
+function FloatingCard({ icon, value, label, delay, duration, className }: FloatingCardProps) {
+  return (
+    <motion.div
+      className={`absolute ${className}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.6 }}
+    >
+      <motion.div
+        className="relative w-48 sm:w-56 lg:w-64 p-6 bg-white/70 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl shadow-slate-200/50 cursor-pointer"
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration,
+          delay,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        whileHover={{
+          y: -25,
+          boxShadow: '0 25px 50px -12px rgba(0, 174, 239, 0.25)',
+          transition: { duration: 0.3 }
+        }}
+      >
+        {/* Glassmorphism effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent rounded-2xl" />
+        
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-[#00AEEF]/10 to-[#2D74B3]/10">
+            <div className="text-[#00AEEF]">
+              {icon}
+            </div>
+          </div>
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#001A2C] mb-2">
+            {value}
+          </div>
+          <div className="text-sm sm:text-base text-[#64748b] font-medium">
+            {label}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Statistik data
+const stats = [
+  {
+    icon: <Users className="w-6 h-6" />,
+    value: '1,000+',
+    label: 'Media Partners',
+    delay: 0.2,
+    duration: 6,
+    className: 'top-20 left-4 sm:left-8 lg:left-16',
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    value: '500K+',
+    label: 'Active Users',
+    delay: 0.4,
+    duration: 7,
+    className: 'top-40 right-4 sm:right-8 lg:right-16',
+  },
+  {
+    icon: <Zap className="w-6 h-6" />,
+    value: '50+',
+    label: 'Content Creators',
+    delay: 0.6,
+    duration: 8,
+    className: 'bottom-32 left-8 sm:left-16 lg:left-24',
+  },
+  {
+    icon: <Globe className="w-6 h-6" />,
+    value: '24/7',
+    label: 'Support Available',
+    delay: 0.8,
+    duration: 9,
+    className: 'bottom-20 right-8 sm:right-16 lg:right-24',
+  },
+]
+
+export default function Hero() {
+  // Blur-in Animation Effect
+  const blurIn = {
+    initial: { opacity: 0, filter: 'blur(10px)', y: 20 },
+    animate: { opacity: 1, filter: 'blur(0px)', y: 0 },
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  }
+
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-0"
+    >
+      {/* Animated Ambient Glow */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#00AEEF]/5 rounded-full blur-3xl ambient-glow" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2D74B3]/5 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#00AEEF]/3 rounded-full blur-3xl ambient-glow" style={{ animationDelay: '4s' }} />
+      </div>
+
+      {/* Optimized Waves Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Wave 1 */}
+        <Wave 
+          pathColor="url(#gradient1)"
+          duration={30}
+          delay={0}
+          className="opacity-20"
+        />
+        
+        {/* Wave 2 */}
+        <Wave 
+          pathColor="url(#gradient2)"
+          duration={40}
+          delay={2}
+          reverse={true}
+          className="opacity-15"
+        />
+        
+        {/* SVG Gradients Definition - Promedia Colors */}
+        <svg width="0" height="0" className="absolute">
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#00AEEF" stopOpacity="0.04" />
+              <stop offset="50%" stopColor="#2D74B3" stopOpacity="0.02" />
+              <stop offset="100%" stopColor="#00AEEF" stopOpacity="0.03" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#2D74B3" stopOpacity="0.03" />
+              <stop offset="100%" stopColor="#00AEEF" stopOpacity="0.02" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Floating Cards dengan Statistik */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {stats.map((stat, index) => (
+          <FloatingCard
+            key={index}
+            icon={stat.icon}
+            value={stat.value}
+            label={stat.label}
+            delay={stat.delay}
+            duration={stat.duration}
+            className={stat.className}
+          />
+        ))}
+      </div>
+
+      {/* Content - Center Aligned */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Badge - Mavericks & Ahead */}
+          <motion.div
+            {...blurIn}
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="inline-flex items-center justify-center mb-6 lg:mb-8"
+          >
+            <div className="px-4 py-2 bg-[#00AEEF]/5 border border-[#00AEEF]/20 rounded-full backdrop-blur-sm">
+              <span className="text-xs font-semibold text-[#00AEEF] tracking-wide uppercase">
+                Mavericks & Ahead
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            {...blurIn}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 lg:mb-8 leading-[1.1]"
+            style={{ letterSpacing: '-0.05em' }}
+          >
+            Ekosistem Media Digital{' '}
+            <span className="bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent">
+              Terintegrasi
+            </span>
+          </motion.h1>
+
+          {/* Sub-headline */}
+          <motion.p
+            {...blurIn}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#64748b] mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed font-normal"
+          >
+            Memberdayakan Mediapreneur & Contentpreneur melalui teknologi media yang inklusif dan berkelanjutan.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            {...blurIn}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6"
+          >
+            <Link href="/register">
+              <motion.div
+                className="btn-shimmer px-8 py-4 lg:px-10 lg:py-4 text-base lg:text-lg font-semibold text-white rounded-xl shadow-xl shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 relative overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Mulai Sekarang</span>
+              </motion.div>
+            </Link>
+
+            <motion.button
+              className="px-8 py-4 lg:px-10 lg:py-4 text-base lg:text-lg font-semibold text-[#001A2C] bg-transparent border-2 border-[#00AEEF]/30 rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Pelajari Lebih Lanjut
+            </motion.button>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-[#00AEEF]/30 rounded-full flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-3 bg-[#00AEEF]/60 rounded-full mt-2"
+          />
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}
