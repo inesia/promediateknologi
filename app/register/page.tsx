@@ -252,7 +252,7 @@ function RegistrationForm() {
           {/* Logo */}
           <div className="absolute top-8 left-8 z-10">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="Promedia Teknologi"
               width={180}
               height={60}
@@ -721,7 +721,7 @@ function RegistrationForm() {
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#2D74B3]/5 rounded-full blur-3xl"></div>
           <div className="relative z-10 text-center">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="Promedia Teknologi"
               width={160}
               height={50}

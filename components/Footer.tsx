@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion'
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const footerLinks = {
   product: [
-    { label: 'Mediapreneur', href: '/program-mediapreneur' },
+    { label: 'Mediapreneur', href: '/program/mediapreneur' },
     { label: 'Contentpreneur', href: '/program/contentpreneur' },
+    { label: 'Roweb Technology', href: '/technology' },
     { label: 'AI & SEO Tools', href: '#' },
     { label: 'Analytics', href: '#' },
   ],
@@ -53,12 +55,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.product.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -72,12 +74,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -91,12 +93,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -110,12 +112,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -128,19 +130,17 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo & Tagline */}
             <div className="flex flex-col items-center md:items-start gap-3">
-              <motion.a
-                href="/"
-                className="flex items-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src="/images/logo.jpg"
+              <Link href="/" className="flex items-center">
+                <motion.span whileHover={{ scale: 1.05 }} className="block">
+                  <Image
+                  src="/images/logo.png"
                   alt="Promedia Teknologi"
                   width={160}
                   height={50}
                   className="h-10 w-auto object-contain"
                 />
-              </motion.a>
+                </motion.span>
+              </Link>
              
             </div>
 

@@ -7,22 +7,22 @@ import MitraSkeleton from './MitraSkeleton'
 
 // Mock data - replace with actual API call
 const mockMitraData = [
-  { id: 1, name: 'Media Nasional 1', category: 'nasional', logo: '/images/logo.jpg' },
-  { id: 2, name: 'Media Regional 1', category: 'regional', logo: '/images/logo.jpg' },
-  { id: 3, name: 'Media Hiburan 1', category: 'hiburan', logo: '/images/logo.jpg' },
-  { id: 4, name: 'Media Teknologi 1', category: 'teknologi', logo: '/images/logo.jpg' },
-  { id: 5, name: 'Media Nasional 2', category: 'nasional', logo: '/images/logo.jpg' },
-  { id: 6, name: 'Media Regional 2', category: 'regional', logo: '/images/logo.jpg' },
-  { id: 7, name: 'Media Hiburan 2', category: 'hiburan', logo: '/images/logo.jpg' },
-  { id: 8, name: 'Media Teknologi 2', category: 'teknologi', logo: '/images/logo.jpg' },
-  { id: 9, name: 'Media Nasional 3', category: 'nasional', logo: '/images/logo.jpg' },
-  { id: 10, name: 'Media Regional 3', category: 'regional', logo: '/images/logo.jpg' },
-  { id: 11, name: 'Media Hiburan 3', category: 'hiburan', logo: '/images/logo.jpg' },
-  { id: 12, name: 'Media Teknologi 3', category: 'teknologi', logo: '/images/logo.jpg' },
-  { id: 13, name: 'Media Nasional 4', category: 'nasional', logo: '/images/logo.jpg' },
-  { id: 14, name: 'Media Regional 4', category: 'regional', logo: '/images/logo.jpg' },
-  { id: 15, name: 'Media Hiburan 4', category: 'hiburan', logo: '/images/logo.jpg' },
-  { id: 16, name: 'Media Teknologi 4', category: 'teknologi', logo: '/images/logo.jpg' },
+  { id: 1, name: 'Media Nasional 1', category: 'nasional', logo: '/images/logo.png' },
+  { id: 2, name: 'Media Regional 1', category: 'regional', logo: '/images/logo.png' },
+  { id: 3, name: 'Media Hiburan 1', category: 'hiburan', logo: '/images/logo.png' },
+  { id: 4, name: 'Media Teknologi 1', category: 'teknologi', logo: '/images/logo.png' },
+  { id: 5, name: 'Media Nasional 2', category: 'nasional', logo: '/images/logo.png' },
+  { id: 6, name: 'Media Regional 2', category: 'regional', logo: '/images/logo.png' },
+  { id: 7, name: 'Media Hiburan 2', category: 'hiburan', logo: '/images/logo.png' },
+  { id: 8, name: 'Media Teknologi 2', category: 'teknologi', logo: '/images/logo.png' },
+  { id: 9, name: 'Media Nasional 3', category: 'nasional', logo: '/images/logo.png' },
+  { id: 10, name: 'Media Regional 3', category: 'regional', logo: '/images/logo.png' },
+  { id: 11, name: 'Media Hiburan 3', category: 'hiburan', logo: '/images/logo.png' },
+  { id: 12, name: 'Media Teknologi 3', category: 'teknologi', logo: '/images/logo.png' },
+  { id: 13, name: 'Media Nasional 4', category: 'nasional', logo: '/images/logo.png' },
+  { id: 14, name: 'Media Regional 4', category: 'regional', logo: '/images/logo.png' },
+  { id: 15, name: 'Media Hiburan 4', category: 'hiburan', logo: '/images/logo.png' },
+  { id: 16, name: 'Media Teknologi 4', category: 'teknologi', logo: '/images/logo.png' },
 ]
 
 interface Mitra {

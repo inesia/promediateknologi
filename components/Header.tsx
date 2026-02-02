@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Server } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -26,6 +26,7 @@ const navItems: NavItem[] = [
       { label: 'Tentang Perusahaan', href: '/about-us#tentang-kami' },
       { label: 'Lokasi', href: '/about-us#lokasi' },
       { label: 'Mitra Promedia', href: '/mitra' },
+      { label: 'Teknologi & Infrastruktur', href: '/technology' },
     ]
   },
   { 
@@ -90,7 +91,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
           >
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="Promedia Teknologi"
               width={180}
               height={60}
@@ -136,16 +137,19 @@ export default function Header() {
                       className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-lg rounded-lg shadow-xl border border-slate-100 py-2 z-50"
                     >
                       {item.submenu.map((subItem, subIndex) => (
-                        <motion.a
-                          key={subItem.label}
-                          href={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-slate-700 hover:text-[#00AEEF] hover:bg-slate-50 transition-colors"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: subIndex * 0.05 }}
-                        >
-                          {subItem.label}
-                        </motion.a>
+                        <Link key={subItem.label} href={subItem.href}>
+                          <motion.span
+                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:text-[#00AEEF] hover:bg-slate-50 transition-colors cursor-pointer block"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: subIndex * 0.05 }}
+                          >
+                            {subItem.label === 'Teknologi & Infrastruktur' && (
+                              <Server className="w-4 h-4 flex-shrink-0" />
+                            )}
+                            {subItem.label}
+                          </motion.span>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -245,14 +249,17 @@ export default function Header() {
                           className="pl-4 space-y-2 overflow-hidden"
                         >
                           {item.submenu.map((subItem) => (
-                            <a
+                            <Link
                               key={subItem.label}
                               href={subItem.href}
-                              className="block text-sm text-slate-600 hover:text-[#00AEEF] transition-colors py-1.5"
+                              className="flex items-center gap-2 block text-sm text-slate-600 hover:text-[#00AEEF] transition-colors py-1.5"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
+                              {subItem.label === 'Teknologi & Infrastruktur' && (
+                                <Server className="w-4 h-4 flex-shrink-0" />
+                              )}
                               {subItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </motion.div>
                       )}

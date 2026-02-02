@@ -1,7 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Users, TrendingUp, Zap, Globe } from 'lucide-react'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { Users, TrendingUp, Zap, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 // Wave Component - Elegant Background Animation
@@ -103,36 +104,69 @@ function FloatingCard({ icon, value, label, delay, duration, className }: Floati
   )
 }
 
-// Statistik data
+// Animated counter for 1 Billion - Media Profile 2025
+function BillionCounter() {
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (v) => v.toFixed(1))
+  const [display, setDisplay] = useState('0.0')
+
+  useEffect(() => {
+    const controls = animate(count, 1, {
+      duration: 2.2,
+      ease: 'easeOut',
+    })
+    return () => controls.stop()
+  }, [count])
+
+  useEffect(() => {
+    const unsub = rounded.on('change', (v) => setDisplay(v))
+    return () => unsub()
+  }, [rounded])
+
+  return (
+    <span className="tabular-nums">
+      <motion.span
+        key={display}
+        initial={{ opacity: 0.8, scale: 1.02 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.15 }}
+      >
+        {display}
+      </motion.span>
+    </span>
+  )
+}
+
+// Statistik data - Media Profile 2025
 const stats = [
   {
     icon: <Users className="w-6 h-6" />,
-    value: '1,000+',
-    label: 'Media Partners',
+    value: '1,200+',
+    label: 'Media Network',
     delay: 0.2,
     duration: 6,
     className: 'top-20 left-4 sm:left-8 lg:left-16',
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    value: '500K+',
-    label: 'Active Users',
+    value: '1 Billion+',
+    label: 'Unique Users/Year',
     delay: 0.4,
     duration: 7,
     className: 'top-40 right-4 sm:right-8 lg:right-16',
   },
   {
     icon: <Zap className="w-6 h-6" />,
-    value: '50+',
-    label: 'Content Creators',
+    value: '3.1 Billion+',
+    label: 'Pageviews/Year',
     delay: 0.6,
     duration: 8,
     className: 'bottom-32 left-8 sm:left-16 lg:left-24',
   },
   {
-    icon: <Globe className="w-6 h-6" />,
-    value: '24/7',
-    label: 'Support Available',
+    icon: <MapPin className="w-6 h-6" />,
+    value: '210+',
+    label: 'Cities & Regencies',
     delay: 0.8,
     duration: 9,
     className: 'bottom-20 right-8 sm:right-16 lg:right-24',
@@ -247,6 +281,30 @@ export default function Hero() {
             Memberdayakan Mediapreneur & Contentpreneur melalui teknologi media yang inklusif dan berkelanjutan.
           </motion.p>
 
+          {/* Media Profile 2025 - 1 Billion highlight with counter */}
+          <motion.div
+            {...blurIn}
+            transition={{ delay: 0.55, duration: 0.8 }}
+            className="mb-6 md:mb-8 lg:mb-10"
+          >
+            <div className="inline-block px-4 py-3 md:px-6 md:py-4 rounded-2xl bg-gradient-to-br from-[#00AEEF]/8 via-white to-[#2D74B3]/8 border border-[#00AEEF]/20 shadow-lg shadow-[#00AEEF]/5">
+              <p className="text-xs md:text-sm font-semibold text-[#64748b] uppercase tracking-wider mb-1 md:mb-2">
+                Jangkauan User / Year
+              </p>
+              <div className="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
+                <span className="text-6xl sm:text-7xl md:text-8xl font-black text-[#001A2C] tracking-tighter">
+                  <BillionCounter />
+                </span>
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent tracking-tight">
+                  Billion+
+                </span>
+              </div>
+              <p className="text-[10px] md:text-xs text-[#64748b] mt-2 md:mt-3 font-medium">
+                Verified by Google Analytics & Internal Data 2025
+              </p>
+            </div>
+          </motion.div>
+
           {/* CTA Buttons - Full width on mobile */}
           <motion.div
             {...blurIn}
@@ -264,6 +322,10 @@ export default function Hero() {
             </Link>
 
             <motion.button
+              type="button"
+              onClick={() => {
+                document.getElementById('brand-statement')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
               className="px-6 py-3.5 md:px-8 md:py-4 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg font-semibold text-[#001A2C] bg-transparent border-2 border-[#00AEEF]/30 rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

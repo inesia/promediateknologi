@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Server, DollarSign, GraduationCap } from 'lucide-react'
+import Link from 'next/link'
 
 const benefits = [
   {
@@ -87,6 +88,16 @@ export default function BenefitsGrid() {
                     <p className="text-white/90 leading-relaxed mb-6">
                       {benefit.description}
                     </p>
+
+                    {/* Tech spec link for Teknologi Server card */}
+                    {benefit.id === 'teknologi' && (
+                      <Link
+                        href="/technology"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/40 text-white/90 text-sm font-medium hover:bg-white/10 hover:border-white/60 transition-colors mb-4"
+                      >
+                        Lihat Spesifikasi Tech
+                      </Link>
+                    )}
 
                     {/* Hover Reveal - Revenue Estimate */}
                     <motion.div

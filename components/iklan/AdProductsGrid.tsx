@@ -14,7 +14,7 @@ const products = [
     icon: Monitor,
     price: 'CPM mulai Rp 15.000',
     visual: 'website-banner',
-    previewImage: '/images/logo.jpg',
+    previewImage: '/images/logo.png',
     badge: 'Best Seller',
   },
   {
@@ -24,7 +24,7 @@ const products = [
     icon: FileText,
     price: 'Fixed Rate Rp 3.500.000',
     visual: 'article',
-    previewImage: '/images/logo.jpg',
+    previewImage: '/images/logo.png',
     badge: 'High Impact',
   },
   {
@@ -34,7 +34,7 @@ const products = [
     icon: Instagram,
     price: 'Mulai Rp 1.500.000',
     visual: 'instagram-feed',
-    previewImage: '/images/logo.jpg',
+    previewImage: '/images/logo.png',
   },
   {
     id: 'video-ad',
@@ -43,7 +43,7 @@ const products = [
     icon: Video,
     price: 'Hubungi Kami',
     visual: 'video-player',
-    previewImage: '/images/logo.jpg',
+    previewImage: '/images/logo.png',
   },
 ]
 

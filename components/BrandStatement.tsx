@@ -22,6 +22,7 @@ export default function BrandStatement() {
 
   return (
     <section 
+      id="brand-statement"
       ref={sectionRef}
       className="relative py-32 lg:py-40 bg-white overflow-hidden"
     >
@@ -106,7 +107,7 @@ export default function BrandStatement() {
             transition={{ duration: 0.6, delay: 1.2 }}
           >
             <motion.a
-              href="/about-us/v2"
+              href="/about-us"
               className="group inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-[#001A2C] border-2 border-[#00AEEF]/30 rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
