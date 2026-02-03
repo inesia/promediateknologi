@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import NetworkLivePulse from '@/components/NetworkLivePulse'
 import BrandStatement from '@/components/BrandStatement'
 import EcosystemServices from '@/components/EcosystemServices'
 import LogoCloud from '@/components/LogoCloud'
@@ -14,6 +15,7 @@ export default function Home() {
       <BrandStatement />
       <EcosystemServices />
       <LogoCloud />
+      <NetworkLivePulse />
       <FinalCTA />
       <Footer />
     </main>
