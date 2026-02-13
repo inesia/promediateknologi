@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -28,6 +29,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'assets.promediateknologi.id',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.promediateknologi.id',
         pathname: '/**',
       },
     ],
