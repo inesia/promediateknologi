@@ -5,22 +5,28 @@ import { DollarSign, GraduationCap, Clock } from 'lucide-react'
 
 const highlights = [
   {
-    title: 'Income dari Views',
-    description: 'Dapatkan penghasilan dari setiap view artikel Anda',
-    icon: DollarSign,
+    title: 'Pelatihan dan Pengembangan Gratis',
+    description: 'Akses pelatihan dan pendampingan untuk mengasah kemampuan menulis, riset, dan pengembangan konten secara berkelanjutan.',
+    icon: GraduationCap,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
-    title: 'Pelatihan Gratis',
-    description: 'Akses workshop dan training untuk meningkatkan skill menulis',
-    icon: GraduationCap,
+    title: 'Bangun Reputasi dan Nilai',
+    description: 'Dapatkan peluang membangun reputasimu sebagai penulis sambil menaikkan nilai pendapatan dari karya yang dibaca.',
+    icon: DollarSign,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
-    title: 'Fleksibilitas Waktu',
-    description: 'Tulis kapan saja, di mana saja sesuai waktu luang Anda',
+    title: 'Fleksibilitas',
+    description: 'Berkarya sesuai ritme dan waktu Anda, tanpa mengikat, selama tetap menjaga kualitas dan konsistensi.',
     icon: Clock,
     color: 'from-[#00AEEF] to-[#2D74B3]',
+  },
+  {
+    title: 'Komunitas Nasional',
+    description: 'Masuk dalam bagian komunitas penulis, jurnalis, dan media dari seluruh kota dan kabupaten di Indonesia',
+    icon: Clock, // Need new icon, maybe Users or Globe
+    color: 'from-[#2D74B3] to-[#00AEEF]',
   },
 ]
 
@@ -41,10 +47,10 @@ export default function WhyJoinUs() {
           }}
         >
           <span className="text-[15rem] lg:text-[20rem] font-black text-[#001A2C] opacity-[0.02] select-none">
-            WRITE. SHARE. EARN. {' '}
+            TULIS. BAGIKAN. HASILKAN. {' '}
           </span>
           <span className="text-[15rem] lg:text-[20rem] font-black text-[#001A2C] opacity-[0.02] select-none">
-            WRITE. SHARE. EARN. {' '}
+            TULIS. BAGIKAN. HASILKAN. {' '}
           </span>
         </motion.div>
       </div>
@@ -59,7 +65,7 @@ export default function WhyJoinUs() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Why Join Us?
+            Mengapa Bergabung?
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Keuntungan yang akan Anda dapatkan sebagai Contentpreneur
@@ -67,7 +73,7 @@ export default function WhyJoinUs() {
         </motion.div>
 
         {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon
             return (

@@ -10,6 +10,26 @@ const nextConfig = {
         hostname: 'picsum.photos',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.promediateknologi.id',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'promediateknologi.id',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'db3.promediateknologi.id',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.promediateknologi.id',
+        pathname: '/**',
+      },
     ],
   },
 }

@@ -535,7 +535,7 @@ export default function EcosystemServices() {
     {
       title: 'Mediapreneur',
       description:
-        'Bangun bisnis media Anda sendiri dengan infrastruktur teknologi enterprise dan dukungan monetisasi penuh.',
+        'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
       linkHref: '/program/mediapreneur',
       linkText: 'Pelajari Selengkapnya',
       visual: <CMSDashboardMockup />,
@@ -544,7 +544,7 @@ export default function EcosystemServices() {
     {
       title: 'Contentpreneur',
       description:
-        'Ubah tulisan menjadi pendapatan. Platform terbaik untuk kreator konten berkembang dan terhubung dengan brand.',
+        'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
       linkHref: '/program/contentpreneur',
       linkText: 'Pelajari Selengkapnya',
       visual: <DigitalPenIllustration />,
@@ -553,7 +553,7 @@ export default function EcosystemServices() {
     {
       title: 'Socmedpreneur',
       description:
-        'Optimasi dan monetisasi media sosial dengan tools dan analytics lengkap untuk mengembangkan reach dan engagement.',
+        'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
       linkHref: '/program/socmedpreneur',
       linkText: 'Pelajari Selengkapnya',
       visual: <SocialMediaVisualization />,

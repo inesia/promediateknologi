@@ -42,7 +42,7 @@ export default function PhilosophySection() {
             className="mb-16"
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-              Philosophy
+              Tentang Perusahaan
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3]" />
           </motion.div>
@@ -55,25 +55,40 @@ export default function PhilosophySection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8 text-lg lg:text-xl text-slate-700 leading-relaxed tracking-wide"
           >
-            <p className="font-medium">
-              Kami tidak hanya berkembang—kami menciptakan semesta baru.
-            </p>
-            
-            <p>
-              Promedia Teknologi hadir sebagai pembeda di tengah ekosistem media digital yang semakin padat. 
-              Kami tidak sekadar mengikuti tren, melainkan menciptakan ekosistem baru yang memberikan nilai 
-              tambah bagi setiap anggota komunitas media.
-            </p>
+            <div className="space-y-12">
+              {/* Profil Singkat */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Profil Singkat</h3>
+                <p>
+                  Promedia Group adalah ekosistem media dan teknologi yang tumbuh dari keyakinan bahwa setiap cerita layak mendapat ruang. Bukan hanya dari media besar, tapi juga dari media kecil, jurnalis dan kreator personal, terutama mereka yang berkarya di daerah, dekat dengan realitas sehari-hari.
+                </p>
+                <p className="mt-4">
+                  Sejak Juli 2021, Promedia Group hadir dengan misi menumbuhkan dan mendampingi mereka, mitra-mitra kami yang memiliki banyak cerita penting, namun sering kali kekurangan akses dan dukungan teknologi. Melalui berbagai inisiatif di bidang media digital, sosial media hingga dan video, Promedia Group menyediakan platform, infrastruktur teknologi dan monetisasi, serta jaringan media dan komunitas kreator dengan satu tujuan, tumbuh bersama.
+                </p>
+                <p className="mt-4">
+                  Bagi kami, teknologi hanyalah alat. Yang utama adalah manusia, proses, dan cerita di baliknya. Karena suara-suara dari daerah tidak kalah penting, hanya sering kali kurang terdengar. Promedia Group hadir untuk membantu suara-suara itu tumbuh, terhubung, dan sampai ke audiens yang lebih luas secara berkelanjutan.
+                </p>
+              </div>
 
-            <p>
-              Sebagai pionir ekosistem media digital terintegrasi, kami membangun infrastruktur masa depan 
-              yang memungkinkan Mediapreneur dan Contentpreneur untuk berkembang dengan legalitas yang jelas, 
-              teknologi yang mutakhir, dan dukungan komunitas yang solid.
-            </p>
+              {/* Filosofi Kami */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Filosofi Kami</h3>
+                <p>
+                  Promedia Group meyakini bahwa keberlanjutan media dibangun melalui akses yang setara dan kolaborasi yang sehat. Setiap entitas, baik media maupun kreator independen, memiliki peran dalam ekosistem informasi yang beragam.
+                </p>
+                <p className="mt-4">
+                  Kami menyediakan platform, teknologi, dan jaringan untuk mendukung proses tersebut secara efisien dan berkelanjutan, tanpa mengorbankan independensi dan identitas. Dengan pendekatan ekosistem, Promedia Group berkomitmen untuk tumbuh bersama mitra kami dan membangun media yang relevan bagi masa depan.
+                </p>
+              </div>
 
-            <p className="font-semibold text-[#001A2C]">
-              Visi kami adalah menjadi arsitek ekosistem media yang membentuk masa depan industri media Indonesia.
-            </p>
+              {/* Cita-cita Kami */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Cita-cita Kami</h3>
+                <p>
+                  Menjadi ruang di mana setiap cerita memiliki kesempatan yang sama untuk tumbuh, didengar, dan memberi makna, tanpa dibatasi lokasi, modal, dan kerumitan teknologi.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

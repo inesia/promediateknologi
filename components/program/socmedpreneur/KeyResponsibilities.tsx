@@ -17,7 +17,7 @@ const responsibilities = [
   },
   {
     id: 'community',
-    title: 'Community Management',
+    title: 'Manajemen Komunitas',
     description: 'Mengelola dan berinteraksi dengan komunitas untuk membangun engagement yang kuat',
     icon: MessageSquare,
     color: 'from-[#2D74B3] to-[#00AEEF]',
@@ -28,7 +28,7 @@ const responsibilities = [
   },
   {
     id: 'traffic',
-    title: 'Traffic Booster',
+    title: 'Peningkat Trafik',
     description: 'Meningkatkan traffic website melalui strategi optimasi media sosial yang efektif',
     icon: TrendingUp,
     color: 'from-[#00AEEF] to-[#2D74B3]',
@@ -52,7 +52,7 @@ export default function KeyResponsibilities() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Key Responsibilities
+            Tanggung Jawab Utama
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Tugas utama sebagai Socmed Specialist di ekosistem Promedia

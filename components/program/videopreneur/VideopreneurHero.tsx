@@ -75,7 +75,7 @@ export default function VideopreneurHero() {
             className="text-white"
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-              Visualize the Story.
+              Visualisasikan Ceritanya.
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed">
@@ -91,7 +91,7 @@ export default function VideopreneurHero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Start Your Production</span>
+              <span>Mulai Produksi Anda</span>
               <Play className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>

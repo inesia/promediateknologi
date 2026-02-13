@@ -1,84 +1,86 @@
-'use client'
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, Server } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, Server } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface SubMenuItem {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 interface NavItem {
-  label: string
-  href: string
-  submenu?: SubMenuItem[]
+  label: string;
+  href: string;
+  submenu?: SubMenuItem[];
 }
 
 const navItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { 
-    label: 'Tentang Kami', 
-    href: '/about-us',
+  { label: "Home", href: "/" },
+  {
+    label: "Tentang Kami",
+    href: "/about-us",
     submenu: [
-      { label: 'Tentang Perusahaan', href: '/about-us#tentang-kami' },
-      { label: 'Lokasi', href: '/about-us#lokasi' },
-      { label: 'Mitra Promedia', href: '/mitra' },
-      { label: 'Teknologi & Infrastruktur', href: '/technology' },
-    ]
+      { label: "Tentang Perusahaan", href: "/about-us#tentang-perusahaan" },
+      { label: "Mitra Media", href: "/mitra" },
+      { label: "Lokasi", href: "/about-us#lokasi" },
+      { label: "Teknologi", href: "/technology" },
+    ],
   },
-  { 
-    label: 'Program Promedia', 
-    href: '#',
+  {
+    label: "Program",
+    href: "#",
     submenu: [
-      { label: 'Mediapreneur', href: '/program/mediapreneur' },
-      { label: 'Contentpreneur', href: '/program/contentpreneur' },
-      { label: 'Socmedpreneur', href: '/program/socmedpreneur' },
-      { label: 'Videopreneur', href: '/program/videopreneur' },
-    ]
+      { label: "Mediapreneur", href: "/program/mediapreneur" },
+      { label: "Contentpreneur", href: "/program/contentpreneur" },
+      { label: "Socmedpreneur", href: "/program/socmedpreneur" },
+      { label: "Videopreneur", href: "/program/videopreneur" },
+    ],
   },
-  { label: 'JPP', href: '/jpp' },
-      { 
-    label: 'Pokja', 
-    href: '#',
+  {
+    label: "Organisasi",
+    href: "#",
     submenu: [
-      { label: 'Pokja Jurnalis Tekno', href: '/pokja/tekno' },
-      { label: 'Pokja Jurnalis Otomotif', href: '/pokja/otomotif' },
-    ]
+      { label: "Jaringan Pemred Promedia", href: "/organisasi/jpp" },
+      {
+        label: "Koperasi Jasa Mitra Promedia Sejahtera",
+        href: "/organisasi/koperasi",
+      },
+      { label: "Asosiasi Konten Kreator Indonesia", href: "/organisasi/akki" },
+    ],
   },
-  { label: 'Iklan', href: '/iklan' },
-  { 
-    label: 'Kontak', 
-    href: '#',
-    submenu: [
-      { label: 'Validasi Keanggotaan', href: '/validasi-keanggotaan' },
-    ]
-  },
-]
+  { label: "Iklan", href: "/iklan" },
+  { label: "Kontak", href: "/kontak" },
+  { label: "FAQ", href: "/faq" },
+];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<
+    string | null
+  >(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
-        isScrolled ? 'bg-white/70 border-b border-slate-100' : 'bg-white/60 border-b border-transparent'
+        isScrolled
+          ? "bg-white/70 border-b border-slate-100"
+          : "bg-white/60 border-b border-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +108,9 @@ export default function Header() {
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => item.submenu && setActiveDropdown(item.label)}
+                onMouseEnter={() =>
+                  item.submenu && setActiveDropdown(item.label)
+                }
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <motion.a
@@ -144,7 +148,7 @@ export default function Header() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: subIndex * 0.05 }}
                           >
-                            {subItem.label === 'Teknologi & Infrastruktur' && (
+                            {subItem.label === "Teknologi & Infrastruktur" && (
                               <Server className="w-4 h-4 flex-shrink-0" />
                             )}
                             {subItem.label}
@@ -196,7 +200,7 @@ export default function Header() {
           {isMobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden border-t border-slate-100 py-4 overflow-hidden"
             >
@@ -209,12 +213,14 @@ export default function Header() {
                         className="flex-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors py-2"
                         onClick={(e) => {
                           if (item.submenu) {
-                            e.preventDefault()
+                            e.preventDefault();
                             setMobileActiveDropdown(
-                              mobileActiveDropdown === item.label ? null : item.label
-                            )
+                              mobileActiveDropdown === item.label
+                                ? null
+                                : item.label,
+                            );
                           } else {
-                            setIsMobileMenuOpen(false)
+                            setIsMobileMenuOpen(false);
                           }
                         }}
                       >
@@ -224,26 +230,30 @@ export default function Header() {
                         <button
                           onClick={() =>
                             setMobileActiveDropdown(
-                              mobileActiveDropdown === item.label ? null : item.label
+                              mobileActiveDropdown === item.label
+                                ? null
+                                : item.label,
                             )
                           }
                           className="p-2"
                         >
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${
-                              mobileActiveDropdown === item.label ? 'rotate-180' : ''
+                              mobileActiveDropdown === item.label
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
                         </button>
                       )}
                     </div>
-                    
+
                     {/* Mobile Submenu */}
                     <AnimatePresence>
                       {item.submenu && mobileActiveDropdown === item.label && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
+                          animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
                           className="pl-4 space-y-2 overflow-hidden"
@@ -255,7 +265,8 @@ export default function Header() {
                               className="flex items-center gap-2 block text-sm text-slate-600 hover:text-[#00AEEF] transition-colors py-1.5"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              {subItem.label === 'Teknologi & Infrastruktur' && (
+                              {subItem.label ===
+                                "Teknologi & Infrastruktur" && (
                                 <Server className="w-4 h-4 flex-shrink-0" />
                               )}
                               {subItem.label}
@@ -281,5 +292,5 @@ export default function Header() {
         </AnimatePresence>
       </nav>
     </motion.header>
-  )
+  );
 }

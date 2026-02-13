@@ -29,11 +29,11 @@ export default function MediapreneurHero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 leading-tight">
-              Own Your Media Empire.
+              Bangun Bisnis Media Anda Sendiri
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-              Program kepemilikan media bagi jurnalis profesional. Bangun, kelola, dan monetisasi portal berita Anda sendiri dengan dukungan teknologi Promedia.
+              Program untuk jurnalis hingga penulis berpengalaman. Bangun, kelola, dan monetisasi portal media Anda sendiri. Wujudkan visi mediamu dengan dukungan teknologi Promedia. Gratis.
             </p>
 
             {/* CTA Button */}
@@ -43,7 +43,7 @@ export default function MediapreneurHero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Ajukan Proposal Media</span>
+                <span>Daftar Sekarang</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.div>
             </Link>
@@ -84,9 +84,9 @@ function CMSDashboardMockup() {
           {/* Stats Cards */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { label: 'Articles', value: '1,234', color: 'from-[#00AEEF] to-[#2D74B3]' },
-              { label: 'Views', value: '45.6K', color: 'from-[#2D74B3] to-[#00AEEF]' },
-              { label: 'Revenue', value: 'Rp 12M', color: 'from-[#00AEEF] to-[#2D74B3]' },
+              { label: 'Artikel', value: '1,234', color: 'from-[#00AEEF] to-[#2D74B3]' },
+              { label: 'Pembaca', value: '45.6K', color: 'from-[#2D74B3] to-[#00AEEF]' },
+              { label: 'Pendapatan', value: 'Rp 12M', color: 'from-[#00AEEF] to-[#2D74B3]' },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}

@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import JPPHero from '@/components/jpp/JPPHero'
-import MisiFokus from '@/components/jpp/MisiFokus'
-import AgendaAktivitas from '@/components/jpp/AgendaAktivitas'
+import AboutJPP from '@/components/jpp/AboutJPP'
+import SpecialInterestGroups from '@/components/jpp/SpecialInterestGroups'
 import MembershipStats from '@/components/jpp/MembershipStats'
 import CTASection from '@/components/jpp/CTASection'
 
 export const metadata: Metadata = {
-  title: 'JPP - Jaringan Pemimpin Redaksi Promedia | Penjaga Jurnalisme Berkualitas',
+  title: 'JPP - Jaringan Pemred Promedia | Penjaga Jurnalisme Berkualitas',
   description: 'Wadah eksklusif bagi ribuan Pemimpin Redaksi dalam ekosistem Promedia untuk menetapkan standar jurnalisme masa depan.',
   keywords: 'JPP, jaringan pemimpin redaksi, pemimpin redaksi, jurnalisme berkualitas, publisher rights, promedia teknologi',
   openGraph: {
@@ -24,9 +24,9 @@ export default function JPPPage() {
       <Header />
       <article>
         <JPPHero />
-        <MisiFokus />
-        <AgendaAktivitas />
+        <AboutJPP />
         <MembershipStats />
+        <SpecialInterestGroups />
         <CTASection />
       </article>
       <Footer />

@@ -7,23 +7,30 @@ const requirements = [
   {
     id: 'tim',
     title: 'Tim Solid',
-    description: 'Min. 3 orang: 1 Pimred, 2 Editor',
+    description: 'Min. 3 orang dengan visi sama — 1 Pemimpin Redaksi, 2 Redaktur.',
     icon: Users,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
-    id: 'legalitas',
-    title: 'Legalitas',
-    description: 'Badan hukum/PT',
+    id: 'identitas',
+    title: 'Identitas Tim',
+    description: 'Siapkan CV Tim Inti yang Didaftarkan.',
     icon: ShieldCheck,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
-    id: 'experience',
-    title: 'Experience',
-    description: 'Min. 1 tahun di jurnalisme',
+    id: 'pengalaman',
+    title: 'Pengalaman',
+    description: 'Min. 1 Tahun di dunia jurnalistik/kepenulisan.',
     icon: Briefcase,
     color: 'from-[#00AEEF] to-[#2D74B3]',
+  },
+  {
+    id: 'cita-cita',
+    title: 'Cita-cita',
+    description: 'Wajib punya semangat ingin bangun bisnis media sendiri.',
+    icon: Users, // Using Users as generic icon or maybe Rocket if imported
+    color: 'from-[#2D74B3] to-[#00AEEF]',
   },
 ]
 
@@ -43,12 +50,15 @@ export default function SyaratKualifikasi() {
             Syarat & Kualifikasi
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Persyaratan yang perlu dipenuhi untuk bergabung dalam program Mediapreneur
+            Penuhi empat syarat berikut agar bisa mendaftar program ini.
+          </p>
+          <p className="text-sm text-slate-500 mt-4 italic">
+            *Proses pendaftaran tidak dipungut biaya, kecuali pembelian domain yang dimiliki masing-masing mitra.
           </p>
         </motion.div>
 
         {/* Interactive Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto">
           {requirements.map((req, index) => {
             const Icon = req.icon
             return (
@@ -60,19 +70,19 @@ export default function SyaratKualifikasi() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className="relative h-full p-8 lg:p-10 bg-white rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                <div className="relative h-full p-6 lg:p-8 bg-white rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                   {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${req.color} mb-6 shadow-lg`}>
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className={`inline-flex p-3 lg:p-4 rounded-xl bg-gradient-to-br ${req.color} mb-4 lg:mb-6 shadow-lg`}>
+                    <Icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#001A2C] mb-4">
+                  <h3 className="text-xl lg:text-2xl font-black text-[#001A2C] mb-3 lg:mb-4">
                     {req.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-600 leading-relaxed text-lg">
+                  <p className="text-slate-600 leading-relaxed text-sm lg:text-base">
                     {req.description}
                   </p>
 
@@ -82,7 +92,7 @@ export default function SyaratKualifikasi() {
                   />
 
                   {/* Decorative corner */}
-                  <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${req.color} opacity-5 rounded-bl-full`} />
+                  <div className={`absolute top-0 right-0 w-16 h-16 lg:w-24 lg:h-24 bg-gradient-to-br ${req.color} opacity-5 rounded-bl-full`} />
                 </div>
               </motion.div>
             )

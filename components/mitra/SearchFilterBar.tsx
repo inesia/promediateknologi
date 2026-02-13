@@ -8,8 +8,19 @@ const categories = [
   { id: 'all', label: 'Semua' },
   { id: 'nasional', label: 'Nasional' },
   { id: 'regional', label: 'Regional' },
-  { id: 'hiburan', label: 'Hiburan' },
+  { id: 'ekonomi', label: 'Ekonomi & Bisnis' },
+  { id: 'energi', label: 'Energi & Lingkungan' },
+  { id: 'agrobisnis', label: 'Agrobisnis' },
+  { id: 'otomotif', label: 'Otomotif' },
   { id: 'teknologi', label: 'Teknologi' },
+  { id: 'sains', label: 'Sains & Pengetahuan' },
+  { id: 'pendidikan', label: 'Pendidikan' },
+  { id: 'kesehatan', label: 'Kesehatan' },
+  { id: 'agama', label: 'Agama' },
+  { id: 'lifestyle', label: 'Lifestyle' },
+  { id: 'kuliner', label: 'Kuliner' },
+  { id: 'wisata', label: 'Wisata' },
+  { id: 'hiburan', label: 'Seni & Hiburan' },
 ]
 
 interface SearchFilterBarProps {

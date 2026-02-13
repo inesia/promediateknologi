@@ -1,20 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FileText, Heart } from 'lucide-react'
-
-const requirements = [
-  {
-    icon: FileText,
-    title: 'CV Terbaru',
-    description: 'Kirimkan CV Anda yang sudah diupdate dengan pengalaman menulis',
-  },
-  {
-    icon: Heart,
-    title: 'Passion Menulis',
-    description: 'Memiliki minat dan semangat untuk menulis konten berkualitas',
-  },
-]
+import { FileText, Users, MonitorPlay, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Persyaratan() {
   return (
@@ -29,69 +17,98 @@ export default function Persyaratan() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Persyaratan
+            Alur dan Cara Mendaftar
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Persyaratan sederhana untuk memulai perjalanan sebagai Contentpreneur
+            Ada dua jalur untuk mengikuti program Contentpreneur ini
           </p>
         </motion.div>
 
-        {/* Simple List */}
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-6">
-            {requirements.map((req, index) => {
-              const Icon = req.icon
-              return (
-                <motion.div
-                  key={req.title}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-start gap-6 p-6 lg:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#00AEEF] to-[#2D74B3] flex items-center justify-center shadow-lg">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-black text-[#001A2C] mb-2">
-                      {req.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed text-lg">
-                      {req.description}
-                    </p>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-
-          {/* CTA */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          {/* Jalur Media */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 text-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg"
           >
-            <motion.a
-              href="https://bit.ly/promediamitra"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300"
+            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-[#00AEEF] to-[#2D74B3] mb-6 shadow-lg">
+              <MonitorPlay className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#001A2C] mb-6">1. Jalur Media</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#00AEEF] flex-shrink-0" />
+                <p className="text-slate-600">Mendaftar lowongan jurnalis/penulis yang dibuka oleh mitra media Promedia Group. Cek laman karir dan media sosial mereka.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#00AEEF] flex-shrink-0" />
+                <p className="text-slate-600">Mengikuti alur administrasi pendaftaran yang diterapkan mitra media Promedia Group.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#00AEEF] flex-shrink-0" />
+                <p className="text-slate-600">Mengikuti rangkaian pelatihan terpusat yang digelar oleh tim Promedia Group.</p>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Jalur Promedia Group */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg"
+          >
+            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-[#2D74B3] to-[#00AEEF] mb-6 shadow-lg">
+              <Users className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#001A2C] mb-6">2. Jalur Promedia Group</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#2D74B3] flex-shrink-0" />
+                <p className="text-slate-600">Mengisi formulir pendaftaran yang disediakan. Klik tombol di bawah.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#2D74B3] flex-shrink-0" />
+                <p className="text-slate-600">Mengikuti zoom penjelasan konsep program Contentpreneur secara online.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#2D74B3] flex-shrink-0" />
+                <p className="text-slate-600">Melakukan daftar ulang.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#2D74B3] flex-shrink-0" />
+                <p className="text-slate-600">Mengikuti rangkaian pelatihan terpusat yang digelar oleh tim Promedia Group.</p>
+              </li>
+              <li className="flex gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-[#2D74B3] flex-shrink-0" />
+                <p className="text-slate-600">Mendapatkan penempatan ke media yang direkomendasikan Promedia Group.</p>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <Link href="/register?role=contentpreneur">
+            <motion.div
+              className="inline-flex items-center gap-3 px-10 py-4 bg-[#00AEEF] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span>Daftar Sekarang</span>
-              <FileText className="w-5 h-5" />
-            </motion.a>
-          </motion.div>
-        </div>
+              <ArrowRight className="w-5 h-5" />
+            </motion.div>
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

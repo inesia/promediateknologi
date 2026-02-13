@@ -142,15 +142,15 @@ const stats = [
   {
     icon: <Users className="w-6 h-6" />,
     value: '1,200+',
-    label: 'Media Network',
+    label: 'Jaringan Media',
     delay: 0.2,
     duration: 6,
     className: 'top-20 left-4 sm:left-8 lg:left-16',
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    value: '1 Billion+',
-    label: 'Unique Users/Year',
+    value: '1.0 Billion+',
+    label: 'Jangkauan User / Year',
     delay: 0.4,
     duration: 7,
     className: 'top-40 right-4 sm:right-8 lg:right-16',
@@ -158,15 +158,15 @@ const stats = [
   {
     icon: <Zap className="w-6 h-6" />,
     value: '3.1 Billion+',
-    label: 'Pageviews/Year',
+    label: 'Pageview / Tahun',
     delay: 0.6,
     duration: 8,
     className: 'bottom-32 left-8 sm:left-16 lg:left-24',
   },
   {
     icon: <MapPin className="w-6 h-6" />,
-    value: '210+',
-    label: 'Cities & Regencies',
+    value: '230+',
+    label: 'Kabupaten & Kota',
     delay: 0.8,
     duration: 9,
     className: 'bottom-20 right-8 sm:right-16 lg:right-24',
@@ -278,7 +278,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#64748b] mb-6 md:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed font-normal px-2"
           >
-            Memberdayakan Mediapreneur & Contentpreneur melalui teknologi media yang inklusif dan berkelanjutan.
+            Tempat Media, Jurnalis, dan Kreator Tumbuh Bersama, secara Setara dan Berkelanjutan
           </motion.p>
 
           {/* Media Profile 2025 - 1 Billion highlight with counter */}
@@ -317,7 +317,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Mulai Sekarang</span>
+                <span className="relative z-10">Daftar Sekarang</span>
               </motion.div>
             </Link>
 

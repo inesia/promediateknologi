@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const headline = "The Architects of Media Ecosystem"
+const headline = "Tentang Kami"
 const words = headline.split(' ')
 
 export default function AboutHero() {

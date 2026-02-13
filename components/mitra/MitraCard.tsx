@@ -38,11 +38,12 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
               src={mitra.logo}
               alt={mitra.name}
               fill
-              className={`object-contain transition-all duration-500 ${
+              className={`object-contain transition-all duration-500 p-4 ${
                 isHovered ? 'grayscale-0 scale-110 brightness-110' : 'grayscale'
               }`}
               onError={() => setImageError(true)}
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
+              unoptimized // Added to allow external images without configuring every domain if needed for initial testing, though remotePatterns is set.
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg">

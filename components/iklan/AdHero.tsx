@@ -28,11 +28,11 @@ export default function AdHero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 leading-tight">
-              Jangkau Jutaan Pembaca Indonesia dalam Satu Klik.
+              Iklan Terintegrasi di Jaringan Media Promedia
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-              Platform periklanan transparan dengan akses ke 1.000+ jaringan media premium.
+              Solusi periklanan untuk hubungkan brand dengan audiens melalui jaringan media lintas segmen dan daerah.
             </p>
           </motion.div>
 

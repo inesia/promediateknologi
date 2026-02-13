@@ -127,11 +127,11 @@ export default function JPPHero() {
 
             {/* Headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-              Penjaga Jurnalisme Berkualitas.
+              Jaringan Pemred Promedia (JPP)
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed">
-              Wadah eksklusif bagi ribuan Pemimpin Redaksi dalam ekosistem Promedia untuk menetapkan standar jurnalisme masa depan.
+              Forum kolaboratif para Pemimpin Redaksi media di Promedia Group untuk memperkuat peran dan masa depan industri media Indonesia.
             </p>
           </motion.div>
 

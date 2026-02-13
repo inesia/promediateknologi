@@ -8,26 +8,42 @@ import Link from 'next/link'
 const benefits = [
   {
     id: 'teknologi',
-    title: 'Teknologi Server',
-    description: 'Infrastruktur server yang handal dan scalable untuk mendukung portal berita Anda',
+    title: 'Teknologi & Infrastruktur Media',
+    description: 'Infrastruktur server yang handal, aman, dan scalable untuk mendukung pertumbuhan media digital Anda.',
     icon: Server,
-    revenue: 'Hemat hingga Rp 50 juta/tahun',
+    revenue: '',
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
     id: 'monetisasi',
-    title: 'Monetisasi Iklan Programmatic',
-    description: 'Sistem iklan otomatis yang mengoptimalkan pendapatan dari setiap pageview',
+    title: 'Monetisasi Terintegrasi',
+    description: 'Sistem iklan programmatic dan dukungan monetisasi direct ke Brand untuk mengoptimalkan pendapatan media secara berkelanjutan.',
     icon: DollarSign,
-    revenue: 'Potensi revenue Rp 10-50 juta/bulan',
+    revenue: '',
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
     id: 'pelatihan',
-    title: 'Pelatihan',
-    description: 'Workshop dan training berkala untuk meningkatkan kualitas konten dan manajemen media',
+    title: 'Pendampingan & Pelatihan',
+    description: 'Pendampingan konten, editorial, dan manajemen media oleh praktisi berpengalaman melalui pelatihan dan evaluasi berkala.',
     icon: GraduationCap,
-    revenue: 'Nilai investasi Rp 20 juta/tahun',
+    revenue: '',
+    color: 'from-[#00AEEF] to-[#2D74B3]',
+  },
+  {
+    id: 'visi',
+    title: 'Media Anda. Visi Anda.',
+    description: 'Media yang sepenuhnya menjadi milik Anda, dengan kendali editorial dan arah pengembangan yang independen.',
+    icon: Server, // Reusing icon or need new one
+    revenue: '',
+    color: 'from-[#2D74B3] to-[#00AEEF]',
+  },
+  {
+    id: 'jaringan',
+    title: 'Jaringan & Ekosistem Promedia',
+    description: 'Terhubung dengan jaringan media hingga komunitas jurnalis & kreator dalam ekosistem Promedia Group di seluruh Indonesia.',
+    icon: GraduationCap, // Reusing icon
+    revenue: '',
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
 ]

@@ -70,7 +70,7 @@ export default function GearTools() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
-            Gear & Tools
+            Perangkat & Alat
           </h2>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Software dan hardware yang digunakan dalam produksi video profesional
@@ -85,7 +85,7 @@ export default function GearTools() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Software</h3>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Perangkat Lunak</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {software.map((item, index) => {
               const Icon = item.icon
@@ -109,7 +109,7 @@ export default function GearTools() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Hardware</h3>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Perangkat Keras</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {hardware.map((item, index) => {
               const Icon = item.icon

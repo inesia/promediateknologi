@@ -29,11 +29,11 @@ export default function ContentpreneurHero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 leading-tight">
-              Turn Words into Wealth.
+              Berkarya, Berkembang, dan Terhubung
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-              Menulis adalah proses merapikan kenangan menjadi pendapatan. Bergabunglah sebagai kreator konten di jaringan Promedia.
+              Tempat jurnalis dan kreator mengembangkan karya, membangun reputasi, dan tumbuh bersama — lalu mengubahnya jadi pendapatan.
             </p>
 
             {/* CTA Button */}
@@ -43,7 +43,7 @@ export default function ContentpreneurHero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Mulai Menulis Sekarang</span>
+                <span>Daftar Sekarang</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.div>
             </Link>

@@ -7,15 +7,15 @@ import Link from 'next/link'
 const steps = [
   {
     id: 1,
-    title: 'Submit CV',
-    description: 'Kirimkan CV tim dan proposal media Anda melalui formulir pendaftaran',
+    title: 'Isi Formulir & Submit CV',
+    description: 'Siapkan dan kirim CV terbaik tim Anda dan isi formulir yang telah disiapkan.',
     icon: FileText,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
     id: 2,
-    title: 'Zoom Interview',
-    description: 'Tim kami akan menghubungi untuk melakukan wawancara via Zoom',
+    title: 'Zoom Penjelasan Kemitraan',
+    description: 'Tunggu undangan untuk hadir ke zoom penjelasaan konsep bisnis dan kemitraan, langsung dengan CEO Promedia Group. Undangan akan dikirim via email & Whatsapp.',
     icon: Video,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },

@@ -25,12 +25,12 @@ export default function CTASection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00AEEF]/10 rounded-full mb-6 border border-[#00AEEF]/30">
             <Sparkles className="w-5 h-5 text-[#00AEEF]" />
             <span className="text-sm font-semibold text-[#00AEEF]">
-              Ready to Create
+              Siap Berkreasi
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
-            Start Your Production
+            Mulai Produksi Anda
           </h2>
 
           <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
@@ -64,7 +64,7 @@ export default function CTASection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] blur-xl opacity-50" />
 
             {/* Content */}
-            <span className="relative z-10">Start Your Production</span>
+            <span className="relative z-10">Mulai Produksi Anda</span>
             <Play className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="white" />
 
             {/* Shimmer overlay */}

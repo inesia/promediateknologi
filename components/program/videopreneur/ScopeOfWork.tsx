@@ -7,21 +7,21 @@ import { Scissors, Radio, Sparkles } from 'lucide-react'
 const scopes = [
   {
     id: 'editing',
-    title: 'Video Editing',
+    title: 'Penyuntingan Video',
     description: 'Mengedit dan memproduksi konten video berkualitas tinggi untuk berbagai platform',
     icon: Scissors,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
     id: 'streaming',
-    title: 'Live Streaming',
+    title: 'Siaran Langsung',
     description: 'Mengelola dan memproduksi siaran langsung untuk berbagai acara dan program',
     icon: Radio,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
     id: 'motion',
-    title: 'Motion Graphic',
+    title: 'Grafis Gerak',
     description: 'Membuat animasi dan motion graphics untuk memperkaya konten visual',
     icon: Sparkles,
     color: 'from-[#00AEEF] to-[#2D74B3]',
@@ -43,7 +43,7 @@ export default function ScopeOfWork() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Scope of Work
+            Lingkup Pekerjaan
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Tugas dan tanggung jawab sebagai Videopreneur di ekosistem Promedia

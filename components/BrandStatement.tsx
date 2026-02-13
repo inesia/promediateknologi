@@ -95,7 +95,7 @@ export default function BrandStatement() {
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
-            Promedia adalah pionir ekosistem media digital terintegrasi. Kami membangun infrastruktur masa depan bagi Mediapreneur & Contentpreneur.
+            Kami membangun infrastruktur masa depan sekaligus ruang tumbuh yang setara dan berkelanjutan bagi media, jurnalis, dan kreator di seluruh Indonesia.
           </motion.p>
 
           {/* CTA Button */}

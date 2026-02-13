@@ -6,23 +6,23 @@ import { Gavel, Shield, Radio } from 'lucide-react'
 const fokus = [
   {
     id: 'quality',
-    title: 'Jurnalisme Berkualitas',
-    description: 'Edukasi konten positif dan verifikasi Dewan Pers untuk menjaga standar jurnalisme berkualitas tinggi',
+    title: 'Menjaga Kualitas Jurnalisme',
+    description: 'Memastikan setiap konten yang diproduksi memenuhi standar kode etik jurnalistik dan ramah terhadap pembaca.',
     icon: Gavel,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
     id: 'policy',
-    title: 'Kebijakan Industri',
-    description: 'Pengawalan Perpres Publisher Rights & kemandirian pers untuk menciptakan ekosistem media yang independen',
+    title: 'Advokasi Hak Para Penerbit (Publisher Rights)',
+    description: 'Memperjuangkan hak-hak ekonomi dan kekayaan intelektual media di hadapan platform digital global.',
     icon: Shield,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
     id: 'network',
-    title: 'Jaringan Strategis',
-    description: 'Akses audiensi ke pemerintah dan tokoh nasional untuk membangun dialog strategis yang konstruktif',
-    icon: Radio,
+    title: 'Peningkatan Kompetensi SDM',
+    description: 'Melakukan pelatihan rutin bagi para pemimpin redaksi agar mampu beradaptasi dengan perubahan lanskap media.',
+    icon: Radio, // Maybe change icon to Users or GraduationCap if available but Radio is imported
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
 ]
