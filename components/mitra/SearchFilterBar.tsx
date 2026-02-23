@@ -18,17 +18,16 @@ const categories = [
 
 const regions = [
   { id: 'all', label: 'Semua Wilayah' },
-  { id: 'Nasional', label: 'Nasional' },
-  { id: 'Jawa Barat', label: 'Jawa Barat' },
-  { id: 'Jawa Tengah', label: 'Jawa Tengah' },
-  { id: 'Jawa Timur', label: 'Jawa Timur' },
-  { id: 'DKI Jakarta', label: 'DKI Jakarta' },
-  { id: 'Banten', label: 'Banten' },
-  { id: 'Sumatera', label: 'Sumatera' },
-  { id: 'Kalimantan', label: 'Kalimantan' },
-  { id: 'Sulawesi', label: 'Sulawesi' },
-  { id: 'Bali & Nusa Tenggara', label: 'Bali & Nusa Tenggara' },
-  { id: 'Papua & Maluku', label: 'Papua & Maluku' },
+  { id: 'jawa-barat', label: 'Jawa Barat' },
+  { id: 'jawa-tengah', label: 'Jawa Tengah' },
+  { id: 'jawa-timur', label: 'Jawa Timur' },
+  { id: 'dki-jakarta', label: 'DKI Jakarta' },
+  { id: 'banten', label: 'Banten' },
+  { id: 'sumatera', label: 'Sumatera' },
+  { id: 'kalimantan', label: 'Kalimantan' },
+  { id: 'sulawesi', label: 'Sulawesi' },
+  { id: 'bali-nusa-tenggara', label: 'Bali & Nusa Tenggara' },
+  { id: 'papua-maluku', label: 'Papua & Maluku' },
 ]
 
 interface SearchFilterBarProps {

@@ -11,15 +11,15 @@ export async function GET(request: Request) {
   try {
     let params = `?page=${page}&limit=${limit}`
     if (search) {
-      params += '&pencarian=' + encodeURIComponent(search);
+      params += '&pencarian=' + encodeURIComponent(search).toLowerCase();
     }
 
     if (category && category !== 'all') {
-      params += '&tipe=' + encodeURIComponent(category);
+      params += '&tipe=' + encodeURIComponent(category).toLowerCase();
     }
 
     if (region && region !== 'all') {
-      params += '&daerah=' + encodeURIComponent(region);
+      params += '&daerah=' + encodeURIComponent(region).replaceAll('%20', '-').toLowerCase();
     }
 
     const source = await fetch(`${process.env.NEXT_API_URL}/clients${params}`)
