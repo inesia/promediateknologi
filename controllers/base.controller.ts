@@ -1,0 +1,158 @@
+export async function getDataHome() {
+    try {
+        const source = await fetch(`${process.env.NEXT_API_URL}/home`, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+                "Accept": "application/json, text/plain, */*",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Cache-Control": "no-cache",
+                "Pragma": "no-cache",
+                "Referer": "https://www.ayoindonesia.com/",
+            }
+        })
+
+        if (!source.ok) {
+            console.warn(`getDataHome failed: ${source.status} ${source.statusText}. Using fallback data.`)
+            return {
+                data: {
+                    id: 1,
+                    title: "Promedia Group",
+                    description: "Promedia Group - Mavericks & Ahead",
+                    slug: "home"
+                },
+                meta: { code: 200, message: "Fallback data used" }
+            }
+        }
+
+        const contentType = source.headers.get("content-type")
+        if (!contentType || !contentType.includes("application/json")) {
+            console.warn(`getDataHome returned non-JSON response. Using fallback data.`)
+            return {
+                data: {
+                    id: 1,
+                    title: "Promedia Group",
+                    description: "Promedia Group - Mavericks & Ahead",
+                    slug: "home"
+                },
+                meta: { code: 200, message: "Fallback data used" }
+            }
+        }
+
+        const data = await source.json()
+        return data
+    } catch (error) {
+        console.error("getDataHome error:", error)
+        return null
+    }
+}
+
+export async function getPageHome() {
+    try {
+        const source = await fetch(`${process.env.NEXT_API_URL}/page/home`, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+                "Accept": "application/json, text/plain, */*",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Cache-Control": "no-cache",
+                "Pragma": "no-cache",
+                "Referer": "https://www.ayoindonesia.com/",
+            }
+        })
+
+        if (!source.ok) {
+            console.warn(`getPageHome failed: ${source.status} ${source.statusText}. Using fallback data.`)
+            return {
+                data: {
+                    id: 1,
+                    title: "Promedia Group",
+                    description: "Promedia Group - Mavericks & Ahead | Ekosistem media digital terintegrasi pertama di Indonesia",
+                    slug: "home"
+                },
+                meta: { code: 200, message: "Fallback data used" }
+            }
+        }
+
+        const contentType = source.headers.get("content-type")
+        if (!contentType || !contentType.includes("application/json")) {
+            console.warn(`getPageHome returned non-JSON response. Using fallback data.`)
+            return {
+                data: {
+                    id: 1,
+                    title: "Promedia Group",
+                    description: "Promedia Group - Mavericks & Ahead | Ekosistem media digital terintegrasi pertama di Indonesia",
+                    slug: "home"
+                },
+                meta: { code: 200, message: "Fallback data used" }
+            }
+        }
+
+        const data = await source.json()
+        return data
+    } catch (error) {
+        console.error("getPageHome error:", error)
+        return null
+    }
+}
+
+export async function getNetworkLivePulse() {
+    try {
+        // const source = await search({
+        //     index: "article",
+        //     from: 0,
+        //     size: 6,
+        //     _source: ["title", "site.id", "site.name", "site.url", "section.id", "section.name", "section.alias", "thumb_url", "photo_url", "published_by.name", "published_date", "url", "description"],
+        //     sort: {
+        //         id: {
+        //             order: "desc"
+        //         }
+        //     }
+        // })
+
+        const source = await fetch(`${process.env.NEXT_ES_HOST}/article/data/_search`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                "Accept": "application/json",
+            },
+        })
+
+        if (!source.ok) {
+            console.warn(`getNetworkLivePulse failed: ${source.status} ${source.statusText}. Using fallback data.`)
+            return { hits: { hits: [] } } // Empty hits or mock data
+        }
+
+        const contentType = source.headers.get("content-type")
+        if (!contentType || !contentType.includes("application/json")) {
+            console.warn(`getNetworkLivePulse returned non-JSON response. Using fallback data.`)
+            return { hits: { hits: [] } }
+        }
+
+        const data = await source.json()
+        console.dir(data, { depth: null })
+        return data
+    } catch (error) {
+        console.error("getNetworkLivePulse error:", error)
+        return { hits: { hits: [] } }
+    }
+}
+
+export async function getClients({ category, region, search, page, limit }: { category: string, region: string, search: string, page: number, limit: number }) {
+    try {
+        let params = ''
+        if (search) {
+            params = '&pencarian=' + search;
+        } else if (region && category) {
+            params = '&daerah=' + region + '&tipe=' + category;
+        } else {
+            params = '';
+        }
+        const source = await fetch(`${process.env.NEXT_API_URL}/clients?page=${page}&limit=${limit}${params}`)
+
+        const data = await source.json()
+        return data
+    } catch (error) {
+        console.error("getClients error:", error)
+        return null
+    }
+}

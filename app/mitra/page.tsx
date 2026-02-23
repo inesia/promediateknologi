@@ -11,6 +11,7 @@ import CTASection from '@/components/mitra/CTASection'
 export default function MitraPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState('all')
+  const [activeRegion, setActiveRegion] = useState('all')
 
   return (
     <main className="min-h-screen bg-white">
@@ -21,8 +22,14 @@ export default function MitraPage() {
           onSearchChange={setSearchQuery}
           onCategoryChange={setActiveCategory}
           activeCategory={activeCategory}
+          onRegionChange={setActiveRegion}
+          activeRegion={activeRegion}
         />
-        <MitraGrid searchQuery={searchQuery} activeCategory={activeCategory} />
+        <MitraGrid
+          searchQuery={searchQuery}
+          activeCategory={activeCategory}
+          activeRegion={activeRegion}
+        />
         <CTASection />
       </article>
       <Footer />

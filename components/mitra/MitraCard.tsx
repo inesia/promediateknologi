@@ -8,7 +8,7 @@ interface Mitra {
   id: number
   name: string
   category: string
-  logo: string
+  path: string
 }
 
 interface MitraCardProps {
@@ -35,12 +35,11 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
         <div className="relative w-full h-full flex items-center justify-center">
           {!imageError ? (
             <Image
-              src={mitra.logo}
+              src={mitra.path}
               alt={mitra.name}
               fill
-              className={`object-contain transition-all duration-500 p-4 ${
-                isHovered ? 'grayscale-0 scale-110 brightness-110' : 'grayscale'
-              }`}
+              className={`object-contain transition-all duration-500 p-4 ${isHovered ? 'grayscale-0 scale-110 brightness-110' : 'grayscale'
+                }`}
               onError={() => setImageError(true)}
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
               unoptimized // Added to allow external images without configuring every domain if needed for initial testing, though remotePatterns is set.

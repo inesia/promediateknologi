@@ -1,0 +1,99 @@
+[
+    {
+        "name": "Hardiyansyah",
+        "slug": "hardiyansyah",
+        "position": "Presiden Komisaris",
+        "images": [
+            "/asset/images/chairman/photo-2.png",
+            "/asset/images/chairman/photo-1.png"
+        ],
+        "avatar": "/asset/images/chairman/andi-2.png",
+        "description": "Presiden Komisaris Promedia Group ini berpengalaman lebih dari 20 tahun di media konvensional dan digital. Karena pengalamannya ini, beliau didaulat menjadi Ketua PWI Kota Bandung periode 2017-sekarang. Berbekal kemampuan dan tekad yang mumpuni, menjadi 'tenaga ekstra' untuk kemajuan Promedia Group.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    },
+    {
+        "name": "Roberto A.M. Purba",
+        "slug": "roberto-purba",
+        "position": "Komisaris",
+        "images": [
+            "/asset/images/chairman/photo-9.png",
+            "/asset/images/chairman/photo-10.png"
+        ],
+        "avatar": "/asset/images/chairman/roberto-1.png",
+        "description": "Menjabat sebagai Komisaris di Promedia Group. Anak muda Bandung ini berpengalaman lebih dari 5 tahun mengelola perusahaan media dan digital advertising. Bergabung dalam organisasi pengusaha muda dengan fokus meningkatkan kapabilitas sumber daya manusia Indonesia guna mencapai kemandirian ekonomi.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    },
+    {
+        "name": "Agus Sulistriyono",
+        "slug": "agus-sulistriyono",
+        "position": "Chief Executive Officer",
+        "images": [
+            "/asset/images/chairman/photo-11.png",
+            "/asset/images/chairman/photo-12.png"
+        ],
+        "avatar": "/asset/images/chairman/sulis-1.png",
+        "description": "Menjabat sebagai Chief Executive Office di PRMN sekaligus di Promedia Group. Berpengalaman lebih dari 17 tahun di dunia jurnalisme di Kompas Gramedia Group.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    },
+    {
+        "name": "Hilman Hidayat S.Sos, M.Si",
+        "slug": "hilman-hidayat",
+        "position": "Chief Financial Officer",
+        "images": [
+            "/asset/images/chairman/photo-5.png",
+            "/asset/images/chairman/photo-6.png"
+        ],
+        "avatar": "/asset/images/chairman/hilman-1.png",
+        "description": "Berpengalaman lebih dari 24 tahun dalam dunia jurnalisme dan bisnis digital. Pemilik sekaligus pengusaha media ini juga mengemban amanah sebagai Ketua Persatuan Wartawan Indonesia region Jawa Barat periode 2021-2026. Selain itu beliau juga berperan sebagai Chief Financial Officer di Promedia Group.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    },
+
+    {
+        "name": "Dadang Hermawan",
+        "slug": "dadang-hermawan",
+        "position": "Chief Media Network",
+        "images": [
+            "/asset/images/chairman/photo-3.png",
+            "/asset/images/chairman/photo-4.png"
+        ],
+        "avatar": "/asset/images/chairman/dadang-1.png",
+        "description": "Ayah dari 3 anak ini cukup lama berkecimpung di bisnis media mulai dari redaksi hingga periklanan. Sosok yang pernah ikut membidani Pikiran Rakyat Media Network (PRMN) ini siap mendukung para mitra untuk membangun dan mengelola portal secara baik, berkembang, namun tetap mengedepankan sisi jurnalisme yang aktual serta faktual.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    },
+    {
+        "name": "Rahmad Maulana",
+        "slug": "rahmad-maulana",
+        "position": "Chief Technology Officer",
+        "images": [
+            "/asset/images/chairman/photo-7.png",
+            "/asset/images/chairman/photo-8.png"
+        ],
+        "avatar": "/asset/images/chairman/rahmad-1.png",
+        "description": "Berpengalaman lebih dari 13 tahun di dunia teknologi digital serta media online, beliau turut serta membangun ekosistem Pikiran Rakyat Media Network (PRMN). Sekarang mengemban tugas sebagai Vice President of IT & Programmatic di Promedia Group sekaligus di PRMN.",
+        "social_media": {
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
+    }
+]
