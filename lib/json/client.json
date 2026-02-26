@@ -1,0 +1,98 @@
+[
+    {
+        "active": 1,
+        "name": "Lombok Insider",
+        "logo": "https://static.promediateknologi.id/promedia/network/155/desktop/images/logo.png?v=1111",
+        "uri": "https://www.lombokinsider.com/"
+    },
+    {
+        "active": 1,
+        "name": "KR Jogja",
+        "logo": "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia-2/network/124/desktop/images/logo.png?v=66",
+        "uri": "https://www.krjogja.com/"
+    },
+    {
+        "active": 1,
+        "name": "Suara Merdeka",
+        "logo": "https://static.promediateknologi.id/promedia/network/04/desktop/images/logo_top.jpg?v=1111",
+        "uri": "https://www.suaramerdeka.com/"
+    },
+    {
+        "active": 1,
+        "name": "Ayo indonesia",
+        "logo": "https://static.promediateknologi.id/promedia/network/01/desktop/images/logo-ayoindonesia-ok.png",
+        "uri": "https://www.ayoindonesia.com/"
+    },
+    {
+        "active": 1,
+        "name": "Harian Haluan",
+        "logo": "https://static.promediateknologi.id/promedia/network/10/desktop/images/logo_top.png?v=1111",
+        "uri": "https://www.harianhaluan.com/"
+    },
+    {
+        "active": 1,
+        "name": "Hops",
+        "logo": "https://static.promediateknologi.id/promedia/network/294/desktop/images/logo.png?v=1111",
+        "uri": "https://www.hops.id/"
+    },
+    {
+        "active": 1,
+        "name": "Jatim Network",
+        "logo": "https://static.promediateknologi.id/promedia/network/43/desktop/images/logo.png?v=1111",
+        "uri": "https://www.jatimnetwork.com/"
+    },
+    {
+        "active": 1,
+        "name": "Urban Jabar",
+        "logo": "https://static.promediateknologi.id/promedia/network/92/desktop/images/logo.png?v=1111",
+        "uri": "https://www.urbanjabar.com/"
+    },
+    {
+        "active": 1,
+        "name": "Info Sumsel",
+        "logo": "https://static.promediateknologi.id/promedia/network/362/desktop/images/logo.png?v=1111",
+        "uri": "https://www.infosumsel.id/"
+    },
+    {
+        "active": 1,
+        "name": "Gora Juara",
+        "logo": "https://static.promediateknologi.id/promedia/network/100/desktop/images/logo-gorajuara.png?v=1111",
+        "uri": "https://www.gorajuara.com/"
+    },
+    {
+        "active": 1,
+        "name": "Ayo Bandung",
+        "logo": "https://static.promediateknologi.id/promedia/network/79/desktop/images/logo-bandung.png?v=1111",
+        "uri": "https://www.ayobandung.com/"
+    },
+    {
+        "active": 1,
+        "name": "Smol",
+        "logo": "https://static.promediateknologi.id/promedia/network/71/desktop/images/logo.png?v=1111",
+        "uri": "https://www.smol.id/"
+    },
+    {
+        "active": 1,
+        "name": "About Malang",
+        "logo": "https://static.promediateknologi.id/promedia/network/142/desktop/images/logo.png?v=1111",
+        "uri": "https://www.aboutmalang.com/"
+    },
+    {
+        "active": 1,
+        "name": "Kilat",
+        "logo": "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/844/desktop/images/logo.png?v=1032",
+        "uri": "https://www.kilat.com/"
+    },
+    {
+        "active": 1,
+        "name": "Fokus Media",
+        "logo": "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/621/desktop/images/logo.png?v=1192",
+        "uri": "https://www.fokusmedia.id/"
+    },
+    {
+        "active": 1,
+        "name": "Zona Jakarta",
+        "logo": "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/673/desktop/images/logo.png?v=1192",
+        "uri": "https://www.zonajakarta.com/"
+    }
+]

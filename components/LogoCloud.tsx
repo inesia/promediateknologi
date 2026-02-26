@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 // Placeholder logo component
-function PartnerLogo({ name, index }: { name: string; index: number }) {
+function PartnerLogo({ name, index, logo }: { name: string; index: number, logo: string }) {
   return (
     <motion.div
       className="flex-shrink-0 w-32 h-20 mx-6 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
@@ -12,29 +13,13 @@ function PartnerLogo({ name, index }: { name: string; index: number }) {
       transition={{ delay: index * 0.1 }}
     >
       <div className="relative w-full h-full rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-        <span className="text-xs font-semibold text-slate-600">{name}</span>
+        <img src={logo} alt={name} width={100} height={100} />
       </div>
     </motion.div>
   )
 }
 
-export default function LogoCloud() {
-  // Placeholder partner names
-  const partners = [
-    'Media Partner 1',
-    'Media Partner 2',
-    'Media Partner 3',
-    'Media Partner 4',
-    'Media Partner 5',
-    'Media Partner 6',
-    'Media Partner 7',
-    'Media Partner 8',
-    'Media Partner 9',
-    'Media Partner 10',
-  ]
-
-  // Duplicate for seamless loop
-  const duplicatedPartners = [...partners, ...partners]
+export default function LogoCloud({ clients }: { clients: any[] }) {
 
   return (
     <section className="relative py-16 lg:py-20 bg-white overflow-hidden">
@@ -94,8 +79,10 @@ export default function LogoCloud() {
                 ease: 'linear',
               }}
             >
-              {duplicatedPartners.map((partner, index) => (
-                <PartnerLogo key={`${partner}-${index}`} name={partner} index={index} />
+              {clients.map((partner, index) => (
+                <Link href={partner.uri} key={index} target="_blank">
+                  <PartnerLogo name={partner.name} logo={partner.logo} index={index} />
+                </Link>
               ))}
             </motion.div>
           </div>

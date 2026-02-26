@@ -1,3 +1,5 @@
+import clients from "@/lib/json/client.json"
+
 export async function getDataHome() {
     try {
         const source = await fetch(`${process.env.NEXT_API_URL}/home`, {
@@ -155,4 +157,30 @@ export async function getClients({ category, region, search, page, limit }: { ca
         console.error("getClients error:", error)
         return null
     }
+}
+
+export async function getRecentNews() {
+    try {
+        const source = await fetch(`${process.env.NEXT_API_NEWS_URL}/article/latest/?page=1&site_id=143`, {
+            method: "GET",
+            headers: {
+                "Accept": "application/vnd.promedia+json; version=1.0",
+                "Authorization": `Bearer ${process.env.NEXT_KEY_NEWS_URL}`,
+            },
+        })
+        if (!source.ok) {
+            console.warn(`getRecentNews failed: ${source.status} ${source.statusText}. Using fallback data.`)
+            return { "meta": { "code": 404, "status": false, "message": "Data tidak ditemukan" }, "data": [] } // Empty hits or mock data
+        }
+
+        const data = await source.json()
+        return data
+    } catch (error) {
+        console.error("getRecentNews error:", error)
+        return { "meta": { "code": 404, "status": false, "message": "Data tidak ditemukan" }, "data": [] }
+    }
+}
+
+export async function getClient() {
+    return clients
 }
