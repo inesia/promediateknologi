@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import EcosystemStats from '@/components/EcosystemStats'
 import LatestNews from '@/components/LatestNews'
 import NetworkLivePulse from '@/components/NetworkLivePulse'
 import BrandStatement from '@/components/BrandStatement'
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <EcosystemStats />
       <BrandStatement />
       <EcosystemServices />
       <LogoCloud />

@@ -24,36 +24,21 @@ const navItems: NavItem[] = [
     href: "/about-us",
     submenu: [
       { label: "Tentang Perusahaan", href: "/about-us#tentang-perusahaan" },
-      { label: "Mitra Media", href: "/mitra" },
+      { label: "Mitra Kami", href: "/mitra" },
       { label: "Lokasi", href: "/about-us#lokasi" },
-      { label: "Teknologi", href: "/technology" },
+      { label: "Teknologi Kami", href: "/technology" },
     ],
   },
   {
     label: "Program",
     href: "#",
     submenu: [
-      { label: "Mediapreneur", href: "/program/mediapreneur" },
-      { label: "Contentpreneur", href: "/program/contentpreneur" },
-      { label: "Socmedpreneur", href: "/program/socmedpreneur" },
-      { label: "Videopreneur", href: "/program/videopreneur" },
+      { label: "Publisher Media Network", href: "/program/mediapreneur" },
+      { label: "Influencer Media Network", href: "/program/socmedpreneur" },
+      { label: "Content Creator For Publisher", href: "/program/contentpreneur" },
     ],
   },
-  {
-    label: "Organisasi",
-    href: "#",
-    submenu: [
-      { label: "Jaringan Pemred Promedia", href: "/organisasi/jpp" },
-      {
-        label: "Koperasi Jasa Mitra Promedia Sejahtera",
-        href: "/organisasi/koperasi",
-      },
-      { label: "Asosiasi Konten Kreator Indonesia", href: "/organisasi/akki" },
-    ],
-  },
-  { label: "Iklan", href: "/iklan" },
-  { label: "Kontak", href: "/kontak" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Kontak & FAQ", href: "/kontak" },
 ];
 
 export default function Header() {
@@ -148,7 +133,7 @@ export default function Header() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: subIndex * 0.05 }}
                           >
-                            {subItem.label === "Teknologi & Infrastruktur" && (
+                            {subItem.label === "Teknologi Kami" && (
                               <Server className="w-4 h-4 flex-shrink-0" />
                             )}
                             {subItem.label}
@@ -266,7 +251,7 @@ export default function Header() {
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {subItem.label ===
-                                "Teknologi & Infrastruktur" && (
+                                "Teknologi Kami" && (
                                 <Server className="w-4 h-4 flex-shrink-0" />
                               )}
                               {subItem.label}

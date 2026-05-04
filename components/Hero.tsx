@@ -66,7 +66,7 @@ function FloatingCard({ icon, value, label, delay, duration, className }: Floati
       transition={{ delay, duration: 0.6 }}
     >
       <motion.div
-        className="relative w-48 sm:w-56 lg:w-64 p-6 bg-white/70 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl shadow-slate-200/50 cursor-pointer"
+        className="relative w-40 md:w-44 lg:w-48 xl:w-64 p-4 lg:p-6 bg-white/70 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl shadow-slate-200/50 cursor-pointer pointer-events-auto"
         animate={{
           y: [0, -15, 0],
         }}
@@ -111,7 +111,7 @@ function BillionCounter() {
   const [display, setDisplay] = useState('0.0')
 
   useEffect(() => {
-    const controls = animate(count, 1, {
+    const controls = animate(count, 1.3, {
       duration: 2.2,
       ease: 'easeOut',
     })
@@ -141,35 +141,35 @@ function BillionCounter() {
 const stats = [
   {
     icon: <Users className="w-6 h-6" />,
-    value: '1,200+',
-    label: 'Jaringan Media',
+    value: '1,154+',
+    label: 'Publisher Media',
     delay: 0.2,
     duration: 6,
-    className: 'top-20 left-4 sm:left-8 lg:left-16',
+    className: 'top-20 md:left-2 lg:left-4 xl:left-8 2xl:left-20',
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    value: '1.0 Billion+',
-    label: 'Jangkauan User / Year',
+    value: '1.3 Billion+',
+    label: 'Total Views / Year',
     delay: 0.4,
     duration: 7,
-    className: 'top-40 right-4 sm:right-8 lg:right-16',
+    className: 'top-32 md:right-2 lg:right-4 xl:right-8 2xl:right-20',
   },
   {
     icon: <Zap className="w-6 h-6" />,
-    value: '3.1 Billion+',
-    label: 'Pageview / Tahun',
+    value: '40 Juta+',
+    label: 'Follower Sosmed',
     delay: 0.6,
     duration: 8,
-    className: 'bottom-32 left-8 sm:left-16 lg:left-24',
+    className: 'bottom-28 md:left-2 lg:left-4 xl:left-12 2xl:left-24',
   },
   {
     icon: <MapPin className="w-6 h-6" />,
-    value: '230+',
-    label: 'Kabupaten & Kota',
+    value: '2,300+',
+    label: 'Akun Sosmed',
     delay: 0.8,
     duration: 9,
-    className: 'bottom-20 right-8 sm:right-16 lg:right-24',
+    className: 'bottom-20 md:right-2 lg:right-4 xl:right-12 2xl:right-24',
   },
 ]
 
@@ -184,7 +184,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-12 md:pb-0"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-16 md:pb-24 lg:pb-32"
     >
       {/* Animated Ambient Glow - Reduced for mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -244,8 +244,8 @@ export default function Hero() {
       </div>
 
       {/* Content - Center Aligned */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+        <div className="max-w-2xl lg:max-w-3xl xl:max-w-5xl mx-auto text-center">
           {/* Badge - Mavericks & Ahead */}
           <motion.div
             {...blurIn}
@@ -263,7 +263,7 @@ export default function Hero() {
           <motion.h1
             {...blurIn}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#001A2C] mb-4 md:mb-6 lg:mb-8 leading-[1.15] md:leading-[1.1] px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-[#001A2C] mb-4 md:mb-6 lg:mb-8 leading-[1.15] md:leading-[1.1] px-2"
             style={{ letterSpacing: '-0.03em' }}
           >
             Ekosistem Media Digital{' '}
@@ -289,18 +289,18 @@ export default function Hero() {
           >
             <div className="inline-block px-4 py-3 md:px-6 md:py-4 rounded-2xl bg-gradient-to-br from-[#00AEEF]/8 via-white to-[#2D74B3]/8 border border-[#00AEEF]/20 shadow-lg shadow-[#00AEEF]/5">
               <p className="text-xs md:text-sm font-semibold text-[#64748b] uppercase tracking-wider mb-1 md:mb-2">
-                Jangkauan User / Year
+                Jangkauan View Multi Platform
               </p>
               <div className="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
-                <span className="text-6xl sm:text-7xl md:text-8xl font-black text-[#001A2C] tracking-tighter">
+                <span className="text-5xl sm:text-6xl md:text-7xl font-black text-[#001A2C] tracking-tighter">
                   <BillionCounter />
                 </span>
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent tracking-tight">
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent tracking-tight">
                   Billion+
                 </span>
               </div>
               <p className="text-[10px] md:text-xs text-[#64748b] mt-2 md:mt-3 font-medium">
-                Verified by Google Analytics & Internal Data 2025
+                Verified by GA4, TikTok Studio, META Business Suites & Others
               </p>
             </div>
           </motion.div>
@@ -367,7 +367,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+        className="absolute bottom-4 lg:bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
