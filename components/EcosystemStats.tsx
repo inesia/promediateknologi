@@ -1,77 +1,29 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView, useSpring, useTransform } from 'framer-motion'
+import { useRef, useEffect } from 'react'
 import { Globe, Play, Camera, MonitorPlay, MessageCircle, Share2 } from 'lucide-react'
 
-// Dummy icons for social media platforms since we use Lucide
-const TikTokIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-  </svg>
-)
+function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  const spring = useSpring(0, { duration: 3000, bounce: 0 })
+  const displayValue = useTransform(spring, (current) => 
+    Math.floor(current).toLocaleString('id-ID') + suffix
+  )
 
-const InstagramIcon = () => <Camera className="w-6 h-6" />
-const YoutubeIcon = () => <MonitorPlay className="w-6 h-6" />
-const FacebookIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-)
-const XIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-  </svg>
-)
+  useEffect(() => {
+    if (isInView) {
+      spring.set(value)
+    }
+  }, [isInView, spring, value])
 
-const influencerStats = [
-  {
-    platform: 'TikTok',
-    icon: <TikTokIcon />,
-    followers: '27.612.594',
-    views: '911.946.685',
-    accounts: 306,
-    color: 'from-gray-800 to-black',
-    textColor: 'text-gray-800',
-  },
-  {
-    platform: 'Instagram',
-    icon: <InstagramIcon />,
-    followers: '2.361.412',
-    views: '343.860.805',
-    accounts: 158,
-    color: 'from-pink-500 to-purple-600',
-    textColor: 'text-pink-600',
-  },
-  {
-    platform: 'YouTube',
-    icon: <YoutubeIcon />,
-    followers: '5.723.665',
-    views: null, // Not provided
-    accounts: 576,
-    color: 'from-red-500 to-red-700',
-    textColor: 'text-red-600',
-  },
-  {
-    platform: 'Facebook',
-    icon: <FacebookIcon />,
-    followers: '3.827.753',
-    views: null, // Not provided
-    accounts: 573,
-    color: 'from-blue-600 to-blue-800',
-    textColor: 'text-blue-700',
-  },
-  {
-    platform: 'X (Twitter)',
-    icon: <XIcon />,
-    followers: '558.329',
-    views: null, // Not provided
-    accounts: 783,
-    color: 'from-gray-700 to-gray-900',
-    textColor: 'text-gray-800',
-  },
-]
+  return (
+    <motion.span ref={ref} className="tabular-nums">
+      {displayValue}
+    </motion.span>
+  )
+}
 
 export default function EcosystemStats() {
   const sectionRef = useRef(null)
@@ -124,14 +76,18 @@ export default function EcosystemStats() {
               <div className="p-8 md:p-12 text-center md:text-left">
                 <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Jumlah Media</p>
                 <div className="flex items-baseline justify-center md:justify-start gap-2">
-                  <span className="text-5xl md:text-6xl font-black text-[#001A2C]">1.154</span>
+                  <span className="text-5xl md:text-6xl font-black text-[#001A2C]">
+                    <Counter value={1154} />
+                  </span>
                   <span className="text-xl font-bold text-[#00AEEF]">Publisher</span>
                 </div>
               </div>
               <div className="p-8 md:p-12 text-center md:text-left">
                 <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Total Views</p>
                 <div className="flex items-baseline justify-center md:justify-start gap-2">
-                  <span className="text-5xl md:text-6xl font-black text-[#001A2C]">1.366</span>
+                  <span className="text-5xl md:text-6xl font-black text-[#001A2C]">
+                    <Counter value={1.366} />
+                  </span>
                   <span className="text-xl font-bold text-[#00AEEF]">Billion+</span>
                 </div>
                 <p className="text-xs text-slate-400 mt-2 font-medium">*1.366.125.327 views (Last 12 Month)</p>
@@ -169,20 +125,20 @@ export default function EcosystemStats() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#001A2C]">{stat.platform}</h4>
-                    <p className="text-xs text-slate-500">{stat.accounts} Akun/Channel</p>
+                    <p className="text-xs text-slate-500">{stat.accounts} Akun</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
                     <p className="text-xs font-semibold text-slate-400 uppercase mb-1">Followers / Subs</p>
-                    <p className={`text-2xl font-black ${stat.textColor}`}>{stat.followers}</p>
+                    <p className={`text-xl font-black ${stat.textColor}`}>{stat.followers}</p>
                   </div>
                   
                   {stat.views && (
                     <div className="pt-3 border-t border-slate-100">
                       <p className="text-xs font-semibold text-slate-400 uppercase mb-1">Total Views</p>
-                      <p className="text-xl font-bold text-[#001A2C]">{stat.views}</p>
+                      <p className="text-lg font-bold text-[#001A2C]">{stat.views}</p>
                     </div>
                   )}
                 </div>
@@ -195,3 +151,51 @@ export default function EcosystemStats() {
     </section>
   )
 }
+
+const influencerStats = [
+  {
+    platform: 'TikTok',
+    icon: <Share2 className="w-6 h-6" />,
+    followers: '27.612.594',
+    views: '911.946.685',
+    accounts: 306,
+    color: 'from-gray-800 to-black',
+    textColor: 'text-gray-800',
+  },
+  {
+    platform: 'Instagram',
+    icon: <Camera className="w-6 h-6" />,
+    followers: '2.361.412',
+    views: '343.860.805',
+    accounts: 158,
+    color: 'from-pink-500 to-purple-600',
+    textColor: 'text-pink-600',
+  },
+  {
+    platform: 'YouTube',
+    icon: <MonitorPlay className="w-6 h-6" />,
+    followers: '5.723.665',
+    views: null,
+    accounts: 576,
+    color: 'from-red-500 to-red-700',
+    textColor: 'text-red-600',
+  },
+  {
+    platform: 'Facebook',
+    icon: <MessageCircle className="w-6 h-6" />,
+    followers: '3.827.753',
+    views: null,
+    accounts: 573,
+    color: 'from-blue-600 to-blue-800',
+    textColor: 'text-blue-700',
+  },
+  {
+    platform: 'X (Twitter)',
+    icon: <Globe className="w-6 h-6" />,
+    followers: '558.329',
+    views: null,
+    accounts: 783,
+    color: 'from-gray-700 to-gray-900',
+    textColor: 'text-gray-800',
+  },
+]

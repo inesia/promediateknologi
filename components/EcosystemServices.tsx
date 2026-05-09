@@ -551,7 +551,7 @@ export default function EcosystemServices() {
       reverse: true,
     },
     {
-      title: 'Socmedpreneur',
+      title: 'Influencer Media Network',
       description:
         'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
       linkHref: '/program/socmedpreneur',
@@ -559,7 +559,7 @@ export default function EcosystemServices() {
       visual: <SocialMediaVisualization />,
       reverse: false,
     },
-    {
+    /* {
       title: 'Videopreneur',
       description:
         'Platform streaming profesional untuk memperkaya inventori video dan gambar bergerak dengan kualitas broadcast.',
@@ -567,7 +567,7 @@ export default function EcosystemServices() {
       linkText: 'Pelajari Selengkapnya',
       visual: <VideoProductionVisualization />,
       reverse: true,
-    },
+    }, */
     {
       title: 'Teknologi AI & SEO',
       description:

@@ -62,12 +62,12 @@ const roleOptions = [
   },
   {
     id: 'socmedpreneur' as RoleType,
-    title: 'Socmedpreneur',
+    title: 'Influencer Media Network',
     description: 'Untuk specialist media sosial',
     icon: Share2,
     gradient: 'from-[#00AEEF] to-[#2D74B3]'
   },
-  {
+  /* {
     id: 'videopreneur' as RoleType,
     title: 'Videopreneur',
     description: 'Untuk kreator video',
@@ -80,7 +80,7 @@ const roleOptions = [
     description: 'Untuk pengiklan',
     icon: Megaphone,
     gradient: 'from-[#00AEEF] to-[#2D74B3]'
-  }
+  } */
 ]
 
 // Form schema based on role
@@ -254,9 +254,9 @@ function RegistrationForm() {
             <Image
               src="/images/logo.png"
               alt="Promedia Teknologi"
-              width={180}
-              height={60}
-              className="h-10 w-auto object-contain"
+              width={200}
+              height={67}
+              className="h-12 lg:h-16 w-auto object-contain"
             />
           </div>
 
@@ -723,9 +723,9 @@ function RegistrationForm() {
             <Image
               src="/images/logo.png"
               alt="Promedia Teknologi"
-              width={160}
-              height={50}
-              className="h-10 w-auto object-contain mx-auto mb-6"
+              width={180}
+              height={60}
+              className="h-12 w-auto object-contain mx-auto mb-6"
             />
             <AnimatePresence mode="wait">
               <motion.div

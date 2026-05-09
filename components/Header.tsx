@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
     href: "/about-us",
     submenu: [
       { label: "Tentang Perusahaan", href: "/about-us#tentang-perusahaan" },
+      { label: "Promedia dalam Angka", href: "/dalam-angka" },
       { label: "Mitra Kami", href: "/mitra" },
       { label: "Lokasi", href: "/about-us#lokasi" },
       { label: "Teknologi Kami", href: "/technology" },
@@ -80,9 +81,9 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="Promedia Teknologi"
-              width={180}
-              height={60}
-              className="h-10 lg:h-12 w-auto object-contain"
+              width={200}
+              height={67}
+              className="h-12 lg:h-16 w-auto object-contain"
               priority
             />
           </motion.a>

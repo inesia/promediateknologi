@@ -135,9 +135,9 @@ export default function Footer() {
                   <Image
                   src="/images/logo.png"
                   alt="Promedia Teknologi"
-                  width={160}
-                  height={50}
-                  className="h-10 w-auto object-contain"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto object-contain"
                 />
                 </motion.span>
               </Link>
