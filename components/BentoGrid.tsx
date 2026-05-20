@@ -366,9 +366,9 @@ export default function BentoGrid() {
             metric="Dari Sabang sampai Merauke"
           />
 
-          {/* Card 5 - 24/7 Support (Small with Uptime) */}
+          {/* Card 4 - 24/7 Support (Small with Uptime) */}
           <BentoCard
-            index={4}
+            index={3}
             title="24/7 Support"
             description="Dukungan teknis tersedia kapan saja untuk memastikan operasional lancar."
             icon={<Clock className="w-6 h-6 lg:w-7 lg:h-7" />}
@@ -377,9 +377,9 @@ export default function BentoGrid() {
             parallaxOffset={15}
           />
 
-          {/* Card 6 - Networking & Infrastructure (Wide - Bottom) */}
+          {/* Card 5 - Networking & Infrastructure (Wide - Bottom) */}
           <BentoCard
-            index={5}
+            index={4}
             title="Networking & Infrastructure"
             description="Jangkauan ribuan mitra media di seluruh Indonesia dengan infrastruktur teknologi yang handal dan skalabel."
             icon={<Network className="w-6 h-6 lg:w-7 lg:h-7" />}

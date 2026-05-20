@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { scrapedMitraData } from './mitra/mitraData'
 
+const HOME_MEDIA_PARTNER_LIMIT = 16
+
 function PartnerLogo({
   name,
   logo,
@@ -23,7 +25,7 @@ function PartnerLogo({
       viewport={{ once: true }}
       transition={{ delay: (index % 8) * 0.05 }}
     >
-      <motion.div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow">
+      <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow">
         <Image
           src={logo}
           alt={name}
@@ -32,7 +34,7 @@ function PartnerLogo({
           sizes="(max-width: 768px) 50vw, 12vw"
           unoptimized
         />
-      </motion.div>
+      </div>
     </motion.div>
   )
 }
@@ -46,17 +48,17 @@ function PlaceholderPartner({ name, index }: { name: string; index: number }) {
       viewport={{ once: true }}
       transition={{ delay: (index % 8) * 0.05 }}
     >
-      <motion.div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-4">
+      <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-4">
         <span className="text-[10px] font-bold text-slate-400 text-center uppercase tracking-tighter">
           {name}
         </span>
-      </motion.div>
+      </div>
     </motion.div>
   )
 }
 
 export default function LogoCloud() {
-  const mediaPartners = scrapedMitraData
+  const mediaPartners = scrapedMitraData.slice(0, HOME_MEDIA_PARTNER_LIMIT)
 
   const socialPartners = [
     'Social Media 1', 'Social Media 2', 'Social Media 3', 'Social Media 4',
@@ -65,7 +67,7 @@ export default function LogoCloud() {
 
   return (
     <section className="relative py-20 lg:py-24 bg-white overflow-hidden">
-      <motion.div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -81,10 +83,11 @@ export default function LogoCloud() {
           </p>
         </motion.div>
 
-        <motion.div className="mb-20">
-          <motion.div className="flex items-center justify-between mb-8">
+        {/* Media Partners Section */}
+        <div className="mb-20">
+          <div className="flex items-center justify-between mb-8">
             <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
-              <motion.div className="w-1.5 h-6 bg-[#00AEEF] rounded-full" />
+              <span className="w-1.5 h-6 bg-[#00AEEF] rounded-full shrink-0" aria-hidden />
               Media Partners
             </h3>
             <Link
@@ -93,8 +96,8 @@ export default function LogoCloud() {
             >
               Lihat Semua <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-          <motion.div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
             {mediaPartners.map((partner, index) => (
               <PartnerLogo
                 key={partner.id}
@@ -103,13 +106,14 @@ export default function LogoCloud() {
                 index={index}
               />
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div>
-          <motion.div className="flex items-center justify-between mb-8">
+        {/* Social Media Section */}
+        <div>
+          <div className="flex items-center justify-between mb-8">
             <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
-              <motion.div className="w-1.5 h-6 bg-[#2D74B3] rounded-full" />
+              <span className="w-1.5 h-6 bg-[#2D74B3] rounded-full shrink-0" aria-hidden />
               Social Media & Influencer
             </h3>
             <Link
@@ -118,14 +122,14 @@ export default function LogoCloud() {
             >
               Lihat Semua <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-          <motion.div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
             {socialPartners.map((partner, index) => (
               <PlaceholderPartner key={partner} name={partner} index={index} />
             ))}
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
