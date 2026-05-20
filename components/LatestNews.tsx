@@ -3,35 +3,56 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
-const LATEST_NEWS = [
+const COMBINED_NEWS = [
   {
     id: 1,
     title: 'Promedia Group Raih Penghargaan di Panen Fest 2026',
-    date: { day: '07', month: 'Feb' },
-    source: 'Promedia News',
+    date: { day: '19', month: 'Mei' },
+    source: 'Promedia',
+    type: 'promedia',
     image: 'https://picsum.photos/seed/news1/600/400',
   },
   {
     id: 2,
-    title: 'Headline Utama Partner: Kolaborasi Strategis di Era Digital',
-    date: { day: '05', month: 'Feb' },
-    source: 'Mitra Media',
-    image: 'https://picsum.photos/seed/news2/600/400',
+    title: 'Pemkot Surabaya Resmikan Taman Inovasi Digital di Kawasan Darmo',
+    date: { day: '19', month: 'Mei' },
+    source: 'JatimNetwork.com',
+    type: 'network',
+    image: 'https://picsum.photos/400/225?random=1',
   },
   {
     id: 3,
-    title: 'Usung Tagline "Mavericks and Ahead", Promedia Teknologi Optimis Tatap Masa Depan',
-    date: { day: '28', month: 'Jan' },
-    source: 'Promedia News',
+    title: 'Usung Tagline "Mavericks and Ahead", Promedia Optimis Tatap Masa Depan',
+    date: { day: '18', month: 'Mei' },
+    source: 'Promedia',
+    type: 'promedia',
     image: 'https://picsum.photos/seed/news3/600/400',
   },
   {
     id: 4,
-    title: 'Inovasi Jurnalistik Lokal: Cerita dari Jaringan Mitra Promedia',
-    date: { day: '15', month: 'Jan' },
-    source: 'Mitra Media',
-    image: 'https://picsum.photos/seed/news4/600/400',
+    title: 'Timnas Indonesia Siap Hadapi Laga Kualifikasi Piala Dunia',
+    date: { day: '18', month: 'Mei' },
+    source: 'AyoBandung',
+    type: 'network',
+    image: 'https://picsum.photos/400/225?random=3',
+  },
+  {
+    id: 5,
+    title: 'BI Pertahankan Suku Bunga Acuan di Level 6%',
+    date: { day: '17', month: 'Mei' },
+    source: 'SumutDaily.co',
+    type: 'network',
+    image: 'https://picsum.photos/400/225?random=4',
+  },
+  {
+    id: 6,
+    title: 'Kementan Amplifikasi Isu Pangan Nasional ke 500 Media',
+    date: { day: '17', month: 'Mei' },
+    source: 'BeritaJakarta.id',
+    type: 'network',
+    image: 'https://picsum.photos/400/225?random=9',
   },
 ]
 
@@ -47,7 +68,7 @@ export default function LatestNews() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001A2C] mb-4">
-              Kabar Terbaru <span className="text-[#00AEEF]">Ekosistem</span>
+              Kabar <span className="text-[#00AEEF]">Ekosistem</span>
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl">
               Berita terkini dari Promedia dan seluruh jaringan mitra di Indonesia.
@@ -59,15 +80,15 @@ export default function LatestNews() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {LATEST_NEWS.map((item, index) => (
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          {COMBINED_NEWS.map((item, index) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -75,20 +96,29 @@ export default function LatestNews() {
                   alt={item.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 33vw"
                 />
-                <div className="absolute top-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-lg text-[10px] font-bold text-[#001A2C] uppercase tracking-wider">
-                  {item.source}
+                <div className={`absolute top-2 left-2 md:top-3 md:left-3 px-2 py-1 md:px-3 md:py-1.5 backdrop-blur-md rounded-lg text-[8px] md:text-[10px] font-bold uppercase tracking-wider ${
+                  item.type === 'promedia' 
+                    ? 'bg-[#00AEEF]/90 text-white shadow-lg shadow-[#00AEEF]/20 border border-[#00AEEF]/50' 
+                    : 'bg-white/90 text-[#001A2C] shadow-sm border border-white/50'
+                }`}>
+                  {item.type === 'promedia' ? 'Promedia' : 'Network'}
                 </div>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-[#00AEEF] font-black text-lg">{item.date.day}</div>
-                  <div className="text-slate-400 text-xs font-bold uppercase tracking-widest">{item.date.month} 2026</div>
+              <div className="p-3 md:p-6 flex-1 flex flex-col">
+                <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-2 md:mb-4 gap-1 md:gap-2">
+                  <div className="flex items-center gap-1 md:gap-2">
+                    <div className="text-[#00AEEF] font-black text-sm md:text-lg">{item.date.day}</div>
+                    <div className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.date.month} 2026</div>
+                  </div>
+                  <div className="text-[8px] md:text-[10px] font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-1.5 py-0.5 md:px-2.5 md:py-1 rounded-md tracking-wide w-fit truncate max-w-full">
+                    {item.source}
+                  </div>
                 </div>
                 
-                <h3 className="text-base font-bold text-[#001A2C] leading-snug group-hover:text-[#00AEEF] transition-colors line-clamp-3">
+                <h3 className="text-xs sm:text-sm md:text-lg font-bold text-[#001A2C] leading-snug group-hover:text-[#00AEEF] transition-colors line-clamp-3 md:line-clamp-3">
                   {item.title}
                 </h3>
               </div>
@@ -100,4 +130,3 @@ export default function LatestNews() {
   )
 }
 
-import { ArrowRight } from 'lucide-react'

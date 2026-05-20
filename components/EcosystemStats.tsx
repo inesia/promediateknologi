@@ -2,7 +2,10 @@
 
 import { motion, useInView, useSpring, useTransform } from 'framer-motion'
 import { useRef, useEffect } from 'react'
-import { Globe, Play, Camera, MonitorPlay, MessageCircle, Share2 } from 'lucide-react'
+import { Globe, Play, Camera, MonitorPlay, MessageCircle, Share2, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { scrapedMitraData } from './mitra/mitraData'
 
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = useRef(null)
@@ -94,6 +97,31 @@ export default function EcosystemStats() {
               </div>
             </div>
           </div>
+
+          {/* Scrolling Logos */}
+          <div className="mt-8 overflow-hidden relative">
+            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-slate-50 to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-slate-50 to-transparent z-10" />
+            
+            <motion.div 
+              className="flex gap-8 items-center whitespace-nowrap"
+              animate={{ x: [0, -1920] }}
+              transition={{ repeat: Infinity, duration: 40, ease: 'linear' }}
+            >
+              {[...scrapedMitraData, ...scrapedMitraData].map((mitra, idx) => (
+                <div key={`${mitra.id}-${idx}`} className="relative w-32 h-16 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                  <Image 
+                    src={mitra.logo} 
+                    alt={mitra.name} 
+                    fill 
+                    className="object-contain"
+                    sizes="128px"
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Influencer Media Network */}
@@ -147,6 +175,38 @@ export default function EcosystemStats() {
           </div>
         </motion.div>
 
+        {/* Sales / Marketing CTA */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <div className="bg-[#001A2C] rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2D74B3]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
+                Ekosistem Promedia <span className="text-[#00AEEF]">Dalam Angka</span>
+              </h3>
+              <p className="text-slate-300 mb-8 text-lg">
+                Jelajahi profil lengkap, jangkauan audiens, dan performa jaringan media kami untuk kebutuhan kampanye digital Anda.
+              </p>
+              
+              <Link href="/dalam-angka">
+                <motion.div
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Lihat Profil Lengkap
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -9,9 +9,7 @@ const footerLinks = {
   product: [
     { label: 'Mediapreneur', href: '/program/mediapreneur' },
     { label: 'Contentpreneur', href: '/program/contentpreneur' },
-    { label: 'Roweb Technology', href: '/technology' },
-    { label: 'AI & SEO Tools', href: '#' },
-    { label: 'Analytics', href: '#' },
+    { label: 'Influencer Preneur', href: '/program/influencerpreneur' },
   ],
   company: [
     { label: 'Tentang Kami', href: '/about-us' },

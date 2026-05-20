@@ -37,6 +37,7 @@ const navItems: NavItem[] = [
       { label: "Publisher Media Network", href: "/program/mediapreneur" },
       { label: "Influencer Media Network", href: "/program/socmedpreneur" },
       { label: "Content Creator For Publisher", href: "/program/contentpreneur" },
+      { label: "Daftar Mitra", href: "https://forms.fillout.com/t/18DvaYMThNus" },
     ],
   },
   { label: "Kontak & FAQ", href: "/kontak" },
@@ -126,8 +127,9 @@ export default function Header() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-lg rounded-lg shadow-xl border border-slate-100 py-2 z-50"
                     >
-                      {item.submenu.map((subItem, subIndex) => (
-                        <Link key={subItem.label} href={subItem.href}>
+                      {item.submenu.map((subItem, subIndex) => {
+                        const isExternal = subItem.href.startsWith('http');
+                        const linkContent = (
                           <motion.span
                             className="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:text-[#00AEEF] hover:bg-slate-50 transition-colors cursor-pointer block"
                             initial={{ opacity: 0, x: -10 }}
@@ -139,8 +141,17 @@ export default function Header() {
                             )}
                             {subItem.label}
                           </motion.span>
-                        </Link>
-                      ))}
+                        );
+                        return isExternal ? (
+                          <a key={subItem.label} href={subItem.href} target="_blank" rel="noopener noreferrer">
+                            {linkContent}
+                          </a>
+                        ) : (
+                          <Link key={subItem.label} href={subItem.href}>
+                            {linkContent}
+                          </Link>
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -244,20 +255,35 @@ export default function Header() {
                           transition={{ duration: 0.2 }}
                           className="pl-4 space-y-2 overflow-hidden"
                         >
-                          {item.submenu.map((subItem) => (
-                            <Link
-                              key={subItem.label}
-                              href={subItem.href}
-                              className="flex items-center gap-2 block text-sm text-slate-600 hover:text-[#00AEEF] transition-colors py-1.5"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {subItem.label ===
-                                "Teknologi Kami" && (
-                                <Server className="w-4 h-4 flex-shrink-0" />
-                              )}
-                              {subItem.label}
-                            </Link>
-                          ))}
+                          {item.submenu.map((subItem) => {
+                            const isExternal = subItem.href.startsWith('http');
+                            const mobileLinkClass = "flex items-center gap-2 block text-sm text-slate-600 hover:text-[#00AEEF] transition-colors py-1.5";
+                            return isExternal ? (
+                              <a
+                                key={subItem.label}
+                                href={subItem.href}
+                                className={mobileLinkClass}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {subItem.label}
+                              </a>
+                            ) : (
+                              <Link
+                                key={subItem.label}
+                                href={subItem.href}
+                                className={mobileLinkClass}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {subItem.label ===
+                                  "Teknologi Kami" && (
+                                  <Server className="w-4 h-4 flex-shrink-0" />
+                                )}
+                                {subItem.label}
+                              </Link>
+                            );
+                          })}
                         </motion.div>
                       )}
                     </AnimatePresence>

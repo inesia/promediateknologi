@@ -6,10 +6,10 @@ import MitraCard from './MitraCard'
 import MitraSkeleton from './MitraSkeleton'
 
 // Mock data - replace with actual API call
+import { scrapedMitraData } from './mitraData'
+
 // Initial data
-const mockMitraData = [
-  { id: 1, name: 'Media Nasional 1', category: 'nasional', logo: '/images/logo.png' },
-]
+const mockMitraData = scrapedMitraData;
 
 interface Mitra {
   id: number
@@ -29,73 +29,16 @@ export default function MitraGrid({ searchQuery, activeCategory }: MitraGridProp
   const [displayCount, setDisplayCount] = useState(12)
 
   // Simulate loading
-  // Fetch data
+  // Use static data
   useEffect(() => {
-    async function fetchMitra() {
-      setIsLoading(true)
-      try {
-        const res = await fetch('/api/mitra')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const json = await res.json()
-        
-        // Console log to debug structure
-        console.log('Mitra API Response:', json)
-
-        // Attempting to map based on common patterns if the API returns direct array or wrapped object
-        // Adjust this mapping once we know the exact structure
-        let dataToMap = []
-        if (Array.isArray(json)) {
-          dataToMap = json
-        } else if (json.data && Array.isArray(json.data)) {
-          dataToMap = json.data
-        } else if (json.record && Array.isArray(json.record)) {
-             dataToMap = json.record
-        }
-
-        const normalizeCategory = (apiCategory: string) => {
-          const lower = (apiCategory || '').toLowerCase()
-          if (lower.includes('nasional') || lower.includes('news')) return 'nasional'
-          if (lower.includes('regional') || lower.includes('daerah')) return 'regional'
-          if (lower.includes('ekonomi') || lower.includes('bisnis') || lower.includes('business')) return 'ekonomi'
-          if (lower.includes('energi') || lower.includes('lingkungan')) return 'energi'
-          if (lower.includes('agro') || lower.includes('tani')) return 'agrobisnis'
-          if (lower.includes('otomotif') || lower.includes('auto')) return 'otomotif'
-          if (lower.includes('teknologi') || lower.includes('tech') || lower.includes('gadget')) return 'teknologi'
-          if (lower.includes('sains') || lower.includes('pengetahuan') || lower.includes('science')) return 'sains'
-          if (lower.includes('pendidikan') || lower.includes('edukasi') || lower.includes('education')) return 'pendidikan'
-          if (lower.includes('kesehatan') || lower.includes('health') || lower.includes('medis')) return 'kesehatan'
-          if (lower.includes('agama') || lower.includes('religi')) return 'agama'
-          if (lower.includes('lifestyle') || lower.includes('gaya hidup')) return 'lifestyle'
-          if (lower.includes('kuliner') || lower.includes('food') || lower.includes('makan')) return 'kuliner'
-          if (lower.includes('wisata') || lower.includes('travel') || lower.includes('turis')) return 'wisata'
-          if (lower.includes('seni') || lower.includes('hiburan') || lower.includes('art') || lower.includes('entertainment')) return 'hiburan'
-          return 'nasional' // Default fallback
-        }
-
-        const mappedData = dataToMap.map((item: any, index: number) => ({
-          id: item.id || index,
-          name: item.fullname || item.name || item.domain || 'Mitra Media',
-          category: normalizeCategory(item.category_name || item.category || ''),
-          logo: item.logo_url || item.logo || item.image || '/images/logo.png', // Fallback to placeholder
-          domain: item.domain || ''
-        }))
-
-        if (mappedData.length > 0) {
-          setMitraData(mappedData)
-        } else {
-             // Fallback if mapping fails
-             console.warn('Could not map API data, using mock data')
-             setMitraData(mockMitraData)
-        }
-      } catch (error) {
-        console.error('Error loading mitra:', error)
-        setMitraData(mockMitraData)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchMitra()
+    setIsLoading(true)
+    // Small delay to show skeleton and allow smooth transition
+    const timer = setTimeout(() => {
+      setMitraData(mockMitraData)
+      setIsLoading(false)
+    }, 500)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   // Filter and search

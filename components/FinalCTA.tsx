@@ -76,7 +76,7 @@ export default function FinalCTA() {
                 Isi formulir pendaftaran mitra kami melalui Google Form. Tim kami akan segera menghubungi Anda.
               </p>
 
-              <Link href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform" target="_blank">
+              <Link href="https://forms.fillout.com/t/18DvaYMThNus" target="_blank">
                 <motion.div
                   className="btn-shimmer group px-8 py-5 text-lg font-bold text-white rounded-2xl shadow-2xl shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 relative overflow-hidden flex items-center justify-center gap-3 cursor-pointer"
                   whileHover={{ scale: 1.05 }}

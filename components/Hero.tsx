@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { Users, TrendingUp, Zap, MapPin } from 'lucide-react'
+import { Newspaper, Eye, Users, AtSign } from 'lucide-react'
 import Link from 'next/link'
 
 // Wave Component - Elegant Background Animation
@@ -140,7 +140,7 @@ function BillionCounter() {
 // Statistik data - Media Profile 2025
 const stats = [
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Newspaper className="w-6 h-6" />,
     value: '1,154+',
     label: 'Publisher Media',
     delay: 0.2,
@@ -148,7 +148,7 @@ const stats = [
     className: 'top-20 md:left-2 lg:left-4 xl:left-8 2xl:left-20',
   },
   {
-    icon: <TrendingUp className="w-6 h-6" />,
+    icon: <Eye className="w-6 h-6" />,
     value: '1.3 Billion+',
     label: 'Total Views / Year',
     delay: 0.4,
@@ -156,7 +156,7 @@ const stats = [
     className: 'top-32 md:right-2 lg:right-4 xl:right-8 2xl:right-20',
   },
   {
-    icon: <Zap className="w-6 h-6" />,
+    icon: <Users className="w-6 h-6" />,
     value: '40 Juta+',
     label: 'Follower Sosmed',
     delay: 0.6,
@@ -164,7 +164,7 @@ const stats = [
     className: 'bottom-28 md:left-2 lg:left-4 xl:left-12 2xl:left-24',
   },
   {
-    icon: <MapPin className="w-6 h-6" />,
+    icon: <AtSign className="w-6 h-6" />,
     value: '2,300+',
     label: 'Akun Sosmed',
     delay: 0.8,
