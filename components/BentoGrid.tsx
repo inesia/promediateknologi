@@ -366,17 +366,6 @@ export default function BentoGrid() {
             metric="Dari Sabang sampai Merauke"
           />
 
-          {/* Card 4 - Teknologi AI & SEO (Wide) */}
-          <BentoCard
-            index={3}
-            title="Teknologi AI & SEO"
-            description="Otomasi cerdas dan optimasi mesin pencari untuk jangkauan maksimal."
-            icon={<Sparkles className="w-6 h-6 lg:w-7 lg:h-7" />}
-            className="lg:col-span-2 min-h-[260px]"
-            visual="wide-image"
-            parallaxOffset={25}
-          />
-
           {/* Card 5 - 24/7 Support (Small with Uptime) */}
           <BentoCard
             index={4}

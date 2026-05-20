@@ -1,8 +1,8 @@
-'use client'
+﻿'use client'
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, Share2, Video, Server } from 'lucide-react'
+import { ArrowRight, Share2, Video } from 'lucide-react'
 import Link from 'next/link'
 
 // CMS Dashboard Mockup Component
@@ -432,38 +432,6 @@ function VideoProductionVisualization() {
   )
 }
 
-// Roweb / Teknologi AI & SEO visual
-function RowebTechVisual() {
-  return (
-    <div className="relative w-full max-w-lg mx-auto h-[400px] flex items-center justify-center">
-      <motion.div
-        className="relative w-48 h-48 rounded-2xl bg-gradient-to-br from-[#001A2C] to-[#0a1628] border border-[#00AEEF]/20 flex items-center justify-center shadow-2xl"
-        animate={{
-          boxShadow: [
-            '0 25px 50px -12px rgba(0, 174, 239, 0.15)',
-            '0 25px 50px -12px rgba(0, 174, 239, 0.25)',
-            '0 25px 50px -12px rgba(0, 174, 239, 0.15)',
-          ],
-        }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Server className="w-20 h-20 text-[#00AEEF]" />
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-[#00AEEF]"
-            style={{
-              left: `${20 + (i % 3) * 30}%`,
-              top: `${25 + Math.floor(i / 3) * 25}%`,
-            }}
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
-          />
-        ))}
-      </motion.div>
-    </div>
-  )
-}
 
 interface FeatureSectionProps {
   title: string
@@ -559,25 +527,6 @@ export default function EcosystemServices() {
       visual: <SocialMediaVisualization />,
       reverse: false,
     },
-    /* {
-      title: 'Videopreneur',
-      description:
-        'Platform streaming profesional untuk memperkaya inventori video dan gambar bergerak dengan kualitas broadcast.',
-      linkHref: '/program/videopreneur',
-      linkText: 'Pelajari Selengkapnya',
-      visual: <VideoProductionVisualization />,
-      reverse: true,
-    }, */
-    /* {
-      title: 'Teknologi AI & SEO',
-      description:
-        'Infrastruktur Roweb berbasis AWS dan Cloudflare: uptime 99%, keamanan siber, dan CMS dengan intelijen media serta tools SEO terintegrasi.',
-      linkHref: '/technology',
-      linkText: 'Pelajari Keunggulan Roweb',
-      visual: <RowebTechVisual />,
-      reverse: false,
-      linkClassName: 'inline-flex items-center gap-2 text-blue-500 font-medium hover:underline transition-colors group',
-    }, */
   ]
 
   return (
