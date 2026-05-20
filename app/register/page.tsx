@@ -70,7 +70,8 @@ export default function RegistrationPage() {
             </div>
 
             <p className="text-[#00AEEF] font-bold text-base lg:text-lg italic border-l-4 border-[#00AEEF] pl-4">
-              "Kami bantu anda mewujudkan mimpi untuk memiliki media daring sendiri secara mandiri dan profesional."
+              &ldquo;Kami bantu anda mewujudkan mimpi untuk memiliki media daring sendiri secara mandiri dan
+              profesional.&rdquo;
             </p>
           </div>
         </div>
