@@ -568,7 +568,7 @@ export default function EcosystemServices() {
       visual: <VideoProductionVisualization />,
       reverse: true,
     }, */
-    {
+    /* {
       title: 'Teknologi AI & SEO',
       description:
         'Infrastruktur Roweb berbasis AWS dan Cloudflare: uptime 99%, keamanan siber, dan CMS dengan intelijen media serta tools SEO terintegrasi.',
@@ -577,7 +577,7 @@ export default function EcosystemServices() {
       visual: <RowebTechVisual />,
       reverse: false,
       linkClassName: 'inline-flex items-center gap-2 text-blue-500 font-medium hover:underline transition-colors group',
-    },
+    }, */
   ]
 
   return (

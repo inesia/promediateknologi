@@ -4,8 +4,6 @@ import { motion, useInView, useSpring, useTransform } from 'framer-motion'
 import { useRef, useEffect } from 'react'
 import { Globe, Play, Camera, MonitorPlay, MessageCircle, Share2, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { scrapedMitraData } from './mitra/mitraData'
 
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = useRef(null)
@@ -98,30 +96,6 @@ export default function EcosystemStats() {
             </div>
           </div>
 
-          {/* Scrolling Logos */}
-          <div className="mt-8 overflow-hidden relative">
-            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-slate-50 to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-slate-50 to-transparent z-10" />
-            
-            <motion.div 
-              className="flex gap-8 items-center whitespace-nowrap"
-              animate={{ x: [0, -1920] }}
-              transition={{ repeat: Infinity, duration: 40, ease: 'linear' }}
-            >
-              {[...scrapedMitraData, ...scrapedMitraData].map((mitra, idx) => (
-                <div key={`${mitra.id}-${idx}`} className="relative w-32 h-16 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                  <Image 
-                    src={mitra.logo} 
-                    alt={mitra.name} 
-                    fill 
-                    className="object-contain"
-                    sizes="128px"
-                    unoptimized
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
         </motion.div>
 
         {/* Influencer Media Network */}
