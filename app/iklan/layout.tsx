@@ -1,12 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Promedia Ad Solutions - Marketplace Iklan Modern & Transparan',
-  description: 'Platform periklanan transparan dengan akses ke 1.000+ jaringan media premium. Jangkau jutaan pembaca Indonesia dalam satu klik.',
-  keywords: 'promedia ad solutions, iklan online, marketplace iklan, display banner, advertorial, social media ads, video ads, promedia teknologi',
+  title: 'Product & Success Story Campaign | Promedia Ad Solutions',
+  description:
+    'Katalog produk iklan Promedia Group: Native/Article, Sosmed Media Network, Banner Display, dan Event/Partnership. Jangkau audiens di 1.000+ media partner.',
+  keywords:
+    'promedia ad solutions, product campaign, advertorial, display banner, sosmed media network, success story, promedia teknologi',
   openGraph: {
-    title: 'Promedia Ad Solutions - Marketplace Iklan Modern',
-    description: 'Platform periklanan transparan dengan akses ke 1.000+ jaringan media premium',
+    title: 'Product & Success Story Campaign | Promedia',
+    description: 'Katalog produk periklanan dan dokumentasi kampanye sukses Promedia Group',
     type: 'website',
   },
 }

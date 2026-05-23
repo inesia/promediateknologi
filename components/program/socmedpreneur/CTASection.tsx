@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Zap } from 'lucide-react'
-import Link from 'next/link'
+import { getPartnerFormUrl } from '@/lib/programRegistration'
 
 export default function CTASection() {
   return (
@@ -37,16 +37,20 @@ export default function CTASection() {
           </p>
 
           {/* CTA Button */}
-          <Link href="/register?role=socmedpreneur">
+          <a
+            href={getPartnerFormUrl('socmedpreneur')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.div
               className="group inline-flex items-center gap-3 px-8 py-4 bg-[#00AEEF] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Daftar Social Media Specialist</span>
+              <span>Daftar Influencer Media Network</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.div>
-          </Link>
+          </a>
 
           {/* Decorative line */}
           <motion.div

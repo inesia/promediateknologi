@@ -19,7 +19,7 @@ export default function CTASection() {
             Ready to Upgrade Your Media Tech?
           </h2>
           <p className="text-slate-600 text-lg mb-10">
-            Bergabung dengan program Mediapreneur dan akses infrastruktur Roweb untuk media Anda.
+            Bergabung dengan program Publisher Media Network dan akses infrastruktur Roweb untuk media Anda.
           </p>
           <Link href="/program/mediapreneur">
             <motion.span
@@ -27,7 +27,7 @@ export default function CTASection() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              Pelajari Program Mediapreneur
+              Pelajari Program Publisher Media Network
               <ArrowRight className="w-5 h-5" />
             </motion.span>
           </Link>

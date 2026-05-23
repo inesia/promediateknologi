@@ -5,36 +5,31 @@ import { useRef, useState, useEffect } from 'react'
 import MediapreneurVisual from './pilar-visuals/MediapreneurVisual'
 import ContentpreneurVisual from './pilar-visuals/ContentpreneurVisual'
 import SocmedpreneurVisual from './pilar-visuals/SocmedpreneurVisual'
-import VideopreneurVisual from './pilar-visuals/VideopreneurVisual'
 
 const pilars = [
   {
     id: 'mediapreneur',
-    title: 'Mediapreneur',
+    title: 'Publisher Media Network',
     subtitle: 'The Foundation',
-    description: 'Program kepemilikan media bagi jurnalis profesional dengan legalitas yang jelas dan teknologi CMS yang mutakhir. Mediapreneur memberikan akses penuh kepada jurnalis untuk memiliki dan mengelola media digital mereka sendiri dengan dukungan infrastruktur teknologi Promedia.',
+    description:
+      'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
     visual: MediapreneurVisual,
   },
   {
     id: 'contentpreneur',
     title: 'Contentpreneur',
     subtitle: 'The Talent',
-    description: 'Pemberdayaan penulis untuk menghasilkan konten berkualitas tinggi di bawah naungan Promedia dengan sistem yang terintegrasi. Contentpreneur membuka peluang bagi para penulis untuk berkarya dengan platform yang profesional dan sistem monetisasi yang transparan.',
+    description:
+      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
     visual: ContentpreneurVisual,
   },
   {
-    id: 'socmedpreneur',
-    title: 'Socmedpreneur',
+    id: 'influencer-media-network',
+    title: 'Influencer Media Network',
     subtitle: 'The Reach',
-    description: 'Program optimasi dan monetisasi media sosial bagi anggota ekosistem dengan tools dan analytics yang lengkap. Socmedpreneur membantu anggota untuk mengoptimalkan kehadiran digital mereka di berbagai platform media sosial dengan strategi yang terukur.',
+    description:
+      'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
     visual: SocmedpreneurVisual,
-  },
-  {
-    id: 'videopreneur',
-    title: 'Videopreneur',
-    subtitle: 'The Future',
-    description: 'Program Promedia TV untuk memperkaya inventori video dan gambar bergerak dengan platform streaming yang profesional. Videopreneur membuka era baru dalam produksi konten video dengan teknologi streaming mutakhir dan distribusi yang luas.',
-    visual: VideopreneurVisual,
   },
 ]
 
@@ -74,7 +69,7 @@ export default function PilarEkosistem() {
             Pilar Ekosistem
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Empat pilar utama yang membentuk fondasi ekosistem Promedia Teknologi
+            Tiga pilar utama yang membentuk fondasi ekosistem Promedia Teknologi
           </p>
         </motion.div>
       </div>

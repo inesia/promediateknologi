@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const footerLinks = {
   product: [
-    { label: 'Mediapreneur', href: '/program/mediapreneur' },
+    { label: 'Publisher Media Network', href: '/program/mediapreneur' },
     { label: 'Contentpreneur', href: '/program/contentpreneur' },
     { label: 'Influencer Preneur', href: '/program/influencerpreneur' },
   ],
@@ -19,7 +19,6 @@ const footerLinks = {
   ],
   support: [
     { label: 'Help Center', href: '#' },
-    { label: 'Validasi Keanggotaan', href: '/validasi-keanggotaan' },
     { label: 'Dokumentasi', href: '#' },
     { label: 'Kontak', href: '#' },
   ],

@@ -30,7 +30,7 @@ const testimonials = [
   {
     text: "Promedia membantu saya membangun media digital yang profesional dan terpercaya.",
     author: "Media Partner",
-    role: "Mediapreneur"
+    role: "Publisher Media Network"
   },
   {
     text: "Ekosistem Promedia memberikan platform yang tepat untuk mengembangkan karier sebagai content creator.",
@@ -48,7 +48,7 @@ const testimonials = [
 const roleOptions = [
   {
     id: 'mediapreneur' as RoleType,
-    title: 'Mediapreneur',
+    title: 'Publisher Media Network',
     description: 'Untuk pemilik media/bisnis',
     icon: Newspaper,
     gradient: 'from-[#00AEEF] to-[#2D74B3]'

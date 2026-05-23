@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { ArrowRight, Heart, Share2, MessageCircle } from 'lucide-react'
+import { getPartnerFormUrl } from '@/lib/programRegistration'
 
 export default function SocmedpreneurHero() {
   const [mounted, setMounted] = useState(false)
@@ -36,17 +37,20 @@ export default function SocmedpreneurHero() {
             </p>
 
             {/* CTA Button */}
-            <motion.a
-              href="https://bit.ly/promediamitra"
+            <a
+              href={getPartnerFormUrl('socmedpreneur')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#00AEEF] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
-              <span>Daftar Social Media Specialist</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+              <motion.div
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#00AEEF] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Daftar Influencer Media Network</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.div>
+            </a>
           </motion.div>
 
           {/* Right: Smartphone Mockup with Bubbles */}

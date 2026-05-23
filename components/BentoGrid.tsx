@@ -333,7 +333,7 @@ export default function BentoGrid() {
           {/* Card 1 - Mediapreneur Ecosystem (Large - Top Left) */}
           <BentoCard
             index={0}
-            title="Mediapreneur Ecosystem"
+            title="Publisher Media Network"
             description="Platform all-in-one untuk membangun dan mengelola portal media digital. Dari CMS hingga monetisasi, semua terintegrasi dalam satu ekosistem yang powerful."
             icon={<Newspaper className="w-6 h-6 lg:w-7 lg:h-7" />}
             className="md:col-span-2 lg:row-span-2 min-h-[300px] lg:min-h-[380px]"

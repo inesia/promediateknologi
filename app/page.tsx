@@ -13,9 +13,9 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <EcosystemServices />
       <EcosystemStats />
       <BrandStatement />
-      <EcosystemServices />
       <LogoCloud />
       <LatestNews />
       <FinalCTA />

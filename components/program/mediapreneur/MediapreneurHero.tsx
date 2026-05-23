@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { getPartnerFormUrl } from '@/lib/programRegistration'
 
 export default function MediapreneurHero() {
   const [mounted, setMounted] = useState(false)
@@ -37,16 +37,20 @@ export default function MediapreneurHero() {
             </p>
 
             {/* CTA Button */}
-            <Link href="/register?role=mediapreneur">
+            <a
+              href={getPartnerFormUrl('mediapreneur')}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-[#00AEEF] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Daftar Sekarang</span>
+                <span>Daftar Publisher Media Network</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.div>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Right: CMS Dashboard Mockup */}

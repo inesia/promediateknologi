@@ -10,8 +10,8 @@ import FinalStatement from '@/components/about-us/FinalStatement'
 
 export const metadata: Metadata = {
   title: 'Tentang Kami - Promedia Teknologi | The Architects of Media Ecosystem',
-  description: 'Promedia Teknologi adalah pionir ekosistem media digital terintegrasi. Kami membangun infrastruktur masa depan bagi Mediapreneur & Contentpreneur dengan empat pilar utama: Mediapreneur, Contentpreneur, Socmedpreneur, dan Videopreneur.',
-  keywords: 'promedia teknologi, tentang kami, media digital, ekosistem media, mediapreneur, contentpreneur',
+  description: 'Promedia Teknologi adalah pionir ekosistem media digital terintegrasi. Tiga pilar utama: Publisher Media Network, Contentpreneur, dan Influencer Media Network.',
+  keywords: 'promedia teknologi, tentang kami, media digital, ekosistem media, publisher media network, contentpreneur',
   openGraph: {
     title: 'Tentang Kami - Promedia Teknologi',
     description: 'The Architects of Media Ecosystem - Membangun ekosistem media digital terintegrasi',

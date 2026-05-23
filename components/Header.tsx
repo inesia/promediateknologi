@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Server } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { homeHeader } from "@/lib/homeContent";
 
 interface SubMenuItem {
   label: string;
@@ -37,7 +38,7 @@ const navItems: NavItem[] = [
       { label: "Publisher Media Network", href: "/program/mediapreneur" },
       { label: "Influencer Media Network", href: "/program/socmedpreneur" },
       { label: "Content Creator For Publisher", href: "/program/contentpreneur" },
-      { label: "Daftar Mitra", href: "https://forms.fillout.com/t/18DvaYMThNus" },
+      { label: "Gabung Program", href: "/register" },
     ],
   },
   { label: "Kontak & FAQ", href: "/kontak" },
@@ -159,37 +160,31 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA Button - Right */}
-          <Link href="/register">
-            <motion.div
-              className="hidden lg:block px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-lg shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 relative overflow-hidden group cursor-pointer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Daftar</span>
+          {/* Daftar + menu — desktop & mobile */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link href={homeHeader.registerHref} className="shrink-0">
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#2D74B3] to-[#00AEEF] opacity-0"
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          </Link>
+                className="px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-lg shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 relative overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">{homeHeader.registerCta}</span>
+              </motion.div>
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+            <button
+              type="button"
+              className="lg:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -289,13 +284,12 @@ export default function Header() {
                     </AnimatePresence>
                   </div>
                 ))}
-                <Link href="/register">
+                <Link href={homeHeader.registerHref} onClick={() => setIsMobileMenuOpen(false)}>
                   <motion.div
                     className="w-full px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-lg shadow-lg text-center mt-4 block cursor-pointer"
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Daftar
+                    {homeHeader.registerCta}
                   </motion.div>
                 </Link>
               </div>

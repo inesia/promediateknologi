@@ -41,23 +41,23 @@ const faqCategories = [
   },
   {
     id: 'mediapreneur',
-    label: 'Mediapreneur',
+    label: 'Publisher Media Network',
     items: [
       {
-        question: 'Apa itu program Mediapreneur Promedia?',
-        answer: 'Mediapreneur adalah program kemitraan bagi pemilik atau pengelola media digital untuk membangun dan mengembangkan media mereka dalam ekosistem Promedia. Program ini menyediakan dukungan teknologi, pendampingan strategis, dan konektivitas ekosistem tanpa mengambil alih kepemilikan maupun kebijakan editorial media.',
+        question: 'Apa itu program Publisher Media Network Promedia?',
+        answer: 'Publisher Media Network adalah program kemitraan bagi pemilik atau pengelola media digital untuk membangun dan mengembangkan media mereka dalam ekosistem Promedia. Program ini menyediakan dukungan teknologi, pendampingan strategis, dan konektivitas ekosistem tanpa mengambil alih kepemilikan maupun kebijakan editorial media.',
       },
       {
         question: 'Siapa saja yang dapat bergabung sebagai media partner Promedia?',
-        answer: 'Program Mediapreneur terbuka bagi media digital yang sudah dikelola secara profesional maupun jurnalis/kreator yang ingin memulai bisnis media digitalnya sendiri.',
+        answer: 'Program Publisher Media Network terbuka bagi media digital yang sudah dikelola secara profesional maupun jurnalis/kreator yang ingin memulai bisnis media digitalnya sendiri.',
       },
       {
         question: 'Apakah media partner tetap memiliki kendali penuh atas medianya?',
         answer: 'Ya. Media partner tetap memiliki kepemilikan dan kendali penuh atas media, termasuk kebijakan editorial, struktur redaksi, dan arah pengembangan konten. Promedia tidak mengintervensi keputusan redaksional.',
       },
       {
-        question: 'Apakah ada biaya untuk bergabung sebagai Mediapreneur?',
-        answer: 'Promedia tidak mengenakan biaya pendaftaran untuk program Mediapreneur. Namun, kemitraan ini bersifat selektif dan dijalankan berdasarkan kesepakatan serta komitmen bersama.',
+        question: 'Apakah ada biaya untuk bergabung sebagai mitra Publisher Media Network?',
+        answer: 'Promedia tidak mengenakan biaya pendaftaran untuk program Publisher Media Network. Namun, kemitraan ini bersifat selektif dan dijalankan berdasarkan kesepakatan serta komitmen bersama.',
       },
       {
         question: 'Dukungan apa saja yang diberikan Promedia kepada media partner?',

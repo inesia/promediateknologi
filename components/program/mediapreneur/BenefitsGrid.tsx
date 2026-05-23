@@ -66,7 +66,7 @@ export default function BenefitsGrid() {
             Keuntungan
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Manfaat yang akan Anda dapatkan sebagai mitra Mediapreneur
+            Manfaat yang akan Anda dapatkan sebagai mitra Publisher Media Network
           </p>
         </motion.div>
 

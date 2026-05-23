@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FileText, Video, Rocket, CheckCircle2 } from 'lucide-react'
-import Link from 'next/link'
+import { getPartnerFormUrl } from '@/lib/programRegistration'
 
 const steps = [
   {
@@ -44,7 +44,7 @@ export default function FlowPendaftaran() {
             Alur Pendaftaran
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Proses sederhana untuk memulai perjalanan sebagai Mediapreneur
+            Proses sederhana untuk memulai perjalanan di Publisher Media Network
           </p>
         </motion.div>
 
@@ -132,7 +132,11 @@ export default function FlowPendaftaran() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <Link href="/register?role=mediapreneur">
+          <a
+            href={getPartnerFormUrl('mediapreneur')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.div
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -141,7 +145,7 @@ export default function FlowPendaftaran() {
               <span>Mulai Pendaftaran</span>
               <Rocket className="w-5 h-5" />
             </motion.div>
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

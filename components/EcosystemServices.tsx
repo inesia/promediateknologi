@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowRight, Share2, Video } from 'lucide-react'
 import Link from 'next/link'
+import { homePrograms } from '@/lib/homeContent'
 
 // CMS Dashboard Mockup Component
 function CMSDashboardMockup() {
@@ -459,10 +460,12 @@ function FeatureSection({
   const defaultLinkClass = 'inline-flex items-center gap-2 text-[#00AEEF] hover:text-[#2D74B3] font-semibold transition-colors group'
   const linkClass = linkClassName ?? defaultLinkClass
   return (
-    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-16`}>
-      {/* Visual */}
+    <div
+      className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}
+    >
+      {/* Ilustrasi — desktop saja */}
       <motion.div
-        className="w-full lg:w-1/2"
+        className="hidden lg:block w-full lg:w-1/2"
         initial={{ opacity: 0, x: reverse ? 50 : -50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: reverse ? 50 : -50 }}
         transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -470,22 +473,22 @@ function FeatureSection({
         {visual}
       </motion.div>
 
-      {/* Content */}
+      {/* Konten — full width di mobile */}
       <motion.div
-        className="w-full lg:w-1/2"
-        initial={{ opacity: 0, x: reverse ? -50 : 50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: reverse ? -50 : 50 }}
-        transition={{ duration: 0.8, delay: index * 0.2 + 0.2 }}
+        className="w-full lg:w-1/2 text-center lg:text-left"
+        initial={{ opacity: 0, y: 24 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+        transition={{ duration: 0.8, delay: index * 0.15 }}
       >
-        <h2 className="text-4xl lg:text-5xl font-black text-[#001A2C] mb-6 leading-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#001A2C] mb-4 lg:mb-6 leading-tight">
           {title}
         </h2>
-        <p className="text-lg text-slate-600 mb-6 max-w-[500px] leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 mb-5 lg:mb-6 max-w-[500px] mx-auto lg:mx-0 leading-relaxed">
           {description}
         </p>
         <Link
           href={linkHref}
-          className={linkClass}
+          className={`${linkClass} justify-center lg:justify-start`}
         >
           <span>{linkText}</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
@@ -499,42 +502,31 @@ export default function EcosystemServices() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
-  const features = [
-    {
-      title: 'Mediapreneur',
-      description:
-        'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
-      linkHref: '/program/mediapreneur',
-      linkText: 'Pelajari Selengkapnya',
-      visual: <CMSDashboardMockup />,
-      reverse: false,
-    },
-    {
-      title: 'Contentpreneur',
-      description:
-        'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-      linkHref: '/program/contentpreneur',
-      linkText: 'Pelajari Selengkapnya',
-      visual: <DigitalPenIllustration />,
-      reverse: true,
-    },
-    {
-      title: 'Influencer Media Network',
-      description:
-        'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
-      linkHref: '/program/socmedpreneur',
-      linkText: 'Pelajari Selengkapnya',
-      visual: <SocialMediaVisualization />,
-      reverse: false,
-    },
+  const visuals = [
+    <CMSDashboardMockup key="mediapreneur" />,
+    <DigitalPenIllustration key="contentpreneur" />,
+    <SocialMediaVisualization key="socmedpreneur" />,
   ]
 
+  const features = homePrograms.items.map((item, index) => ({
+    title: item.title,
+    description: item.description,
+    linkHref: item.linkHref,
+    linkText: item.linkLabel,
+    visual: visuals[index],
+    reverse: item.reverse,
+  }))
+
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 bg-white overflow-hidden">
+    <section
+      id="layanan-program"
+      ref={sectionRef}
+      className="relative py-16 sm:py-20 lg:py-32 bg-white overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20 lg:mb-24"
+          className="text-center mb-12 sm:mb-16 lg:mb-24"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
@@ -547,7 +539,7 @@ export default function EcosystemServices() {
           >
             <div className="px-4 py-2 bg-[#00AEEF]/5 border border-[#00AEEF]/20 rounded-full">
               <span className="text-xs font-semibold text-[#00AEEF] tracking-wide uppercase">
-                Layanan & Ekosistem
+                {homePrograms.badge}
               </span>
             </div>
           </motion.div>
@@ -558,15 +550,15 @@ export default function EcosystemServices() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Solusi Lengkap untuk{' '}
+            {homePrograms.title}{' '}
             <span className="bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] bg-clip-text text-transparent">
-              Media Digital
+              {homePrograms.titleHighlight}
             </span>
           </motion.h2>
         </motion.div>
 
         {/* Feature Sections */}
-        <div className="space-y-32 lg:space-y-40">
+        <div className="space-y-14 sm:space-y-20 lg:space-y-40">
           {features.map((feature, index) => (
             <FeatureSection
               key={index}
