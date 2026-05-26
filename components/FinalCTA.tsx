@@ -5,18 +5,13 @@ import { ArrowRight, Newspaper, PenTool, Share2, Route } from 'lucide-react'
 import Link from 'next/link'
 import { PROGRAMS } from '@/lib/programRegistration'
 import type { ProgramSlug } from '@/lib/programRegistration'
+import { homePartnershipCta } from '@/lib/homeContent'
 
 const programIcons: Record<ProgramSlug, typeof Newspaper> = {
   mediapreneur: Newspaper,
   contentpreneur: PenTool,
   socmedpreneur: Share2,
 }
-
-const steps = [
-  'Pilih program yang sesuai',
-  'Pelajari detail & persyaratan',
-  'Daftar lewat formulir resmi',
-]
 
 export default function FinalCTA() {
   return (
@@ -51,15 +46,16 @@ export default function FinalCTA() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00AEEF]/15 border border-[#00AEEF]/30 mb-4">
               <Route className="w-4 h-4 text-[#00AEEF]" />
               <span className="text-[10px] sm:text-xs font-bold text-[#00AEEF] uppercase tracking-wide">
-                Program Kemitraan Promedia
+                {homePartnershipCta.badge}
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 leading-tight">
-              Gabung <span className="text-[#00AEEF]">Program</span> yang Tepat untuk Anda
+              {homePartnershipCta.titlePrefix}{' '}
+              <span className="text-[#00AEEF]">{homePartnershipCta.titleHighlight}</span>{' '}
+              {homePartnershipCta.titleSuffix}
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-              Tiga jalur berbeda — media, konten, dan influencer. Mulai dari halaman program, baru
-              lanjut pendaftaran.
+              {homePartnershipCta.subtitle}
             </p>
           </motion.div>
 
@@ -91,7 +87,7 @@ export default function FinalCTA() {
                           {program.title}
                         </h3>
                         <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
-                          {program.tagline}
+                          {homePartnershipCta.programDescriptions[program.slug]}
                         </p>
                       </div>
                       <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-[#00AEEF] shrink-0 mt-1 transition-colors" />
@@ -109,15 +105,14 @@ export default function FinalCTA() {
               viewport={{ once: true }}
             >
               <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
-                Belum yakin program mana?
+                {homePartnershipCta.unsureTitle}
               </h3>
               <p className="text-slate-300 text-sm sm:text-base mb-6 leading-relaxed">
-                Buka halaman pilih program untuk membandingkan ketiga jalur, lalu daftar saat Anda
-                sudah siap.
+                {homePartnershipCta.unsureDescription}
               </p>
 
               <ol className="space-y-2.5 mb-8 text-left max-w-sm mx-auto lg:mx-0">
-                {steps.map((step, i) => (
+                {homePartnershipCta.steps.map((step, i) => (
                   <li key={step} className="flex items-center gap-3 text-sm text-slate-300">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00AEEF] text-[11px] font-black text-[#001A2C]">
                       {i + 1}
@@ -133,7 +128,7 @@ export default function FinalCTA() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="relative z-10">Lihat Semua Program</span>
+                  <span className="relative z-10">{homePartnershipCta.cta}</span>
                   <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-lg bg-[#001A2C]/10">
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
@@ -141,8 +136,7 @@ export default function FinalCTA() {
               </Link>
 
               <p className="mt-5 text-[11px] sm:text-xs text-slate-500 leading-relaxed">
-                Pendaftaran tidak dipungut biaya. Setiap program memiliki formulir dan alur
-                onboarding sendiri.
+                {homePartnershipCta.footnote}
               </p>
             </motion.div>
           </div>

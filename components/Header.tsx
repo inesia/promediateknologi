@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
     href: "/about-us",
     submenu: [
       { label: "Tentang Perusahaan", href: "/about-us#tentang-perusahaan" },
-      { label: "Promedia dalam Angka", href: "/dalam-angka" },
+      { label: "Promedia Dalam Angka", href: "/dalam-angka" },
       { label: "Mitra Kami", href: "/mitra" },
       { label: "Lokasi", href: "/about-us#lokasi" },
       { label: "Teknologi Kami", href: "/technology" },

@@ -7,19 +7,22 @@ import Image from 'next/image'
 import { scrapedMitraData } from './mitra/mitraData'
 
 const HOME_MEDIA_PARTNER_LIMIT = 16
+const HOME_PARTNER_MOBILE_LIMIT = 6
 
 function PartnerLogo({
   name,
   logo,
   index,
+  className,
 }: {
   name: string
   logo: string
   index: number
+  className?: string
 }) {
   return (
     <motion.div
-      className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+      className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 ${className ?? ''}`}
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -39,10 +42,18 @@ function PartnerLogo({
   )
 }
 
-function PlaceholderPartner({ name, index }: { name: string; index: number }) {
+function PlaceholderPartner({
+  name,
+  index,
+  className,
+}: {
+  name: string
+  index: number
+  className?: string
+}) {
   return (
     <motion.div
-      className="flex items-center justify-center"
+      className={`flex items-center justify-center ${className ?? ''}`}
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -104,6 +115,7 @@ export default function LogoCloud() {
                 name={partner.name}
                 logo={partner.logo}
                 index={index}
+                className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
               />
             ))}
           </div>
@@ -125,7 +137,12 @@ export default function LogoCloud() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
             {socialPartners.map((partner, index) => (
-              <PlaceholderPartner key={partner} name={partner} index={index} />
+              <PlaceholderPartner
+                key={partner}
+                name={partner}
+                index={index}
+                className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
+              />
             ))}
           </div>
         </div>
