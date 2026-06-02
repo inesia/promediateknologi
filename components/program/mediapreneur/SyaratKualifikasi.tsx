@@ -5,31 +5,35 @@ import { Briefcase, ShieldCheck, Users } from 'lucide-react'
 
 const requirements = [
   {
-    id: 'tim',
-    title: 'Tim Solid',
-    description: 'Min. 3 orang dengan visi sama — 1 Pemimpin Redaksi, 2 Redaktur.',
+    id: 'kreator',
+    title: '1.',
+    description:
+      'Tim kreator dan jurnalis yang ingin memulai bisnis media independennya sendiri.',
     icon: Users,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
-    id: 'identitas',
-    title: 'Identitas Tim',
-    description: 'Siapkan CV Tim Inti yang Didaftarkan.',
-    icon: ShieldCheck,
+    id: 'pemilik',
+    title: '2.',
+    description:
+      'Pemilik dan pengelola media online yang sudah berjalan, namun tidak ingin lagi dipusingkan dengan biaya IT development, maintenance & security.',
+    icon: Briefcase,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
   {
-    id: 'pengalaman',
-    title: 'Pengalaman',
-    description: 'Min. 1 Tahun di dunia jurnalistik/kepenulisan.',
-    icon: Briefcase,
+    id: 'identitas',
+    title: '1.',
+    description:
+      'Tim kreator dan jurnalis yang ingin memulai bisnis media independennya sendiri.',
+    icon: ShieldCheck,
     color: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
-    id: 'cita-cita',
-    title: 'Cita-cita',
-    description: 'Wajib punya semangat ingin bangun bisnis media sendiri.',
-    icon: Users, // Using Users as generic icon or maybe Rocket if imported
+    id: 'pengalaman',
+    title: '2.',
+    description:
+      'Pemilik dan pengelola media online yang sudah berjalan, namun tidak ingin lagi dipusingkan dengan biaya IT development, maintenance & security.',
+    icon: Users,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
 ]
@@ -47,13 +51,13 @@ export default function SyaratKualifikasi() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Syarat & Kualifikasi
+            Untuk Siapa Program Ini?
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Penuhi empat syarat berikut agar bisa mendaftar program ini.
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto" aria-hidden="true">
+            {' '}
           </p>
-          <p className="text-sm text-slate-500 mt-4 italic">
-            *Proses pendaftaran tidak dipungut biaya, kecuali pembelian domain yang dimiliki masing-masing mitra.
+          <p className="text-sm text-slate-500 mt-4 italic" aria-hidden="true">
+            {' '}
           </p>
         </motion.div>
 

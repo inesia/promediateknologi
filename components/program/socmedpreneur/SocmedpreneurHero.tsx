@@ -29,11 +29,11 @@ export default function SocmedpreneurHero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#001A2C] mb-6 leading-tight">
-              Kuasai Algoritmanya.
+              Saatnya Level-Up.
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-              Optimasi dan monetisasi media sosial untuk mendorong traffic ekosistem Promedia.
+              Dari kreator, menjadi pemengaruh dan brand media profesional.
             </p>
 
             {/* CTA Button */}

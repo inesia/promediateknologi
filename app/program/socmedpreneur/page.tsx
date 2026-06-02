@@ -7,12 +7,15 @@ import PlatformFocus from '@/components/program/socmedpreneur/PlatformFocus'
 import CTASection from '@/components/program/socmedpreneur/CTASection'
 
 export const metadata: Metadata = {
-  title: 'Socmedpreneur - Master the Algorithm | Promedia Teknologi',
-  description: 'Optimasi dan monetisasi media sosial untuk mendorong traffic ekosistem Promedia. Jadilah motor penggerak traffic sebagai Socmed Specialist.',
-  keywords: 'socmedpreneur, program media sosial, social media specialist, optimasi media sosial, monetisasi media sosial, promedia teknologi',
+  title: 'Influencer Media Network | Promedia Teknologi',
+  description:
+    'Dari kreator, menjadi pemengaruh dan brand media profesional. Inkubator strategis untuk membangun dan memasarkan brand media Anda bersama Promedia.',
+  keywords:
+    'influencer media network, socmedpreneur, kreator konten, brand media, monetisasi media sosial, promedia teknologi',
   openGraph: {
-    title: 'Socmedpreneur - Master the Algorithm',
-    description: 'Optimasi dan monetisasi media sosial untuk mendorong traffic ekosistem Promedia',
+    title: 'Influencer Media Network | Promedia Teknologi',
+    description:
+      'Dari kreator, menjadi pemengaruh dan brand media profesional bersama Influencer Media Network.',
     type: 'website',
   },
 }

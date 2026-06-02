@@ -54,10 +54,10 @@ export default function PlatformFocus() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Fokus Platform
+            Influencer Media Network adalah bagian dari:
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Platform media sosial yang menjadi fokus optimasi dan monetisasi
+            VoxPro by Promedia Group
           </p>
         </motion.div>
 

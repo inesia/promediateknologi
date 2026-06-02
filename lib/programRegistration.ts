@@ -39,7 +39,7 @@ export const PROGRAMS: ProgramRegistration[] = [
     menuLabel: PUBLISHER_MEDIA_NETWORK,
     tagline: 'Bangun dan monetisasi portal media Anda sendiri',
     description:
-      'Untuk pemilik portal berita dan tim media online yang ingin berkembang bersama jaringan Promedia—dukungan teknologi, pelatihan, dan distribusi.',
+      'Untuk pemilik dan pengelola media online yang sudah berjalan hingga jurnalis & kreator yang ingin memulai bisnis media independennya sendiri. Dapatkan dukungan IT, Marketing, hingga pendampingan, gratis.',
     programHref: '/program/mediapreneur',
     ctaLabel: 'Daftar Publisher Media Network',
     forWho: 'Pemilik media, pemimpin redaksi, dan tim editorial (min. 3 orang)',
@@ -61,7 +61,7 @@ export const PROGRAMS: ProgramRegistration[] = [
       'Untuk jurnalis, penulis lepas, dan kreator konten yang ingin karyanya dihargai di jaringan media mitra Promedia.',
     programHref: '/program/contentpreneur',
     ctaLabel: 'Daftar Contentpreneur',
-    forWho: 'Penulis, jurnalis, dan kreator konten editorial',
+    forWho: 'Penulis, jurnalis, atau siapapun yang ingin memulai karier lewat menulis di media online.',
     beforeApply: [
       'Pelajari dua jalur di halaman program: lowongan mitra media atau intake Promedia Group.',
       'Untuk jalur Promedia Group, lengkapi formulir pendaftaran resmi di bawah.',
@@ -75,12 +75,12 @@ export const PROGRAMS: ProgramRegistration[] = [
     slug: 'socmedpreneur',
     title: 'Influencer Media Network',
     menuLabel: 'Influencer Media Network',
-    tagline: 'Kuasai algoritma, dorong traffic ekosistem',
+    tagline: 'Tidak hanya jadi kreator, tapi pemengaruh',
     description:
-      'Untuk kreator konten di Instagram, TikTok, YouTube, dan Reels yang ingin memonetisasi jangkauan di jaringan media Promedia.',
+      'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
     programHref: '/program/socmedpreneur',
     ctaLabel: 'Daftar Influencer Media Network',
-    forWho: 'Spesialis media sosial dan content creator',
+    forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
     beforeApply: [
       'Siapkan contoh konten sosial dengan performa terbaik.',
       'Siap menjelaskan platform yang dikelola dan niche audiens.',

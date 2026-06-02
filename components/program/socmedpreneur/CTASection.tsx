@@ -24,16 +24,16 @@ export default function CTASection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00AEEF]/10 rounded-full mb-6">
             <Zap className="w-5 h-5 text-[#00AEEF]" />
             <span className="text-sm font-semibold text-[#00AEEF]">
-              Gabung Tim Kami
+              Tumbuh Bersama Kami
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001A2C] mb-8 leading-tight">
-            Jadilah Motor Penggerak Traffic
+            Bangun Brand Profesionalmu. Dari Sekarang.
           </h2>
 
-          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
-            Bergabunglah sebagai Socmed Specialist dan jadilah bagian dari tim yang menggerakkan ekosistem media digital Promedia
+          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto" aria-hidden="true">
+            {' '}
           </p>
 
           {/* CTA Button */}

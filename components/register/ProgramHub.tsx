@@ -39,7 +39,7 @@ export default function ProgramHub() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xs font-semibold text-[#00AEEF] uppercase tracking-wide mb-4">
-              Bergabung dengan Promedia Group
+              Jadi Bagian dari Promedia Group
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
               Pilih Program Anda

@@ -5,9 +5,10 @@ import { Share2, MessageSquare, TrendingUp } from 'lucide-react'
 
 const responsibilities = [
   {
-    id: 'distribusi',
-    title: 'Distribusi Konten',
-    description: 'Menyebarkan konten ke berbagai platform media sosial untuk mencapai audiens yang lebih luas',
+    id: 'web',
+    title: 'Web Profesionalmu Sendiri. Gratis.',
+    description:
+      'Tambah aset digitalmu. Jangan stop di media sosial saja. Bangun brand profesionalmu di sini.',
     icon: Share2,
     color: 'from-[#00AEEF] to-[#2D74B3]',
     animation: {
@@ -16,9 +17,10 @@ const responsibilities = [
     },
   },
   {
-    id: 'community',
-    title: 'Manajemen Komunitas',
-    description: 'Mengelola dan berinteraksi dengan komunitas untuk membangun engagement yang kuat',
+    id: 'marketing',
+    title: 'Marketing Support ke Brand Nasional',
+    description:
+      'Kamu fokus ke konten. Kami bantu buka peluang monetisasi ke brand lokal hingga nasional.',
     icon: MessageSquare,
     color: 'from-[#2D74B3] to-[#00AEEF]',
     animation: {
@@ -27,9 +29,10 @@ const responsibilities = [
     },
   },
   {
-    id: 'traffic',
-    title: 'Peningkat Trafik',
-    description: 'Meningkatkan traffic website melalui strategi optimasi media sosial yang efektif',
+    id: 'workshop',
+    title: 'Workshop dan Pelatihan Gratis',
+    description:
+      'Sudah profesional atau baru memulai? Siapapun itu, kami support pendampingan hingga pelatihan gratis, kami ingin semua tumbuh bersama.',
     icon: TrendingUp,
     color: 'from-[#00AEEF] to-[#2D74B3]',
     animation: {
@@ -52,10 +55,14 @@ export default function KeyResponsibilities() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Tanggung Jawab Utama
+            Apa Itu Influencer Media Network?
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Tugas utama sebagai Socmed Specialist di ekosistem Promedia
+            Inkubator strategis untuk mentransformasi kreativitas Anda menjadi kekuatan media yang
+            profesional. Bersama <strong>Promedia</strong>, kami membantu{' '}
+            <strong>membangun</strong> sekaligus <strong>memasarkan brand media Anda</strong>,
+            memastikan karya Anda tidak hanya viral sesaat, tapi memiliki nilai bisnis yang
+            berkelanjutan. Apa yang Anda Dapat — setelah bergabung, Anda akan mendapatkan:
           </p>
         </motion.div>
 

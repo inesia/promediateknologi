@@ -33,7 +33,8 @@ export default function MediapreneurHero() {
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-              Program untuk jurnalis hingga penulis berpengalaman. Bangun, kelola, dan monetisasi portal media Anda sendiri. Wujudkan visi mediamu dengan dukungan teknologi Promedia. Gratis.
+              Bangun dan kembangkan mediamu sendiri tanpa pusing biaya IT hingga marketing. Jadilah
+              bagian ekosistem media terbesar di Indonesia.
             </p>
 
             {/* CTA Button */}
@@ -47,7 +48,7 @@ export default function MediapreneurHero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Daftar Publisher Media Network</span>
+                <span>Daftar</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.div>
             </a>

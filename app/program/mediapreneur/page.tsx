@@ -7,12 +7,15 @@ import BenefitsGrid from '@/components/program/mediapreneur/BenefitsGrid'
 import FlowPendaftaran from '@/components/program/mediapreneur/FlowPendaftaran'
 
 export const metadata: Metadata = {
-  title: 'Publisher Media Network - Own Your Media Empire | Promedia Teknologi',
-  description: 'Program kepemilikan media bagi jurnalis profesional. Bangun, kelola, dan monetisasi portal berita Anda sendiri dengan dukungan teknologi Promedia.',
-  keywords: 'publisher media network, program media, kepemilikan media, jurnalis profesional, portal berita, promedia teknologi',
+  title: 'Publisher Media Network | Promedia Teknologi',
+  description:
+    'Bangun dan kembangkan mediamu sendiri tanpa pusing biaya IT hingga marketing. Jadilah bagian ekosistem media terbesar di Indonesia.',
+  keywords:
+    'publisher media network, program media, kepemilikan media, jurnalis profesional, portal berita, promedia teknologi',
   openGraph: {
-    title: 'Publisher Media Network - Own Your Media Empire',
-    description: 'Program kepemilikan media bagi jurnalis profesional dengan dukungan teknologi Promedia',
+    title: 'Publisher Media Network | Promedia Teknologi',
+    description:
+      'Bangun bisnis media Anda sendiri bersama Publisher Media Network dan ekosistem Promedia.',
     type: 'website',
   },
 }
