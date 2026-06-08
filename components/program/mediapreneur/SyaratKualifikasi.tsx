@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, ShieldCheck, Users } from 'lucide-react'
+import { Briefcase, Users } from 'lucide-react'
 
 const requirements = [
   {
@@ -18,22 +18,6 @@ const requirements = [
     description:
       'Pemilik dan pengelola media online yang sudah berjalan, namun tidak ingin lagi dipusingkan dengan biaya IT development, maintenance & security.',
     icon: Briefcase,
-    color: 'from-[#2D74B3] to-[#00AEEF]',
-  },
-  {
-    id: 'identitas',
-    title: '1.',
-    description:
-      'Tim kreator dan jurnalis yang ingin memulai bisnis media independennya sendiri.',
-    icon: ShieldCheck,
-    color: 'from-[#00AEEF] to-[#2D74B3]',
-  },
-  {
-    id: 'pengalaman',
-    title: '2.',
-    description:
-      'Pemilik dan pengelola media online yang sudah berjalan, namun tidak ingin lagi dipusingkan dengan biaya IT development, maintenance & security.',
-    icon: Users,
     color: 'from-[#2D74B3] to-[#00AEEF]',
   },
 ]
@@ -62,7 +46,7 @@ export default function SyaratKualifikasi() {
         </motion.div>
 
         {/* Interactive Cards Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
           {requirements.map((req, index) => {
             const Icon = req.icon
             return (

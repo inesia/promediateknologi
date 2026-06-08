@@ -122,10 +122,7 @@ export default function ProgramApply() {
           </a>
 
           <p className="mt-4 text-center text-xs text-slate-400">
-            Disediakan via Fillout
-            {slug !== 'mediapreneur' && (
-              <> · sementara menggunakan formulir Publisher Media Network hingga URL program ini tersedia</>
-            )}
+            Formulir dibuka di tab baru
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center text-center">

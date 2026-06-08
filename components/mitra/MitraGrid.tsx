@@ -1,70 +1,85 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MitraCard from './MitraCard'
 import MitraSkeleton from './MitraSkeleton'
 
-// Mock data - replace with actual API call
-import { scrapedMitraData } from './mitraData'
-
-// Initial data
-const mockMitraData = scrapedMitraData;
-
 interface Mitra {
-  id: number
+  id: string
   name: string
-  category: string
   logo: string
+  url?: string
 }
 
 interface MitraGridProps {
   searchQuery: string
   activeCategory: string
+  activeProvince: string
 }
 
-export default function MitraGrid({ searchQuery, activeCategory }: MitraGridProps) {
+export default function MitraGrid({
+  searchQuery,
+  activeCategory,
+  activeProvince,
+}: MitraGridProps) {
   const [mitraData, setMitraData] = useState<Mitra[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [displayCount, setDisplayCount] = useState(12)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+  const [page, setPage] = useState(1)
+  const [hasMore, setHasMore] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  // Simulate loading
-  // Use static data
+  const fetchMitra = useCallback(
+    async (pageNum: number, replace: boolean) => {
+      if (replace) {
+        setIsLoading(true)
+        setError(null)
+      } else {
+        setIsLoadingMore(true)
+      }
+
+      try {
+        const params = new URLSearchParams({
+          kategori: activeCategory,
+          daerah: activeProvince,
+          page: String(pageNum),
+        })
+
+        if (searchQuery.trim()) {
+          params.set('pencarian', searchQuery.trim())
+        }
+
+        const res = await fetch(`/api/mitra?${params.toString()}`)
+        const json = await res.json()
+
+        if (!res.ok) {
+          throw new Error(json.error || 'Gagal memuat data mitra')
+        }
+
+        const items: Mitra[] = json.data ?? []
+        setMitraData((prev) => (replace ? items : [...prev, ...items]))
+        setHasMore(Boolean(json.hasMore))
+        setPage(pageNum)
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Gagal memuat data mitra'
+        setError(message)
+        if (replace) setMitraData([])
+      } finally {
+        setIsLoading(false)
+        setIsLoadingMore(false)
+      }
+    },
+    [activeCategory, activeProvince, searchQuery]
+  )
+
   useEffect(() => {
-    setIsLoading(true)
-    // Small delay to show skeleton and allow smooth transition
-    const timer = setTimeout(() => {
-      setMitraData(mockMitraData)
-      setIsLoading(false)
-    }, 500)
-    
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Filter and search
-  const filteredMitra = useMemo(() => {
-    let filtered = [...mitraData]
-
-    // Filter by category
-    if (activeCategory !== 'all') {
-      filtered = filtered.filter((mitra) => mitra.category === activeCategory)
-    }
-
-    // Filter by search query
-    if (searchQuery.trim()) {
-      filtered = filtered.filter((mitra) =>
-        mitra.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    }
-
-    return filtered
-  }, [mitraData, activeCategory, searchQuery])
-
-  const displayedMitra = filteredMitra.slice(0, displayCount)
-  const hasMore = displayCount < filteredMitra.length
+    fetchMitra(1, true)
+  }, [fetchMitra])
 
   const handleLoadMore = () => {
-    setDisplayCount((prev) => prev + 12)
+    if (!hasMore || isLoadingMore) return
+    fetchMitra(page + 1, false)
   }
 
   if (isLoading) {
@@ -84,29 +99,37 @@ export default function MitraGrid({ searchQuery, activeCategory }: MitraGridProp
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Results count */}
-        {filteredMitra.length > 0 && (
+        {error && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center text-red-600 mb-8"
+          >
+            {error}
+          </motion.p>
+        )}
+
+        {mitraData.length > 0 && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-slate-600 mb-8 text-center"
           >
-            Menampilkan {displayedMitra.length} dari {filteredMitra.length} mitra media
+            Menampilkan {mitraData.length} mitra media
+            {hasMore ? ' (muat lebih banyak untuk melihat lainnya)' : ''}
           </motion.p>
         )}
 
-        {/* Grid */}
-        {displayedMitra.length > 0 ? (
+        {mitraData.length > 0 ? (
           <>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6">
               <AnimatePresence mode="wait">
-                {displayedMitra.map((mitra, index) => (
+                {mitraData.map((mitra, index) => (
                   <MitraCard key={mitra.id} mitra={mitra} index={index} />
                 ))}
               </AnimatePresence>
             </div>
 
-            {/* Load More Button */}
             {hasMore && (
               <motion.div
                 className="mt-12 flex justify-center"
@@ -116,11 +139,12 @@ export default function MitraGrid({ searchQuery, activeCategory }: MitraGridProp
               >
                 <motion.button
                   onClick={handleLoadMore}
-                  className="px-8 py-3 bg-white border-2 border-[#00AEEF]/30 text-[#00AEEF] font-semibold rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  disabled={isLoadingMore}
+                  className="px-8 py-3 bg-white border-2 border-[#00AEEF]/30 text-[#00AEEF] font-semibold rounded-xl hover:border-[#00AEEF] hover:bg-[#00AEEF]/5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                  whileHover={{ scale: isLoadingMore ? 1 : 1.05 }}
+                  whileTap={{ scale: isLoadingMore ? 1 : 0.95 }}
                 >
-                  Muat Lebih Banyak
+                  {isLoadingMore ? 'Memuat...' : 'Muat Lebih Banyak'}
                 </motion.button>
               </motion.div>
             )}
@@ -131,11 +155,9 @@ export default function MitraGrid({ searchQuery, activeCategory }: MitraGridProp
             animate={{ opacity: 1, y: 0 }}
             className="text-center py-20"
           >
-            <p className="text-xl text-slate-600 mb-4">
-              Tidak ada mitra yang ditemukan
-            </p>
+            <p className="text-xl text-slate-600 mb-4">Tidak ada mitra yang ditemukan</p>
             <p className="text-slate-500">
-              Coba ubah filter atau kata kunci pencarian Anda
+              Coba ubah filter provinsi, kategori, atau kata kunci pencarian Anda
             </p>
           </motion.div>
         )}

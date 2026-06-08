@@ -1,22 +1,20 @@
 /** Nama tampilan program (slug tetap mediapreneur) */
 export const PUBLISHER_MEDIA_NETWORK = 'Publisher Media Network'
 
-/** Formulir resmi Publisher Media Network — https://forms.fillout.com/t/18DvaYMThNus */
-export const MEDIAPRENEUR_FORM_URL = 'https://forms.fillout.com/t/18DvaYMThNus'
+/** Formulir resmi Publisher Media Network */
+export const MEDIAPRENEUR_FORM_URL = 'https://go.promediateknologi.id/DaftarMitraMedia'
 
 /** @deprecated Gunakan getPartnerFormUrl(slug) */
 export const PARTNER_FORM_URL = MEDIAPRENEUR_FORM_URL
 
 export type ProgramSlug = 'mediapreneur' | 'contentpreneur' | 'socmedpreneur'
 
-/**
- * URL formulir pendaftaran per program.
- * Contentpreneur & Influencer Media Network: sementara sama (ganti saat URL final tersedia).
- */
+/** URL formulir pendaftaran per program */
 export const PROGRAM_FORM_URLS: Record<ProgramSlug, string> = {
   mediapreneur: MEDIAPRENEUR_FORM_URL,
-  contentpreneur: MEDIAPRENEUR_FORM_URL, // TODO: ganti URL formulir Contentpreneur
-  socmedpreneur: MEDIAPRENEUR_FORM_URL, // TODO: ganti URL formulir Influencer Media Network
+  contentpreneur:
+    'https://docs.google.com/forms/d/e/1FAIpQLSd7kWx6HPRvujy8noEPaVaQE6IV6SoQBwpYUUStlt_scTX9bQ/viewform',
+  socmedpreneur: 'https://go.promediateknologi.id/VoxProCreators',
 }
 
 export interface ProgramRegistration {
@@ -53,6 +51,22 @@ export const PROGRAMS: ProgramRegistration[] = [
       'Pendaftaran kemitraan gratis. Laporkan permintaan biaya ke WhatsApp 0811 2007 667 (text only).',
   },
   {
+    slug: 'socmedpreneur',
+    title: 'Influencer Media Network',
+    menuLabel: 'Influencer Media Network',
+    tagline: 'Tidak hanya jadi kreator, tapi pemengaruh',
+    description:
+      'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
+    programHref: '/program/socmedpreneur',
+    ctaLabel: 'Daftar Influencer Media Network',
+    forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
+    beforeApply: [
+      'Siapkan contoh konten sosial dengan performa terbaik.',
+      'Siap menjelaskan platform yang dikelola dan niche audiens.',
+      'Ikuti @promediaecosystem untuk pengumuman program.',
+    ],
+  },
+  {
     slug: 'contentpreneur',
     title: 'Contentpreneur',
     menuLabel: 'Content Creator For Publisher',
@@ -69,25 +83,7 @@ export const PROGRAMS: ProgramRegistration[] = [
       'Ikuti pelatihan terpusat sebelum penempatan ke media mitra yang direkomendasikan.',
     ],
     applyNote:
-      'Pelamar jalur media mengikuti halaman karir masing-masing mitra. Formulir online sementara mengarah ke Form Daftar Publisher Media Network hingga URL Contentpreneur tersedia.',
-  },
-  {
-    slug: 'socmedpreneur',
-    title: 'Influencer Media Network',
-    menuLabel: 'Influencer Media Network',
-    tagline: 'Tidak hanya jadi kreator, tapi pemengaruh',
-    description:
-      'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
-    programHref: '/program/socmedpreneur',
-    ctaLabel: 'Daftar Influencer Media Network',
-    forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
-    beforeApply: [
-      'Siapkan contoh konten sosial dengan performa terbaik.',
-      'Siap menjelaskan platform yang dikelola dan niche audiens.',
-      'Ikuti @promediaecosystem untuk pengumuman program.',
-    ],
-    applyNote:
-      'Formulir online sementara mengarah ke Form Daftar Publisher Media Network hingga URL Influencer Media Network tersedia.',
+      'Pelamar jalur media mengikuti halaman karir masing-masing mitra. Untuk jalur Promedia Group, gunakan formulir pendaftaran resmi.',
   },
 ]
 

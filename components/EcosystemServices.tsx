@@ -502,18 +502,18 @@ export default function EcosystemServices() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
-  const visuals = [
-    <CMSDashboardMockup key="mediapreneur" />,
-    <DigitalPenIllustration key="contentpreneur" />,
-    <SocialMediaVisualization key="socmedpreneur" />,
-  ]
+  const visualsBySlug = {
+    mediapreneur: <CMSDashboardMockup key="mediapreneur" />,
+    contentpreneur: <DigitalPenIllustration key="contentpreneur" />,
+    socmedpreneur: <SocialMediaVisualization key="socmedpreneur" />,
+  }
 
   const features = homePrograms.items.map((item, index) => ({
     title: item.title,
     description: item.description,
     linkHref: item.linkHref,
     linkText: item.linkLabel,
-    visual: visuals[index],
+    visual: visualsBySlug[item.slug],
     reverse: item.reverse,
   }))
 

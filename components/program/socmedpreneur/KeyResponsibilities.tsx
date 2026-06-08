@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Share2, MessageSquare, TrendingUp } from 'lucide-react'
 
 const responsibilities = [
@@ -32,7 +33,7 @@ const responsibilities = [
     id: 'workshop',
     title: 'Workshop dan Pelatihan Gratis',
     description:
-      'Sudah profesional atau baru memulai? Siapapun itu, kami support pendampingan hingga pelatihan gratis, kami ingin semua tumbuh bersama.',
+      'Sudah profesional atau baru memulai? Siapapun itu, kami support pendampingan hingga pelatihan gratis. Kami ingin semua tumbuh bersama.',
     icon: TrendingUp,
     color: 'from-[#00AEEF] to-[#2D74B3]',
     animation: {
@@ -46,23 +47,41 @@ export default function KeyResponsibilities() {
   return (
     <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* VoxPro Branding */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
+          className="text-center mb-12 lg:mb-16"
+        >
+          <p className="text-lg sm:text-xl font-bold text-[#001A2C] mb-6">
+            Influencer Media Network adalah bagian dari:
+          </p>
+          <div className="flex justify-center">
+            <Image
+              src="/images/Voxpro5.png"
+              alt="VoxPro by Promedia Group"
+              width={200}
+              height={67}
+              className="w-[200px] h-auto object-contain"
+            />
+          </div>
+        </motion.div>
+
+        {/* Apa yang Anda Dapat */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.1 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            Apa Itu Influencer Media Network?
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-4">
+            Apa yang Anda Dapat
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Inkubator strategis untuk mentransformasi kreativitas Anda menjadi kekuatan media yang
-            profesional. Bersama <strong>Promedia</strong>, kami membantu{' '}
-            <strong>membangun</strong> sekaligus <strong>memasarkan brand media Anda</strong>,
-            memastikan karya Anda tidak hanya viral sesaat, tapi memiliki nilai bisnis yang
-            berkelanjutan. Apa yang Anda Dapat — setelah bergabung, Anda akan mendapatkan:
+            Setelah bergabung, Anda akan mendapatkan:
           </p>
         </motion.div>
 

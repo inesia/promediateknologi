@@ -65,10 +65,10 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-slate-100 lg:backdrop-blur-md ${
         isScrolled
-          ? "bg-white/70 border-b border-slate-100"
-          : "bg-white/60 border-b border-transparent"
+          ? "lg:bg-white/70 lg:border-slate-100"
+          : "lg:bg-white/60 lg:border-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,7 +194,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-slate-100 py-4 overflow-hidden"
+              className="lg:hidden border-t border-slate-100 bg-white py-4 overflow-hidden"
             >
               <div className="flex flex-col space-y-2">
                 {navItems.map((item) => (

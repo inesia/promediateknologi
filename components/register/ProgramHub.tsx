@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Newspaper, PenTool, Share2 } from 'lucide-react'
-import { PROGRAMS } from '@/lib/programRegistration'
+import { PROGRAMS, getPartnerFormUrl } from '@/lib/programRegistration'
 import type { ProgramSlug } from '@/lib/programRegistration'
 
 const iconBySlug: Record<ProgramSlug, typeof Newspaper> = {
@@ -90,6 +90,15 @@ export default function ProgramHub() {
                       Pelajari Program
                       <ArrowRight className="w-4 h-4" />
                     </Link>
+                    <a
+                      href={getPartnerFormUrl(program.slug)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 mt-2 bg-white text-[#00AEEF] border-2 border-[#00AEEF] text-sm font-bold rounded-xl hover:bg-[#00AEEF]/5 transition-colors"
+                    >
+                      Daftar
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </motion.article>
               )
@@ -98,7 +107,7 @@ export default function ProgramHub() {
 
           <p className="mt-12 text-center text-sm text-slate-500 max-w-xl mx-auto">
             Langkah 1: pilih program · Langkah 2: baca persyaratan di halaman program · Langkah 3:
-            daftar lewat tombol di halaman program
+            daftar lewat tombol Daftar
           </p>
         </div>
       </section>

@@ -3,7 +3,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SocmedpreneurHero from '@/components/program/socmedpreneur/SocmedpreneurHero'
 import KeyResponsibilities from '@/components/program/socmedpreneur/KeyResponsibilities'
-import PlatformFocus from '@/components/program/socmedpreneur/PlatformFocus'
 import CTASection from '@/components/program/socmedpreneur/CTASection'
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default function SocmedpreneurPage() {
       <article>
         <SocmedpreneurHero />
         <KeyResponsibilities />
-        <PlatformFocus />
         <CTASection />
       </article>
       <Footer />

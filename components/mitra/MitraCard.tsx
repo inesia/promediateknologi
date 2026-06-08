@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 interface Mitra {
-  id: number
+  id: string | number
   name: string
-  category: string
   logo: string
+  url?: string
 }
 
 interface MitraCardProps {
@@ -17,7 +17,6 @@ interface MitraCardProps {
 }
 
 export default function MitraCard({ mitra, index }: MitraCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
   const [imageError, setImageError] = useState(false)
 
   return (
@@ -26,8 +25,6 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3, delay: index * 0.03 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="group relative"
     >
       <div className="relative aspect-square bg-white border border-slate-200 rounded-xl p-4 lg:p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
@@ -38,9 +35,7 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
               src={mitra.logo}
               alt={mitra.name}
               fill
-              className={`object-contain transition-all duration-500 p-4 ${
-                isHovered ? 'grayscale-0 scale-110 brightness-110' : 'grayscale'
-              }`}
+              className="object-contain transition-all duration-500 p-4 group-hover:scale-110"
               onError={() => setImageError(true)}
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
               unoptimized // Added to allow external images without configuring every domain if needed for initial testing, though remotePatterns is set.

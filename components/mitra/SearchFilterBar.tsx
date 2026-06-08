@@ -1,57 +1,50 @@
 'use client'
 
-import { useState } from 'react'
-import { Search } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Search, MapPin, Tag, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
-
-const categories = [
-  { id: 'all', label: 'Semua' },
-  { id: 'nasional', label: 'Nasional' },
-  { id: 'regional', label: 'Regional' },
-  { id: 'ekonomi', label: 'Ekonomi & Bisnis' },
-  { id: 'energi', label: 'Energi & Lingkungan' },
-  { id: 'agrobisnis', label: 'Agrobisnis' },
-  { id: 'otomotif', label: 'Otomotif' },
-  { id: 'teknologi', label: 'Teknologi' },
-  { id: 'sains', label: 'Sains & Pengetahuan' },
-  { id: 'pendidikan', label: 'Pendidikan' },
-  { id: 'kesehatan', label: 'Kesehatan' },
-  { id: 'agama', label: 'Agama' },
-  { id: 'lifestyle', label: 'Lifestyle' },
-  { id: 'kuliner', label: 'Kuliner' },
-  { id: 'wisata', label: 'Wisata' },
-  { id: 'hiburan', label: 'Seni & Hiburan' },
-]
+import { MITRA_CATEGORIES, MITRA_PROVINCES } from '@/lib/mitraFilters'
 
 interface SearchFilterBarProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
+  onProvinceChange: (province: string) => void
   activeCategory: string
+  activeProvince: string
 }
 
 export default function SearchFilterBar({
   onSearchChange,
   onCategoryChange,
+  onProvinceChange,
   activeCategory,
+  activeProvince,
 }: SearchFilterBarProps) {
   const [searchQuery, setSearchQuery] = useState('')
+  const isFirstRender = useRef(true)
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setSearchQuery(value)
-    onSearchChange(value)
-  }
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    const timer = setTimeout(() => {
+      onSearchChange(searchQuery)
+    }, 400)
+
+    return () => clearTimeout(timer)
+  }, [searchQuery, onSearchChange])
 
   return (
-    <section className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 py-6">
+    <section className="bg-white border-b border-slate-100 py-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Search Bar */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative mb-6"
+            className="relative mb-5"
           >
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -59,37 +52,67 @@ export default function SearchFilterBar({
                 type="text"
                 placeholder="Cari media mitra..."
                 value={searchQuery}
-                onChange={handleSearchChange}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 placeholder-slate-400"
               />
             </div>
           </motion.div>
 
-          {/* Filter Categories */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-wrap items-center gap-3"
+            className="flex flex-col md:flex-row gap-4 md:gap-6"
           >
-            {categories.map((category, index) => (
-              <motion.button
-                key={category.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                onClick={() => onCategoryChange(category.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-[#00AEEF] text-white shadow-lg shadow-[#00AEEF]/25'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <div className="min-w-0 flex-1">
+              <label
+                htmlFor="mitra-province-filter"
+                className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wide mb-2"
               >
-                {category.label}
-              </motion.button>
-            ))}
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
+                Provinsi
+              </label>
+              <div className="relative">
+                <select
+                  id="mitra-province-filter"
+                  value={activeProvince}
+                  onChange={(e) => onProvinceChange(e.target.value)}
+                  className="w-full px-4 py-3 pr-10 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 appearance-none cursor-pointer truncate"
+                >
+                  {MITRA_PROVINCES.map((province) => (
+                    <option key={province.id} value={province.id}>
+                      {province.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+              </div>
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <label
+                htmlFor="mitra-category-filter"
+                className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wide mb-2"
+              >
+                <Tag className="w-3.5 h-3.5 shrink-0" />
+                Kategori
+              </label>
+              <div className="relative">
+                <select
+                  id="mitra-category-filter"
+                  value={activeCategory}
+                  onChange={(e) => onCategoryChange(e.target.value)}
+                  className="w-full px-4 py-3 pr-10 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 appearance-none cursor-pointer truncate"
+                >
+                  {MITRA_CATEGORIES.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -22,7 +22,7 @@ function PartnerLogo({
 }) {
   return (
     <motion.div
-      className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 ${className ?? ''}`}
+      className={`flex items-center justify-center transition-all duration-300 ${className ?? ''}`}
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}

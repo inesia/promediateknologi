@@ -35,20 +35,20 @@ export const homePrograms = {
       reverse: false,
     },
     {
-      slug: 'contentpreneur' as const,
-      title: 'Contentpreneur',
-      description:
-        'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-      linkHref: '/program/contentpreneur',
-      linkLabel: 'Pelajari Selengkapnya',
-      reverse: true,
-    },
-    {
       slug: 'socmedpreneur' as const,
       title: 'Influencer Media Network',
       description:
         'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
       linkHref: '/program/socmedpreneur',
+      linkLabel: 'Pelajari Selengkapnya',
+      reverse: true,
+    },
+    {
+      slug: 'contentpreneur' as const,
+      title: 'Contentpreneur',
+      description:
+        'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
+      linkHref: '/program/contentpreneur',
       linkLabel: 'Pelajari Selengkapnya',
       reverse: false,
     },

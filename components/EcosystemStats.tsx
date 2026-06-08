@@ -212,7 +212,7 @@ export default function EcosystemStats() {
                             </span>
                           </div>
                           <div
-                            className={`pt-3 grid gap-2 sm:gap-3 ${hasViews ? 'grid-cols-2' : 'grid-cols-1'}`}
+                            className={`pt-3 grid gap-2 sm:gap-3 ${hasViews ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}
                           >
                             <div>
                               <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5 sm:mb-1">
