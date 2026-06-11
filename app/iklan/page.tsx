@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AdHero from '@/components/iklan/AdHero'
 import ProductCatalog from '@/components/iklan/ProductCatalog'
-import BannerCalculatorSection from '@/components/iklan/BannerCalculatorSection'
+// import BannerCalculatorSection from '@/components/iklan/BannerCalculatorSection'
 import ClientsSuccessSection from '@/components/iklan/ClientsSuccessSection'
 import CTASection from '@/components/iklan/CTASection'
 
@@ -13,7 +13,7 @@ export default function IklanPage() {
       <article>
         <AdHero />
         <ProductCatalog />
-        <BannerCalculatorSection />
+        {/* <BannerCalculatorSection /> */}
         <ClientsSuccessSection />
         <CTASection />
       </article>

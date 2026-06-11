@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     'Jelajahi Publisher Media Network, Contentpreneur, dan Influencer Media Network. Pilih program, pelajari persyaratan, lalu daftar.',
 }
 
+export const dynamic = 'force-dynamic'
+
 type PageProps = {
   searchParams?: { role?: string; program?: string }
 }

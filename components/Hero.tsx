@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-20 lg:pt-24 pb-16 md:pb-24 lg:pb-32"
+      className="relative min-h-[85vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-20 md:pt-24 lg:pt-24 pb-8 md:pb-20 lg:pb-32"
     >
       <HeroEcosystemBackground />
 
@@ -24,7 +24,7 @@ export default function Hero() {
           <motion.div
             {...blurIn}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="inline-flex items-center justify-center mb-4 md:mb-6 lg:mb-8"
+            className="inline-flex items-center justify-center mb-3 md:mb-6 lg:mb-8"
           >
             <div className="px-3 py-1.5 md:px-4 md:py-2 bg-[#00AEEF]/5 border border-[#00AEEF]/20 rounded-full backdrop-blur-sm">
               <span className="text-[10px] md:text-xs font-semibold text-[#00AEEF] tracking-wide uppercase">
@@ -36,11 +36,11 @@ export default function Hero() {
           <motion.h1
             {...blurIn}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-[#001A2C] mb-4 md:mb-6 lg:mb-8 leading-[1.15] md:leading-[1.1] px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-[#001A2C] mb-3 md:mb-6 lg:mb-8 leading-[1.25] md:leading-[1.2] px-2 pb-1"
             style={{ letterSpacing: '-0.03em' }}
           >
             {homeHero.headlineLine1}{' '}
-            <span className="bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent block md:inline">
+            <span className="bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF] bg-clip-text text-transparent inline-block">
               {homeHero.headlineLine2}
             </span>
           </motion.h1>
@@ -48,9 +48,9 @@ export default function Hero() {
           <motion.div
             {...blurIn}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mb-6 md:mb-8 lg:mb-12 px-2"
+            className="mb-5 md:mb-8 lg:mb-12 px-2"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#64748b] max-w-2xl mx-auto leading-relaxed font-normal px-5 py-4 sm:px-6 sm:py-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-[#00AEEF]/15 shadow-sm shadow-slate-100/80">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#64748b] max-w-2xl mx-auto leading-relaxed font-normal px-4 py-3 sm:px-6 sm:py-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-[#00AEEF]/15 shadow-sm shadow-slate-100/80">
               {homeHero.subheadline}
             </p>
           </motion.div>

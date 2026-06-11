@@ -68,7 +68,7 @@ export default function ContactPage() {
               <p className="text-slate-500 text-sm">(Text Only)</p>
             </motion.div>
 
-            {/* Iklan Email */}
+            {/* Email */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,11 +79,14 @@ export default function ContactPage() {
               <div className="w-16 h-16 mx-auto bg-purple-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Mail className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-[#001A2C] mb-4">Iklan & Kerjasama</h3>
-              <a href="mailto:iklan@promedia.co.id" className="text-lg font-semibold text-purple-600 hover:underline">
-                iklan@promedia.co.id
+              <h3 className="text-xl font-bold text-[#001A2C] mb-4">Email</h3>
+              <a
+                href="mailto:marcomm@promediateknologi.id"
+                className="text-lg font-semibold text-purple-600 hover:underline"
+              >
+                marcomm@promediateknologi.id
               </a>
-               <p className="text-slate-500 text-sm mt-1">Konsultasi Publikasi</p>
+              <p className="text-slate-500 text-sm mt-1">Pertanyaan & Kolaborasi</p>
             </motion.div>
           </div>
 

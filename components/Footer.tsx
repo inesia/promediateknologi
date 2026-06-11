@@ -5,17 +5,28 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const footerLinks = {
+type FooterLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+const footerLinks: {
+  product: FooterLink[]
+  company: FooterLink[]
+  support: FooterLink[]
+  legal: FooterLink[]
+} = {
   product: [
     { label: 'Publisher Media Network', href: '/program/mediapreneur' },
+    { label: 'Influencer Media Network', href: '/program/socmedpreneur' },
     { label: 'Contentpreneur', href: '/program/contentpreneur' },
-    { label: 'Influencer Preneur', href: '/program/influencerpreneur' },
   ],
   company: [
     { label: 'Tentang Kami', href: '/about-us' },
     { label: 'Mitra', href: '/mitra' },
-    { label: 'Karir', href: '#' },
-    { label: 'Blog', href: '#' },
+    { label: 'Karir', href: '/karir' },
+    { label: 'Blog', href: 'https://news.promediateknologi.id/', external: true },
   ],
   support: [
     { label: 'Help Center', href: '#' },
@@ -27,6 +38,24 @@ const footerLinks = {
     { label: 'Terms of Service', href: '#' },
     { label: 'Cookie Policy', href: '#' },
   ],
+}
+
+function FooterLinkItem({ link }: { link: FooterLink }) {
+  const className = 'text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200'
+
+  if (link.external) {
+    return (
+      <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+        {link.label}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={link.href} className={className}>
+      {link.label}
+    </Link>
+  )
 }
 
 const socialLinks = [
@@ -52,12 +81,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.product.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    <FooterLinkItem link={link} />
                   </li>
                 ))}
               </ul>
@@ -71,12 +95,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    <FooterLinkItem link={link} />
                   </li>
                 ))}
               </ul>
@@ -90,12 +109,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    <FooterLinkItem link={link} />
                   </li>
                 ))}
               </ul>
@@ -109,12 +123,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    <FooterLinkItem link={link} />
                   </li>
                 ))}
               </ul>
