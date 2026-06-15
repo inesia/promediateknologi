@@ -13,6 +13,7 @@ export default async function Home() {
 
   const data = await getRecentNews()
   const clients = await getClient()
+  const networkLivePulse = await getNetworkLivePulse()
   return (
     <main className="min-h-screen bg-white">
       <Header />

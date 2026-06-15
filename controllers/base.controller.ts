@@ -1,4 +1,5 @@
 import clients from "@/lib/json/client.json"
+import { fetchWithPromediaAuth } from "@/lib/promedia-auth"
 
 export async function getDataHome() {
     try {
@@ -96,49 +97,6 @@ export async function getPageHome() {
     }
 }
 
-export async function getNetworkLivePulse() {
-    try {
-        // const source = await search({
-        //     index: "article",
-        //     from: 0,
-        //     size: 6,
-        //     _source: ["title", "site.id", "site.name", "site.url", "section.id", "section.name", "section.alias", "thumb_url", "photo_url", "published_by.name", "published_date", "url", "description"],
-        //     sort: {
-        //         id: {
-        //             order: "desc"
-        //         }
-        //     }
-        // })
-
-        const source = await fetch(`${process.env.NEXT_ES_HOST}/article/data/_search`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-                "Accept": "application/json",
-            },
-        })
-
-        if (!source.ok) {
-            console.warn(`getNetworkLivePulse failed: ${source.status} ${source.statusText}. Using fallback data.`)
-            return { hits: { hits: [] } } // Empty hits or mock data
-        }
-
-        const contentType = source.headers.get("content-type")
-        if (!contentType || !contentType.includes("application/json")) {
-            console.warn(`getNetworkLivePulse returned non-JSON response. Using fallback data.`)
-            return { hits: { hits: [] } }
-        }
-
-        const data = await source.json()
-        console.dir(data, { depth: null })
-        return data
-    } catch (error) {
-        console.error("getNetworkLivePulse error:", error)
-        return { hits: { hits: [] } }
-    }
-}
-
 export async function getClients({ category, region, search, page, limit }: { category: string, region: string, search: string, page: number, limit: number }) {
     try {
         let params = ''
@@ -183,4 +141,27 @@ export async function getRecentNews() {
 
 export async function getClient() {
     return clients
+}
+
+export async function getNetworkLivePulse() {
+    try {
+        const source = await fetchWithPromediaAuth(`${process.env.NEXT_BASE_URL_GO24}/article/latest/?page=1`, {
+            method: "GET",
+            headers: {
+                "Accept": "application/vnd.promedia+json; version=1.0",
+                "Content-Type": "application/json",
+            }
+        })
+        if (!source.ok) {
+            console.log(source)
+            console.warn(`getRecentNewsWithAuth failed: ${source.status} ${source.statusText}. Using fallback data.`)
+            return { "meta": { "code": 404, "status": false, "message": "Data tidak ditemukan" }, "data": [] }
+        }
+
+        const data = await source.json()
+        return data
+    } catch (error) {
+        console.error("getRecentNewsWithAuth error:", error)
+        return { "meta": { "code": 404, "status": false, "message": "Data tidak ditemukan" }, "data": [] }
+    }
 }
