@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
 export default function DalamAngkaCTA() {
   return (
@@ -21,13 +20,6 @@ export default function DalamAngkaCTA() {
             Promedia Ad Solutions.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/iklan"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#00AEEF] text-white font-semibold rounded-xl shadow-lg shadow-[#00AEEF]/20 hover:bg-[#0099d6] transition-colors"
-            >
-              Lihat Katalog Iklan
-              <ArrowRight className="w-4 h-4" />
-            </Link>
             <a
               href="https://wa.me/628112007667?text=Halo,%20saya%20ingin%20diskusi%20kampanye%20berdasarkan%20data%20Promedia%20Dalam%20Angka"
               target="_blank"

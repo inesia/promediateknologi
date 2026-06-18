@@ -21,7 +21,7 @@ export default function CTASection() {
           <p className="text-slate-600 text-lg mb-10">
             Bergabung dengan program Publisher Media Network dan akses infrastruktur Roweb untuk media Anda.
           </p>
-          <Link href="/program/mediapreneur">
+          <Link href="/program/publishermedianetwork">
             <motion.span
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white rounded-xl bg-[#00AEEF] hover:bg-[#009ad6] shadow-lg shadow-[#00AEEF]/30 transition-all duration-300"
               whileHover={{ scale: 1.03 }}

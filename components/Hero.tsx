@@ -61,13 +61,9 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 md:gap-4 lg:gap-6 px-4"
           >
             <Link href={homeHero.primaryCtaHref} className="w-full sm:w-auto">
-              <motion.div
-                className="btn-shimmer w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg font-semibold text-white rounded-xl shadow-xl shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 relative overflow-hidden cursor-pointer text-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">{homeHero.primaryCta}</span>
-              </motion.div>
+              <span className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg font-bold text-white bg-[#0077B6] rounded-xl shadow-lg shadow-[#0077B6]/40 hover:bg-[#005F92] transition-colors duration-200 cursor-pointer text-center">
+                {homeHero.primaryCta}
+              </span>
             </Link>
 
             <Link href={homeHero.secondaryCtaHref} className="w-full sm:w-auto">

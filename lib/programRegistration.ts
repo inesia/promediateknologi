@@ -38,7 +38,7 @@ export const PROGRAMS: ProgramRegistration[] = [
     tagline: 'Bangun dan monetisasi portal media Anda sendiri',
     description:
       'Untuk pemilik dan pengelola media online yang sudah berjalan hingga jurnalis & kreator yang ingin memulai bisnis media independennya sendiri. Dapatkan dukungan IT, Marketing, hingga pendampingan, gratis.',
-    programHref: '/program/mediapreneur',
+    programHref: '/program/publishermedianetwork',
     ctaLabel: 'Daftar Publisher Media Network',
     forWho: 'Pemilik media, pemimpin redaksi, dan tim editorial (min. 3 orang)',
     beforeApply: [
@@ -57,7 +57,7 @@ export const PROGRAMS: ProgramRegistration[] = [
     tagline: 'Tidak hanya jadi kreator, tapi pemengaruh',
     description:
       'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
-    programHref: '/program/socmedpreneur',
+    programHref: '/program/influencermedianetwork',
     ctaLabel: 'Daftar Influencer Media Network',
     forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
     beforeApply: [
@@ -93,8 +93,10 @@ export const PROGRAMS_BY_SLUG = Object.fromEntries(
 
 const SLUG_ALIASES: Record<string, ProgramSlug> = {
   mediapreneur: 'mediapreneur',
+  publishermedianetwork: 'mediapreneur',
   contentpreneur: 'contentpreneur',
   socmedpreneur: 'socmedpreneur',
+  influencermedianetwork: 'socmedpreneur',
   'influencer-media-network': 'socmedpreneur',
 }
 

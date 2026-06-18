@@ -82,7 +82,7 @@ export default function ClientTrustGrid() {
                 </>
               ) : (
                 <>
-                  Lihat semua mitra ({clientLogos.length})
+                  Load More
                   <ChevronDown className="w-4 h-4" />
                 </>
               )}

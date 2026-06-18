@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Server } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { homeHeader } from "@/lib/homeContent";
@@ -28,20 +28,18 @@ const navItems: NavItem[] = [
       { label: "Promedia Dalam Angka", href: "/dalam-angka" },
       { label: "Mitra Kami", href: "/mitra" },
       { label: "Lokasi", href: "/about-us#lokasi" },
-      { label: "Teknologi Kami", href: "/technology" },
     ],
   },
   {
     label: "Program",
     href: "#",
     submenu: [
-      { label: "Publisher Media Network", href: "/program/mediapreneur" },
-      { label: "Influencer Media Network", href: "/program/socmedpreneur" },
-      { label: "Content Creator For Publisher", href: "/program/contentpreneur" },
-      { label: "Gabung Program", href: "/register" },
+      { label: "Publisher Media Network", href: "/program/publishermedianetwork" },
+      { label: "Influencer Media Network", href: "/program/influencermedianetwork" },
+      { label: "Contentpreneur", href: "/program/contentpreneur" },
     ],
   },
-  { label: "Kontak & FAQ", href: "/kontak" },
+  { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Header() {
@@ -137,9 +135,6 @@ export default function Header() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: subIndex * 0.05 }}
                           >
-                            {subItem.label === "Teknologi Kami" && (
-                              <Server className="w-4 h-4 flex-shrink-0" />
-                            )}
                             {subItem.label}
                           </motion.span>
                         );
@@ -271,10 +266,6 @@ export default function Header() {
                                 className={mobileLinkClass}
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
-                                {subItem.label ===
-                                  "Teknologi Kami" && (
-                                  <Server className="w-4 h-4 flex-shrink-0" />
-                                )}
                                 {subItem.label}
                               </Link>
                             );

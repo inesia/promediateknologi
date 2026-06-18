@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function MediapreneurPage() {
+export default function PublisherMediaNetworkPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />

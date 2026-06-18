@@ -62,9 +62,9 @@ export default function KeyResponsibilities() {
             <Image
               src="/images/Voxpro5.png"
               alt="VoxPro by Promedia Group"
-              width={200}
-              height={67}
-              className="w-[200px] h-auto object-contain"
+              width={360}
+              height={120}
+              className="w-[280px] sm:w-[320px] lg:w-[360px] h-auto object-contain"
             />
           </div>
         </motion.div>

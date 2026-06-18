@@ -4,7 +4,6 @@ import Footer from '@/components/Footer'
 import AboutHero from '@/components/about-us/AboutHero'
 import PhilosophySection from '@/components/about-us/PhilosophySection'
 import FourPillarsGrid from '@/components/about-us/FourPillarsGrid'
-import PilarEkosistem from '@/components/about-us/PilarEkosistem'
 import OurPresence from '@/components/about-us/OurPresence'
 import FinalStatement from '@/components/about-us/FinalStatement'
 
@@ -27,7 +26,6 @@ export default function AboutUsPage() {
         <AboutHero />
         <PhilosophySection />
         <FourPillarsGrid />
-        <PilarEkosistem />
         <OurPresence />
         <FinalStatement />
       </article>

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
-import { voxproTiers } from '@/lib/dalamAngkaData'
+import { voxproTiers, VOXPRO_TOTAL_DISPLAY } from '@/lib/dalamAngkaData'
 import AnimatedCounter from './AnimatedCounter'
 
 export default function VoxproInfluencerSection() {
@@ -57,7 +57,7 @@ export default function VoxproInfluencerSection() {
           viewport={{ once: true }}
           className="mt-10 text-center text-xs text-slate-500"
         >
-          Total jaringan Voxpro: 1.500+ influencer aktif di ekosistem Promedia Group
+          Total jaringan Voxpro: {VOXPRO_TOTAL_DISPLAY} influencer aktif di ekosistem Promedia Group
         </motion.p>
       </div>
     </section>

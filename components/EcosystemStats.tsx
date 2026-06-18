@@ -1,31 +1,13 @@
 'use client'
 
-import { motion, useInView, useSpring, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import { ArrowRight, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
 import { homeDalamAngka } from '@/lib/homeContent'
 import { socialPlatformStats } from '@/lib/dalamAngkaData'
+import { formatCompactStat } from '@/lib/formatNumber'
 import { SocialBrandIcon } from '@/components/icons/SocialBrandIcons'
-
-function MediaCounter({ value }: { value: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const spring = useSpring(0, { duration: 2500, bounce: 0 })
-  const displayValue = useTransform(spring, (current) =>
-    Math.floor(current).toLocaleString('id-ID')
-  )
-
-  useEffect(() => {
-    if (isInView) spring.set(value)
-  }, [isInView, spring, value])
-
-  return (
-    <motion.span ref={ref} className="tabular-nums">
-      {displayValue}
-    </motion.span>
-  )
-}
 
 const platformVisuals: Record<
   string,
@@ -107,7 +89,6 @@ export default function EcosystemStats() {
               {homeDalamAngka.description}
             </p>
 
-            {/* Primary stats — 2 kolom */}
             <div className="mt-6 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-8 max-w-3xl mx-auto">
               <div className="text-center rounded-xl border border-slate-200 bg-white px-2 py-4 sm:px-6 sm:py-6">
                 <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2">
@@ -115,7 +96,7 @@ export default function EcosystemStats() {
                 </p>
                 <div className="flex flex-wrap items-baseline justify-center gap-1 sm:gap-2">
                   <span className="text-2xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] tabular-nums leading-none">
-                    <MediaCounter value={1154} />
+                    {formatCompactStat(primaryStats.mediaCount)}
                   </span>
                   <span className="text-sm sm:text-2xl font-bold text-[#00AEEF]">
                     {primaryStats.mediaSuffix}
@@ -128,10 +109,7 @@ export default function EcosystemStats() {
                 </p>
                 <div className="flex flex-wrap items-baseline justify-center gap-1 sm:gap-2">
                   <span className="text-2xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] leading-none">
-                    {primaryStats.viewsValue}
-                  </span>
-                  <span className="text-sm sm:text-2xl font-bold text-[#00AEEF]">
-                    {primaryStats.viewsSuffix}
+                    {formatCompactStat(primaryStats.viewsCount)}
                   </span>
                 </div>
                 <p className="text-[9px] sm:text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-snug">
@@ -141,13 +119,14 @@ export default function EcosystemStats() {
             </div>
           </div>
 
-          {/* Social platform grid */}
           <div className="px-3 sm:px-6 lg:px-10 pb-5 sm:pb-10">
             <div className="grid grid-cols-2 gap-2.5 sm:gap-4 max-w-4xl mx-auto">
               {socialPlatformStats.map((stat, index) => {
                 const visual = platformVisuals[stat.platform]
                 const isTwitter = stat.platform === TWITTER_PLATFORM
-                const hasViews = Boolean(stat.views)
+                const hasViews = stat.views !== null
+                const followersDisplay = formatCompactStat(stat.followers)
+                const viewsDisplay = stat.views !== null ? formatCompactStat(stat.views) : null
 
                 return (
                   <motion.div
@@ -187,7 +166,7 @@ export default function EcosystemStats() {
                             <p
                               className={`text-sm sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
                             >
-                              {stat.followers}
+                              {followersDisplay}
                             </p>
                           </div>
                         </div>
@@ -221,16 +200,16 @@ export default function EcosystemStats() {
                               <p
                                 className={`text-sm sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
                               >
-                                {stat.followers}
+                                {followersDisplay}
                               </p>
                             </div>
-                            {hasViews && (
+                            {viewsDisplay && (
                               <div>
                                 <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5 sm:mb-1">
                                   Views
                                 </p>
                                 <p className="text-sm sm:text-lg font-black text-[#001A2C] tabular-nums leading-tight">
-                                  {stat.views}
+                                  {viewsDisplay}
                                 </p>
                               </div>
                             )}
@@ -246,15 +225,11 @@ export default function EcosystemStats() {
 
           <div className="px-4 sm:px-8 lg:px-12 pb-5 sm:pb-10 lg:pb-12">
             <Link href={homeDalamAngka.ctaHref} className="block max-w-2xl mx-auto">
-              <motion.span
-                className="btn-shimmer flex items-center justify-center gap-2 sm:gap-3 w-full px-4 py-3 sm:px-6 sm:py-5 bg-[#00AEEF] text-white font-black text-xs sm:text-base rounded-xl shadow-lg shadow-[#00AEEF]/35 hover:bg-[#33c1ff] transition-colors relative overflow-hidden"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-              >
+              <span className="flex items-center justify-center gap-2 sm:gap-3 w-full px-4 py-3 sm:px-6 sm:py-5 bg-[#0077B6] text-white font-black text-xs sm:text-base rounded-xl shadow-lg shadow-[#0077B6]/35 hover:bg-[#005F92] transition-colors">
                 <BarChart3 className="w-5 h-5 shrink-0" />
                 {homeDalamAngka.cta}
                 <ArrowRight className="w-5 h-5 shrink-0" />
-              </motion.span>
+              </span>
             </Link>
             <p className="text-center text-xs sm:text-sm text-slate-500 mt-4">
               {homeDalamAngka.ctaFootnote}

@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Server, DollarSign, GraduationCap } from 'lucide-react'
-import Link from 'next/link'
 
 const benefits = [
   {
@@ -105,33 +104,22 @@ export default function BenefitsGrid() {
                       {benefit.description}
                     </p>
 
-                    {/* Tech spec link for Teknologi Server card */}
-                    {benefit.id === 'teknologi' && (
-                      <Link
-                        href="/technology"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/40 text-white/90 text-sm font-medium hover:bg-white/10 hover:border-white/60 transition-colors mb-4"
+                    {/* Hover Reveal - Revenue Estimate (skip teknologi card) */}
+                    {benefit.id !== 'teknologi' && benefit.revenue && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: isHovered ? 1 : 0,
+                          y: isHovered ? 0 : 20,
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="pt-6 border-t border-white/20"
                       >
-                        Lihat Spesifikasi Tech
-                      </Link>
-                    )}
-
-                    {/* Hover Reveal - Revenue Estimate */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{
-                        opacity: isHovered ? 1 : 0,
-                        y: isHovered ? 0 : 20,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="pt-6 border-t border-white/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="w-5 h-5 text-white" />
                         <span className="text-white font-semibold text-lg">
                           {benefit.revenue}
                         </span>
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    )}
                   </div>
 
                   {/* Background pattern */}

@@ -12,17 +12,17 @@ const pillars = [
     gradient: 'from-[#00AEEF] to-[#2D74B3]',
   },
   {
-    title: 'Contentpreneur',
-    description:
-      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-    icon: PenTool,
-    gradient: 'from-[#2D74B3] to-[#00AEEF]',
-  },
-  {
     title: 'Influencer Media Network',
     description:
       'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
     icon: Share2,
+    gradient: 'from-[#2D74B3] to-[#00AEEF]',
+  },
+  {
+    title: 'Contentpreneur',
+    description:
+      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
+    icon: PenTool,
     gradient: 'from-[#00AEEF] to-[#2D74B3]',
   },
 ]

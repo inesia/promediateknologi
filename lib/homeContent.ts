@@ -30,7 +30,7 @@ export const homePrograms = {
       title: 'Publisher Media Network',
       description:
         'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
-      linkHref: '/program/mediapreneur',
+      linkHref: '/program/publishermedianetwork',
       linkLabel: 'Pelajari Selengkapnya',
       reverse: false,
     },
@@ -39,7 +39,7 @@ export const homePrograms = {
       title: 'Influencer Media Network',
       description:
         'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
-      linkHref: '/program/socmedpreneur',
+      linkHref: '/program/influencermedianetwork',
       linkLabel: 'Pelajari Selengkapnya',
       reverse: true,
     },
@@ -64,19 +64,27 @@ export const homeDalamAngka = {
     'Ribuan media, miliaran views. Demografi audiens hingga jaringan influencer dalam satu halaman untuk campaign Anda',
   primaryStats: {
     mediaLabel: 'JUMLAH MEDIA',
-    mediaValue: '1.154',
+    mediaCount: 1154,
     mediaSuffix: 'Publisher',
     viewsLabel: 'TOTAL VIEWS',
-    viewsValue: '1',
-    viewsSuffix: 'Billion+',
-    viewsFootnote: '*1.366.125.327 views (Last 12 Month)',
+    viewsCount: 1_366_125_327,
+    viewsFootnote: '*1.3 Billion+ views (Last 12 Month)',
   },
   cta: 'Jelajahi Data Lengkap',
   ctaHref: '/dalam-angka',
   ctaFootnote: 'Gratis diakses - untuk brand, agency, dan pengiklan korporat',
 }
 
-/** Section Program Kemitraan Promedia (homepage, FinalCTA) */
+/** Section ajakan bergabung (homepage, FinalCTA) */
+export const homeJoinBanner = {
+  title: 'Ready to join the universe?',
+  description:
+    'Bergabunglah dengan ekosistem Promedia Teknologi dan jadilah bagian dari revolusi media digital Indonesia.',
+  cta: 'Daftar Sekarang',
+  ctaHref: '/register',
+}
+
+/** Section Program Kemitraan Promedia (legacy — register hub) */
 export const homePartnershipCta = {
   badge: 'Program Kemitraan Promedia',
   titlePrefix: 'Pilih',

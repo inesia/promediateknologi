@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function SocmedpreneurPage() {
+export default function InfluencerMediaNetworkPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />

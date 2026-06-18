@@ -6,8 +6,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { scrapedMitraData } from './mitra/mitraData'
 import { socialPartnerData } from '@/lib/socialPartnerData'
+import {
+  HOME_FEATURED_MEDIA_PARTNER_IDS,
+  HOME_FEATURED_SOCIAL_PARTNER_IDS,
+} from '@/lib/homePartnerConfig'
 
-const HOME_MEDIA_PARTNER_LIMIT = 16
 const HOME_PARTNER_MOBILE_LIMIT = 6
 
 function PartnerLogo({
@@ -60,8 +63,19 @@ function SectionViewAllLink({
   )
 }
 
+function getFeaturedPartners<T extends { id: number }>(
+  allPartners: T[],
+  featuredIds: number[]
+): T[] {
+  const byId = new Map(allPartners.map((p) => [p.id, p]))
+  return featuredIds
+    .map((id) => byId.get(id))
+    .filter((p): p is T => p !== undefined)
+}
+
 export default function LogoCloud() {
-  const mediaPartners = scrapedMitraData.slice(0, HOME_MEDIA_PARTNER_LIMIT)
+  const mediaPartners = getFeaturedPartners(scrapedMitraData, HOME_FEATURED_MEDIA_PARTNER_IDS)
+  const socialPartners = getFeaturedPartners(socialPartnerData, HOME_FEATURED_SOCIAL_PARTNER_IDS)
 
   return (
     <section className="relative py-20 lg:py-24 bg-white overflow-hidden">
@@ -81,59 +95,61 @@ export default function LogoCloud() {
           </p>
         </motion.div>
 
-        {/* Media Partners Section */}
-        <div className="mb-20">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-[#00AEEF] rounded-full shrink-0" aria-hidden />
-              Media Partners
-            </h3>
-            <div className="hidden md:block">
+        {mediaPartners.length > 0 && (
+          <div className="mb-20">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-[#00AEEF] rounded-full shrink-0" aria-hidden />
+                Media Partners
+              </h3>
+              <div className="hidden md:block">
+                <SectionViewAllLink href="/mitra" colorClass="text-[#00AEEF]" />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+              {mediaPartners.map((partner, index) => (
+                <PartnerLogo
+                  key={partner.id}
+                  name={partner.name}
+                  logo={partner.logo}
+                  index={index}
+                  className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
+                />
+              ))}
+            </div>
+            <div className="mt-6 flex justify-center md:hidden">
               <SectionViewAllLink href="/mitra" colorClass="text-[#00AEEF]" />
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
-            {mediaPartners.map((partner, index) => (
-              <PartnerLogo
-                key={partner.id}
-                name={partner.name}
-                logo={partner.logo}
-                index={index}
-                className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
-              />
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center md:hidden">
-            <SectionViewAllLink href="/mitra" colorClass="text-[#00AEEF]" />
-          </div>
-        </div>
+        )}
 
-        {/* Social Media Section */}
-        <div>
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-[#2D74B3] rounded-full shrink-0" aria-hidden />
-              Social Media & Influencer
-            </h3>
-            <div className="hidden md:block">
+        {socialPartners.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-[#2D74B3] rounded-full shrink-0" aria-hidden />
+                Social Media & Influencer
+              </h3>
+              <div className="hidden md:block">
+                <SectionViewAllLink href="/mitra?category=social" colorClass="text-[#2D74B3]" />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+              {socialPartners.map((partner, index) => (
+                <PartnerLogo
+                  key={partner.id}
+                  name={partner.name}
+                  logo={partner.logo}
+                  index={index}
+                  className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
+                />
+              ))}
+            </div>
+            <div className="mt-6 flex justify-center md:hidden">
               <SectionViewAllLink href="/mitra?category=social" colorClass="text-[#2D74B3]" />
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
-            {socialPartnerData.map((partner, index) => (
-              <PartnerLogo
-                key={partner.id}
-                name={partner.name}
-                logo={partner.logo}
-                index={index}
-                className={index >= HOME_PARTNER_MOBILE_LIMIT ? 'hidden md:flex' : undefined}
-              />
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center md:hidden">
-            <SectionViewAllLink href="/mitra?category=social" colorClass="text-[#2D74B3]" />
-          </div>
-        </div>
+        )}
       </div>
     </section>
   )

@@ -75,7 +75,7 @@ export default function LatestNews() {
             </p>
           </motion.div>
           
-          <Link href="/news" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-[#001A2C] hover:bg-slate-50 transition-all shadow-sm">
+          <Link href="https://www.go24jam.id/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-[#001A2C] hover:bg-slate-50 transition-all shadow-sm">
             Lihat Semua Berita <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

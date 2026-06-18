@@ -38,12 +38,14 @@ export default function MetricCard({ metric, index, variant = 'light' }: MetricC
         <Icon className="w-5 h-5" />
       </div>
       <p className={`text-3xl sm:text-4xl font-black leading-none mb-2 ${textPrimary}`}>
-        <AnimatedCounter
-          value={metric.value}
-          suffix={metric.suffix}
-          prefix={metric.prefix}
-          decimals={metric.decimals ?? 0}
-        />
+        {metric.display ?? (
+          <AnimatedCounter
+            value={metric.value}
+            suffix={metric.suffix}
+            prefix={metric.prefix}
+            decimals={metric.decimals ?? 0}
+          />
+        )}
       </p>
       <p className={`text-sm font-bold leading-snug mb-1 ${textPrimary}`}>{metric.label}</p>
       {metric.sublabel && (

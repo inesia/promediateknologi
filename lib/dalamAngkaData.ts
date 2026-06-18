@@ -9,6 +9,7 @@ import {
   MousePointerClick,
   Search,
 } from 'lucide-react'
+import { formatCompactStat } from '@/lib/formatNumber'
 
 export interface ScaleMetric {
   value: number
@@ -18,40 +19,41 @@ export interface ScaleMetric {
   sublabel?: string
   icon: LucideIcon
   decimals?: number
+  /** Tampilan statistik ringkas (override AnimatedCounter) */
+  display?: string
 }
-
 export const ecosystemScaleMetrics: ScaleMetric[] = [
   {
     value: 1200,
-    suffix: '+',
+    display: formatCompactStat(1200),
     label: 'Jaringan Media Digital',
     sublabel: 'Portal & publisher di ekosistem Promedia',
     icon: Globe,
   },
   {
     value: 40000,
-    suffix: '+',
+    display: formatCompactStat(40000),
     label: 'Kreator Konten & Jurnalis Profesional',
     sublabel: 'Tenaga kreatif dan editorial terdaftar',
     icon: Users,
   },
   {
     value: 210,
-    suffix: '+',
+    display: formatCompactStat(210),
     label: 'Sebaran Media di Kota & Kabupaten',
     sublabel: 'Tersebar di 28 provinsi',
     icon: MapPin,
   },
   {
     value: 1500,
-    suffix: '+',
+    display: formatCompactStat(1500),
     label: 'Akun Media Sosial Multi-Platform',
     sublabel: 'Distribusi konten lintas channel',
     icon: Share2,
   },
   {
     value: 400,
-    suffix: '+',
+    display: formatCompactStat(400),
     label: 'Jaringan Media Pro TV',
     sublabel: 'Televisi digital berjejaring',
     icon: Tv,
@@ -61,14 +63,14 @@ export const ecosystemScaleMetrics: ScaleMetric[] = [
 export const trafficMetrics: ScaleMetric[] = [
   {
     value: 1,
-    suffix: ' Miliar+',
+    display: '1 Billion+',
     label: 'Unique Users Sepanjang Tahun',
     sublabel: 'Jangkauan audiens unik tahunan',
     icon: Eye,
   },
   {
     value: 3.1,
-    suffix: ' Miliar',
+    display: '3.1 Billion+',
     label: 'Pageviews Sepanjang Tahun',
     sublabel: 'Volume tayangan halaman tahunan',
     icon: MousePointerClick,
@@ -82,7 +84,6 @@ export const trafficMetrics: ScaleMetric[] = [
     icon: Search,
   },
 ]
-
 export const genderSplit = [
   { label: 'Laki-laki', percent: 48.8, color: 'bg-[#2D74B3]' },
   { label: 'Perempuan', percent: 51.2, color: 'bg-[#00AEEF]' },
@@ -106,18 +107,17 @@ export interface InfluencerTier {
 export interface SocialPlatformStat {
   platform: string
   accounts: number
-  followers: string
-  views: string | null
+  followers: number
+  views: number | null
 }
 
 export const socialPlatformStats: SocialPlatformStat[] = [
-  { platform: 'TikTok', accounts: 306, followers: '27.612.594', views: '911.946.685' },
-  { platform: 'Instagram', accounts: 158, followers: '2.361.412', views: '343.860.805' },
-  { platform: 'YouTube', accounts: 576, followers: '5.723.665', views: null },
-  { platform: 'Facebook', accounts: 573, followers: '3.827.753', views: null },
-  { platform: 'X (Twitter)', accounts: 783, followers: '558.329', views: null },
+  { platform: 'TikTok', accounts: 306, followers: 27_612_594, views: 911_946_685 },
+  { platform: 'Instagram', accounts: 158, followers: 2_361_412, views: 343_860_805 },
+  { platform: 'YouTube', accounts: 576, followers: 5_723_665, views: null },
+  { platform: 'Facebook', accounts: 573, followers: 3_827_753, views: null },
+  { platform: 'X (Twitter)', accounts: 783, followers: 558_329, views: null },
 ]
-
 export const voxproTiers: InfluencerTier[] = [
   { count: 100, suffix: '+', tier: 'Mega Influencers', description: 'Jangkauan masif & celebrity-grade impact' },
   { count: 150, suffix: '+', tier: 'Macro Influencers', description: 'Audiens luas dengan engagement kuat' },
@@ -126,3 +126,5 @@ export const voxproTiers: InfluencerTier[] = [
   { count: 350, suffix: '+', tier: 'Nano Influencers', description: 'Hyper-local & authentic storytelling' },
   { count: 500, suffix: '+', tier: 'Pico Influencers', description: 'Volume tinggi untuk aktivasi skala' },
 ]
+
+export const VOXPRO_TOTAL_DISPLAY = formatCompactStat(1500)
