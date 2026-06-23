@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Newspaper, PenTool, Share2 } from 'lucide-react'
+import { ArrowRight, Newspaper, PenTool, Share2, MousePointerClick, BookOpen, UserPlus } from 'lucide-react'
 import { PROGRAMS, getPartnerFormUrl } from '@/lib/programRegistration'
 import type { ProgramSlug } from '@/lib/programRegistration'
 
@@ -16,6 +16,74 @@ const colorBySlug: Record<ProgramSlug, string> = {
   mediapreneur: 'bg-[#00AEEF]/10 text-[#00AEEF] border-[#00AEEF]/20',
   contentpreneur: 'bg-[#2D74B3]/10 text-[#2D74B3] border-[#2D74B3]/20',
   socmedpreneur: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+}
+
+const registrationSteps = [
+  {
+    icon: MousePointerClick,
+    title: 'Pilih program',
+    description: 'Tentukan jalur yang sesuai dengan profil Anda',
+  },
+  {
+    icon: BookOpen,
+    title: 'Pelajari persyaratan',
+    description: 'Baca detail program dan ketentuan pendaftaran',
+  },
+  {
+    icon: UserPlus,
+    title: 'Daftar resmi',
+    description: 'Lanjut lewat tombol Daftar di kartu program',
+  },
+]
+
+function RegistrationSteps() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.35 }}
+      className="mt-14 lg:mt-16"
+    >
+      <p className="text-center text-xs font-bold text-[#00AEEF] uppercase tracking-widest mb-6">
+        Alur Pendaftaran
+      </p>
+
+      <div className="relative max-w-4xl mx-auto">
+        <div
+          className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-[#00AEEF]/20 via-[#00AEEF]/40 to-[#00AEEF]/20"
+          aria-hidden
+        />
+
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {registrationSteps.map((step, index) => {
+            const Icon = step.icon
+            return (
+              <li
+                key={step.title}
+                className="relative flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center rounded-2xl md:rounded-none bg-white md:bg-transparent border border-slate-200 md:border-0 shadow-sm md:shadow-none p-5 md:p-0"
+              >
+                <div className="relative shrink-0 md:mb-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00AEEF] to-[#2D74B3] flex items-center justify-center shadow-lg shadow-[#00AEEF]/20">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#001A2C] text-white text-xs font-black flex items-center justify-center ring-2 ring-white">
+                    {index + 1}
+                  </span>
+                </div>
+
+                <div className="min-w-0 flex-1 md:flex-none">
+                  <h3 className="text-sm font-black text-[#001A2C] mb-1">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
+    </motion.div>
+  )
 }
 
 export default function ProgramHub() {
@@ -105,10 +173,7 @@ export default function ProgramHub() {
             })}
           </div>
 
-          <p className="mt-12 text-center text-sm text-slate-500 max-w-xl mx-auto">
-            Langkah 1: pilih program · Langkah 2: baca persyaratan di halaman program · Langkah 3:
-            daftar lewat tombol Daftar
-          </p>
+          <RegistrationSteps />
         </div>
       </section>
     </div>

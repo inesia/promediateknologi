@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, Share2, Video } from 'lucide-react'
+import { ArrowRight, Share2, Video, FileText, Eye, Wallet, Globe } from 'lucide-react'
 import Link from 'next/link'
 import { homePrograms } from '@/lib/homeContent'
 
@@ -17,8 +17,8 @@ function CMSDashboardMockup() {
           <div className="w-3 h-3 rounded-full bg-red-500" />
           <div className="w-3 h-3 rounded-full bg-yellow-500" />
           <div className="w-3 h-3 rounded-full bg-green-500" />
-          <div className="flex-1 h-8 bg-slate-100 rounded-lg ml-4 flex items-center px-4">
-            <span className="text-xs text-slate-500">promedia.id/dashboard</span>
+          <div className="flex-1 h-8 bg-slate-100 rounded-lg ml-4 flex items-center justify-center px-4">
+            <Globe className="w-3.5 h-3.5 text-slate-400" />
           </div>
         </div>
 
@@ -27,21 +27,25 @@ function CMSDashboardMockup() {
           {/* Stats Cards */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { label: 'Articles', value: '1,234', color: 'from-[#00AEEF] to-[#2D74B3]' },
-              { label: 'Views', value: '45.6K', color: 'from-[#2D74B3] to-[#00AEEF]' },
-              { label: 'Revenue', value: 'Rp 12M', color: 'from-[#00AEEF] to-[#2D74B3]' },
-            ].map((stat, i) => (
+              { icon: FileText, color: 'from-[#00AEEF] to-[#2D74B3]' },
+              { icon: Eye, color: 'from-[#2D74B3] to-[#00AEEF]' },
+              { icon: Wallet, color: 'from-[#00AEEF] to-[#2D74B3]' },
+            ].map((stat, i) => {
+              const Icon = stat.icon
+              return (
               <motion.div
-                key={stat.label}
-                className="bg-gradient-to-br bg-slate-50 rounded-xl p-3 border border-slate-200"
+                key={i}
+                className="bg-gradient-to-br bg-slate-50 rounded-xl p-3 border border-slate-200 flex items-center justify-center aspect-[4/3]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.1 }}
               >
-                <div className="text-xs text-slate-500 mb-1">{stat.label}</div>
-                <div className="text-base font-bold text-[#001A2C]">{stat.value}</div>
+                <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-sm`}>
+                  <Icon className="w-4 h-4 text-white" />
+                </div>
               </motion.div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Content List */}
@@ -55,8 +59,8 @@ function CMSDashboardMockup() {
                 transition={{ delay: 0.8 + i * 0.1 }}
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-[#00AEEF] to-[#2D74B3] rounded-lg flex-shrink-0" />
-                <div className="flex-1">
-                  <div className="h-2 bg-slate-300 rounded w-3/4 mb-1" />
+                <div className="flex-1 space-y-1.5">
+                  <div className="h-2 bg-slate-300 rounded w-3/4" />
                   <div className="h-2 bg-slate-200 rounded w-1/2" />
                 </div>
               </motion.div>

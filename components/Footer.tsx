@@ -75,7 +75,22 @@ export default function Footer() {
     <footer className="relative bg-white border-t border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 lg:gap-12 max-w-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+            <div className="col-span-2 md:col-span-1">
+              <Link href="/" className="inline-block mb-4">
+                <Image
+                  src="/images/logo.png"
+                  alt="Promedia Teknologi"
+                  width={180}
+                  height={60}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+              </Link>
+              <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
+                Ekosistem media digital terintegrasi untuk publisher, kreator, dan brand.
+              </p>
+            </div>
+
             <div>
               <h3 className="text-sm font-semibold text-[#001A2C] uppercase tracking-wider mb-4">
                 Produk
@@ -101,46 +116,35 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="text-sm font-semibold text-[#001A2C] uppercase tracking-wider mb-4">
+                Ikuti Kami
+              </h3>
+              <div className="flex flex-wrap items-center gap-3">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-slate-100 hover:bg-[#00AEEF] text-slate-600 hover:text-white flex items-center justify-center transition-all duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="py-8 border-t border-slate-100">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <Link href="/" className="flex items-center">
-              <motion.span whileHover={{ scale: 1.05 }} className="block">
-                <Image
-                  src="/images/logo.png"
-                  alt="Promedia Teknologi"
-                  width={180}
-                  height={60}
-                  className="h-12 w-auto object-contain"
-                />
-              </motion.span>
-            </Link>
-
-            <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-100 hover:bg-[#00AEEF] text-slate-600 hover:text-white flex items-center justify-center transition-all duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-4 h-4" />
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 text-center md:text-left">
-            <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Promedia Teknologi. All rights reserved.
-            </p>
-          </div>
+        <div className="py-6 border-t border-slate-100">
+          <p className="text-sm text-slate-500 text-center md:text-left">
+            © {new Date().getFullYear()} Promedia Teknologi. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
