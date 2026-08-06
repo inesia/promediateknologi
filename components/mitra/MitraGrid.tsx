@@ -4,9 +4,10 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MitraCard from './MitraCard'
 import MitraSkeleton from './MitraSkeleton'
+import { socialPartnerData } from '@/lib/socialPartnerData'
 
 interface Mitra {
-  id: string
+  id: string | number
   name: string
   logo: string
   url?: string
@@ -16,12 +17,14 @@ interface MitraGridProps {
   searchQuery: string
   activeCategory: string
   activeProvince: string
+  activeType?: 'media' | 'influencer'
 }
 
 export default function MitraGrid({
   searchQuery,
   activeCategory,
   activeProvince,
+  activeType = 'media',
 }: MitraGridProps) {
   const [mitraData, setMitraData] = useState<Mitra[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -74,15 +77,27 @@ export default function MitraGrid({
   )
 
   useEffect(() => {
-    fetchMitra(1, true)
-  }, [fetchMitra])
+    if (activeType === 'media') {
+      fetchMitra(1, true)
+    } else {
+      setIsLoading(false)
+    }
+  }, [activeType, fetchMitra])
+
+  const filteredInfluencers = activeType === 'influencer'
+    ? socialPartnerData.filter((item) =>
+        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : []
+
+  const displayItems = activeType === 'media' ? mitraData : filteredInfluencers
 
   const handleLoadMore = () => {
     if (!hasMore || isLoadingMore) return
     fetchMitra(page + 1, false)
   }
 
-  if (isLoading) {
+  if (isLoading && activeType === 'media') {
     return (
       <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +114,7 @@ export default function MitraGrid({
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {error && (
+        {error && activeType === 'media' && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -109,22 +124,22 @@ export default function MitraGrid({
           </motion.p>
         )}
 
-        {mitraData.length > 0 && (
+        {displayItems.length > 0 && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-slate-600 mb-8 text-center"
           >
-            Menampilkan {mitraData.length} mitra media
-            {hasMore ? ' (muat lebih banyak untuk melihat lainnya)' : ''}
+            Menampilkan {displayItems.length} {activeType === 'media' ? 'mitra media' : 'influencer & creator'}
+            {activeType === 'media' && hasMore ? ' (muat lebih banyak untuk melihat lainnya)' : ''}
           </motion.p>
         )}
 
-        {mitraData.length > 0 ? (
+        {displayItems.length > 0 ? (
           <>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6">
               <AnimatePresence mode="wait">
-                {mitraData.map((mitra, index) => (
+                {displayItems.map((mitra, index) => (
                   <MitraCard key={mitra.id} mitra={mitra} index={index} />
                 ))}
               </AnimatePresence>

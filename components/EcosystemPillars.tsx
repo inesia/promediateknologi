@@ -31,7 +31,7 @@ const creatorFeatures = [
 export default function EcosystemPillars() {
   return (
     <section className="relative bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 text-slate-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-20 mt-4 sm:mt-6 lg:mt-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mt-4 sm:mt-6 lg:mt-8">
         
         {/* Floating White Stats Bar Card - Optimized for Mobile & Desktop */}
         <motion.div 
@@ -122,7 +122,7 @@ export default function EcosystemPillars() {
 
             {/* Action CTA */}
             <div className="relative z-10 pt-2">
-              <Link href="/register?role=publisher" className="inline-block w-full sm:w-auto">
+              <Link href="https://go.promediateknologi.id/DaftarMitraMedia" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
                 <motion.span 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -180,7 +180,7 @@ export default function EcosystemPillars() {
 
             {/* Action CTA */}
             <div className="relative z-10 pt-2">
-              <Link href="/register?role=creator" className="inline-block w-full sm:w-auto">
+              <Link href="https://go.promediateknologi.id/VoxProCreators" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
                 <motion.span 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

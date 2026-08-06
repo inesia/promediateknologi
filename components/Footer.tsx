@@ -78,7 +78,7 @@ export default function Footer() {
             <div className="col-span-2 md:col-span-1">
               <Link href="/" className="inline-block mb-4 bg-white/10 p-2 rounded-lg">
                 <Image
-                  src="/images/logo.webp"
+                  src="/images/logo.png"
                   alt="Promedia Teknologi"
                   width={180}
                   height={60}

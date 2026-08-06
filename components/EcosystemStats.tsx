@@ -58,7 +58,7 @@ export default function EcosystemStats() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-12"
+          className="text-center mx-auto mb-6 sm:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.7 }}
@@ -89,7 +89,7 @@ export default function EcosystemStats() {
               {homeDalamAngka.description}
             </p>
 
-            <div className="mt-6 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-8 max-w-3xl mx-auto">
+            <div className="mt-6 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-8 mx-auto">
               <div className="text-center rounded-xl border border-slate-200 bg-white px-2 py-4 sm:px-6 sm:py-6">
                 <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2">
                   {primaryStats.mediaLabel}
@@ -120,7 +120,7 @@ export default function EcosystemStats() {
           </div>
 
           <div className="px-3 sm:px-6 lg:px-10 pb-5 sm:pb-10">
-            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mx-auto">
               {socialPlatformStats.map((stat, index) => {
                 const visual = platformVisuals[stat.platform]
                 const isTwitter = stat.platform === TWITTER_PLATFORM

@@ -10,6 +10,8 @@ const pillars = [
       'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
     icon: Newspaper,
     gradient: 'from-[#00AEEF] to-[#2D74B3]',
+    href: 'https://go.promediateknologi.id/DaftarMitraMedia',
+    ctaText: 'Daftar Sekarang',
   },
   {
     title: 'Influencer Media Network',
@@ -17,6 +19,8 @@ const pillars = [
       'Ruang kreator membangun dampak di media sosial sambil terhubung dengan brand, didukung tools, analitik, dan monetisasi terintegrasi.',
     icon: Share2,
     gradient: 'from-[#2D74B3] to-[#00AEEF]',
+    href: 'https://go.promediateknologi.id/VoxProCreators',
+    ctaText: 'Daftar Sekarang',
   },
 ]
 
@@ -39,7 +43,7 @@ export default function FourPillarsGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mx-auto">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon
             const isPublisher = pillar.title === 'Publisher Media Network'
@@ -93,7 +97,20 @@ export default function FourPillarsGrid() {
                       {pillar.title}
                     </h3>
 
-                    <p className={`leading-relaxed ${isDarkCard ? 'text-slate-200' : 'text-slate-600'}`}>{pillar.description}</p>
+                    <p className={`leading-relaxed ${isDarkCard ? 'text-slate-200' : 'text-slate-600'} mb-8`}>{pillar.description}</p>
+                    
+                    <a 
+                      href={pillar.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all ${
+                        isDarkCard 
+                          ? 'bg-white text-[#001A2C] hover:bg-slate-100 shadow-lg' 
+                          : 'bg-[#001A2C] text-white hover:bg-[#002b4a]'
+                      }`}
+                    >
+                      {pillar.ctaText}
+                    </a>
                   </div>
 
                   <div

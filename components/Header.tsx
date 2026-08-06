@@ -74,7 +74,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
           >
             <Image
-              src="/images/logo.webp"
+              src="/images/logo.png"
               alt="Promedia Teknologi"
               width={200}
               height={67}

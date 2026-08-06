@@ -14,8 +14,8 @@ export const homeHero = {
   primaryCta: 'Bergabung Sebagai Publisher',
   secondaryCta: 'Bergabung Sebagai Creator',
   tertiaryCta: 'Pelajari Ekosistem Kami',
-  primaryCtaHref: '/register?role=publisher',
-  secondaryCtaHref: '/register?role=creator',
+  primaryCtaHref: 'https://go.promediateknologi.id/DaftarMitraMedia',
+  secondaryCtaHref: 'https://go.promediateknologi.id/VoxProCreators',
   tertiaryCtaHref: '/about-us',
   badges: [
     { label: 'Stronger Media', variant: 'blue' },

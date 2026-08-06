@@ -12,6 +12,7 @@ import CTASection from '@/components/mitra/CTASection'
 function MitraPageContent() {
   const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = useState('')
+  const [activeType, setActiveType] = useState<'media' | 'influencer'>('media')
   const [activeCategory, setActiveCategory] = useState(
     () => searchParams.get('kategori') || searchParams.get('category') || 'all'
   )
@@ -28,13 +29,16 @@ function MitraPageContent() {
           onSearchChange={setSearchQuery}
           onCategoryChange={setActiveCategory}
           onProvinceChange={setActiveProvince}
+          onTypeChange={setActiveType}
           activeCategory={activeCategory}
           activeProvince={activeProvince}
+          activeType={activeType}
         />
         <MitraGrid
           searchQuery={searchQuery}
           activeCategory={activeCategory}
           activeProvince={activeProvince}
+          activeType={activeType}
         />
         <CTASection />
       </article>

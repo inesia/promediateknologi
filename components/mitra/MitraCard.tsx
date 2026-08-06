@@ -18,6 +18,7 @@ interface MitraCardProps {
 
 export default function MitraCard({ mitra, index }: MitraCardProps) {
   const [imageError, setImageError] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   return (
     <motion.div
@@ -31,18 +32,24 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
         {/* Logo Container */}
         <div className="relative w-full h-full flex items-center justify-center">
           {!imageError ? (
-            <Image
-              src={mitra.logo}
-              alt={mitra.name}
-              fill
-              className="object-contain transition-all duration-500 p-4 group-hover:scale-110"
-              onError={() => setImageError(true)}
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
-              unoptimized // Added to allow external images without configuring every domain if needed for initial testing, though remotePatterns is set.
-            />
+            <>
+              {!isLoaded && (
+                <div className="absolute inset-0 bg-slate-200 animate-pulse rounded-lg" />
+              )}
+              <Image
+                src={mitra.logo}
+                alt={mitra.name}
+                fill
+                className={`object-contain p-4 transition-all duration-500 ${isLoaded ? 'opacity-100 scale-100 group-hover:scale-110' : 'opacity-0 scale-95'}`}
+                onError={() => setImageError(true)}
+                onLoad={() => setIsLoaded(true)}
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                unoptimized
+              />
+            </>
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg">
-              <span className="text-xs text-slate-400 font-medium text-center px-2">
+            <div className="w-full h-full flex items-center justify-center bg-slate-100 rounded-lg p-2">
+              <span className="text-xs text-slate-400 font-medium text-center line-clamp-2 leading-tight">
                 {mitra.name}
               </span>
             </div>

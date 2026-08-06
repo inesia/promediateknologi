@@ -69,10 +69,10 @@ export default function NetworkLivePulse() {
         {/* Section header + GO24 logo slot */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            {/* Slot logo GO24: letakkan asset di public/images/go24-logo.webp */}
+            {/* Slot logo GO24: letakkan asset di public/images/go24-logo.png */}
             <div className="relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm overflow-hidden">
               <Image
-                src="/images/go24-logo.webp"
+                src="/images/go24-logo.png"
                 alt="GO24"
                 width={80}
                 height={80}

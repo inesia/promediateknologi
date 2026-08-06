@@ -9,16 +9,20 @@ interface SearchFilterBarProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
   onProvinceChange: (province: string) => void
+  onTypeChange: (type: 'media' | 'influencer') => void
   activeCategory: string
   activeProvince: string
+  activeType: 'media' | 'influencer'
 }
 
 export default function SearchFilterBar({
   onSearchChange,
   onCategoryChange,
   onProvinceChange,
+  onTypeChange,
   activeCategory,
   activeProvince,
+  activeType,
 }: SearchFilterBarProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const isFirstRender = useRef(true)
@@ -40,6 +44,32 @@ export default function SearchFilterBar({
     <section className="bg-white border-b border-slate-100 py-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          {/* Partner Type Toggle Tabs */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+              <button
+                onClick={() => onTypeChange('media')}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 ${
+                  activeType === 'media'
+                    ? 'bg-[#00AEEF] text-white shadow-md shadow-[#00AEEF]/25'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                Media Network
+              </button>
+              <button
+                onClick={() => onTypeChange('influencer')}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 ${
+                  activeType === 'influencer'
+                    ? 'bg-[#7c4dff] text-white shadow-md shadow-purple-500/25'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                Influencer Network
+              </button>
+            </div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,7 +80,7 @@ export default function SearchFilterBar({
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="text"
-                placeholder="Cari media mitra..."
+                placeholder={activeType === 'media' ? "Cari media mitra..." : "Cari influencer & creator..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 placeholder-slate-400"
@@ -58,12 +88,13 @@ export default function SearchFilterBar({
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col md:flex-row gap-4 md:gap-6"
-          >
+          {activeType === 'media' && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-col md:flex-row gap-4 md:gap-6"
+            >
             <div className="min-w-0 flex-1">
               <label
                 htmlFor="mitra-province-filter"
@@ -114,6 +145,7 @@ export default function SearchFilterBar({
               </div>
             </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
-﻿'use client'
+'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -24,6 +25,8 @@ function PartnerLogo({
   index: number
   className?: string
 }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+
   return (
     <motion.div
       className={`flex items-center justify-center transition-all duration-300 ${className ?? ''}`}
@@ -32,13 +35,17 @@ function PartnerLogo({
       viewport={{ once: true }}
       transition={{ delay: (index % 8) * 0.05 }}
     >
-      <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow">
+      <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow overflow-hidden group">
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-slate-200 animate-pulse rounded-xl" />
+        )}
         <Image
           src={logo}
           alt={name}
           fill
-          className="object-contain p-2"
+          className={`object-contain p-2 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} group-hover:scale-105`}
           sizes="(max-width: 768px) 50vw, 12vw"
+          onLoad={() => setIsLoaded(true)}
           unoptimized
         />
       </div>

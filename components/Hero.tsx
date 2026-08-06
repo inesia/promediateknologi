@@ -24,15 +24,22 @@ export default function Hero() {
 
       {/* Full Bleed Background Image Layer using /images/bg-hero1.webp */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[68%] xl:w-[65%] h-full opacity-50 sm:opacity-75 lg:opacity-100">
-          <Image
-            src="/images/bg-hero1.webp"
-            alt="Digital Media Ecosystem Background"
-            fill
-            priority
-            className="object-cover object-center lg:object-right"
-          />
-        </div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+          className="absolute inset-y-0 right-0 w-full lg:w-[68%] xl:w-[65%] h-full"
+        >
+          <div className="relative w-full h-full opacity-50 sm:opacity-75 lg:opacity-100">
+            <Image
+              src="/images/bg-hero1.webp"
+              alt="Digital Media Ecosystem Background"
+              fill
+              priority
+              className="object-cover object-center lg:object-right"
+            />
+          </div>
+        </motion.div>
         {/* Seamless gradient blending into dark navy #030917 on text side */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#030917] via-[#030917]/80 via-35% to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#030917] via-transparent to-[#030917]/50 z-10" />
@@ -81,7 +88,7 @@ export default function Hero() {
             >
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 {/* Primary Button */}
-                <Link href={homeHero.primaryCtaHref} className="w-full sm:w-auto">
+                <Link href={homeHero.primaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <motion.span
                     className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-xl shadow-lg shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/50 transition-all duration-300 group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
@@ -93,7 +100,7 @@ export default function Hero() {
                 </Link>
 
                 {/* Secondary Button */}
-                <Link href={homeHero.secondaryCtaHref} className="w-full sm:w-auto">
+                <Link href={homeHero.secondaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <motion.span
                     className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-semibold text-white bg-[#0a1936]/80 border border-slate-700/80 hover:border-[#00AEEF]/60 rounded-xl backdrop-blur-md hover:bg-[#0f244c] transition-all duration-300 group cursor-pointer"
                     whileHover={{ scale: 1.02 }}

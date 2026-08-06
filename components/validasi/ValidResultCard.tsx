@@ -23,7 +23,7 @@ export default function ValidResultCard({ cardId }: ValidResultCardProps) {
     position: 'Pemimpin Redaksi',
     media: 'JatimNetwork.com',
     id: cardId || 'PM-2024-X88',
-    avatar: '/images/logo.webp',
+    avatar: '/images/logo.png',
   }
 
   return (

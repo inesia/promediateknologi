@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, Plus } from 'lucide-react'
+import { ArrowRight, Users } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -132,56 +132,6 @@ export default function FinalCTA() {
             </div>
           </motion.div>
         </div>
-
-        {/* Middle Row: "Dipercaya oleh" Logo Cloud */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-slate-400 mb-6 sm:mb-8">
-            Dipercaya oleh
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 lg:gap-12">
-            <span className="font-extrabold text-lg sm:text-xl tracking-tight text-[#00AEEF] hover:opacity-80 transition-opacity">
-              detik<span className="text-[#001A2C]">com</span>
-            </span>
-
-            <span className="font-black text-base sm:text-lg tracking-wider text-red-600 hover:opacity-80 transition-opacity">
-              IDN <span className="text-slate-800">TIMES</span>
-            </span>
-
-            <span className="font-bold text-lg sm:text-xl text-[#00A896] hover:opacity-80 transition-opacity">
-              kumparan
-            </span>
-
-            <span className="font-bold text-sm sm:text-base tracking-wide text-slate-800 flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-              <svg className="w-4 h-4 text-red-600 fill-current" viewBox="0 0 24 24">
-                <polygon points="12,2 2,22 22,22" />
-              </svg> 
-              ANTARA
-            </span>
-
-            <span className="font-extrabold text-base sm:text-lg text-[#0056B3] hover:opacity-80 transition-opacity">
-              Tribun<span className="font-normal text-slate-700">Network</span>
-            </span>
-
-            <span className="font-black text-base sm:text-lg italic text-[#004B87] hover:opacity-80 transition-opacity">
-              JawaPos<span className="text-slate-500 font-normal">.com</span>
-            </span>
-
-            <span className="font-extrabold text-base sm:text-lg text-[#003366] flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <span className="text-[#00AEEF] font-black">D</span> katadata
-            </span>
-
-            <button className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-slate-300 hover:border-[#00AEEF] flex items-center justify-center text-slate-400 hover:text-[#00AEEF] transition-all hover:scale-105">
-              <Plus className="w-5 h-5" />
-            </button>
-          </div>
-        </motion.div>
 
         {/* Bottom Bar: Dark Blue Capsule Banner */}
         <motion.div
