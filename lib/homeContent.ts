@@ -5,14 +5,23 @@
 
 export const homeHero = {
   badge: 'MAVERICKS & AHEAD',
-  headlineLine1: 'Ekosistem Media Digital',
-  headlineLine2: 'Terintegrasi',
+  headlineLine1: 'Building',
+  headlineHighlight: "Indonesia's",
+  headlineLine2: 'Digital Media',
+  headlineLine3: 'Ecosystem',
   subheadline:
-    'Tempat media dan kreator tumbuh bersama, secara setara dan berkelanjutan.',
-  primaryCta: 'Daftar Program',
-  secondaryCta: 'Pelajari Lebih Lanjut',
-  primaryCtaHref: '/register',
-  secondaryCtaHref: '/about-us',
+    'Kami membangun ekosistem yang menghubungkan publisher, creator, brand, dan teknologi untuk menciptakan pertumbuhan, kolaborasi, dan peluang tanpa batas.',
+  primaryCta: 'Bergabung Sebagai Publisher',
+  secondaryCta: 'Bergabung Sebagai Creator',
+  tertiaryCta: 'Pelajari Ekosistem Kami',
+  primaryCtaHref: '/register?role=publisher',
+  secondaryCtaHref: '/register?role=creator',
+  tertiaryCtaHref: '/about-us',
+  badges: [
+    { label: 'Stronger Media', variant: 'blue' },
+    { label: 'Bigger Impact', variant: 'purple' },
+    { label: 'Brighter Future', variant: 'teal' },
+  ],
 }
 
 export const homeHeader = {

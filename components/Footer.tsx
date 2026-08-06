@@ -36,7 +36,7 @@ const footerLinks: {
 }
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
-  const className = 'text-sm text-slate-600 hover:text-[#00AEEF] transition-colors duration-200'
+  const className = 'text-sm text-white/80 hover:text-white transition-colors duration-200'
 
   if (link.external) {
     return (
@@ -72,27 +72,27 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-white border-t border-slate-100">
+    <footer className="relative bg-[#2D74B3]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 lg:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="inline-block mb-4">
+              <Link href="/" className="inline-block mb-4 bg-white/10 p-2 rounded-lg">
                 <Image
                   src="/images/logo.png"
                   alt="Promedia Teknologi"
                   width={180}
                   height={60}
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain brightness-0 invert"
                 />
               </Link>
-              <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
+              <p className="text-sm text-white/80 leading-relaxed max-w-xs">
                 Ekosistem media digital terintegrasi untuk publisher, kreator, dan brand.
               </p>
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-[#001A2C] uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Produk
               </h3>
               <ul className="space-y-3">
@@ -105,7 +105,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-[#001A2C] uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Perusahaan
               </h3>
               <ul className="space-y-3">
@@ -118,17 +118,18 @@ export default function Footer() {
             </div>
 
             <div className="col-span-2 md:col-span-1">
-              <h3 className="text-sm font-semibold text-[#001A2C] uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Ikuti Kami
               </h3>
-              <div className="flex flex-wrap items-center gap-3">
+              {/* Force 2 rows for 6 icons by using grid-cols-3 */}
+              <div className="grid grid-cols-3 gap-3 w-fit">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-slate-100 hover:bg-[#00AEEF] text-slate-600 hover:text-white flex items-center justify-center transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#00AEEF] flex items-center justify-center transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.label}
@@ -141,8 +142,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-6 border-t border-slate-100">
-          <p className="text-sm text-slate-500 text-center md:text-left">
+        <div className="py-6 border-t border-white/20">
+          <p className="text-sm text-white/60 text-center md:text-left">
             © {new Date().getFullYear()} Promedia Teknologi. All rights reserved.
           </p>
         </div>

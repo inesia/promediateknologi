@@ -1,5 +1,7 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import EcosystemPillars from '@/components/EcosystemPillars'
+import FeaturesGrid from '@/components/FeaturesGrid'
 import EcosystemStats from '@/components/EcosystemStats'
 import LatestNews from '@/components/LatestNews'
 import BrandStatement from '@/components/BrandStatement'
@@ -13,7 +15,9 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <EcosystemServices />
+      <EcosystemPillars />
+      <FeaturesGrid />
+      {/* <EcosystemServices /> */}
       <EcosystemStats />
       <BrandStatement />
       <LogoCloud />
