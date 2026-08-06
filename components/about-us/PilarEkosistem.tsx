@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import MediapreneurVisual from './pilar-visuals/MediapreneurVisual'
-import ContentpreneurVisual from './pilar-visuals/ContentpreneurVisual'
 import SocmedpreneurVisual from './pilar-visuals/SocmedpreneurVisual'
 
 const pilars = [
@@ -15,14 +14,7 @@ const pilars = [
       'Bangun media digital Anda sendiri dengan teknologi terkini, didampingi praktisi berpengalaman, dan dukungan monetisasi terintegrasi — tanpa dipungut biaya.',
     visual: MediapreneurVisual,
   },
-  {
-    id: 'contentpreneur',
-    title: 'Contentpreneur',
-    subtitle: 'The Talent',
-    description:
-      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-    visual: ContentpreneurVisual,
-  },
+
   {
     id: 'influencer-media-network',
     title: 'Influencer Media Network',

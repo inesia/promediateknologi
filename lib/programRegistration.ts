@@ -7,13 +7,11 @@ export const MEDIAPRENEUR_FORM_URL = 'https://go.promediateknologi.id/DaftarMitr
 /** @deprecated Gunakan getPartnerFormUrl(slug) */
 export const PARTNER_FORM_URL = MEDIAPRENEUR_FORM_URL
 
-export type ProgramSlug = 'mediapreneur' | 'contentpreneur' | 'socmedpreneur'
+export type ProgramSlug = 'mediapreneur' | 'socmedpreneur'
 
 /** URL formulir pendaftaran per program */
 export const PROGRAM_FORM_URLS: Record<ProgramSlug, string> = {
   mediapreneur: MEDIAPRENEUR_FORM_URL,
-  contentpreneur:
-    'https://docs.google.com/forms/d/e/1FAIpQLSd7kWx6HPRvujy8noEPaVaQE6IV6SoQBwpYUUStlt_scTX9bQ/viewform',
   socmedpreneur: 'https://go.promediateknologi.id/VoxProCreators',
 }
 
@@ -66,25 +64,6 @@ export const PROGRAMS: ProgramRegistration[] = [
       'Ikuti @promediaecosystem untuk pengumuman program.',
     ],
   },
-  {
-    slug: 'contentpreneur',
-    title: 'Contentpreneur',
-    menuLabel: 'Content Creator For Publisher',
-    tagline: 'Ubah kata-kata menjadi penghasilan profesional',
-    description:
-      'Untuk jurnalis, penulis lepas, dan kreator konten yang ingin karyanya dihargai di jaringan media mitra Promedia.',
-    programHref: '/program/contentpreneur',
-    ctaLabel: 'Daftar Contentpreneur',
-    forWho: 'Penulis, jurnalis, atau siapapun yang ingin memulai karier lewat menulis di media online.',
-    beforeApply: [
-      'Pelajari dua jalur di halaman program: lowongan mitra media atau intake Promedia Group.',
-      'Untuk jalur Promedia Group, lengkapi formulir pendaftaran resmi di bawah.',
-      'Hadiri briefing program online (Zoom) saat diundang.',
-      'Ikuti pelatihan terpusat sebelum penempatan ke media mitra yang direkomendasikan.',
-    ],
-    applyNote:
-      'Pelamar jalur media mengikuti halaman karir masing-masing mitra. Untuk jalur Promedia Group, gunakan formulir pendaftaran resmi.',
-  },
 ]
 
 export const PROGRAMS_BY_SLUG = Object.fromEntries(
@@ -94,7 +73,6 @@ export const PROGRAMS_BY_SLUG = Object.fromEntries(
 const SLUG_ALIASES: Record<string, ProgramSlug> = {
   mediapreneur: 'mediapreneur',
   publishermedianetwork: 'mediapreneur',
-  contentpreneur: 'contentpreneur',
   socmedpreneur: 'socmedpreneur',
   influencermedianetwork: 'socmedpreneur',
   'influencer-media-network': 'socmedpreneur',

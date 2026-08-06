@@ -36,7 +36,6 @@ const navItems: NavItem[] = [
     submenu: [
       { label: "Publisher Media Network", href: "/program/publishermedianetwork" },
       { label: "Influencer Media Network", href: "/program/influencermedianetwork" },
-      { label: "Contentpreneur", href: "/program/contentpreneur" },
     ],
   },
   { label: "Kontak", href: "/kontak" },

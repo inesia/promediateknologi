@@ -8,13 +8,11 @@ import type { ProgramSlug } from '@/lib/programRegistration'
 
 const iconBySlug: Record<ProgramSlug, typeof Newspaper> = {
   mediapreneur: Newspaper,
-  contentpreneur: PenTool,
   socmedpreneur: Share2,
 }
 
 const colorBySlug: Record<ProgramSlug, string> = {
   mediapreneur: 'bg-[#00AEEF]/10 text-[#00AEEF] border-[#00AEEF]/20',
-  contentpreneur: 'bg-[#2D74B3]/10 text-[#2D74B3] border-[#2D74B3]/20',
   socmedpreneur: 'bg-emerald-50 text-emerald-600 border-emerald-100',
 }
 

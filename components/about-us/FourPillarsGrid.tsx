@@ -18,13 +18,6 @@ const pillars = [
     icon: Share2,
     gradient: 'from-[#2D74B3] to-[#00AEEF]',
   },
-  {
-    title: 'Contentpreneur',
-    description:
-      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-    icon: PenTool,
-    gradient: 'from-[#00AEEF] to-[#2D74B3]',
-  },
 ]
 
 export default function FourPillarsGrid() {
@@ -39,14 +32,14 @@ export default function FourPillarsGrid() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
-            The 3 Pillars
+            Pilar Utama
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Tiga pilar utama yang membentuk ekosistem Promedia Teknologi
+            Dua pilar utama yang membentuk ekosistem Promedia Teknologi
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon
             const isPublisher = pillar.title === 'Publisher Media Network'

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -90,93 +90,6 @@ function CMSDashboardMockup() {
 }
 
 // Digital Pen Illustration Component
-function DigitalPenIllustration() {
-  return (
-    <div className="relative w-full max-w-lg mx-auto h-[400px]">
-      {/* Floating Pen */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 5, -5, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      >
-        <div className="relative w-32 h-32">
-          {/* Pen Body */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF] to-[#2D74B3] rounded-full shadow-2xl flex items-center justify-center">
-            <svg
-              className="w-16 h-16 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-              />
-            </svg>
-          </div>
-          {/* Glow */}
-          <div className="absolute inset-0 bg-white/20 rounded-full blur-xl" />
-        </div>
-      </motion.div>
-
-      {/* Flowing Text Lines */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute"
-          style={{
-            left: `${20 + i * 15}%`,
-            top: `${15 + i * 15}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: 3 + i * 0.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: i * 0.3,
-          }}
-        >
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#00AEEF] to-transparent rounded-full" />
-        </motion.div>
-      ))}
-
-      {/* Floating particles */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-[#00AEEF]/30 rounded-full"
-          style={{
-            left: `${20 + (i % 4) * 20}%`,
-            top: `${20 + Math.floor(i / 4) * 30}%`,
-          }}
-          animate={{
-            y: [0, -40, 0],
-            opacity: [0.3, 0.8, 0.3],
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 3 + i * 0.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: i * 0.3,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
 
 // Social Media Icons Cloud Visualization
 function SocialMediaVisualization() {
@@ -508,7 +421,6 @@ export default function EcosystemServices() {
 
   const visualsBySlug = {
     mediapreneur: <CMSDashboardMockup key="mediapreneur" />,
-    contentpreneur: <DigitalPenIllustration key="contentpreneur" />,
     socmedpreneur: <SocialMediaVisualization key="socmedpreneur" />,
   }
 

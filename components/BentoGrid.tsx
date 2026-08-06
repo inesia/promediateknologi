@@ -343,20 +343,11 @@ export default function BentoGrid() {
             badge="Updated Daily"
           />
 
-          {/* Card 2 - Contentpreneur (Square) */}
+
+
+          {/* Card 2 - 1,000+ Partners */}
           <BentoCard
             index={1}
-            title="Contentpreneur"
-            description="Tools profesional untuk penulis dan kreator konten menghasilkan karya berkualitas tinggi."
-            icon={<BookOpen className="w-6 h-6 lg:w-7 lg:h-7" />}
-            className="min-h-[260px]"
-            visual="image"
-            parallaxOffset={30}
-          />
-
-          {/* Card 3 - 1,000+ Partners */}
-          <BentoCard
-            index={2}
             title="1,000+"
             description="Media partners bergabung dalam ekosistem Promedia"
             icon={<Users className="w-6 h-6 lg:w-7 lg:h-7" />}
@@ -366,9 +357,9 @@ export default function BentoGrid() {
             metric="Dari Sabang sampai Merauke"
           />
 
-          {/* Card 4 - 24/7 Support (Small with Uptime) */}
+          {/* Card 3 - 24/7 Support (Small with Uptime) */}
           <BentoCard
-            index={3}
+            index={2}
             title="24/7 Support"
             description="Dukungan teknis tersedia kapan saja untuk memastikan operasional lancar."
             icon={<Clock className="w-6 h-6 lg:w-7 lg:h-7" />}
@@ -377,13 +368,13 @@ export default function BentoGrid() {
             parallaxOffset={15}
           />
 
-          {/* Card 5 - Networking & Infrastructure (Wide - Bottom) */}
+          {/* Card 4 - Networking & Infrastructure (Wide - Bottom) */}
           <BentoCard
-            index={4}
+            index={3}
             title="Networking & Infrastructure"
             description="Jangkauan ribuan mitra media di seluruh Indonesia dengan infrastruktur teknologi yang handal dan skalabel."
             icon={<Network className="w-6 h-6 lg:w-7 lg:h-7" />}
-            className="md:col-span-2 lg:col-span-3 min-h-[260px]"
+            className="md:col-span-2 lg:col-span-2 min-h-[260px]"
             visual="wide-image"
             parallaxOffset={35}
           />

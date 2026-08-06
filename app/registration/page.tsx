@@ -23,7 +23,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 // Role types
-type RoleType = 'mediapreneur' | 'contentpreneur' | 'advertiser' | 'socmedpreneur' | 'videopreneur' | null
+type RoleType = 'mediapreneur' | 'advertiser' | 'socmedpreneur' | 'videopreneur' | null
 
 // Testimonials data
 const testimonials = [
@@ -31,11 +31,6 @@ const testimonials = [
     text: "Promedia membantu saya membangun media digital yang profesional dan terpercaya.",
     author: "Media Partner",
     role: "Publisher Media Network"
-  },
-  {
-    text: "Ekosistem Promedia memberikan platform yang tepat untuk mengembangkan karier sebagai content creator.",
-    author: "Content Creator",
-    role: "Contentpreneur"
   },
   {
     text: "Expanding Universe - Bergabunglah dengan revolusi media digital Indonesia.",
@@ -52,13 +47,6 @@ const roleOptions = [
     description: 'Untuk pemilik media/bisnis',
     icon: Newspaper,
     gradient: 'from-[#00AEEF] to-[#2D74B3]'
-  },
-  {
-    id: 'contentpreneur' as RoleType,
-    title: 'Contentpreneur',
-    description: 'Untuk penulis/kreator',
-    icon: PenTool,
-    gradient: 'from-[#2D74B3] to-[#00AEEF]'
   },
   {
     id: 'socmedpreneur' as RoleType,
@@ -96,10 +84,6 @@ const createSchema = (role: RoleType) => {
     return baseSchema.extend({
       mediaName: z.string().min(2, 'Nama media minimal 2 karakter'),
       websiteLink: z.string().url('Format URL tidak valid').optional().or(z.literal(''))
-    })
-  } else if (role === 'contentpreneur') {
-    return baseSchema.extend({
-      portfolioLink: z.string().url('Format URL tidak valid')
     })
   } else if (role === 'socmedpreneur') {
     return baseSchema.extend({
@@ -583,32 +567,7 @@ function RegistrationForm() {
                       </>
                     )}
 
-                    {selectedRole === 'contentpreneur' && (
-                      <div className="relative">
-                        <input
-                          {...register('portfolioLink')}
-                          type="url"
-                          id="portfolioLink"
-                          className={`peer w-full px-4 pt-6 pb-2 border-2 rounded-lg outline-none transition-all ${
-                            errors.portfolioLink
-                              ? 'border-red-500 focus:border-red-500'
-                              : 'border-slate-200 focus:border-[#00AEEF]'
-                          }`}
-                          placeholder=" "
-                        />
-                        <label
-                          htmlFor="portfolioLink"
-                          className="absolute left-4 top-2 text-sm text-slate-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#00AEEF]"
-                        >
-                          Link Portfolio/CV
-                        </label>
-                        {errors.portfolioLink && (
-                          <p className="mt-1 text-sm text-red-500">
-                            {errors.portfolioLink.message as string}
-                          </p>
-                        )}
-                      </div>
-                    )}
+
 
                     {(selectedRole === 'socmedpreneur' || selectedRole === 'videopreneur') && (
                       <div className="relative">

@@ -52,15 +52,6 @@ export const homePrograms = {
       linkLabel: 'Pelajari Selengkapnya',
       reverse: true,
     },
-    {
-      slug: 'contentpreneur' as const,
-      title: 'Contentpreneur',
-      description:
-        'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-      linkHref: '/program/contentpreneur',
-      linkLabel: 'Pelajari Selengkapnya',
-      reverse: false,
-    },
   ],
 }
 
@@ -100,12 +91,10 @@ export const homePartnershipCta = {
   titleHighlight: 'Program',
   titleSuffix: 'yang Tepat untuk Anda',
   subtitle:
-    'Tiga jalur berbeda — publisher, influencer, atau penulis. Pelajari program kami dan lanjut pendaftaran.',
+    'Dua jalur berbeda — publisher atau influencer. Pelajari program kami dan lanjut pendaftaran.',
   programDescriptions: {
     mediapreneur:
       'Ciptakan brand mediamu, bangun tim redaksimu. Full support tim IT & marketing profesional, gratis.',
-    contentpreneur:
-      'Jadi penulis untuk publisher media. Ubah kata-katamu jadi penghasilan tambahan.',
     socmedpreneur:
       'Kembangkan aset digitalmu, dari medsos hingga web profesionalmu sendiri. Perlebar peluang ke brand bersama Voxpro by Promedia Group.',
   },

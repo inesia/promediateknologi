@@ -24,7 +24,6 @@ const footerLinks: {
   product: [
     { label: 'Publisher Media Network', href: '/program/publishermedianetwork' },
     { label: 'Influencer Media Network', href: '/program/influencermedianetwork' },
-    { label: 'Contentpreneur', href: '/program/contentpreneur' },
   ],
   company: [
     { label: 'Tentang Kami', href: '/about-us' },

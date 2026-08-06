@@ -18,8 +18,8 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Promedia Teknologi - Ekosistem Media Digital Terintegrasi',
-  description: 'Platform terintegrasi untuk Publisher Media Network dan Contentpreneur. Solusi digital lengkap untuk mengembangkan bisnis media Anda.',
-  keywords: 'promedia teknologi, media digital, publisher media network, contentpreneur, ekosistem digital',
+  description: 'Platform terintegrasi untuk Publisher Media Network dan Influencer Media Network. Solusi digital lengkap untuk mengembangkan bisnis media Anda.',
+  keywords: 'promedia teknologi, media digital, publisher media network, influencer media network, ekosistem digital',
   authors: [{ name: 'Promedia Teknologi' }],
   icons: {
     icon: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   manifest: '/images/favicon/manifest.json',
   openGraph: {
     title: 'Promedia Teknologi - Ekosistem Media Digital Terintegrasi',
-    description: 'Platform terintegrasi untuk Publisher Media Network dan Contentpreneur',
+    description: 'Platform terintegrasi untuk Publisher Media Network dan Influencer Media Network',
     type: 'website',
     locale: 'id_ID',
     siteName: 'Promedia Teknologi',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Promedia Teknologi - Ekosistem Media Digital Terintegrasi',
-    description: 'Platform terintegrasi untuk Publisher Media Network dan Contentpreneur',
+    description: 'Platform terintegrasi untuk Publisher Media Network dan Influencer Media Network',
   },
   robots: {
     index: true,

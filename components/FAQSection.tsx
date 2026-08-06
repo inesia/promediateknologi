@@ -84,48 +84,6 @@ const faqCategories = [
         answer: 'Domain dan seluruh konten yang dikelola dalam kemitraan sepenuhnya tetap menjadi milik media mitra, baik selama masa kerja sama maupun setelah kerja sama berakhir. Sebagai bagian dari mekanisme operasional dan perlindungan bersama, Promedia Group memfasilitasi pengelolaan domain pada tahun pertama kemitraan. Kebijakan ini diterapkan untuk memastikan kesiapan operasional dan komitmen kerja sama di tahap awal. Setelah periode tersebut, pengelolaan domain dapat dialihkan sepenuhnya kepada media mitra sesuai kesepakatan.',
       },
     ]
-  },
-  {
-    id: 'contentpreneur',
-    label: 'Contentpreneur',
-    items: [
-      {
-        question: 'Apa itu Program Contentpreneur Promedia?',
-        answer: 'Contentpreneur adalah program bagi jurnalis dan kreator untuk mengembangkan karya tulis dalam ekosistem media Promedia. Program ini memberikan ruang publikasi, pendampingan, serta peluang pendapatan bagi kreator yang ingin bertumbuh secara profesional dan berkelanjutan.',
-      },
-      {
-        question: 'Siapa saja yang dapat bergabung sebagai Contentpreneur?',
-        answer: 'Program Contentpreneur terbuka bagi jurnalis dan kreator dengan minat kuat pada membaca, menulis, dan pengembangan konten. Latar belakang pendidikan atau pengalaman formal bukan syarat utama, selama memiliki komitmen untuk berkarya secara konsisten dan bertanggung jawab.',
-      },
-      {
-        question: 'Apakah Contentpreneur harus berlatar belakang jurnalis?',
-        answer: 'Tidak. Program ini terbuka bagi siapa pun yang ingin mengembangkan kemampuan menulis dan menghasilkan karya berkualitas. Namun, setiap karya tetap diharapkan mengikuti prinsip dasar penulisan yang bertanggung jawab dan etis.',
-      },
-      {
-        question: 'Bagaimana sistem publikasi karya Contentpreneur?',
-        answer: 'Karya Contentpreneur akan melalui proses kurasi sebelum dipublikasikan oleh mitra media. Tidak semua karya akan langsung dimuat. Proses ini dilakukan untuk menjaga kualitas dan relevansi konten bagi pembaca.',
-      },
-      {
-        question: 'Apakah Contentpreneur bebas menentukan topik tulisan?',
-        answer: 'Contentpreneur dapat mengusulkan topik tulisan sesuai minat dan keahliannya. Namun, publikasi tetap mempertimbangkan kebutuhan redaksional, relevansi isu, dan kebijakan masing-masing media dalam jaringan Promedia.',
-      },
-      {
-        question: 'Apakah setiap tulisan Contentpreneur akan dimonetisasi?',
-        answer: 'Tidak semua karya secara otomatis menghasilkan pendapatan. Peluang pendapatan dipengaruhi oleh performa konten, kebutuhan media, dan skema monetisasi yang berlaku.',
-      },
-      {
-        question: 'Bagaimana sistem pendapatan bagi Contentpreneur?',
-        answer: 'Pendapatan Contentpreneur diperoleh melalui skema yang ditetapkan berdasarkan performa karya dan kerja sama yang berjalan. Promedia tidak menjanjikan pendapatan tetap atau instan, tetapi menyediakan ekosistem yang memungkinkan karya bernilai secara profesional.',
-      },
-      {
-        question: 'Apakah Ikut Program Contentpreneur Harus Bayar?',
-        answer: 'Tidak. Program Contentpreneur tidak memungut biaya pendaftaran. Namun, partisipasi dalam program ini menuntut komitmen untuk mengikuti proses kurasi, pengembangan, dan etika berkarya yang berlaku.',
-      },
-      {
-        question: 'Apakah Contentpreneur bisa berhenti kapan saja?',
-        answer: 'Ya. Contentpreneur dapat menghentikan partisipasi sesuai ketentuan yang berlaku. Promedia menjunjung profesionalisme dan komunikasi terbuka dalam setiap bentuk kerja sama.',
-      },
-    ]
   }
 ]
 
