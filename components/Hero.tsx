@@ -126,7 +126,7 @@ export default function Hero() {
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute top-[8%] left-[2%] sm:top-[12%] sm:left-[8%] lg:top-[15%] lg:left-[10%] z-30 pointer-events-auto"
             >
-              <div className="flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-[#1864f7]/85 border border-[#3b82f6]/50 backdrop-blur-xl text-white shadow-[0_12px_36px_rgba(24,100,247,0.4)] transition-transform hover:scale-105">
+              <div className="flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-[#00AEEF]/85 border border-[#00AEEF]/50 backdrop-blur-xl text-white shadow-[0_12px_36px_rgba(0,174,239,0.4)] transition-transform hover:scale-105">
                 <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white shrink-0">
                   <Building2 className="w-5 h-5" />
                 </div>

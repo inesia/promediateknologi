@@ -21,6 +21,20 @@ export const metadata: Metadata = {
   description: 'Platform terintegrasi untuk Publisher Media Network dan Contentpreneur. Solusi digital lengkap untuk mengembangkan bisnis media Anda.',
   keywords: 'promedia teknologi, media digital, publisher media network, contentpreneur, ekosistem digital',
   authors: [{ name: 'Promedia Teknologi' }],
+  icons: {
+    icon: [
+      { url: '/images/favicon/favicon.ico' },
+      { url: '/images/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/images/favicon/android-icon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/favicon/apple-icon.png' },
+      { url: '/images/favicon/apple-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/images/favicon/manifest.json',
   openGraph: {
     title: 'Promedia Teknologi - Ekosistem Media Digital Terintegrasi',
     description: 'Platform terintegrasi untuk Publisher Media Network dan Contentpreneur',

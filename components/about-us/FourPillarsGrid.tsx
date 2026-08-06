@@ -49,6 +49,15 @@ export default function FourPillarsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon
+            const isPublisher = pillar.title === 'Publisher Media Network'
+            const isInfluencer = pillar.title === 'Influencer Media Network'
+            const isDarkCard = isPublisher || isInfluencer
+            const bgImage = isPublisher ? "/images/section-bgg.png" : isInfluencer ? "/images/section-bgc.png" : null
+            const darkBgClass = isPublisher ? 'bg-[#061838]' : isInfluencer ? 'bg-[#140b2e]' : 'bg-white/80 backdrop-blur-xl'
+            const gradientOverlay = isPublisher
+              ? "bg-gradient-to-br from-[#061838]/95 via-[#061838]/90 to-[#092659]/75"
+              : "bg-gradient-to-br from-[#140b2e]/95 via-[#140b2e]/90 to-[#211347]/75"
+
             return (
               <motion.div
                 key={pillar.title}
@@ -58,7 +67,20 @@ export default function FourPillarsGrid() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className="relative h-full p-8 lg:p-10 bg-white/80 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg shadow-[#00AEEF]/5 hover:shadow-[#00AEEF]/20 transition-all duration-500 hover:scale-[1.02]">
+                <div
+                  className={`relative h-full p-8 lg:p-10 rounded-2xl border border-white/50 shadow-lg shadow-[#00AEEF]/5 hover:shadow-[#00AEEF]/20 transition-all duration-500 hover:scale-[1.02] overflow-hidden ${
+                    isDarkCard ? `${darkBgClass} text-white` : 'bg-white/80 backdrop-blur-xl'
+                  }`}
+                >
+                  {isDarkCard && bgImage && (
+                    <>
+                      <div
+                        className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none transition-transform duration-700 group-hover:scale-105"
+                        style={{ backgroundImage: `url('${bgImage}')` }}
+                      />
+                      <div className={`absolute inset-0 ${gradientOverlay} pointer-events-none`} />
+                    </>
+                  )}
                   <motion.div
                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{
@@ -74,11 +96,11 @@ export default function FourPillarsGrid() {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <h3 className="text-2xl lg:text-3xl font-black text-[#001A2C] mb-4">
+                    <h3 className={`text-2xl lg:text-3xl font-black mb-4 ${isDarkCard ? 'text-white' : 'text-[#001A2C]'}`}>
                       {pillar.title}
                     </h3>
 
-                    <p className="text-slate-600 leading-relaxed">{pillar.description}</p>
+                    <p className={`leading-relaxed ${isDarkCard ? 'text-slate-200' : 'text-slate-600'}`}>{pillar.description}</p>
                   </div>
 
                   <div

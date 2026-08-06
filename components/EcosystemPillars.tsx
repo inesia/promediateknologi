@@ -30,24 +30,29 @@ const creatorFeatures = [
 
 export default function EcosystemPillars() {
   return (
-    <section className="relative bg-white pb-20 sm:pb-28 lg:pb-32 text-slate-900 pt-0">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-20 -mt-16 sm:-mt-20 lg:-mt-[72px]">
+    <section className="relative bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 text-slate-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-20 mt-4 sm:mt-6 lg:mt-8">
         
-        {/* Floating White Stats Bar Card - Exactly 50% in Hero, 50% in Light Section */}
+        {/* Floating White Stats Bar Card - Optimized for Mobile & Desktop */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-xl py-8 lg:py-10 px-4 lg:px-8 shadow-[0_30px_40px_-15px_rgba(0,0,0,0.35)] border border-slate-100 mb-16 sm:mb-20"
+          className="bg-white rounded-2xl py-6 lg:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100 mb-16 sm:mb-20"
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 gap-y-8 lg:gap-y-0">
+          <div className="grid grid-cols-2 lg:grid-cols-5 lg:divide-x divide-slate-200 gap-y-6 sm:gap-y-8 lg:gap-y-0">
             {statsData.map((stat, idx) => (
-              <div key={idx} className="text-center flex flex-col justify-center items-center lg:px-2">
-                <span className="text-3xl lg:text-[36px] font-bold text-[#00AEEF] tracking-tight block mb-2">
+              <div 
+                key={idx} 
+                className={`text-center flex flex-col justify-center items-center px-2 py-1 lg:py-0 ${
+                  idx === 4 ? 'col-span-2 lg:col-span-1 border-t border-slate-100/80 pt-4 lg:border-t-0 lg:pt-0' : ''
+                }`}
+              >
+                <span className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#00AEEF] tracking-tight block mb-1.5">
                   {stat.value}
                 </span>
-                <span className="text-sm font-medium text-slate-600">
+                <span className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
                   {stat.label}
                 </span>
               </div>
@@ -78,20 +83,15 @@ export default function EcosystemPillars() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#061838] via-[#092659] to-[#0c3172] border border-blue-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
+            className="relative rounded-3xl overflow-hidden bg-[#061838] border border-blue-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
           >
-            {/* Visual Screen Mockup Overlay on Right Side */}
-            <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 sm:opacity-30 pointer-events-none overflow-hidden">
-              <div className="absolute right-[-20%] top-[10%] w-[130%] h-[90%] rounded-2xl border border-[#00AEEF]/30 bg-[#07193c] p-4 shadow-2xl transform rotate-[-6deg] transition-transform duration-700 group-hover:rotate-[-4deg] group-hover:scale-105">
-                <div className="w-full h-4 bg-[#00AEEF]/20 rounded mb-3" />
-                <div className="w-3/4 h-3 bg-white/30 rounded mb-2" />
-                <div className="w-1/2 h-3 bg-white/20 rounded mb-4" />
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="h-16 bg-[#00AEEF]/30 rounded-lg" />
-                  <div className="h-16 bg-[#00AEEF]/20 rounded-lg" />
-                </div>
-              </div>
-            </div>
+            {/* Background Image Layer */}
+            <div
+              className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none transition-transform duration-700 group-hover:scale-105"
+              style={{ backgroundImage: "url('/images/section-bgg.png')" }}
+            />
+            {/* Directional Dark Gradient Overlay for perfect text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#061838] via-[#061838]/95 to-[#092659]/60 pointer-events-none" />
 
             <div className="relative z-10">
               {/* Icon Container */}
@@ -141,22 +141,15 @@ export default function EcosystemPillars() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#140b2e] via-[#211347] to-[#311b66] border border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
+            className="relative rounded-3xl overflow-hidden bg-[#140b2e] border border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
           >
-            {/* Visual Smartphone Profile Mockup Overlay on Right Side */}
-            <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 sm:opacity-30 pointer-events-none overflow-hidden">
-              <div className="absolute right-[-10%] top-[8%] w-[80%] h-[110%] rounded-3xl border-2 border-purple-400/30 bg-[#190d38] p-3 shadow-2xl transform rotate-[8deg] transition-transform duration-700 group-hover:rotate-[6deg] group-hover:scale-105">
-                <div className="w-12 h-2 bg-purple-400/40 rounded-full mx-auto mb-3" />
-                <div className="w-12 h-12 rounded-full bg-purple-500/40 mx-auto mb-2" />
-                <div className="w-20 h-2.5 bg-white/40 rounded mx-auto mb-1" />
-                <div className="w-28 h-2 bg-white/20 rounded mx-auto mb-3" />
-                <div className="grid grid-cols-3 gap-1 px-1">
-                  <div className="h-14 bg-purple-600/30 rounded" />
-                  <div className="h-14 bg-purple-600/30 rounded" />
-                  <div className="h-14 bg-purple-600/30 rounded" />
-                </div>
-              </div>
-            </div>
+            {/* Background Image Layer */}
+            <div
+              className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none transition-transform duration-700 group-hover:scale-105"
+              style={{ backgroundImage: "url('/images/section-bgc.png')" }}
+            />
+            {/* Directional Dark Gradient Overlay for perfect text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#140b2e] via-[#140b2e]/95 to-[#211347]/60 pointer-events-none" />
 
             <div className="relative z-10">
               {/* Icon Container */}

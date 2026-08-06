@@ -53,39 +53,91 @@ export default function PhilosophySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8 text-lg lg:text-xl text-slate-700 leading-relaxed tracking-wide"
+            className="space-y-16"
           >
-            <div className="space-y-12">
-              {/* Profil Singkat */}
-              <div>
-                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Profil Singkat</h3>
-                <p>
-                  Promedia Group adalah ekosistem media dan teknologi yang tumbuh dari keyakinan bahwa setiap cerita layak mendapat ruang. Bukan hanya dari media besar, tapi juga dari media kecil, jurnalis dan kreator personal, terutama mereka yang berkarya di daerah, dekat dengan realitas sehari-hari.
-                </p>
-                <p className="mt-4">
-                  Sejak Juli 2021, Promedia Group hadir dengan misi menumbuhkan dan mendampingi mereka, mitra-mitra kami yang memiliki banyak cerita penting, namun sering kali kekurangan akses dan dukungan teknologi. Melalui berbagai inisiatif di bidang media digital, sosial media hingga dan video, Promedia Group menyediakan platform, infrastruktur teknologi dan monetisasi, serta jaringan media dan komunitas kreator dengan satu tujuan, tumbuh bersama.
-                </p>
-                <p className="mt-4">
-                  Bagi kami, teknologi hanyalah alat. Yang utama adalah manusia, proses, dan cerita di baliknya. Karena suara-suara dari daerah tidak kalah penting, hanya sering kali kurang terdengar. Promedia Group hadir untuk membantu suara-suara itu tumbuh, terhubung, dan sampai ke audiens yang lebih luas secara berkelanjutan.
-                </p>
-              </div>
+            {/* About Us Paragraphs */}
+            <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 p-8 sm:p-10 lg:p-12 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 space-y-6">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#001A2C] tracking-tight">
+                About Us
+              </h3>
+              <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">
+                <strong className="text-[#001A2C] font-semibold">Promedia Group</strong> adalah perusahaan pengembang ekosistem media digital yang berfokus pada pertumbuhan publisher, creator, dan influencer di Indonesia.
+              </p>
+              <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">
+                Kami percaya masa depan media tidak lagi bergantung pada satu platform. Karena itu kami membangun ekosistem multi-platform yang mengintegrasikan website, media sosial, teknologi, pelatihan, serta monetisasi agar setiap mitra dapat berkembang secara berkelanjutan.
+              </p>
+            </div>
 
-              {/* Filosofi Kami */}
-              <div>
-                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Filosofi Kami</h3>
-                <p>
-                  Promedia Group meyakini bahwa keberlanjutan media dibangun melalui akses yang setara dan kolaborasi yang sehat. Setiap entitas, baik media maupun kreator independen, memiliki peran dalam ekosistem informasi yang beragam.
-                </p>
-                <p className="mt-4">
-                  Kami menyediakan platform, teknologi, dan jaringan untuk mendukung proses tersebut secara efisien dan berkelanjutan, tanpa mengorbankan independensi dan identitas. Dengan pendekatan ekosistem, Promedia Group berkomitmen untuk tumbuh bersama mitra kami dan membangun media yang relevan bagi masa depan.
-                </p>
-              </div>
+            {/* Vision & Mission Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+              
+              {/* Vision Card */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-br from-[#061838] to-[#092659] p-8 sm:p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group border border-blue-500/20"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
+                  style={{ backgroundImage: "url('/images/section-bgg.png')" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#061838]/90 to-[#092659]/80 pointer-events-none" />
 
-              {/* Cita-cita Kami */}
+                <div className="relative z-10 space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-[#00AEEF]/20 border border-[#00AEEF]/40 flex items-center justify-center text-[#00AEEF]">
+                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                    Vision
+                  </h3>
+                  <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-medium">
+                    Menjadi ekosistem media digital terbesar di Indonesia.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Mission Card */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/40 relative overflow-hidden flex flex-col justify-between group"
+              >
+                <div className="relative z-10 space-y-6">
+                  <div className="w-14 h-14 rounded-2xl bg-[#00AEEF]/10 border border-[#00AEEF]/30 flex items-center justify-center text-[#00AEEF]">
+                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[#001A2C]">
+                    Mission
+                  </h3>
+                  
+                  <ul className="space-y-3.5">
+                    {[
+                      'Mengembangkan publisher profesional.',
+                      'Memberdayakan creator.',
+                      'Membangun teknologi media.',
+                      'Meningkatkan monetisasi.',
+                      'Menghubungkan brand dengan audience.',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-base sm:text-lg text-slate-700 font-medium">
+                        <div className="w-2 h-2 rounded-full bg-[#00AEEF] mt-2.5 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+
+            </div>
+
+            {/* Additional Company Narrative */}
+            <div className="space-y-8 text-slate-700 leading-relaxed pt-6 border-t border-slate-200/60">
               <div>
-                <h3 className="text-2xl font-bold text-[#001A2C] mb-4">Cita-cita Kami</h3>
-                <p>
-                  Menjadi ruang di mana setiap cerita memiliki kesempatan yang sama untuk tumbuh, didengar, dan memberi makna, tanpa dibatasi lokasi, modal, dan kerumitan teknologi.
+                <h4 className="text-xl font-bold text-[#001A2C] mb-3">Profil & Perjalanan</h4>
+                <p className="text-base sm:text-lg">
+                  Promedia Group hadir dengan misi menumbuhkan dan mendampingi mitra-mitra media digital di seluruh Indonesia. Melalui berbagai inisiatif di bidang media digital, media sosial, hingga teknologi video, kami menyediakan platform, infrastruktur teknologi, monetisasi, serta jaringan media dan komunitas kreator dengan satu tujuan: tumbuh bersama secara berkelanjutan.
                 </p>
               </div>
             </div>
