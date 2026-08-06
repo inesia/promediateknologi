@@ -22,11 +22,11 @@ export default function Hero() {
       {/* Dynamic Network Particles & Glowing Stars Background */}
       <HeroEcosystemBackground />
 
-      {/* Full Bleed Background Image Layer using /images/bg-hero1.png */}
+      {/* Full Bleed Background Image Layer using /images/bg-hero1.webp */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[68%] xl:w-[65%] h-full opacity-50 sm:opacity-75 lg:opacity-100">
           <Image
-            src="/images/bg-hero1.png"
+            src="/images/bg-hero1.webp"
             alt="Digital Media Ecosystem Background"
             fill
             priority

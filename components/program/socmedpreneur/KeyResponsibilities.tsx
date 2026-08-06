@@ -60,7 +60,7 @@ export default function KeyResponsibilities() {
           </p>
           <div className="flex justify-center">
             <Image
-              src="/images/Voxpro5.png"
+              src="/images/Voxpro5.webp"
               alt="VoxPro by Promedia Group"
               width={360}
               height={120}

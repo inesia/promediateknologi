@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 
 export default function PortfolioSlider() {
   const campaigns = [
-    { id: 1, title: 'Campaign 1', image: '/images/portfolios/campaign1.jpg' },
-    { id: 2, title: 'Campaign 2', image: '/images/portfolios/campaign2.jpg' },
-    { id: 3, title: 'Campaign 3', image: '/images/portfolios/campaign3.jpg' },
-    { id: 4, title: 'Campaign 4', image: '/images/portfolios/campaign4.jpg' },
-    { id: 5, title: 'Campaign 5', image: '/images/portfolios/campaign5.jpg' },
+    { id: 1, title: 'Campaign 1', image: '/images/portfolios/campaign1.webp' },
+    { id: 2, title: 'Campaign 2', image: '/images/portfolios/campaign2.webp' },
+    { id: 3, title: 'Campaign 3', image: '/images/portfolios/campaign3.webp' },
+    { id: 4, title: 'Campaign 4', image: '/images/portfolios/campaign4.webp' },
+    { id: 5, title: 'Campaign 5', image: '/images/portfolios/campaign5.webp' },
   ]
 
   return (

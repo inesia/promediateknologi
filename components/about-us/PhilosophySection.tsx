@@ -78,7 +78,7 @@ export default function PhilosophySection() {
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
-                  style={{ backgroundImage: "url('/images/section-bgg.png')" }}
+                  style={{ backgroundImage: "url('/images/section-bgg.webp')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#061838]/90 to-[#092659]/80 pointer-events-none" />
 

@@ -9,25 +9,25 @@ const reviews = [
     id: 1,
     title: 'Review iPhone 15 Pro Max: Flagship yang Mengesankan',
     category: 'Smartphone',
-    thumbnail: '/images/logo.png',
+    thumbnail: '/images/logo.webp',
   },
   {
     id: 2,
     title: 'MacBook Pro M3: Performa untuk Profesional',
     category: 'Laptop',
-    thumbnail: '/images/logo.png',
+    thumbnail: '/images/logo.webp',
   },
   {
     id: 3,
     title: 'Samsung Galaxy S24 Ultra: AI yang Revolusioner',
     category: 'Smartphone',
-    thumbnail: '/images/logo.png',
+    thumbnail: '/images/logo.webp',
   },
   {
     id: 4,
     title: 'iPad Pro 2024: Tablet untuk Kreator',
     category: 'Tablet',
-    thumbnail: '/images/logo.png',
+    thumbnail: '/images/logo.webp',
   },
 ]
 

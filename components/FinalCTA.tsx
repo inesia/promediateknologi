@@ -35,7 +35,7 @@ export default function FinalCTA() {
             <div className="flex items-center gap-3.5 pt-4 border-t border-slate-100">
               <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border border-slate-200 shadow-sm">
                 <Image
-                  src="/images/avatar-andi.png"
+                  src="/images/avatar-andi.webp"
                   alt="Andi Pratama"
                   fill
                   className="object-cover"
@@ -115,7 +115,7 @@ export default function FinalCTA() {
             <div className="flex items-center gap-3.5 pt-4 border-t border-slate-100">
               <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border border-slate-200 shadow-sm">
                 <Image
-                  src="/images/avatar-nadia.png"
+                  src="/images/avatar-nadia.webp"
                   alt="Nadia Putri"
                   fill
                   className="object-cover"

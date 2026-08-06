@@ -52,7 +52,7 @@ export default function FourPillarsGrid() {
             const isPublisher = pillar.title === 'Publisher Media Network'
             const isInfluencer = pillar.title === 'Influencer Media Network'
             const isDarkCard = isPublisher || isInfluencer
-            const bgImage = isPublisher ? "/images/section-bgg.png" : isInfluencer ? "/images/section-bgc.png" : null
+            const bgImage = isPublisher ? "/images/section-bgg.webp" : isInfluencer ? "/images/section-bgc.webp" : null
             const darkBgClass = isPublisher ? 'bg-[#061838]' : isInfluencer ? 'bg-[#140b2e]' : 'bg-white/80 backdrop-blur-xl'
             const gradientOverlay = isPublisher
               ? "bg-gradient-to-br from-[#061838]/95 via-[#061838]/90 to-[#092659]/75"

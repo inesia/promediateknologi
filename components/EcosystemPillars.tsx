@@ -88,7 +88,7 @@ export default function EcosystemPillars() {
             {/* Background Image Layer */}
             <div
               className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('/images/section-bgg.png')" }}
+              style={{ backgroundImage: "url('/images/section-bgg.webp')" }}
             />
             {/* Directional Dark Gradient Overlay for perfect text contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#061838] via-[#061838]/95 to-[#092659]/60 pointer-events-none" />
@@ -146,7 +146,7 @@ export default function EcosystemPillars() {
             {/* Background Image Layer */}
             <div
               className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('/images/section-bgc.png')" }}
+              style={{ backgroundImage: "url('/images/section-bgc.webp')" }}
             />
             {/* Directional Dark Gradient Overlay for perfect text contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#140b2e] via-[#140b2e]/95 to-[#211347]/60 pointer-events-none" />
