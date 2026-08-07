@@ -61,7 +61,7 @@ function DigitalGridCanvas() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(0, 174, 239, 0.6)'
+        ctx.fillStyle = 'rgba(0, 174, 239, 0.45)'
         ctx.fill()
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -70,7 +70,7 @@ function DigitalGridCanvas() {
           const dy = p.y - o.y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < maxDistance) {
-            const alpha = 0.2 * (1 - dist / maxDistance)
+            const alpha = 0.15 * (1 - dist / maxDistance)
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(o.x, o.y)
@@ -95,7 +95,7 @@ function DigitalGridCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
+      className="absolute inset-0 w-full h-full opacity-70 pointer-events-none"
       aria-hidden
     />
   )
@@ -103,15 +103,19 @@ function DigitalGridCanvas() {
 
 export default function HeroEcosystemBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none bg-[#030917]" aria-hidden>
+    <div className="absolute inset-0 overflow-hidden pointer-events-none bg-transparent" aria-hidden>
       {/* Radial Glow Spotlights */}
-      <div className="absolute -top-[10%] left-[-5%] w-[600px] h-[600px] bg-[#0072FF]/20 rounded-full blur-[140px]" />
-      <div className="absolute top-[20%] right-[-10%] w-[700px] h-[700px] bg-[#00AEEF]/15 rounded-full blur-[160px]" />
-      <div className="absolute bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-[#8B5CF6]/15 rounded-full blur-[150px]" />
+      <div className="absolute -top-[10%] left-[-5%] w-[600px] h-[600px] bg-[#00AEEF]/20 rounded-full blur-[140px]" />
+      <div className="absolute top-[20%] right-[-10%] w-[700px] h-[700px] bg-[#2D74B3]/15 rounded-full blur-[160px]" />
+      <div className="absolute bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-[#00AEEF]/15 rounded-full blur-[150px]" />
+      
+      {/* Vibrant Mobile Spotlight Glow */}
+      <div className="block lg:hidden absolute top-[8%] right-[-15%] w-[380px] h-[380px] bg-[#00AEEF]/30 rounded-full blur-[90px]" />
+      <div className="block lg:hidden absolute top-[45%] left-[-20%] w-[320px] h-[320px] bg-[#2D74B3]/25 rounded-full blur-[85px]" />
 
       {/* Grid Pattern Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.12]" 
+        className="absolute inset-0 opacity-[0.05]" 
         style={{
           backgroundImage: `linear-gradient(to right, #00AEEF 1px, transparent 1px), linear-gradient(to bottom, #00AEEF 1px, transparent 1px)`,
           backgroundSize: '48px 48px'
@@ -120,14 +124,6 @@ export default function HeroEcosystemBackground() {
 
       {/* Interactive Network Particle Canvas */}
       <DigitalGridCanvas />
-
-      {/* Dark Vignette Overlay to ensure text high contrast */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle at 20% 50%, rgba(3, 9, 23, 0.4) 0%, rgba(3, 9, 23, 0.85) 70%, rgba(3, 9, 23, 0.98) 100%)'
-        }}
-      />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { homeHeader } from "@/lib/homeContent";
 
 interface SubMenuItem {
@@ -42,6 +43,8 @@ const navItems: NavItem[] = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -57,12 +60,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isTransparent = isHome && !isScrolled && !isMobileMenuOpen;
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-slate-100 shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent border-b border-transparent shadow-none"
+          : "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
+      }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -154,7 +163,7 @@ export default function Header() {
           <div className="flex items-center gap-2 sm:gap-3">
             <Link href={homeHeader.registerHref} className="shrink-0">
               <motion.div
-                className="px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-lg shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300 relative overflow-hidden cursor-pointer"
+                className="px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#00AEEF] hover:bg-[#0088D6] border-2 border-white rounded-lg shadow-none transition-all duration-300 relative overflow-hidden cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
