@@ -59,7 +59,7 @@ export default function Hero() {
 
       {/* Hero Main Content Container */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full flex flex-col justify-center">
-        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full max-w-7xl mx-auto py-2 lg:py-0">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full mx-auto py-2 lg:py-0">
           
           {/* Visual Illustration Section (Order 1 on mobile, Order 2 on desktop) */}
           <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-6 relative w-full flex items-center justify-center py-4 lg:py-0">
