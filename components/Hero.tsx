@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Play, Building2, Radio, Sparkles } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 import { homeHero } from '@/lib/homeContent'
 import HeroEcosystemBackground from '@/components/HeroEcosystemBackground'
 
@@ -62,18 +62,18 @@ export default function Hero() {
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full mx-auto py-2 lg:py-0">
           
           {/* Visual Illustration Section (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-6 relative w-full flex items-center justify-center py-4 lg:py-0">
+          <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-6 relative w-full flex items-center justify-center py-2 lg:py-0">
             
-            {/* Main Visual Image (banner-hero2.png) */}
+            {/* Main Visual Image (banner-hero2.png - Phone & Social Media Illustration) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.94, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
               transition={{
                 opacity: { duration: 0.8, delay: 0.1 },
                 scale: { duration: 0.8, delay: 0.1 },
                 y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
               }}
-              className="relative z-20 w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[420px] md:max-w-md lg:max-w-xl mx-auto"
+              className="relative z-20 w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] md:max-w-lg lg:max-w-2xl mx-auto"
             >
               <Image
                 src="/images/banner-hero2.png"
@@ -82,71 +82,8 @@ export default function Hero() {
                 height={760}
                 priority
                 quality={100}
-                className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,174,239,0.25)] hover:scale-[1.02] transition-transform duration-500"
+                className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,174,239,0.28)] hover:scale-[1.02] transition-transform duration-500"
               />
-            </motion.div>
-
-            {/* Badge 1: Stronger Media (Top-Left) */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-2 left-0 sm:-top-3 sm:left-2 lg:-top-4 lg:-left-4 z-30 pointer-events-auto scale-85 sm:scale-100 origin-top-left"
-            >
-              <div className="flex items-center gap-2.5 sm:gap-3.5 px-3 sm:px-5 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-[#00AEEF]/35 backdrop-blur-xl text-[#001A2C] shadow-[0_8px_25px_rgba(0,174,239,0.22)] transition-transform hover:scale-105">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00AEEF] flex items-center justify-center text-white shrink-0 shadow-md shadow-[#00AEEF]/30">
-                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
-                </div>
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-xs sm:text-base font-bold text-[#001A2C] tracking-wide">
-                    Stronger
-                  </span>
-                  <span className="text-xs sm:text-base font-bold text-[#00AEEF] tracking-wide">
-                    Media
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Badge 2: Bigger Impact (Bottom-Right, placed directly below the YouTube icon) */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -bottom-2 right-0 sm:bottom-0 sm:right-2 lg:-bottom-4 lg:-right-4 z-30 pointer-events-auto scale-85 sm:scale-100 origin-bottom-right"
-            >
-              <div className="flex items-center gap-2.5 sm:gap-3.5 px-3 sm:px-5 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-purple-200 backdrop-blur-xl text-[#001A2C] shadow-[0_8px_25px_rgba(124,77,255,0.22)] transition-transform hover:scale-105">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#7c4dff] flex items-center justify-center text-white shrink-0 shadow-md shadow-purple-500/30">
-                  <Radio className="w-4 h-4 sm:w-5 sm:h-5" />
-                </div>
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-xs sm:text-base font-bold text-[#001A2C] tracking-wide">
-                    Bigger
-                  </span>
-                  <span className="text-xs sm:text-base font-bold text-[#7c4dff] tracking-wide">
-                    Impact
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Badge 3: Brighter Future (Bottom-Left) */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute -bottom-2 left-1 sm:-bottom-3 sm:left-3 lg:-bottom-4 lg:left-0 z-30 pointer-events-auto scale-85 sm:scale-100 origin-bottom-left"
-            >
-              <div className="flex items-center gap-2.5 sm:gap-3.5 px-3 sm:px-5 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-teal-200 backdrop-blur-xl text-[#001A2C] shadow-[0_8px_25px_rgba(0,143,149,0.22)] transition-transform hover:scale-105">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#008f95] flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-500/30">
-                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
-                </div>
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-xs sm:text-base font-bold text-[#001A2C] tracking-wide">
-                    Brighter
-                  </span>
-                  <span className="text-xs sm:text-base font-bold text-[#008f95] tracking-wide">
-                    Future
-                  </span>
-                </div>
-              </div>
             </motion.div>
 
           </div>
