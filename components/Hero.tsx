@@ -101,24 +101,24 @@ export default function Hero() {
               {homeHero.badge}
             </motion.div>
 
-            {/* Headline - Full Width on Mobile */}
+            {/* Headline - 2 Lines on Mobile View */}
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.1, duration: 0.6 }}
               className="space-y-1 mb-3 sm:mb-6 w-full"
             >
-              <h1 className="w-full text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08] text-[#001A2C]">
-                <span className="block w-full text-[#001A2C]">
-                  {homeHero.headlineLine1}
+              <h1 className="w-full text-2xl xs:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.12] text-[#001A2C]">
+                {/* Line 1: Building Indonesia's */}
+                <span className="block w-full">
+                  <span className="text-[#001A2C]">Building </span>
+                  <span className="bg-gradient-to-r from-[#00AEEF] via-[#0088D6] to-[#2D74B3] bg-clip-text text-transparent drop-shadow-[0_4px_16px_rgba(0,174,239,0.3)]">
+                    Indonesia&apos;s
+                  </span>
                 </span>
-                <span className="block w-full bg-gradient-to-r from-[#00AEEF] via-[#0088D6] to-[#2D74B3] bg-clip-text text-transparent drop-shadow-[0_4px_16px_rgba(0,174,239,0.3)]">
-                  {homeHero.headlineHighlight}
-                </span>
+                
+                {/* Line 2: Digital Media Ecosystem */}
                 <span className="block w-full text-[#001A2C]">
-                  {homeHero.headlineLine2}
-                </span>
-                <span className="block w-full text-[#001A2C]">
-                  {homeHero.headlineLine3}
+                  Digital Media Ecosystem
                 </span>
               </h1>
             </motion.div>
