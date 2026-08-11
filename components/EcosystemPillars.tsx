@@ -4,14 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Building2, User, Check, ArrowRight } from 'lucide-react'
 
-const statsData = [
-  { value: '1.300+', label: 'Publisher Partner' },
-  { value: '15.000+', label: 'Creator & Influencer' },
-  { value: '38', label: 'Provinsi' },
-  { value: '240+', label: 'Kabupaten/Kota' },
-  { value: 'Jutaan', label: 'Audience Setiap Hari' },
-]
-
 const publisherFeatures = [
   'Website Profesional',
   'Infrastruktur & Teknologi Terbaik',
@@ -31,34 +23,7 @@ const creatorFeatures = [
 export default function EcosystemPillars() {
   return (
     <section className="relative bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 text-slate-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mt-4 sm:mt-6 lg:mt-8">
-        
-        {/* Floating White Stats Bar Card - Optimized for Mobile & Desktop */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl py-6 lg:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100 mb-16 sm:mb-20"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-5 lg:divide-x divide-slate-200 gap-y-6 sm:gap-y-8 lg:gap-y-0">
-            {statsData.map((stat, idx) => (
-              <div 
-                key={idx} 
-                className={`text-center flex flex-col justify-center items-center px-2 py-1 lg:py-0 ${
-                  idx === 4 ? 'col-span-2 lg:col-span-1 border-t border-slate-100/80 pt-4 lg:border-t-0 lg:pt-0' : ''
-                }`}
-              >
-                <span className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#00AEEF] tracking-tight block mb-1.5">
-                  {stat.value}
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
         {/* Section Heading */}
         <motion.div 

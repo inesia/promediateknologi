@@ -120,15 +120,15 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 Ikuti Kami
               </h3>
-              {/* Force 2 rows for 6 icons by using grid-cols-3 */}
-              <div className="grid grid-cols-3 gap-3 w-fit">
+              {/* Single row for 6 social icons */}
+              <div className="flex items-center gap-2 sm:gap-3 w-fit flex-wrap sm:flex-nowrap">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#00AEEF] flex items-center justify-center transition-all duration-300"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#00AEEF] flex items-center justify-center transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.label}

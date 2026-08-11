@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#F4F8FC] text-[#001A2C] pt-20 pb-12 lg:pt-28 lg:pb-20"
+      className="relative min-h-[100dvh] h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#F4F8FC] text-[#001A2C] pt-14 pb-4 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-16"
     >
       {/* Dynamic Network Particles & Light Background Canvas */}
       <HeroEcosystemBackground />
@@ -58,11 +58,140 @@ export default function Hero() {
       </div>
 
       {/* Hero Main Content Container */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full flex flex-col justify-center">
-        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full mx-auto py-2 lg:py-0">
+      <div className="container mx-auto px-3.5 sm:px-6 lg:px-8 relative z-20 w-full flex flex-col justify-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-12 items-center w-full mx-auto py-1 lg:py-0">
           
-          {/* Visual Illustration Section (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-6 relative w-full flex items-center justify-center py-2 lg:py-0">
+          {/* Text Content & Action Buttons Section (Desktop Left Column) */}
+          <div className="lg:col-span-7 xl:col-span-6 text-left py-1 sm:py-4 lg:py-6 flex flex-col justify-center w-full">
+            
+            {/* Top Badge Pill (Full Width at Top on Mobile & Desktop) */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.05, duration: 0.5 }}
+              className="inline-flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#00AEEF]/10 text-[#00AEEF] border border-[#00AEEF]/25 text-[10px] sm:text-sm font-bold tracking-wider uppercase mb-2 sm:mb-5 self-start"
+            >
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00AEEF] animate-pulse" />
+              {homeHero.badge}
+            </motion.div>
+
+            {/* Mobile Top Row: Judul Left, Gambar Right | Desktop: Normal Vertical Stack */}
+            <div className="grid grid-cols-12 lg:flex lg:flex-col items-center lg:items-start gap-2 sm:gap-4 mb-2 sm:mb-6">
+              
+              {/* Left Column (Mobile: 7 Cols | Desktop: Full Width) */}
+              <div className="col-span-7 lg:w-full flex flex-col justify-center text-left">
+                {/* Headline - Larger Font on Mobile to Match Image Height */}
+                <motion.div
+                  {...fadeInUp}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                  className="space-y-1 w-full"
+                >
+                  <h1 className="w-full text-[2.5rem] leading-[1.08] sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#001A2C]">
+                    {/* Line 1: Building Indonesia's */}
+                    <span className="block w-full">
+                      <span className="text-[#001A2C]">Building </span>
+                      <span className="bg-gradient-to-r from-[#00AEEF] via-[#0088D6] to-[#2D74B3] bg-clip-text text-transparent drop-shadow-[0_4px_16px_rgba(0,174,239,0.3)]">
+                        Indonesia&apos;s
+                      </span>
+                    </span>
+                    
+                    {/* Line 2: Digital Media Ecosystem */}
+                    <span className="block w-full text-[#001A2C]">
+                      Digital Media Ecosystem
+                    </span>
+                  </h1>
+                </motion.div>
+
+                {/* Subheadline (Desktop Only inside left column) */}
+                <motion.p
+                  {...fadeInUp}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="hidden lg:block text-sm sm:text-lg md:text-xl text-slate-700 leading-relaxed font-normal max-w-xl mt-4 sm:mt-8"
+                >
+                  {homeHero.subheadline}
+                </motion.p>
+              </div>
+
+              {/* Right Column Image for Mobile (Mobile: 5 Cols | Desktop: Hidden, handled by desktop column) */}
+              <div className="col-span-5 block lg:hidden relative w-full flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
+                  transition={{
+                    opacity: { duration: 0.8, delay: 0.1 },
+                    scale: { duration: 0.8, delay: 0.1 },
+                    y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
+                  }}
+                  className="relative z-20 w-full max-w-[160px] xs:max-w-[190px] sm:max-w-[240px] mx-auto"
+                >
+                  <Image
+                    src="/images/banner-hero2-m2.png"
+                    alt="Promedia Ecosystem - Web & Mobile Platform"
+                    width={950}
+                    height={760}
+                    priority
+                    quality={100}
+                    className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,174,239,0.22)]"
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Subheadline (Mobile Only - Full width above buttons) */}
+            <motion.p
+              {...fadeInUp}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="block lg:hidden text-lg sm:text-xl text-slate-700 leading-relaxed font-normal my-[30px] sm:my-6"
+            >
+              {homeHero.subheadline}
+            </motion.p>
+
+            {/* Action CTAs (Full width below Headline + Image on Mobile) */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="space-y-2.5 sm:space-y-5"
+            >
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 w-full">
+                {/* Primary Button */}
+                <Link href={homeHero.primaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <motion.span
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-4 text-xs sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-xl shadow-md shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/45 transition-all duration-300 group cursor-pointer text-center"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>{homeHero.primaryCta}</span>
+                    <ArrowRight className="w-4 h-4 ml-2 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+                  </motion.span>
+                </Link>
+
+                {/* Secondary Button */}
+                <Link href={homeHero.secondaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <motion.span
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-4 text-xs sm:text-base font-semibold text-[#001A2C] bg-white border border-slate-300 hover:border-[#00AEEF] rounded-xl backdrop-blur-md hover:bg-slate-50 shadow-sm transition-all duration-300 group cursor-pointer text-center"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>{homeHero.secondaryCta}</span>
+                    <ArrowRight className="w-4 h-4 ml-2 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+                  </motion.span>
+                </Link>
+              </div>
+
+              {/* Tertiary Link */}
+              <div className="pt-0.5">
+                <Link href={homeHero.tertiaryCtaHref} className="inline-flex items-center gap-2 text-[#001A2C] hover:text-[#00AEEF] text-xs sm:text-base font-medium group transition-colors">
+                  <span>{homeHero.tertiaryCta}</span>
+                  <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full border border-[#00AEEF]/40 bg-[#00AEEF]/10 flex items-center justify-center group-hover:bg-[#00AEEF] group-hover:text-white transition-colors p-1 text-[#00AEEF]">
+                    <Play className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current ml-0.5" />
+                  </div>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Visual Illustration Section (Desktop Right Column) */}
+          <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 relative w-full items-center justify-center py-2 lg:py-0">
             
             {/* Main Visual Image (banner-hero2.png - Phone & Social Media Illustration) */}
             <motion.div
@@ -86,94 +215,6 @@ export default function Hero() {
               />
             </motion.div>
 
-          </div>
-
-          {/* Text Content & Action Buttons Section (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-6 text-left py-2 sm:py-4 lg:py-6 flex flex-col justify-center w-full">
-            
-            {/* Top Badge Pill */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.05, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#00AEEF]/10 text-[#00AEEF] border border-[#00AEEF]/25 text-xs sm:text-sm font-bold tracking-wider uppercase mb-3 sm:mb-6 self-start"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#00AEEF] animate-pulse" />
-              {homeHero.badge}
-            </motion.div>
-
-            {/* Headline - 2 Lines on Mobile View */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="space-y-1 mb-3 sm:mb-6 w-full"
-            >
-              <h1 className="w-full text-2xl xs:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.12] text-[#001A2C]">
-                {/* Line 1: Building Indonesia's */}
-                <span className="block w-full">
-                  <span className="text-[#001A2C]">Building </span>
-                  <span className="bg-gradient-to-r from-[#00AEEF] via-[#0088D6] to-[#2D74B3] bg-clip-text text-transparent drop-shadow-[0_4px_16px_rgba(0,174,239,0.3)]">
-                    Indonesia&apos;s
-                  </span>
-                </span>
-                
-                {/* Line 2: Digital Media Ecosystem */}
-                <span className="block w-full text-[#001A2C]">
-                  Digital Media Ecosystem
-                </span>
-              </h1>
-            </motion.div>
-
-            {/* Subheadline */}
-            <motion.p
-              {...fadeInUp}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-sm sm:text-lg md:text-xl text-slate-700 leading-relaxed font-normal max-w-xl mb-6 sm:mb-8"
-            >
-              {homeHero.subheadline}
-            </motion.p>
-
-            {/* Action CTAs */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="space-y-4 sm:space-y-5"
-            >
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full">
-                {/* Primary Button */}
-                <Link href={homeHero.primaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <motion.span
-                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-xl shadow-lg shadow-[#00AEEF]/30 hover:shadow-[#00AEEF]/45 transition-all duration-300 group cursor-pointer text-center"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{homeHero.primaryCta}</span>
-                    <ArrowRight className="w-4 h-4 ml-2 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-                  </motion.span>
-                </Link>
-
-                {/* Secondary Button */}
-                <Link href={homeHero.secondaryCtaHref} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <motion.span
-                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-[#001A2C] bg-white border border-slate-300 hover:border-[#00AEEF] rounded-xl backdrop-blur-md hover:bg-slate-50 shadow-sm transition-all duration-300 group cursor-pointer text-center"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{homeHero.secondaryCta}</span>
-                    <ArrowRight className="w-4 h-4 ml-2 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-                  </motion.span>
-                </Link>
-              </div>
-
-              {/* Tertiary Link */}
-              <div className="pt-1">
-                <Link href={homeHero.tertiaryCtaHref} className="inline-flex items-center gap-2.5 text-[#001A2C] hover:text-[#00AEEF] text-sm sm:text-base font-medium group transition-colors">
-                  <span>{homeHero.tertiaryCta}</span>
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#00AEEF]/40 bg-[#00AEEF]/10 flex items-center justify-center group-hover:bg-[#00AEEF] group-hover:text-white transition-colors p-1 text-[#00AEEF]">
-                    <Play className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current ml-0.5" />
-                  </div>
-                </Link>
-              </div>
-            </motion.div>
           </div>
 
         </div>

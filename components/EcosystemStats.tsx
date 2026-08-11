@@ -43,7 +43,7 @@ export default function EcosystemStats() {
   const { primaryStats } = homeDalamAngka
 
   return (
-    <section ref={sectionRef} className="relative py-12 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden">
+    <section ref={sectionRef} className="relative py-8 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden">
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
@@ -56,22 +56,22 @@ export default function EcosystemStats() {
       />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center mx-auto mb-6 sm:mb-10 lg:mb-12"
+          className="text-center mx-auto mb-4 sm:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#00AEEF]/15 border border-[#00AEEF]/30 mb-4 sm:mb-6">
-            <BarChart3 className="w-4 h-4 text-[#00AEEF]" />
-            <span className="text-[10px] sm:text-xs font-bold text-[#00AEEF] uppercase tracking-wide">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full bg-[#00AEEF]/15 border border-[#00AEEF]/30 mb-3 sm:mb-6">
+            <BarChart3 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00AEEF]" />
+            <span className="text-[9px] sm:text-xs font-bold text-[#00AEEF] uppercase tracking-wide">
               {homeDalamAngka.badge}
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-2">
+          <h2 className="text-xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-1 sm:mb-2">
             Promedia{' '}
-            <span className="inline-block px-2 sm:px-3 py-0.5 rounded-md border border-[#00AEEF]/50 text-[#00AEEF]">
+            <span className="inline-block px-1.5 sm:px-3 py-0.5 rounded-md border border-[#00AEEF]/50 text-[#00AEEF]">
               {homeDalamAngka.titleAccent}
             </span>{' '}
             Angka
@@ -79,48 +79,53 @@ export default function EcosystemStats() {
         </motion.div>
 
         <motion.div
-          className="rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 shadow-2xl shadow-black/20 overflow-hidden"
+          className="rounded-xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 shadow-2xl shadow-black/20 overflow-hidden"
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <div className="px-4 sm:px-8 lg:px-12 pt-5 sm:pt-10 pb-4 sm:pb-8">
-            <p className="text-center text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto px-3 py-3 sm:px-4 sm:py-5 rounded-xl border border-slate-200 bg-white/80">
+          <div className="px-3 sm:px-8 lg:px-12 pt-4 sm:pt-10 pb-3 sm:pb-8">
+            <p className="text-center text-[11px] sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto px-2.5 py-2 sm:px-4 sm:py-5 rounded-xl border border-slate-200 bg-white/80">
               {homeDalamAngka.description}
             </p>
 
-            <div className="mt-6 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-8 mx-auto">
-              <div className="text-center rounded-xl border border-slate-200 bg-white px-2 py-4 sm:px-6 sm:py-6">
-                <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2">
-                  {primaryStats.mediaLabel}
+            {/* 3 Columns Clean Stat Bar on Mobile & Desktop */}
+            <div className="mt-3 sm:mt-12 grid grid-cols-3 gap-1.5 sm:gap-6 mx-auto">
+              <div className="text-center rounded-lg sm:rounded-xl border border-slate-200 bg-white px-1.5 py-2.5 sm:px-4 sm:py-6">
+                <p className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-tight sm:tracking-widest mb-1 sm:mb-2 truncate">
+                  Publisher Partner
                 </p>
-                <div className="flex flex-wrap items-baseline justify-center gap-1 sm:gap-2">
-                  <span className="text-2xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] tabular-nums leading-none">
-                    {formatCompactStat(primaryStats.mediaCount)}
-                  </span>
-                  <span className="text-sm sm:text-2xl font-bold text-[#00AEEF]">
-                    {primaryStats.mediaSuffix}
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-base sm:text-4xl lg:text-5xl font-black text-[#001A2C] leading-none">
+                    1.300+
                   </span>
                 </div>
               </div>
-              <div className="text-center rounded-xl border border-slate-200 bg-white px-2 py-4 sm:px-6 sm:py-6">
-                <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2">
-                  {primaryStats.viewsLabel}
+              <div className="text-center rounded-lg sm:rounded-xl border border-slate-200 bg-white px-1.5 py-2.5 sm:px-4 sm:py-6">
+                <p className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-tight sm:tracking-widest mb-1 sm:mb-2 truncate">
+                  Provinsi
                 </p>
-                <div className="flex flex-wrap items-baseline justify-center gap-1 sm:gap-2">
-                  <span className="text-2xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] leading-none">
-                    {formatCompactStat(primaryStats.viewsCount)}
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-base sm:text-4xl lg:text-5xl font-black text-[#001A2C] leading-none">
+                    38
                   </span>
                 </div>
-                <p className="text-[9px] sm:text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-snug">
-                  {primaryStats.viewsFootnote}
+              </div>
+              <div className="text-center rounded-lg sm:rounded-xl border border-slate-200 bg-white px-1.5 py-2.5 sm:px-4 sm:py-6">
+                <p className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-tight sm:tracking-widest mb-1 sm:mb-2 truncate">
+                  Kabupaten / Kota
                 </p>
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-base sm:text-4xl lg:text-5xl font-black text-[#001A2C] leading-none">
+                    240+
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="px-3 sm:px-6 lg:px-10 pb-5 sm:pb-10">
-            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mx-auto">
+          <div className="px-2.5 sm:px-6 lg:px-10 pb-4 sm:pb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 mx-auto">
               {socialPlatformStats.map((stat, index) => {
                 const visual = platformVisuals[stat.platform]
                 const isTwitter = stat.platform === TWITTER_PLATFORM
@@ -135,7 +140,7 @@ export default function EcosystemStats() {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.06 }}
                     className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${
-                      isTwitter ? 'col-span-2' : ''
+                      isTwitter ? 'col-span-1 sm:col-span-2' : ''
                     }`}
                   >
                     <div className="p-3 sm:p-5">
@@ -143,11 +148,11 @@ export default function EcosystemStats() {
                         <div className="flex items-center justify-between gap-3 sm:gap-6">
                           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                             <div
-                              className={`w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-lg sm:rounded-xl flex items-center justify-center shadow-sm ${visual.iconBg}`}
+                              className={`w-8 h-8 sm:w-11 sm:h-11 shrink-0 rounded-lg sm:rounded-xl flex items-center justify-center shadow-sm ${visual.iconBg}`}
                             >
                               <SocialBrandIcon
                                 platform={stat.platform}
-                                className="w-4 h-4 sm:w-5 sm:h-5"
+                                className="w-3.5 h-3.5 sm:w-5 sm:h-5"
                               />
                             </div>
                             <div className="min-w-0">
@@ -164,7 +169,7 @@ export default function EcosystemStats() {
                               Followers
                             </p>
                             <p
-                              className={`text-sm sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
+                              className={`text-xs sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
                             >
                               {followersDisplay}
                             </p>
@@ -172,14 +177,14 @@ export default function EcosystemStats() {
                         </div>
                       ) : (
                         <>
-                          <div className="flex items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                          <div className="flex items-center justify-between gap-2 pb-2.5 sm:pb-3 border-b border-slate-100">
                             <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                               <div
-                                className={`w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-lg sm:rounded-xl flex items-center justify-center shadow-sm ${visual.iconBg}`}
+                                className={`w-8 h-8 sm:w-11 sm:h-11 shrink-0 rounded-lg sm:rounded-xl flex items-center justify-center shadow-sm ${visual.iconBg}`}
                               >
                                 <SocialBrandIcon
                                   platform={stat.platform}
-                                  className="w-4 h-4 sm:w-5 sm:h-5"
+                                  className="w-3.5 h-3.5 sm:w-5 sm:h-5"
                                 />
                               </div>
                               <h3 className="font-bold text-[#001A2C] text-xs sm:text-base leading-tight truncate">
@@ -191,24 +196,24 @@ export default function EcosystemStats() {
                             </span>
                           </div>
                           <div
-                            className={`pt-3 grid gap-2 sm:gap-3 ${hasViews ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}
+                            className={`pt-2.5 sm:pt-3 grid gap-2 sm:gap-3 ${hasViews ? 'grid-cols-2' : 'grid-cols-1'}`}
                           >
                             <div>
                               <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5 sm:mb-1">
                                 Followers
                               </p>
                               <p
-                                className={`text-sm sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
+                                className={`text-xs sm:text-lg font-black tabular-nums leading-tight ${visual.textColor}`}
                               >
                                 {followersDisplay}
                               </p>
                             </div>
                             {viewsDisplay && (
-                              <div>
+                              <div className="text-right">
                                 <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5 sm:mb-1">
                                   Views
                                 </p>
-                                <p className="text-sm sm:text-lg font-black text-[#001A2C] tabular-nums leading-tight">
+                                <p className="text-xs sm:text-lg font-black text-[#001A2C] tabular-nums leading-tight">
                                   {viewsDisplay}
                                 </p>
                               </div>
@@ -223,15 +228,15 @@ export default function EcosystemStats() {
             </div>
           </div>
 
-          <div className="px-4 sm:px-8 lg:px-12 pb-5 sm:pb-10 lg:pb-12">
+          <div className="px-3 sm:px-8 lg:px-12 pb-4 sm:pb-10 lg:pb-12">
             <Link href={homeDalamAngka.ctaHref} className="block max-w-2xl mx-auto">
-              <span className="flex items-center justify-center gap-2 sm:gap-3 w-full px-4 py-3 sm:px-6 sm:py-5 bg-[#0077B6] text-white font-black text-xs sm:text-base rounded-xl shadow-lg shadow-[#0077B6]/35 hover:bg-[#005F92] transition-colors">
-                <BarChart3 className="w-5 h-5 shrink-0" />
+              <span className="flex items-center justify-center gap-2 sm:gap-3 w-full px-4 py-2.5 sm:px-6 sm:py-5 bg-[#0077B6] text-white font-black text-xs sm:text-base rounded-xl shadow-lg shadow-[#0077B6]/35 hover:bg-[#005F92] transition-colors">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 {homeDalamAngka.cta}
-                <ArrowRight className="w-5 h-5 shrink-0" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               </span>
             </Link>
-            <p className="text-center text-xs sm:text-sm text-slate-500 mt-4">
+            <p className="text-center text-[10px] sm:text-sm text-slate-500 mt-2 sm:mt-4">
               {homeDalamAngka.ctaFootnote}
             </p>
           </div>
