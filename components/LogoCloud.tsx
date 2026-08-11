@@ -107,7 +107,7 @@ export default function LogoCloud() {
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
                 <span className="w-1.5 h-6 bg-[#00AEEF] rounded-full shrink-0" aria-hidden />
-                Media Partners
+                Publisher Media Network
               </h3>
               <div className="hidden md:block">
                 <SectionViewAllLink href="/mitra" colorClass="text-[#00AEEF]" />
@@ -135,7 +135,7 @@ export default function LogoCloud() {
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-xl font-bold text-[#001A2C] flex items-center gap-2">
                 <span className="w-1.5 h-6 bg-[#2D74B3] rounded-full shrink-0" aria-hidden />
-                Social Media & Influencer
+                Influencer Media Network
               </h3>
               <div className="hidden md:block">
                 <SectionViewAllLink href="/mitra?category=social" colorClass="text-[#2D74B3]" />
