@@ -41,10 +41,32 @@ export default function FeaturesGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#001A2C] mb-3 tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#001A2C] mb-4 tracking-tight">
             Semua yang Anda Butuhkan untuk Tumbuh
           </h2>
-          <div className="w-10 h-1 bg-[#00AEEF] rounded-full mx-auto" />
+          <div className="w-10 h-1 bg-[#00AEEF] rounded-full mx-auto mb-6" />
+          
+          {/* Highlighted Wording for 100% Gratis */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl sm:rounded-full shadow-sm"
+          >
+            <div className="flex items-center gap-2">
+              <span className="flex h-2.5 w-2.5 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00AEEF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00AEEF]"></span>
+              </span>
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] text-sm sm:text-base">
+                100% Gratis.
+              </span>
+            </div>
+            <span className="text-sm sm:text-base text-slate-600 font-medium text-center">
+              Kami investasi di awal. Anda cukup siapkan domain dan fokus berkarya.
+            </span>
+          </motion.div>
         </motion.div>
 
         <motion.div

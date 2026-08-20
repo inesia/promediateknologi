@@ -33,11 +33,11 @@ export const PROGRAMS: ProgramRegistration[] = [
     slug: 'mediapreneur',
     title: PUBLISHER_MEDIA_NETWORK,
     menuLabel: PUBLISHER_MEDIA_NETWORK,
-    tagline: 'Bangun dan monetisasi portal media Anda sendiri',
+    tagline: 'Bangun bisnis media yang sustainable bersama tim terbaik Anda.',
     description:
       'Untuk pemilik dan pengelola media online yang sudah berjalan hingga jurnalis & kreator yang ingin memulai bisnis media independennya sendiri. Dapatkan dukungan IT, Marketing, hingga pendampingan, gratis.',
     programHref: '/program/publishermedianetwork',
-    ctaLabel: 'Daftar Publisher Media Network',
+    ctaLabel: 'Daftar Sebagai Publisher',
     forWho: 'Pemilik media, pemimpin redaksi, dan tim editorial (min. 3 orang)',
     beforeApply: [
       'Siapkan CV/portofolio tim inti dalam PDF (maks. 10 MB) per anggota.',
@@ -52,11 +52,11 @@ export const PROGRAMS: ProgramRegistration[] = [
     slug: 'socmedpreneur',
     title: 'Influencer Media Network',
     menuLabel: 'Influencer Media Network',
-    tagline: 'Tidak hanya jadi kreator, tapi pemengaruh',
+    tagline: 'Saatnya naik kelas: Dari kreator personal menjadi media profesional',
     description:
       'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
     programHref: '/program/influencermedianetwork',
-    ctaLabel: 'Daftar Influencer Media Network',
+    ctaLabel: 'Daftar Sebagai Influencer',
     forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
     beforeApply: [
       'Siapkan contoh konten sosial dengan performa terbaik.',

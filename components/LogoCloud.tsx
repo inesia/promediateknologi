@@ -36,18 +36,26 @@ function PartnerLogo({
       transition={{ delay: (index % 8) * 0.05 }}
     >
       <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow overflow-hidden group">
-        {!isLoaded && (
-          <div className="absolute inset-0 bg-slate-200 animate-pulse rounded-xl" />
+        {logo ? (
+          <>
+            {!isLoaded && (
+              <div className="absolute inset-0 bg-slate-200 animate-pulse rounded-xl" />
+            )}
+            <Image
+              src={logo}
+              alt={name}
+              fill
+              className={`object-contain p-2 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} group-hover:scale-105`}
+              sizes="(max-width: 768px) 50vw, 12vw"
+              onLoad={() => setIsLoaded(true)}
+              unoptimized
+            />
+          </>
+        ) : (
+          <span className="font-bold text-center text-slate-800 text-sm sm:text-base px-2 group-hover:scale-105 transition-transform duration-500">
+            {name}
+          </span>
         )}
-        <Image
-          src={logo}
-          alt={name}
-          fill
-          className={`object-contain p-2 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} group-hover:scale-105`}
-          sizes="(max-width: 768px) 50vw, 12vw"
-          onLoad={() => setIsLoaded(true)}
-          unoptimized
-        />
       </div>
     </motion.div>
   )
@@ -113,7 +121,7 @@ export default function LogoCloud() {
                 <SectionViewAllLink href="/mitra" colorClass="text-[#00AEEF]" />
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
               {mediaPartners.map((partner, index) => (
                 <PartnerLogo
                   key={partner.id}
@@ -141,7 +149,7 @@ export default function LogoCloud() {
                 <SectionViewAllLink href="/mitra?category=social" colorClass="text-[#2D74B3]" />
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
               {socialPartners.map((partner, index) => (
                 <PartnerLogo
                   key={partner.id}

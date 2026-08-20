@@ -162,7 +162,7 @@ export default function ProgramHub() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 mt-2 bg-white text-[#00AEEF] border-2 border-[#00AEEF] text-sm font-bold rounded-xl hover:bg-[#00AEEF]/5 transition-colors"
                     >
-                      Daftar
+                      {program.ctaLabel}
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
