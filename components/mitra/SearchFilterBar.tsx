@@ -5,6 +5,12 @@ import { Search, MapPin, Tag, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { MITRA_CATEGORIES, MITRA_PROVINCES } from '@/lib/mitraFilters'
 
+interface FilterItem {
+  id?: number | string
+  name: string
+  slug: string
+}
+
 interface SearchFilterBarProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
@@ -13,6 +19,8 @@ interface SearchFilterBarProps {
   activeCategory: string
   activeProvince: string
   activeType: 'media' | 'influencer'
+  regions?: FilterItem[]
+  categories?: FilterItem[]
 }
 
 export default function SearchFilterBar({
@@ -23,6 +31,8 @@ export default function SearchFilterBar({
   activeCategory,
   activeProvince,
   activeType,
+  regions,
+  categories,
 }: SearchFilterBarProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const isFirstRender = useRef(true)
@@ -110,7 +120,11 @@ export default function SearchFilterBar({
                   onChange={(e) => onProvinceChange(e.target.value)}
                   className="w-full px-4 py-3 pr-10 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 appearance-none cursor-pointer truncate"
                 >
-                  {MITRA_PROVINCES.map((province) => (
+                  <option value="all">Semua Provinsi</option>
+                  {(regions && regions.length > 0
+                    ? regions.map((r) => ({ id: r.slug, label: r.name }))
+                    : MITRA_PROVINCES.filter((p) => p.id !== 'all')
+                  ).map((province) => (
                     <option key={province.id} value={province.id}>
                       {province.label}
                     </option>
@@ -135,7 +149,11 @@ export default function SearchFilterBar({
                   onChange={(e) => onCategoryChange(e.target.value)}
                   className="w-full px-4 py-3 pr-10 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/20 focus:border-[#00AEEF] transition-all duration-200 text-slate-700 appearance-none cursor-pointer truncate"
                 >
-                  {MITRA_CATEGORIES.map((category) => (
+                  <option value="all">Semua Kategori</option>
+                  {(categories && categories.length > 0
+                    ? categories.map((c) => ({ id: c.slug, label: c.name }))
+                    : MITRA_CATEGORIES.filter((c) => c.id !== 'all')
+                  ).map((category) => (
                     <option key={category.id} value={category.id}>
                       {category.label}
                     </option>

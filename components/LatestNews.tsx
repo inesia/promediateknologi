@@ -5,58 +5,31 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-const COMBINED_NEWS = [
-  {
-    id: 1,
-    title: 'Promedia Group Raih Penghargaan di Panen Fest 2026',
-    date: { day: '19', month: 'Mei' },
-    source: 'Promedia',
-    type: 'promedia',
-    image: 'https://picsum.photos/seed/news1/600/400',
-  },
-  {
-    id: 2,
-    title: 'Pemkot Surabaya Resmikan Taman Inovasi Digital di Kawasan Darmo',
-    date: { day: '19', month: 'Mei' },
-    source: 'JatimNetwork.com',
-    type: 'network',
-    image: 'https://picsum.photos/400/225?random=1',
-  },
-  {
-    id: 3,
-    title: 'Usung Tagline "Mavericks and Ahead", Promedia Optimis Tatap Masa Depan',
-    date: { day: '18', month: 'Mei' },
-    source: 'Promedia',
-    type: 'promedia',
-    image: 'https://picsum.photos/seed/news3/600/400',
-  },
-  {
-    id: 4,
-    title: 'Timnas Indonesia Siap Hadapi Laga Kualifikasi Piala Dunia',
-    date: { day: '18', month: 'Mei' },
-    source: 'AyoBandung',
-    type: 'network',
-    image: 'https://picsum.photos/400/225?random=3',
-  },
-  {
-    id: 5,
-    title: 'BI Pertahankan Suku Bunga Acuan di Level 6%',
-    date: { day: '17', month: 'Mei' },
-    source: 'SumutDaily.co',
-    type: 'network',
-    image: 'https://picsum.photos/400/225?random=4',
-  },
-  {
-    id: 6,
-    title: 'Kementan Amplifikasi Isu Pangan Nasional ke 500 Media',
-    date: { day: '17', month: 'Mei' },
-    source: 'BeritaJakarta.id',
-    type: 'network',
-    image: 'https://picsum.photos/400/225?random=9',
-  },
+
+const MONTH_NAMES = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+  'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'
 ]
 
-export default function LatestNews() {
+function formatNewsDate(dateString?: string) {
+  if (!dateString) return { day: '', month: '', year: '' }
+
+  const datePart = dateString.trim().split(/[ T]/)[0]
+  const [year, monthNum, day] = datePart.split('-')
+
+  const monthIdx = parseInt(monthNum, 10) - 1
+  const month = MONTH_NAMES[monthIdx] || ''
+
+  return {
+    day: String(parseInt(day, 10) || ''),
+    month,
+    year: year || '',
+  }
+}
+
+export default function LatestNews({ news }: { news: any }) {
+  const latestNews = (Array.isArray(news?.data?.list?.latest) ? news.data.list.latest : []).slice(0, 6)
+
   return (
     <section className="py-24 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,56 +47,67 @@ export default function LatestNews() {
               Berita terkini dari Promedia dan seluruh jaringan mitra di Indonesia.
             </p>
           </motion.div>
-          
+
           <Link href="https://www.go24jam.id/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-[#001A2C] hover:bg-slate-50 transition-all shadow-sm">
             Lihat Semua Berita <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-          {COMBINED_NEWS.map((item, index) => (
-            <motion.article
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 33vw"
-                />
-                <div className={`absolute top-2 left-2 md:top-3 md:left-3 px-2 py-1 md:px-3 md:py-1.5 backdrop-blur-md rounded-lg text-[8px] md:text-[10px] font-bold uppercase tracking-wider ${
-                  item.type === 'promedia' 
-                    ? 'bg-[#00AEEF]/90 text-white shadow-lg shadow-[#00AEEF]/20 border border-[#00AEEF]/50' 
+          {latestNews.map((item: any, index: number) => {
+            const date = formatNewsDate(item.published_date)
+            return (
+              <motion.article
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={item.thumb_url}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 33vw"
+                  />
+                  <div className={`absolute top-2 left-2 md:top-3 md:left-3 px-2 py-1 md:px-3 md:py-1.5 backdrop-blur-md rounded-lg text-[8px] md:text-[10px] font-bold uppercase tracking-wider ${item.type === 'promedia'
+                    ? 'bg-[#00AEEF]/90 text-white shadow-lg shadow-[#00AEEF]/20 border border-[#00AEEF]/50'
                     : 'bg-white/90 text-[#001A2C] shadow-sm border border-white/50'
-                }`}>
-                  {item.type === 'promedia' ? 'Promedia' : 'Network'}
-                </div>
-              </div>
-              
-              <div className="p-3 md:p-6 flex-1 flex flex-col">
-                <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-2 md:mb-4 gap-1 md:gap-2">
-                  <div className="flex items-center gap-1 md:gap-2">
-                    <div className="text-[#00AEEF] font-black text-sm md:text-lg">{item.date.day}</div>
-                    <div className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.date.month} 2026</div>
-                  </div>
-                  <div className="text-[8px] md:text-[10px] font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-1.5 py-0.5 md:px-2.5 md:py-1 rounded-md tracking-wide w-fit truncate max-w-full">
-                    {item.source}
+                    }`}>
+                    {/* {item.type === 'promedia' ? 'Promedia' : 'Network'} */}
+                    Network
                   </div>
                 </div>
-                
-                <h3 className="text-xs sm:text-sm md:text-lg font-bold text-[#001A2C] leading-snug group-hover:text-[#00AEEF] transition-colors line-clamp-3 md:line-clamp-3">
-                  {item.title}
-                </h3>
-              </div>
-            </motion.article>
-          ))}
+
+                <div className="p-3 md:p-6 flex-1 flex flex-col">
+                  <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-2 md:mb-4 gap-1 md:gap-2">
+                    <div className="flex items-center gap-1 md:gap-2">
+                      <div className="text-[#00AEEF] font-black text-sm md:text-lg">{date.day}</div>
+                      <div className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                        {date.month} {date.year}
+                      </div>
+                    </div>
+                    <div className="text-[8px] md:text-[10px] font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-1.5 py-0.5 md:px-2.5 md:py-1 rounded-md tracking-wide w-fit truncate max-w-full">
+                      {item.site?.name}
+                    </div>
+                  </div>
+
+                  <h3 className="text-xs sm:text-sm md:text-lg font-bold text-[#001A2C] leading-snug group-hover:text-[#00AEEF] transition-colors line-clamp-3 md:line-clamp-3">
+                    {item.origin_url || item.url ? (
+                      <a href={item.origin_url || item.url} target="_blank" rel="noopener noreferrer">
+                        {item.title}
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </h3>
+                </div>
+              </motion.article>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -1,43 +1,52 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { parseMitraFromHtml, parseMitraHasMore } from '@/lib/parseMitraHtml'
+import { getClients, getInfluencerClient } from '@/controllers/base.controller'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = request.nextUrl
+    const type = searchParams.get('type') || 'media'
     const kategori = searchParams.get('kategori') || searchParams.get('category') || 'all'
     const daerah = searchParams.get('daerah') || searchParams.get('provinsi') || 'all'
-    const page = searchParams.get('page') || '1'
+    const page = Number(searchParams.get('page') || '1')
     const pencarian = searchParams.get('pencarian') || searchParams.get('q') || ''
 
-    const url = new URL('https://www.promediateknologi.id/mitra')
-    url.searchParams.set('kategori', kategori)
-    url.searchParams.set('daerah', daerah)
-    if (page !== '1') url.searchParams.set('page', page)
-    if (pencarian.trim()) url.searchParams.set('pencarian', pencarian.trim())
-
-    const res = await fetch(url.toString(), {
-      headers: {
-        'User-Agent': 'PromediaWeb/1.0',
-      },
-      next: { revalidate: 3600 },
-    })
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`)
+    let clientsRes
+    if (type === 'influencer') {
+      clientsRes = await getInfluencerClient({
+        search: pencarian,
+        page,
+        limit: 24,
+      })
+    } else {
+      clientsRes = await getClients({
+        category: kategori,
+        region: daerah,
+        search: pencarian,
+        page,
+        limit: 24,
+      })
     }
 
-    const html = await res.text()
-    const data = parseMitraFromHtml(html)
-    const pageNumber = Number(page)
-    const hasMore = parseMitraHasMore(html, pageNumber)
+    const rawList = clientsRes?.data || []
+    const data = rawList.map((client: any) => ({
+      id: client.code || client.id,
+      name: client.name,
+      logo: client.path,
+      url: client.url,
+      region: client.region,
+      type: client.type,
+    }))
+
+    const lastPage = clientsRes?.meta?.last_page || 1
+    const hasMore = page < lastPage
 
     return NextResponse.json({
       data,
       hasMore,
-      page: pageNumber,
-      total: data.length,
+      page,
+      total: clientsRes?.meta?.total ?? data.length,
     })
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error'

@@ -21,12 +21,14 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <motion.div
+    <motion.a
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3, delay: index * 0.03 }}
       className="group relative"
+      href={mitra.url}
+      target="_blank"
     >
       <div className="relative aspect-square bg-white border border-slate-200 rounded-xl p-4 lg:p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
         {/* Logo Container */}
@@ -62,6 +64,6 @@ export default function MitraCard({ mitra, index }: MitraCardProps) {
           initial={false}
         />
       </div>
-    </motion.div>
+    </motion.a>
   )
 }

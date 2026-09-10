@@ -67,11 +67,10 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isTransparent
           ? "bg-transparent border-b border-transparent shadow-none"
           : "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
-      }`}
+        }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -229,11 +228,10 @@ export default function Header() {
                           className="p-2"
                         >
                           <ChevronDown
-                            className={`w-4 h-4 transition-transform ${
-                              mobileActiveDropdown === item.label
-                                ? "rotate-180"
-                                : ""
-                            }`}
+                            className={`w-4 h-4 transition-transform ${mobileActiveDropdown === item.label
+                              ? "rotate-180"
+                              : ""
+                              }`}
                           />
                         </button>
                       )}

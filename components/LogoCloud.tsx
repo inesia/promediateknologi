@@ -88,7 +88,7 @@ function getFeaturedPartners<T extends { id: number }>(
     .filter((p): p is T => p !== undefined)
 }
 
-export default function LogoCloud() {
+export default function LogoCloud({ clients }: { clients: any[] }) {
   const mediaPartners = getFeaturedPartners(scrapedMitraData, HOME_FEATURED_MEDIA_PARTNER_IDS)
   const socialPartners = getFeaturedPartners(socialPartnerData, HOME_FEATURED_SOCIAL_PARTNER_IDS)
 

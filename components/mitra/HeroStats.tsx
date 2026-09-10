@@ -31,7 +31,7 @@ function Counter({ value, suffix = '+', duration = 2 }: CounterProps) {
   return <span>{displayValue.toLocaleString('id-ID')}{suffix}</span>
 }
 
-export default function HeroStats() {
+export default function HeroStats({ totalMitra }: { totalMitra?: number }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function HeroStats() {
           >
             <span className="inline-block">
               <span className="text-[#00AEEF] font-bold">
-                <Counter value={1000} suffix="+" duration={2} />
+                <Counter value={totalMitra || 1000} suffix="+" duration={2} />
               </span>
             </span>
             {' '}Mitra Media telah bertransformasi bersama kami.

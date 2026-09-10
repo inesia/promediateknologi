@@ -22,6 +22,13 @@ const pillars = [
     href: 'https://go.promediateknologi.id/VoxProCreators',
     ctaText: 'Daftar Sekarang',
   },
+  {
+    title: 'Contentpreneur',
+    description:
+      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
+    icon: PenTool,
+    gradient: 'from-[#2D74B3] to-[#00AEEF]',
+  }
 ]
 
 export default function FourPillarsGrid() {
@@ -65,9 +72,8 @@ export default function FourPillarsGrid() {
                 className="group relative"
               >
                 <div
-                  className={`relative h-full p-8 lg:p-10 rounded-2xl border border-white/50 shadow-lg shadow-[#00AEEF]/5 hover:shadow-[#00AEEF]/20 transition-all duration-500 hover:scale-[1.02] overflow-hidden ${
-                    isDarkCard ? `${darkBgClass} text-white` : 'bg-white/80 backdrop-blur-xl'
-                  }`}
+                  className={`relative h-full p-8 lg:p-10 rounded-2xl border border-white/50 shadow-lg shadow-[#00AEEF]/5 hover:shadow-[#00AEEF]/20 transition-all duration-500 hover:scale-[1.02] overflow-hidden ${isDarkCard ? `${darkBgClass} text-white` : 'bg-white/80 backdrop-blur-xl'
+                    }`}
                 >
                   {isDarkCard && bgImage && (
                     <>
@@ -98,16 +104,15 @@ export default function FourPillarsGrid() {
                     </h3>
 
                     <p className={`leading-relaxed ${isDarkCard ? 'text-slate-200' : 'text-slate-600'} mb-8`}>{pillar.description}</p>
-                    
-                    <a 
-                      href={pillar.href} 
-                      target="_blank" 
+
+                    <a
+                      href={pillar.href}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all ${
-                        isDarkCard 
-                          ? 'bg-white text-[#001A2C] hover:bg-slate-100 shadow-lg' 
+                      className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all ${isDarkCard
+                          ? 'bg-white text-[#001A2C] hover:bg-slate-100 shadow-lg'
                           : 'bg-[#001A2C] text-white hover:bg-[#002b4a]'
-                      }`}
+                        }`}
                     >
                       {pillar.ctaText}
                     </a>

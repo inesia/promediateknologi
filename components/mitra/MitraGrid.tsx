@@ -1,10 +1,9 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MitraCard from './MitraCard'
 import MitraSkeleton from './MitraSkeleton'
-import { socialPartnerData } from '@/lib/socialPartnerData'
 
 interface Mitra {
   id: string | number
@@ -18,6 +17,20 @@ interface MitraGridProps {
   activeCategory: string
   activeProvince: string
   activeType?: 'media' | 'influencer'
+  initialClients?: any
+  initialInfluencers?: any
+}
+
+function mapClientsToMitra(clientsData: any): Mitra[] {
+  if (clientsData?.data && Array.isArray(clientsData.data)) {
+    return clientsData.data.map((c: any) => ({
+      id: c.code || c.id,
+      name: c.name,
+      logo: c.path,
+      url: c.url,
+    }))
+  }
+  return []
 }
 
 export default function MitraGrid({
@@ -25,13 +38,29 @@ export default function MitraGrid({
   activeCategory,
   activeProvince,
   activeType = 'media',
+  initialClients,
+  initialInfluencers,
 }: MitraGridProps) {
-  const [mitraData, setMitraData] = useState<Mitra[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [mitraData, setMitraData] = useState<Mitra[]>(() => {
+    const initialSource = activeType === 'influencer' ? initialInfluencers : initialClients
+    return mapClientsToMitra(initialSource)
+  })
+  const [isLoading, setIsLoading] = useState(() => {
+    const initialSource = activeType === 'influencer' ? initialInfluencers : initialClients
+    return !(initialSource?.data && initialSource.data.length > 0)
+  })
   const [isLoadingMore, setIsLoadingMore] = useState(false)
   const [page, setPage] = useState(1)
-  const [hasMore, setHasMore] = useState(false)
+  const [hasMore, setHasMore] = useState(() => {
+    const initialSource = activeType === 'influencer' ? initialInfluencers : initialClients
+    if (initialSource?.meta) {
+      return (initialSource.meta.current_page || 1) < (initialSource.meta.last_page || 1)
+    }
+    return false
+  })
   const [error, setError] = useState<string | null>(null)
+  const isInitialMount = useRef(true)
+  const prevTypeRef = useRef(activeType)
 
   const fetchMitra = useCallback(
     async (pageNum: number, replace: boolean) => {
@@ -44,10 +73,18 @@ export default function MitraGrid({
 
       try {
         const params = new URLSearchParams({
-          kategori: activeCategory,
-          daerah: activeProvince,
+          type: activeType,
           page: String(pageNum),
         })
+
+        if (activeType === 'media') {
+          if (activeCategory && activeCategory !== 'all') {
+            params.set('kategori', activeCategory)
+          }
+          if (activeProvince && activeProvince !== 'all') {
+            params.set('daerah', activeProvince)
+          }
+        }
 
         if (searchQuery.trim()) {
           params.set('pencarian', searchQuery.trim())
@@ -73,31 +110,47 @@ export default function MitraGrid({
         setIsLoadingMore(false)
       }
     },
-    [activeCategory, activeProvince, searchQuery]
+    [activeType, activeCategory, activeProvince, searchQuery]
   )
 
   useEffect(() => {
-    if (activeType === 'media') {
+    // When activeType switches
+    if (prevTypeRef.current !== activeType) {
+      prevTypeRef.current = activeType
+      if (activeType === 'influencer' && initialInfluencers?.data && !searchQuery.trim()) {
+        setMitraData(mapClientsToMitra(initialInfluencers))
+        setHasMore(Boolean(initialInfluencers.meta && (initialInfluencers.meta.current_page || 1) < (initialInfluencers.meta.last_page || 1)))
+        setPage(1)
+        setIsLoading(false)
+        return
+      }
+      if (activeType === 'media' && initialClients?.data && !searchQuery.trim() && activeCategory === 'all' && activeProvince === 'all') {
+        setMitraData(mapClientsToMitra(initialClients))
+        setHasMore(Boolean(initialClients.meta && (initialClients.meta.current_page || 1) < (initialClients.meta.last_page || 1)))
+        setPage(1)
+        setIsLoading(false)
+        return
+      }
       fetchMitra(1, true)
-    } else {
-      setIsLoading(false)
+      return
     }
-  }, [activeType, fetchMitra])
 
-  const filteredInfluencers = activeType === 'influencer'
-    ? socialPartnerData.filter((item) =>
-        item.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : []
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      if (mitraData.length > 0) {
+        return
+      }
+    }
 
-  const displayItems = activeType === 'media' ? mitraData : filteredInfluencers
+    fetchMitra(1, true)
+  }, [activeType, fetchMitra, initialClients, initialInfluencers, searchQuery, activeCategory, activeProvince])
 
   const handleLoadMore = () => {
     if (!hasMore || isLoadingMore) return
     fetchMitra(page + 1, false)
   }
 
-  if (isLoading && activeType === 'media') {
+  if (isLoading) {
     return (
       <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +167,7 @@ export default function MitraGrid({
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {error && activeType === 'media' && (
+        {error && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -124,22 +177,22 @@ export default function MitraGrid({
           </motion.p>
         )}
 
-        {displayItems.length > 0 && (
+        {mitraData.length > 0 && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-slate-600 mb-8 text-center"
           >
-            Menampilkan {displayItems.length} {activeType === 'media' ? 'mitra media' : 'influencer & creator'}
-            {activeType === 'media' && hasMore ? ' (muat lebih banyak untuk melihat lainnya)' : ''}
+            Menampilkan {mitraData.length} {activeType === 'media' ? 'mitra media' : 'influencer & creator'}
+            {hasMore ? ' (muat lebih banyak untuk melihat lainnya)' : ''}
           </motion.p>
         )}
 
-        {displayItems.length > 0 ? (
+        {mitraData.length > 0 ? (
           <>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6">
               <AnimatePresence mode="wait">
-                {displayItems.map((mitra, index) => (
+                {mitraData.map((mitra, index) => (
                   <MitraCard key={mitra.id} mitra={mitra} index={index} />
                 ))}
               </AnimatePresence>
@@ -170,9 +223,13 @@ export default function MitraGrid({
             animate={{ opacity: 1, y: 0 }}
             className="text-center py-20"
           >
-            <p className="text-xl text-slate-600 mb-4">Tidak ada mitra yang ditemukan</p>
+            <p className="text-xl text-slate-600 mb-4">
+              Tidak ada {activeType === 'media' ? 'mitra media' : 'influencer & creator'} yang ditemukan
+            </p>
             <p className="text-slate-500">
-              Coba ubah filter provinsi, kategori, atau kata kunci pencarian Anda
+              {activeType === 'media'
+                ? 'Coba ubah filter provinsi, kategori, atau kata kunci pencarian Anda'
+                : 'Coba ubah kata kunci pencarian Anda'}
             </p>
           </motion.div>
         )}

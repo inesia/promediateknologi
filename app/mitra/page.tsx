@@ -1,56 +1,39 @@
-'use client'
-
-import { Suspense, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HeroStats from '@/components/mitra/HeroStats'
-import SearchFilterBar from '@/components/mitra/SearchFilterBar'
-import MitraGrid from '@/components/mitra/MitraGrid'
 import CTASection from '@/components/mitra/CTASection'
+import MitraContainer from '@/components/mitra/MitraContainer'
+import { getCategoriesSite, getClients, getInfluencerClient, getRegions } from '@/controllers/base.controller'
 
-function MitraPageContent() {
-  const searchParams = useSearchParams()
-  const [searchQuery, setSearchQuery] = useState('')
-  const [activeType, setActiveType] = useState<'media' | 'influencer'>('media')
-  const [activeCategory, setActiveCategory] = useState(
-    () => searchParams.get('kategori') || searchParams.get('category') || 'all'
-  )
-  const [activeProvince, setActiveProvince] = useState(
-    () => searchParams.get('daerah') || searchParams.get('provinsi') || 'all'
-  )
+export default async function MitraPage() {
+  const [regionsRes, categoriesRes, clientsRes, influencerRes] = await Promise.all([
+    getRegions(),
+    getCategoriesSite(),
+    getClients({ page: 1, limit: 24 }),
+    getInfluencerClient({ page: 1, limit: 24 }),
+  ])
+
+  const regions = regionsRes?.data || []
+  const categories = categoriesRes?.data || []
+  const initialClients = clientsRes
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <article>
-        <HeroStats />
-        <SearchFilterBar
-          onSearchChange={setSearchQuery}
-          onCategoryChange={setActiveCategory}
-          onProvinceChange={setActiveProvince}
-          onTypeChange={setActiveType}
-          activeCategory={activeCategory}
-          activeProvince={activeProvince}
-          activeType={activeType}
-        />
-        <MitraGrid
-          searchQuery={searchQuery}
-          activeCategory={activeCategory}
-          activeProvince={activeProvince}
-          activeType={activeType}
-        />
+        <HeroStats totalMitra={clientsRes?.meta?.total} />
+        <Suspense fallback={null}>
+          <MitraContainer
+            regions={regions}
+            categories={categories}
+            initialClients={initialClients}
+            initialInfluencers={influencerRes}
+          />
+        </Suspense>
         <CTASection />
       </article>
       <Footer />
     </main>
-  )
-}
-
-export default function MitraPage() {
-  return (
-    <Suspense fallback={null}>
-      <MitraPageContent />
-    </Suspense>
   )
 }

@@ -8,8 +8,14 @@ import EcosystemServices from '@/components/EcosystemServices'
 import LogoCloud from '@/components/LogoCloud'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import { getClient, getNetworkLivePulse, getRecentNews } from '@/controllers/base.controller'
 
-export default function Home() {
+export default async function Home() {
+
+  const data = await getRecentNews()
+  const clients = await getClient()
+  const networkLivePulse = await getNetworkLivePulse()
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -18,8 +24,8 @@ export default function Home() {
       <EcosystemPillars />
       {/* <EcosystemServices /> */}
       <EcosystemStats />
-      <LogoCloud />
-      <LatestNews />
+      <LogoCloud clients={clients} />
+      <LatestNews news={networkLivePulse} />
       <FinalCTA />
       <Footer />
     </main>
