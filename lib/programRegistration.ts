@@ -57,7 +57,7 @@ export const PROGRAMS: ProgramRegistration[] = [
       'Untuk seluruh kreator yang ingin naik level, profesional atau yang baru memulai karier di medsos. Kami bantu buat web profesional, support IT & Marketing, Gratis',
     programHref: '/program/influencermedianetwork',
     ctaLabel: 'Daftar Sebagai Influencer',
-    forWho: 'Content Creator dan seluruh orang yang ingin mencoba memulai karier lewat konten di medsos.',
+    forWho: 'Content Creator dan pengelola media sosial (min. 1 orang)',
     beforeApply: [
       'Siapkan contoh konten sosial dengan performa terbaik.',
       'Siap menjelaskan platform yang dikelola dan niche audiens.',

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Building2, User, Check, ArrowRight } from 'lucide-react'
+import { Building2, User, Check, ArrowRight, Users, UserCheck } from 'lucide-react'
 
 const publisherFeatures = [
   'Website Profesional',
@@ -68,9 +68,24 @@ export default function EcosystemPillars() {
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
                 Publisher Media Network
               </h3>
-              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-8 max-w-md">
+              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-6 max-w-md">
                 Untuk perusahaan media yang ingin tumbuh lebih profesional dan berkelanjutan.
               </p>
+
+              {/* Syarat Box */}
+              <div className="mb-8 rounded-2xl bg-white/[0.06] border border-white/10 p-3.5 sm:p-4 backdrop-blur-md flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#00AEEF]/20 border border-[#00AEEF]/30 flex items-center justify-center text-[#00AEEF] shrink-0">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold text-[#00AEEF] uppercase tracking-wider block">
+                    Syarat
+                  </span>
+                  <span className="text-sm sm:text-base font-semibold text-white">
+                    Memiliki Tim Minimal 3 Orang
+                  </span>
+                </div>
+              </div>
 
               {/* Feature Checklist */}
               <ul className="space-y-3.5 mb-10">
@@ -126,9 +141,24 @@ export default function EcosystemPillars() {
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
                 Influencer Media Network
               </h3>
-              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-8 max-w-md">
+              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-6 max-w-md">
                 Untuk creator dan influencer yang ingin membangun media personal yang kuat.
               </p>
+
+              {/* Syarat Box */}
+              <div className="mb-8 rounded-2xl bg-white/[0.06] border border-white/10 p-3.5 sm:p-4 backdrop-blur-md flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#7c4dff]/20 border border-[#7c4dff]/30 flex items-center justify-center text-[#b388ff] shrink-0">
+                  <UserCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold text-[#b388ff] uppercase tracking-wider block">
+                    Syarat
+                  </span>
+                  <span className="text-sm sm:text-base font-semibold text-white">
+                    Min. Pengelola 1 Orang
+                  </span>
+                </div>
+              </div>
 
               {/* Feature Checklist */}
               <ul className="space-y-3.5 mb-10">
