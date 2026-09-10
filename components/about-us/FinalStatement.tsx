@@ -31,7 +31,7 @@ export default function FinalStatement() {
 
           {/* CTA Button */}
           <motion.a
-            href={`${window.location.origin}/register`}
+            href="/register"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] text-white font-semibold text-lg rounded-xl shadow-lg shadow-[#00AEEF]/25 hover:shadow-[#00AEEF]/40 transition-all duration-300"
