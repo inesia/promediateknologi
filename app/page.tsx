@@ -12,7 +12,6 @@ import { getClient, getNetworkLivePulse, getRecentNews } from '@/controllers/bas
 
 export default async function Home() {
 
-  const data = await getRecentNews()
   const clients = await getClient()
   const networkLivePulse = await getNetworkLivePulse()
 
