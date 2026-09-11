@@ -39,7 +39,7 @@ export default function HeroStats({ totalMitra }: { totalMitra?: number }) {
   }, [])
 
   return (
-    <section className="relative py-4 lg:py-32 bg-white overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00AEEF]/[0.02] rounded-full blur-3xl" />

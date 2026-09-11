@@ -29,7 +29,7 @@ const fokus = [
 
 export default function MisiFokus() {
   return (
-    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

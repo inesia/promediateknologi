@@ -152,7 +152,7 @@ export default function MitraGrid({
 
   if (isLoading) {
     return (
-      <section className="py-16 lg:py-4 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6">
             {[...Array(12)].map((_, i) => (
@@ -165,7 +165,7 @@ export default function MitraGrid({
   }
 
   return (
-    <section className="py-16 lg:py-4 bg-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {error && (
           <motion.p

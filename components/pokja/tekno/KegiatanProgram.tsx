@@ -26,7 +26,7 @@ const kegiatan = [
 
 export default function KegiatanProgram() {
   return (
-    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -62,7 +62,7 @@ export default function KegiatanProgram() {
                   {/* Gradient Border */}
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
                   <div className="absolute inset-[2px] rounded-xl bg-white -z-10" />
-
+                  
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Pixel Art Style Icon */}

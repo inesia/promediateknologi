@@ -2,10 +2,10 @@
 
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import {
-  Newspaper,
-  PenTool,
-  Sparkles,
+import { 
+  Newspaper, 
+  PenTool, 
+  Sparkles, 
   Network,
   TrendingUp,
   Users,
@@ -45,13 +45,13 @@ interface BentoCardProps {
 function BentoCard({ title, description, icon, className = '', index, visual, parallaxOffset = 0, isMainCard = false, badge, metric }: BentoCardProps) {
   const cardRef = useRef(null)
   const isInView = useInView(cardRef, { once: true, margin: "-100px" })
-
+  
   // Parallax effect
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"]
   })
-
+  
   const y = useTransform(scrollYProgress, [0, 1], [parallaxOffset, -parallaxOffset])
 
   return (
@@ -60,13 +60,13 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       style={{ y }}
-      transition={{
-        duration: 0.6,
+      transition={{ 
+        duration: 0.6, 
         delay: index * 0.1,
         ease: [0.21, 0.47, 0.32, 0.98]
       }}
       className={`group relative rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-100 hover:border-[#00AEEF]/30 transition-all duration-300 overflow-hidden ${className}`}
-      whileHover={{
+      whileHover={{ 
         scale: 1.02,
         boxShadow: '0 20px 40px -12px rgba(0, 174, 239, 0.15)',
         transition: { duration: 0.3 }
@@ -97,7 +97,7 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
             <span className="font-semibold">99.9%</span>
           </div>
           <div className="h-2 bg-[#00AEEF]/10 rounded-full overflow-hidden">
-            <motion.div
+            <motion.div 
               className="h-full bg-gradient-to-r from-[#00AEEF] to-[#2D74B3]"
               initial={{ width: 0 }}
               animate={{ width: '99.9%' }}
@@ -109,7 +109,7 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
 
       {/* 3D Glass Card (Main Card Only) */}
       {isMainCard && (
-        <motion.div
+        <motion.div 
           className="absolute top-8 right-8 w-32 h-40 lg:w-40 lg:h-48 rounded-2xl bg-gradient-to-br from-white/40 to-white/10 backdrop-blur-md border border-white/30 shadow-2xl"
           style={{
             transform: 'perspective(1000px) rotateY(-15deg) rotateX(5deg)',
@@ -135,7 +135,7 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
 
       {/* Badge */}
       {badge && (
-        <motion.div
+        <motion.div 
           className="absolute top-4 right-4 px-3 py-1 bg-[#00AEEF]/10 border border-[#00AEEF]/30 rounded-full z-20"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -150,7 +150,7 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
       {/* Content */}
       <div className="relative p-5 lg:p-6 h-full flex flex-col z-10">
         {/* Icon */}
-        <motion.div
+        <motion.div 
           className="flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-gradient-to-br from-[#00AEEF]/10 to-[#2D74B3]/10 mb-4 lg:mb-6 text-[#00AEEF] group-hover:scale-110 transition-transform duration-300"
           whileHover={{ rotate: [0, -10, 10, -10, 0] }}
           transition={{ duration: 0.5 }}
@@ -176,7 +176,7 @@ function BentoCard({ title, description, icon, className = '', index, visual, pa
         )}
 
         {/* Hover Arrow */}
-        <motion.div
+        <motion.div 
           className="mt-4 text-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={{ x: -10 }}
           whileHover={{ x: 0 }}
@@ -233,14 +233,14 @@ export default function BentoGrid() {
     target: sectionRef,
     offset: ["start end", "start start"]
   })
-
+  
   const headingY = useTransform(scrollYProgress, [0, 1], [100, 0])
   const headingOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 1])
 
   return (
-    <section
+    <section 
       ref={sectionRef}
-      className="relative py-16 lg:py-4 overflow-hidden"
+      className="relative py-16 lg:py-24 overflow-hidden"
       style={{
         background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 10%, rgba(248,250,252,0.3) 50%, rgba(255,255,255,0.5) 90%, rgba(255,255,255,0) 100%)'
       }}
@@ -255,7 +255,7 @@ export default function BentoGrid() {
               <stop offset="100%" stopColor="#00AEEF" stopOpacity="0.1" />
             </linearGradient>
           </defs>
-          <path
+          <path 
             d="M0,400 C320,300 420,500 720,400 C1020,300 1120,500 1440,400 L1440,800 L0,800 Z"
             fill="url(#wave-gradient)"
           />
@@ -290,7 +290,7 @@ export default function BentoGrid() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header with Scroll Reveal */}
-        <motion.div
+        <motion.div 
           className="text-center mb-12 lg:mb-16 relative overflow-hidden"
           style={{ y: headingY, opacity: headingOpacity }}
         >
@@ -307,7 +307,7 @@ export default function BentoGrid() {
             </div>
           </motion.div>
 
-          <motion.h2
+          <motion.h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001A2C] mb-4 relative"
             style={{ letterSpacing: '-0.02em' }}
           >
@@ -381,7 +381,7 @@ export default function BentoGrid() {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <motion.div 
           className="text-center mt-12 lg:mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -34,7 +34,7 @@ export default function MyOrders({ orders }: MyOrdersProps) {
   }
 
   return (
-    <section className="py-16 lg:py-4 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -91,17 +91,19 @@ export default function MyOrders({ orders }: MyOrdersProps) {
                         return (
                           <div key={idx} className="flex items-center gap-2 flex-1">
                             <div
-                              className={`w-8 h-8 rounded-full flex items-center justify-center ${isCompleted
+                              className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                                isCompleted
                                   ? 'bg-[#00AEEF] text-white'
                                   : 'bg-slate-200 text-slate-400'
-                                }`}
+                              }`}
                             >
                               <Icon className="w-4 h-4" />
                             </div>
                             <div className="flex-1">
                               <div
-                                className={`text-xs font-semibold ${isCurrent ? 'text-[#00AEEF]' : 'text-slate-500'
-                                  }`}
+                                className={`text-xs font-semibold ${
+                                  isCurrent ? 'text-[#00AEEF]' : 'text-slate-500'
+                                }`}
                               >
                                 {status}
                               </div>
@@ -119,8 +121,9 @@ export default function MyOrders({ orders }: MyOrdersProps) {
                             </div>
                             {idx < orderStatuses.length - 1 && (
                               <div
-                                className={`h-0.5 flex-1 ${idx < statusIndex ? 'bg-[#00AEEF]' : 'bg-slate-200'
-                                  }`}
+                                className={`h-0.5 flex-1 ${
+                                  idx < statusIndex ? 'bg-[#00AEEF]' : 'bg-slate-200'
+                                }`}
                               />
                             )}
                           </div>

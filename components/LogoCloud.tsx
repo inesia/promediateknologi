@@ -93,7 +93,7 @@ export default function LogoCloud({ clients }: { clients: any[] }) {
   const socialPartners = getFeaturedPartners(socialPartnerData, HOME_FEATURED_SOCIAL_PARTNER_IDS)
 
   return (
-    <section className="relative py-20 lg:py-4 bg-white overflow-hidden">
+    <section className="relative py-20 lg:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mb-16"

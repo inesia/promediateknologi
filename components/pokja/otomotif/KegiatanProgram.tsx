@@ -26,7 +26,7 @@ const kegiatan = [
 
 export default function KegiatanProgram() {
   return (
-    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -60,7 +60,7 @@ export default function KegiatanProgram() {
                 {/* Skewed Container */}
                 <motion.div
                   className="relative p-8 lg:p-10 bg-white rounded-xl border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-                  whileHover={{
+                  whileHover={{ 
                     scale: 1.02,
                     rotate: index % 2 === 0 ? -1 : 1,
                   }}
@@ -69,7 +69,7 @@ export default function KegiatanProgram() {
                   }}
                 >
                   {/* Carbon Fiber Texture Background */}
-                  <div
+                  <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300"
                     style={{
                       backgroundImage: `repeating-linear-gradient(

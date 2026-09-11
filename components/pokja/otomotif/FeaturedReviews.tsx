@@ -50,7 +50,7 @@ const reviews = [
 
 export default function FeaturedReviews() {
   return (
-    <section className="relative py-4 lg:py-32 bg-white">
+    <section className="relative py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -81,17 +81,18 @@ export default function FeaturedReviews() {
             >
               <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                 {/* Image Container */}
-                <div className={`relative overflow-hidden ${review.height === 'tall' ? 'h-96' :
-                    review.height === 'medium' ? 'h-64' :
-                      'h-48'
-                  }`}>
+                <div className={`relative overflow-hidden ${
+                  review.height === 'tall' ? 'h-96' : 
+                  review.height === 'medium' ? 'h-64' : 
+                  'h-48'
+                }`}>
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
                     <div className="text-slate-400 text-sm">Photo Placeholder</div>
                   </div>
-
+                  
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+                  
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-lg">
                     <span className="text-xs font-semibold text-[#D90429]">{review.category}</span>

@@ -48,10 +48,10 @@ function Scissors({ className }: { className?: string }) {
 
 export default function GearTools() {
   return (
-    <section className="relative py-4 lg:py-32 bg-[#000F1A] overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-[#000F1A] overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
+        <div 
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `linear-gradient(rgba(0,174,239,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,174,239,0.1) 1px, transparent 1px)`,

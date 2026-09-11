@@ -38,7 +38,7 @@ export default function AgendaAktivitas() {
   const progress = useTransform(scrollYProgress, [0, 1], [0, 100])
 
   return (
-    <section ref={containerRef} className="relative py-4 lg:py-32 bg-white">
+    <section ref={containerRef} className="relative py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -60,7 +60,7 @@ export default function AgendaAktivitas() {
         <div className="relative">
           {/* Timeline Line */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2" />
-
+          
           {/* Progress Bar */}
           <motion.div
             className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] -translate-y-1/2"

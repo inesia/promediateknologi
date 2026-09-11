@@ -6,7 +6,7 @@ import { getPartnerFormUrl } from '@/lib/programRegistration'
 
 export default function CTASection() {
   return (
-    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00AEEF]/[0.03] rounded-full blur-3xl" />

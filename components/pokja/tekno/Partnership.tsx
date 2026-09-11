@@ -13,7 +13,7 @@ const brands = [
 
 export default function Partnership() {
   return (
-    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-slate-50/50 to-white">
+    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-slate-50/50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

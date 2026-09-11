@@ -43,7 +43,7 @@ const groups = [
 
 export default function SpecialInterestGroups() {
   return (
-    <section className="relative py-4 lg:py-32 bg-slate-50">
+    <section className="relative py-24 lg:py-32 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -75,10 +75,10 @@ export default function SpecialInterestGroups() {
                 className="group relative"
               >
                 <div className="relative h-full p-8 lg:p-10 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-
+                  
                   {/* Background Gradient Blob */}
                   <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${group.color} opacity-[0.03] group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-500`} />
-
+                  
                   {/* Icon & Header */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6 relative z-10">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${group.color} flex items-center justify-center shadow-lg transform group-hover:rotate-6 transition-transform duration-300`}>
@@ -94,7 +94,7 @@ export default function SpecialInterestGroups() {
                     <p className="text-slate-600 leading-relaxed text-lg mb-6">
                       {group.description}
                     </p>
-
+                    
                     <div className="inline-flex items-center text-[#00AEEF] font-semibold group-hover:translate-x-2 transition-transform duration-300 cursor-pointer">
                       Lihat Aktivitas
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

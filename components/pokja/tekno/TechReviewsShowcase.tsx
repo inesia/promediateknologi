@@ -35,7 +35,7 @@ export default function TechReviewsShowcase() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return (
-    <section className="relative py-4 lg:py-32 bg-white">
+    <section className="relative py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

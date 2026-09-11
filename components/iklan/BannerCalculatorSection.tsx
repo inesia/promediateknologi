@@ -7,7 +7,7 @@ import ReachSimulator from './ReachSimulator'
 /** Formula Pending - Waiting for Real Calculation Data from Marketing Team */
 export default function BannerCalculatorSection() {
   return (
-    <section className="py-16 lg:py-4 bg-slate-50">
+    <section className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
