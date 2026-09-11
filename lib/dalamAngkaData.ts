@@ -121,7 +121,7 @@ export const socialPlatformStats: SocialPlatformStat[] = [
 export const voxproTiers: InfluencerTier[] = [
   { count: 10, suffix: '+', tier: 'Mega Influencers', description: 'Jangkauan masif & celebrity-grade impact' },
   { count: 25, suffix: '+', tier: 'Macro Influencers', description: 'Audiens luas dengan engagement kuat' },
-  { count: 100, suffix: '+', tier: 'Middle Influencers', description: 'Niche authority & konversi terukur' },
+  // { count: 100, suffix: '+', tier: 'Middle Influencers', description: 'Niche authority & konversi terukur' },
   { count: 150, suffix: '+', tier: 'Micro Influencers', description: 'Komunitas loyal & cost-efficiency' },
   { count: 300, suffix: '+', tier: 'Nano Influencers', description: 'Hyper-local & authentic storytelling' },
   { count: 500, suffix: '+', tier: 'Pico Influencers', description: 'Volume tinggi untuk aktivasi skala' },
