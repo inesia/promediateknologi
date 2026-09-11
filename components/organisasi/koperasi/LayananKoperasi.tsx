@@ -26,7 +26,7 @@ const services = [
 
 export default function LayananKoperasi() {
   return (
-    <section className="relative py-24 lg:py-32 bg-white -mt-20">
+    <section className="relative py-4 lg:py-32 bg-white -mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {

@@ -7,7 +7,7 @@ import AnimatedCounter from './AnimatedCounter'
 
 export default function VoxproInfluencerSection() {
   return (
-    <section className="py-16 lg:py-24 bg-[#001A2C] relative overflow-hidden">
+    <section className="py-16 lg:py-4 bg-[#001A2C] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#00AEEF]/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">

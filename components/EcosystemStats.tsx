@@ -97,7 +97,7 @@ export default function EcosystemStats() {
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
                   <span className="text-base sm:text-4xl lg:text-5xl font-black text-[#001A2C] leading-none">
-                    1.300+
+                    1.200+
                   </span>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function EcosystemStats() {
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
                   <span className="text-base sm:text-4xl lg:text-5xl font-black text-[#001A2C] leading-none">
-                    38
+                    36
                   </span>
                 </div>
               </div>
@@ -139,9 +139,8 @@ export default function EcosystemStats() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.06 }}
-                    className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${
-                      isTwitter ? 'col-span-1 sm:col-span-2' : ''
-                    }`}
+                    className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${isTwitter ? 'col-span-1 sm:col-span-2' : ''
+                      }`}
                   >
                     <div className="p-3 sm:p-5">
                       {isTwitter ? (
@@ -159,9 +158,9 @@ export default function EcosystemStats() {
                               <h3 className="font-bold text-[#001A2C] text-xs sm:text-base leading-tight">
                                 {stat.platform}
                               </h3>
-                              <span className="text-[10px] sm:text-xs font-semibold text-slate-500">
+                              {/* <span className="text-[10px] sm:text-xs font-semibold text-slate-500">
                                 {stat.accounts} Akun
-                              </span>
+                              </span> */}
                             </div>
                           </div>
                           <div className="text-right shrink-0">
@@ -191,9 +190,9 @@ export default function EcosystemStats() {
                                 {stat.platform}
                               </h3>
                             </div>
-                            <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-slate-600">
+                            {/* <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-slate-600">
                               {stat.accounts} Akun
-                            </span>
+                            </span> */}
                           </div>
                           <div
                             className={`pt-2.5 sm:pt-3 grid gap-2 sm:gap-3 ${hasViews ? 'grid-cols-2' : 'grid-cols-1'}`}

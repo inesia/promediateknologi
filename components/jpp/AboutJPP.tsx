@@ -5,7 +5,7 @@ import { Users, Globe, Scale } from 'lucide-react'
 
 export default function AboutJPP() {
   return (
-    <section className="relative py-24 lg:py-32 bg-white">
+    <section className="relative py-4 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Content */}
@@ -38,19 +38,19 @@ export default function AboutJPP() {
 
           {/* Right: Visual Features */}
           <div className="space-y-6">
-            <FeatureCard 
+            <FeatureCard
               icon={Users}
               title="Kolaborasi Lintas Media"
               description="Menghubungkan pemimpin redaksi untuk sinergi yang produktif."
               delay={0.2}
             />
-            <FeatureCard 
+            <FeatureCard
               icon={Globe}
               title="Jaringan Nasional"
               description="Menjangkau media dari berbagai daerah di seluruh Indonesia."
               delay={0.4}
             />
-            <FeatureCard 
+            <FeatureCard
               icon={Scale}
               title="Kesetaraan & Keberlanjutan"
               description="Membangun ekosistem media yang adil dan berorientasi masa depan."

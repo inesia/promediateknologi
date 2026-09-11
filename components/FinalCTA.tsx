@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50/60 overflow-hidden w-full">
+    <section className="relative py-16 lg:py-4 bg-gradient-to-b from-white to-slate-50/60 overflow-hidden w-full">
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
 
         {/* Bottom Bar: Dark Blue Capsule Banner */}

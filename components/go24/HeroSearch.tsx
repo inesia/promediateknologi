@@ -19,7 +19,7 @@ export default function HeroSearch({ onSearch, onTagClick }: HeroSearchProps) {
   }
 
   return (
-    <section className="relative py-16 lg:py-24 bg-white">
+    <section className="relative py-16 lg:py-4 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#001A2C] mb-8">

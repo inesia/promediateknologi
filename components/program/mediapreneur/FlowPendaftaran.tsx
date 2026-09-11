@@ -30,7 +30,7 @@ const steps = [
 
 export default function FlowPendaftaran() {
   return (
-    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -77,7 +77,7 @@ export default function FlowPendaftaran() {
                   >
                     <Icon className="w-8 h-8 text-white" />
                   </motion.div>
-                  
+
                   {/* Check mark overlay (for completed steps) */}
                   {index < 0 && (
                     <motion.div

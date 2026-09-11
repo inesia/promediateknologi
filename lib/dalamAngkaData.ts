@@ -38,22 +38,22 @@ export const ecosystemScaleMetrics: ScaleMetric[] = [
     icon: Users,
   },
   {
-    value: 210,
-    display: formatCompactStat(210),
+    value: 240,
+    display: formatCompactStat(240),
     label: 'Sebaran Media di Kota & Kabupaten',
-    sublabel: 'Tersebar di 28 provinsi',
+    sublabel: 'Tersebar di 36 provinsi',
     icon: MapPin,
   },
   {
-    value: 1500,
-    display: formatCompactStat(1500),
+    value: 3000,
+    display: formatCompactStat(3000),
     label: 'Akun Media Sosial Multi-Platform',
     sublabel: 'Distribusi konten lintas channel',
     icon: Share2,
   },
   {
-    value: 400,
-    display: formatCompactStat(400),
+    value: 800,
+    display: formatCompactStat(800),
     label: 'Jaringan Media Pro TV',
     sublabel: 'Televisi digital berjejaring',
     icon: Tv,
@@ -62,15 +62,15 @@ export const ecosystemScaleMetrics: ScaleMetric[] = [
 
 export const trafficMetrics: ScaleMetric[] = [
   {
-    value: 1,
-    display: '1 Billion+',
+    value: 500,
+    display: '500 Million+',
     label: 'Unique Users Sepanjang Tahun',
     sublabel: 'Jangkauan audiens unik tahunan',
     icon: Eye,
   },
   {
-    value: 3.1,
-    display: '3.1 Billion+',
+    value: 1.5,
+    display: '1.5 Billion+',
     label: 'Pageviews Sepanjang Tahun',
     sublabel: 'Volume tayangan halaman tahunan',
     icon: MousePointerClick,
@@ -112,18 +112,18 @@ export interface SocialPlatformStat {
 }
 
 export const socialPlatformStats: SocialPlatformStat[] = [
-  { platform: 'TikTok', accounts: 306, followers: 27_612_594, views: 911_946_685 },
-  { platform: 'Instagram', accounts: 158, followers: 2_361_412, views: 343_860_805 },
+  { platform: 'TikTok', accounts: 306, followers: 50_612_594, views: 2_700_612_594 },
+  { platform: 'Instagram', accounts: 158, followers: 12_361_412, views: 600_860_805 },
   { platform: 'YouTube', accounts: 576, followers: 5_723_665, views: null },
   { platform: 'Facebook', accounts: 573, followers: 3_827_753, views: null },
   { platform: 'X (Twitter)', accounts: 783, followers: 558_329, views: null },
 ]
 export const voxproTiers: InfluencerTier[] = [
-  { count: 100, suffix: '+', tier: 'Mega Influencers', description: 'Jangkauan masif & celebrity-grade impact' },
-  { count: 150, suffix: '+', tier: 'Macro Influencers', description: 'Audiens luas dengan engagement kuat' },
+  { count: 10, suffix: '+', tier: 'Mega Influencers', description: 'Jangkauan masif & celebrity-grade impact' },
+  { count: 25, suffix: '+', tier: 'Macro Influencers', description: 'Audiens luas dengan engagement kuat' },
   { count: 100, suffix: '+', tier: 'Middle Influencers', description: 'Niche authority & konversi terukur' },
-  { count: 300, suffix: '+', tier: 'Micro Influencers', description: 'Komunitas loyal & cost-efficiency' },
-  { count: 350, suffix: '+', tier: 'Nano Influencers', description: 'Hyper-local & authentic storytelling' },
+  { count: 150, suffix: '+', tier: 'Micro Influencers', description: 'Komunitas loyal & cost-efficiency' },
+  { count: 300, suffix: '+', tier: 'Nano Influencers', description: 'Hyper-local & authentic storytelling' },
   { count: 500, suffix: '+', tier: 'Pico Influencers', description: 'Volume tinggi untuk aktivasi skala' },
 ]
 

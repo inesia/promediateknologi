@@ -17,7 +17,7 @@ export default function DashboardHeader({
   onTabChange,
 }: DashboardHeaderProps) {
   return (
-    <section className="relative py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50/50 border-b border-slate-200">
+    <section className="relative py-16 lg:py-4 bg-gradient-to-b from-white to-slate-50/50 border-b border-slate-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Headline */}
         <motion.div
@@ -62,21 +62,19 @@ export default function DashboardHeader({
         >
           <button
             onClick={() => onTabChange('marketplace')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-              activeTab === 'marketplace'
+            className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${activeTab === 'marketplace'
                 ? 'bg-[#00AEEF] text-white shadow-lg shadow-[#00AEEF]/25'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
+              }`}
           >
             Marketplace
           </button>
           <button
             onClick={() => onTabChange('orders')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
-              activeTab === 'orders'
+            className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === 'orders'
                 ? 'bg-[#00AEEF] text-white shadow-lg shadow-[#00AEEF]/25'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
+              }`}
           >
             <ShoppingCart className="w-5 h-5" />
             My Orders

@@ -58,7 +58,7 @@ export default function AdProductsGrid({ onProductSelect, selectedProducts }: Ad
   const isSelected = (id: string) => selectedProducts.some((p) => p.id === id)
 
   return (
-    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -93,11 +93,10 @@ export default function AdProductsGrid({ onProductSelect, selectedProducts }: Ad
               >
                 {/* Product Card */}
                 <div
-                  className={`relative h-full p-6 bg-white rounded-xl border-2 transition-all duration-300 ${
-                    selected
+                  className={`relative h-full p-6 bg-white rounded-xl border-2 transition-all duration-300 ${selected
                       ? 'border-[#00AEEF] shadow-lg shadow-[#00AEEF]/20'
                       : 'border-slate-200 hover:border-[#00AEEF]/50 hover:shadow-lg'
-                  }`}
+                    }`}
                 >
                   {/* Dynamic Badge */}
                   {product.badge && (
@@ -192,11 +191,10 @@ export default function AdProductsGrid({ onProductSelect, selectedProducts }: Ad
                           price: product.price,
                         })
                       }
-                      className={`flex-1 px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${
-                        selected
+                      className={`flex-1 px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${selected
                           ? 'bg-[#00AEEF] text-white'
                           : 'bg-slate-100 text-slate-700 hover:bg-[#00AEEF] hover:text-white'
-                      }`}
+                        }`}
                     >
                       {selected ? 'Terpilih' : 'Pilih'}
                     </button>
@@ -231,7 +229,7 @@ export default function AdProductsGrid({ onProductSelect, selectedProducts }: Ad
               >
                 <X className="w-5 h-5 text-slate-600" />
               </button>
-              
+
               <h3 className="text-2xl font-black text-[#001A2C] mb-6">
                 Preview: {products.find((p) => p.id === previewProduct)?.name}
               </h3>

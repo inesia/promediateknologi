@@ -229,7 +229,7 @@ export default function ProductCatalog() {
   const active = pillars.find((p) => p.id === activePillar)!
 
   return (
-    <section className="py-16 lg:py-24 bg-white -mt-px">
+    <section className="py-16 lg:py-4 bg-white -mt-px">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-10 lg:mb-12">
           <p className="text-xs font-semibold text-[#00AEEF] uppercase tracking-wide mb-2">
@@ -250,11 +250,10 @@ export default function ProductCatalog() {
                 key={pillar.id}
                 type="button"
                 onClick={() => setActivePillar(pillar.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shrink-0 transition-colors ${
-                  isActive
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shrink-0 transition-colors ${isActive
                     ? 'bg-[#00AEEF] text-white shadow-sm'
                     : 'bg-slate-100 text-slate-600'
-                }`}
+                  }`}
               >
                 <Icon className="w-4 h-4" />
                 {pillar.shortLabel}
@@ -273,11 +272,10 @@ export default function ProductCatalog() {
                   key={pillar.id}
                   type="button"
                   onClick={() => setActivePillar(pillar.id)}
-                  className={`flex items-center gap-3 w-full text-left px-3 py-3 rounded-xl text-sm font-semibold transition-all ${
-                    isActive
+                  className={`flex items-center gap-3 w-full text-left px-3 py-3 rounded-xl text-sm font-semibold transition-all ${isActive
                       ? 'bg-white text-[#00AEEF] shadow-sm'
                       : 'text-slate-600 hover:bg-white/70'
-                  }`}
+                    }`}
                 >
                   <Icon
                     className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#00AEEF]' : 'text-slate-400'}`}

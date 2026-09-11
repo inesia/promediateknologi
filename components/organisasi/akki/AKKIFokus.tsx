@@ -26,7 +26,7 @@ const fokus = [
 
 export default function AKKIFokus() {
   return (
-    <section className="relative py-24 lg:py-32 bg-slate-50">
+    <section className="relative py-4 lg:py-32 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 lg:mb-20">
           <h2 className="text-4xl sm:text-5xl font-black text-[#001A2C] mb-6">Fokus Utama</h2>
@@ -62,7 +62,7 @@ export default function AKKIFokus() {
                   <p className="text-slate-600 leading-relaxed">
                     {item.description}
                   </p>
-                  
+
                   {/* Decorative stripe */}
                   <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl`} />
                 </div>

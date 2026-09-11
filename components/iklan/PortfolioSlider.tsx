@@ -12,7 +12,7 @@ export default function PortfolioSlider() {
   ]
 
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden">
+    <section className="py-4 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,13 +45,13 @@ export default function PortfolioSlider() {
               >
                 {/* Placeholder visual */}
                 <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                   <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
+                  <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
                 </div>
                 <div className="absolute inset-0 bg-black/10 group-hover/card:bg-black/0 transition-colors duration-300" />
               </div>
             ))}
           </div>
-          
+
           {/* Second Loop (Duplicate) */}
           <div className="flex gap-6 sm:gap-8 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
             {campaigns.map((campaign, index) => (
@@ -59,27 +59,27 @@ export default function PortfolioSlider() {
                 key={`${campaign.id}-${index}-dup`}
                 className="relative w-[280px] h-[180px] sm:w-[400px] sm:h-[260px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg bg-slate-200 group/card hover:shadow-xl transition-all duration-300"
               >
-                 {/* Placeholder visual */}
+                {/* Placeholder visual */}
                 <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                   <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
+                  <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
                 </div>
-                 <div className="absolute inset-0 bg-black/10 group-hover/card:bg-black/0 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/10 group-hover/card:bg-black/0 transition-colors duration-300" />
               </div>
             ))}
           </div>
 
-           {/* Third Loop (Triplicate for safety on wide screens) */}
-           <div className="flex gap-6 sm:gap-8 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+          {/* Third Loop (Triplicate for safety on wide screens) */}
+          <div className="flex gap-6 sm:gap-8 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
             {campaigns.map((campaign, index) => (
               <div
                 key={`${campaign.id}-${index}-dup2`}
                 className="relative w-[280px] h-[180px] sm:w-[400px] sm:h-[260px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg bg-slate-200 group/card hover:shadow-xl transition-all duration-300"
               >
-                 {/* Placeholder visual */}
+                {/* Placeholder visual */}
                 <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                   <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
+                  <span className="text-slate-400 font-bold text-lg">{campaign.title}</span>
                 </div>
-                 <div className="absolute inset-0 bg-black/10 group-hover/card:bg-black/0 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/10 group-hover/card:bg-black/0 transition-colors duration-300" />
               </div>
             ))}
           </div>

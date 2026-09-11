@@ -8,7 +8,7 @@ import { getApplyPageUrl, normalizeProgramSlug } from '@/lib/programRegistration
 export const metadata: Metadata = {
   title: 'Pilih Program | Bergabung Promedia Group',
   description:
-    'Jelajahi Publisher Media Network, Contentpreneur, dan Influencer Media Network. Pilih program, pelajari persyaratan, lalu daftar.',
+    'Jelajahi Publisher Media Network, dan Influencer Media Network. Pilih program, pelajari persyaratan, lalu daftar.',
 }
 
 export const dynamic = 'force-dynamic'

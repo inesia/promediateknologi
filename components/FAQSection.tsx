@@ -94,7 +94,7 @@ export default function FAQSection() {
   const activeFaqs = faqCategories.find(c => c.id === activeCategory)?.items || []
 
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="py-4 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-black text-[#001A2C] mb-6">Frequently Asked Questions</h1>
@@ -110,11 +110,10 @@ export default function FAQSection() {
                 setActiveCategory(category.id)
                 setOpenIndex(null)
               }}
-              className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
-                activeCategory === category.id
+              className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${activeCategory === category.id
                   ? 'bg-[#00AEEF] text-white shadow-lg shadow-blue-500/30'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}
+                }`}
             >
               {category.label}
             </button>
@@ -145,11 +144,10 @@ export default function FAQSection() {
                       <Plus className="w-5 h-5 text-slate-400 flex-shrink-0" />
                     )}
                   </button>
-                  
+
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <div className="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">
                       {faq.answer}

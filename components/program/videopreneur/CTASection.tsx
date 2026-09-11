@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-[#000F1A] via-slate-900 to-white overflow-hidden">
+    <section className="relative py-4 lg:py-32 bg-gradient-to-b from-[#000F1A] via-slate-900 to-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[#000F1A] to-transparent" />
@@ -44,42 +44,42 @@ export default function CTASection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-            {/* Neon Gradient Background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF]"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-              style={{
-                backgroundSize: '200% 100%',
-              }}
-            />
-            
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] blur-xl opacity-50" />
+              {/* Neon Gradient Background */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[#00AEEF] via-[#2D74B3] to-[#00AEEF]"
+                animate={{
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+                style={{
+                  backgroundSize: '200% 100%',
+                }}
+              />
 
-            {/* Content */}
-            <span className="relative z-10">Mulai Produksi Anda</span>
-            <Play className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="white" />
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] blur-xl opacity-50" />
 
-            {/* Shimmer overlay */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              animate={{
-                x: ['-100%', '100%'],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-            />
-          </motion.div>
+              {/* Content */}
+              <span className="relative z-10">Mulai Produksi Anda</span>
+              <Play className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="white" />
+
+              {/* Shimmer overlay */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-100%', '100%'],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              />
+            </motion.div>
           </Link>
 
           {/* Decorative line */}
