@@ -10,6 +10,8 @@ import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 import { getClient, getNetworkLivePulse } from '@/controllers/base.controller'
 
+export const fetchCache = 'force-cache'
+
 export default async function Home() {
 
   const clients = await getClient()

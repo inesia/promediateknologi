@@ -211,7 +211,8 @@ export async function getNetworkLivePulse() {
             headers: {
                 "Accept": "application/vnd.promedia+json; version=1.0",
                 "Content-Type": "application/json",
-            }
+            },
+            cache: "force-cache"
         })
         if (!source.ok) {
             console.warn(`getRecentNewsWithAuth failed: ${source.status} ${source.statusText}. Using fallback data.`)

@@ -24,36 +24,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.promediateknologi.id',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'promediateknologi.id',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'db3.promediateknologi.id',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'assets.promediateknologi.id',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'static.promediateknologi.id',
+        hostname: '*',
         pathname: '/**',
       },
     ],
   },
+  poweredByHeader: false,
 }
 
 module.exports = nextConfig
