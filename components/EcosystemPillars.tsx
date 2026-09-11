@@ -4,20 +4,30 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Building2, User, Check, ArrowRight, Users, UserCheck } from 'lucide-react'
 
-const publisherFeatures = [
-  'Website Profesional',
-  'Infrastruktur & Teknologi Terbaik',
-  'Monetisasi & Peluang Iklan',
-  'Pelatihan & Pendampingan',
-  'Dukungan Komunitas',
+const publisherBenefits = [
+  'Dibuatkan Website Media Gratis',
+  'Server & IT Maintenance Gratis',
+  'Support Monetisasi & Dicarikan Iklan',
+  'Pelatihan & Pendampingan Gratis',
 ]
 
-const creatorFeatures = [
-  'Website Personal',
-  'Branding & Identitas Profesional',
-  'Monetisasi & Peluang Kolaborasi',
-  'Live Commerce & Media Kit',
-  'Pelatihan & Dukungan Komunitas',
+const publisherSyaratOther = [
+  'Pengalaman di Media Minimal 1 Tahun',
+  'Komitmen Minimal 5 Artikel/Hari',
+  'Bercita-cita bangun redaksi media sendiri',
+]
+
+const influencerBenefits = [
+  'Dibuatkan Website Personal Gratis',
+  'Server & IT Maintenance Gratis',
+  'Support Monetisasi & Dicarikan Iklan',
+  'Pelatihan & Pendampingan Gratis',
+]
+
+const influencerSyaratOther = [
+  'Aktif Media Sosial (Min. 1000 Follower)',
+  'Komitmen Minimal 1 Post/Hari di Medsos & Web',
+  'Bercita-cita bangun personal brand & media personal',
 ]
 
 export default function EcosystemPillars() {
@@ -40,7 +50,7 @@ export default function EcosystemPillars() {
         </motion.div>
 
         {/* Dual Pillar Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* Card 1: Publisher Media Network */}
           <motion.div
@@ -58,59 +68,85 @@ export default function EcosystemPillars() {
             {/* Directional Dark Gradient Overlay for perfect text contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#061838] via-[#061838]/95 to-[#092659]/60 pointer-events-none" />
 
-            <div className="relative z-10">
-              {/* Icon Container */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#00AEEF] flex items-center justify-center text-white mb-6 shadow-lg shadow-[#00AEEF]/40">
-                <Building2 className="w-7 h-7 sm:w-8 sm:h-8" />
-              </div>
-
-              {/* Title & Description */}
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-                Publisher Media Network
-              </h3>
-              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-6 max-w-md">
-                Untuk perusahaan media yang ingin tumbuh lebih profesional dan berkelanjutan.
-              </p>
-
-              {/* Syarat Box */}
-              <div className="mb-8 rounded-2xl bg-white/[0.06] border border-white/10 p-3.5 sm:p-4 backdrop-blur-md flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-[#00AEEF]/20 border border-[#00AEEF]/30 flex items-center justify-center text-[#00AEEF] shrink-0">
-                  <Users className="w-5 h-5" />
+            <div className="relative z-10 flex-1 flex flex-col">
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#00AEEF] flex items-center justify-center text-white shadow-lg shadow-[#00AEEF]/40 shrink-0">
+                  <Building2 className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-[#00AEEF] uppercase tracking-wider block">
-                    Syarat
-                  </span>
-                  <span className="text-sm sm:text-base font-semibold text-white">
-                    Memiliki Tim Minimal 3 Orang
-                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    Publisher Media Network
+                  </h3>
                 </div>
               </div>
 
-              {/* Feature Checklist */}
-              <ul className="space-y-3.5 mb-10">
-                {publisherFeatures.map((feat, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-slate-200">
-                    <div className="w-5 h-5 rounded-full bg-[#00AEEF] flex items-center justify-center text-white shrink-0">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Yang Anda Dapatkan */}
+              <div className="mb-6">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#00AEEF] mb-3.5 flex items-center gap-2">
+                  <span>Yang Anda Dapatkan:</span>
+                </h4>
+                <ul className="space-y-3">
+                  {publisherBenefits.map((feat, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-slate-200">
+                      <div className="w-5 h-5 rounded-full bg-[#00AEEF]/20 border border-[#00AEEF]/40 flex items-center justify-center text-[#00AEEF] shrink-0">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Syarat */}
+              <div className="mb-8">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#00AEEF] mb-3.5">
+                  Syarat:
+                </h4>
+
+                {/* Highlighted Syarat Box: Memiliki Tim Minimal 3 Orang */}
+                <div className="mb-4 rounded-2xl bg-gradient-to-r from-[#00AEEF]/25 via-[#00AEEF]/15 to-[#00AEEF]/5 border border-[#00AEEF]/50 p-4 backdrop-blur-md flex items-center gap-3.5 shadow-lg shadow-[#00AEEF]/10 ring-1 ring-[#00AEEF]/30">
+                  <div className="w-11 h-11 rounded-xl bg-[#00AEEF] flex items-center justify-center text-white shrink-0 shadow-md shadow-[#00AEEF]/40">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold text-[#00AEEF] uppercase tracking-wider block mb-0.5">
+                      Syarat Utama
+                    </span>
+                    <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                      Memiliki Tim Minimal 3 Orang
+                    </span>
+                  </div>
+                </div>
+
+                {/* Other Syarat List */}
+                <ul className="space-y-2.5 pl-1">
+                  {publisherSyaratOther.map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-[15px] font-medium text-slate-300">
+                      <div className="w-2 h-2 rounded-full bg-[#00AEEF] shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Action CTA */}
-            <div className="relative z-10 pt-2">
-              <Link href="https://go.promediateknologi.id/DaftarMitraMedia" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                <motion.span 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] rounded-xl shadow-lg shadow-[#00AEEF]/30 transition-all cursor-pointer"
+            <div className="relative z-10 pt-4 mt-auto border-t border-white/10">
+              <Link
+                href="https://go.promediateknologi.id/DaftarMitraMedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="group/btn inline-flex items-center justify-center w-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] hover:from-[#00bbf5] hover:to-[#3180c4] rounded-xl shadow-lg shadow-[#00AEEF]/30 transition-all cursor-pointer"
                 >
-                  <span>Daftar Sebagai Publisher</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </motion.span>
+                  <span>Daftar Program Publisher</span>
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </motion.div>
               </Link>
             </div>
           </motion.div>
@@ -131,59 +167,85 @@ export default function EcosystemPillars() {
             {/* Directional Dark Gradient Overlay for perfect text contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#140b2e] via-[#140b2e]/95 to-[#211347]/60 pointer-events-none" />
 
-            <div className="relative z-10">
-              {/* Icon Container */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#7c4dff] flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-600/40">
-                <User className="w-7 h-7 sm:w-8 sm:h-8" />
-              </div>
-
-              {/* Title & Description */}
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-                Influencer Media Network
-              </h3>
-              <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed mb-6 max-w-md">
-                Untuk creator dan influencer yang ingin membangun media personal yang kuat.
-              </p>
-
-              {/* Syarat Box */}
-              <div className="mb-8 rounded-2xl bg-white/[0.06] border border-white/10 p-3.5 sm:p-4 backdrop-blur-md flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-[#7c4dff]/20 border border-[#7c4dff]/30 flex items-center justify-center text-[#b388ff] shrink-0">
-                  <UserCheck className="w-5 h-5" />
+            <div className="relative z-10 flex-1 flex flex-col">
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#7c4dff] flex items-center justify-center text-white shadow-lg shadow-purple-600/40 shrink-0">
+                  <User className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-[#b388ff] uppercase tracking-wider block">
-                    Syarat
-                  </span>
-                  <span className="text-sm sm:text-base font-semibold text-white">
-                    Min. Pengelola 1 Orang
-                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    Influencer Media Network
+                  </h3>
                 </div>
               </div>
 
-              {/* Feature Checklist */}
-              <ul className="space-y-3.5 mb-10">
-                {creatorFeatures.map((feat, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-slate-200">
-                    <div className="w-5 h-5 rounded-full bg-[#7c4dff] flex items-center justify-center text-white shrink-0">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                    </div>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Yang Anda Dapatkan */}
+              <div className="mb-6">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#b388ff] mb-3.5 flex items-center gap-2">
+                  <span>Yang Anda Dapatkan:</span>
+                </h4>
+                <ul className="space-y-3">
+                  {influencerBenefits.map((feat, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-base font-medium text-slate-200">
+                      <div className="w-5 h-5 rounded-full bg-[#7c4dff]/20 border border-[#7c4dff]/40 flex items-center justify-center text-[#b388ff] shrink-0">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Syarat */}
+              <div className="mb-8">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#b388ff] mb-3.5">
+                  Syarat:
+                </h4>
+
+                {/* Highlighted Syarat Box: Min. Pengelola 1 Orang */}
+                <div className="mb-4 rounded-2xl bg-gradient-to-r from-[#7c4dff]/25 via-[#7c4dff]/15 to-[#7c4dff]/5 border border-[#7c4dff]/50 p-4 backdrop-blur-md flex items-center gap-3.5 shadow-lg shadow-purple-600/10 ring-1 ring-[#7c4dff]/30">
+                  <div className="w-11 h-11 rounded-xl bg-[#7c4dff] flex items-center justify-center text-white shrink-0 shadow-md shadow-purple-600/40">
+                    <UserCheck className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold text-[#b388ff] uppercase tracking-wider block mb-0.5">
+                      Syarat Utama
+                    </span>
+                    <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                      Min. Pengelola 1 Orang
+                    </span>
+                  </div>
+                </div>
+
+                {/* Other Syarat List */}
+                <ul className="space-y-2.5 pl-1">
+                  {influencerSyaratOther.map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-sm sm:text-[15px] font-medium text-slate-300">
+                      <div className="w-2 h-2 rounded-full bg-[#b388ff] shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Action CTA */}
-            <div className="relative z-10 pt-2">
-              <Link href="https://go.promediateknologi.id/VoxProCreators" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                <motion.span 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-[#7c4dff] hover:bg-[#6c3be8] rounded-xl shadow-lg shadow-purple-600/30 transition-all cursor-pointer"
+            <div className="relative z-10 pt-4 mt-auto border-t border-white/10">
+              <Link
+                href="https://go.promediateknologi.id/VoxProCreators"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="group/btn inline-flex items-center justify-center w-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-[#7c4dff] hover:bg-[#6c3be8] rounded-xl shadow-lg shadow-purple-600/30 transition-all cursor-pointer"
                 >
-                  <span>Jadi Creator Sekarang</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </motion.span>
+                  <span>Daftar Program Influencer</span>
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </motion.div>
               </Link>
             </div>
           </motion.div>
