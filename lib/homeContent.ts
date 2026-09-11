@@ -12,7 +12,7 @@ export const homeHero = {
   subheadline:
     'Kami membangun ekosistem yang menghubungkan publisher, creator, brand, dan teknologi untuk menciptakan pertumbuhan, kolaborasi, dan peluang tanpa batas.',
   primaryCta: 'Bergabung Sebagai Publisher',
-  secondaryCta: 'Bergabung Sebagai Creator',
+  secondaryCta: 'Bergabung Sebagai Influencer',
   tertiaryCta: 'Pelajari Ekosistem Kami',
   primaryCtaHref: 'https://go.promediateknologi.id/DaftarMitraMedia',
   secondaryCtaHref: 'https://go.promediateknologi.id/VoxProCreators',

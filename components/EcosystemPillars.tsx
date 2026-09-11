@@ -36,7 +36,7 @@ export default function EcosystemPillars() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
         {/* Section Heading */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function EcosystemPillars() {
 
         {/* Dual Pillar Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          
+
           {/* Card 1: Publisher Media Network */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -100,9 +100,9 @@ export default function EcosystemPillars() {
 
               {/* Syarat */}
               <div className="mb-8">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#00AEEF] mb-3.5">
+                {/* <h4 className="text-xs font-bold uppercase tracking-wider text-[#00AEEF] mb-3.5">
                   Syarat:
-                </h4>
+                </h4> */}
 
                 {/* Highlighted Syarat Box: Memiliki Tim Minimal 3 Orang */}
                 <div className="mb-4 rounded-2xl bg-gradient-to-r from-[#00AEEF]/25 via-[#00AEEF]/15 to-[#00AEEF]/5 border border-[#00AEEF]/50 p-4 backdrop-blur-md flex items-center gap-3.5 shadow-lg shadow-[#00AEEF]/10 ring-1 ring-[#00AEEF]/30">
@@ -139,7 +139,7 @@ export default function EcosystemPillars() {
                 rel="noopener noreferrer"
                 className="inline-block w-full"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="group/btn inline-flex items-center justify-center w-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#00AEEF] to-[#2D74B3] hover:from-[#00bbf5] hover:to-[#3180c4] rounded-xl shadow-lg shadow-[#00AEEF]/30 transition-all cursor-pointer"
@@ -199,9 +199,9 @@ export default function EcosystemPillars() {
 
               {/* Syarat */}
               <div className="mb-8">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#b388ff] mb-3.5">
+                {/* <h4 className="text-xs font-bold uppercase tracking-wider text-[#b388ff] mb-3.5">
                   Syarat:
-                </h4>
+                </h4> */}
 
                 {/* Highlighted Syarat Box: Min. Pengelola 1 Orang */}
                 <div className="mb-4 rounded-2xl bg-gradient-to-r from-[#7c4dff]/25 via-[#7c4dff]/15 to-[#7c4dff]/5 border border-[#7c4dff]/50 p-4 backdrop-blur-md flex items-center gap-3.5 shadow-lg shadow-purple-600/10 ring-1 ring-[#7c4dff]/30">
@@ -238,7 +238,7 @@ export default function EcosystemPillars() {
                 rel="noopener noreferrer"
                 className="inline-block w-full"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="group/btn inline-flex items-center justify-center w-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white bg-[#7c4dff] hover:bg-[#6c3be8] rounded-xl shadow-lg shadow-purple-600/30 transition-all cursor-pointer"
