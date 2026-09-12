@@ -125,7 +125,7 @@ export default function EcosystemStats() {
           </div>
 
           <div className="px-2.5 sm:px-6 lg:px-10 pb-4 sm:pb-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-4 mx-auto">
               {socialPlatformStats.map((stat, index) => {
                 const visual = platformVisuals[stat.platform]
                 const isTwitter = stat.platform === TWITTER_PLATFORM
@@ -139,7 +139,7 @@ export default function EcosystemStats() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.06 }}
-                    className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${isTwitter ? 'col-span-1 sm:col-span-2' : ''
+                    className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${isTwitter ? 'col-span-2' : ''
                       }`}
                   >
                     <div className="p-3 sm:p-5">
