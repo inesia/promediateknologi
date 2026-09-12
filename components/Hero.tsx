@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="relative w-full h-full opacity-100">
           <Image
-            src="/images/banner-hero1.png"
+            src="/images/banner-hero1.webp"
             alt="Digital Media Ecosystem Background Wave"
             fill
             priority
@@ -41,7 +41,7 @@ export default function Hero() {
         {/* Top Wave Graphic aligned cleanly behind illustration artwork */}
         <div className="absolute top-0 right-0 left-0 h-[420px] xs:h-[460px] sm:h-[520px]">
           <Image
-            src="/images/banner-hero1.png"
+            src="/images/banner-hero1.webp"
             alt="Digital Media Ecosystem Mobile Background Wave"
             fill
             priority
@@ -202,7 +202,7 @@ export default function Hero() {
               className="relative z-20 w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] md:max-w-lg lg:max-w-2xl mx-auto"
             >
               <Image
-                src="/images/banner-hero2.png"
+                src="/images/banner-hero2.webp"
                 alt="Promedia Ecosystem - Web & Mobile Platform"
                 width={950}
                 height={760}
