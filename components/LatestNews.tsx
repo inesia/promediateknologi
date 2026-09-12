@@ -35,10 +35,7 @@ export default function LatestNews({ news }: { news: any }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-0 gap-6">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={false}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001A2C] mb-4">
               Kabar <span className="text-[#00AEEF]">Ekosistem</span>
@@ -59,10 +56,7 @@ export default function LatestNews({ news }: { news: any }) {
             return (
               <motion.article
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={false}
                 className="bg-white rounded-2xl overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">

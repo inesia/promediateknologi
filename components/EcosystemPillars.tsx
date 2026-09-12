@@ -37,10 +37,7 @@ export default function EcosystemPillars() {
 
         {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={false}
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#001A2C] mb-3 tracking-tight">
@@ -54,10 +51,7 @@ export default function EcosystemPillars() {
 
           {/* Card 1: Publisher Media Network */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={false}
             className="relative rounded-3xl overflow-hidden bg-[#061838] border border-blue-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
           >
             {/* Background Image Layer */}
@@ -153,10 +147,7 @@ export default function EcosystemPillars() {
 
           {/* Card 2: Influencer Media Network */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={false}
             className="relative rounded-3xl overflow-hidden bg-[#140b2e] border border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-2xl group"
           >
             {/* Background Image Layer */}

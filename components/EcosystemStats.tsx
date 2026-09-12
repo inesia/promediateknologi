@@ -1,7 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowRight, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
 import { homeDalamAngka } from '@/lib/homeContent'
@@ -38,12 +37,10 @@ const platformVisuals: Record<
 const TWITTER_PLATFORM = 'X (Twitter)'
 
 export default function EcosystemStats() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-80px' })
   const { primaryStats } = homeDalamAngka
 
   return (
-    <section ref={sectionRef} className="relative py-8 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden w-full">
+    <section className="relative py-8 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden w-full">
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
@@ -54,14 +51,12 @@ export default function EcosystemStats() {
           backgroundSize: '48px 48px',
         }}
       />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="hidden sm:block absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
       <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mx-auto mb-4 sm:mb-10 lg:mb-12"
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          transition={{ duration: 0.7 }}
+          initial={false}
         >
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full bg-[#00AEEF]/15 border border-[#00AEEF]/30 mb-3 sm:mb-6">
             <BarChart3 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00AEEF]" />
@@ -80,9 +75,7 @@ export default function EcosystemStats() {
 
         <motion.div
           className="rounded-xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 shadow-2xl shadow-black/20 overflow-hidden"
-          initial={{ opacity: 0, y: 32 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          initial={false}
         >
           <div className="px-3 sm:px-8 lg:px-12 pt-4 sm:pt-10 pb-3 sm:pb-8">
             <p className="text-center text-[11px] sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto px-2.5 py-2 sm:px-4 sm:py-5 rounded-xl border border-slate-200 bg-white/80">
@@ -136,9 +129,7 @@ export default function EcosystemStats() {
                 return (
                   <motion.div
                     key={stat.platform}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                    transition={{ duration: 0.4, delay: 0.2 + index * 0.06 }}
+                    initial={false}
                     className={`bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm overflow-hidden ${isTwitter ? 'col-span-2' : ''
                       }`}
                   >

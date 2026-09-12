@@ -12,10 +12,7 @@ export default function FinalCTA() {
 
         {/* Bottom Bar: Dark Blue Capsule Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={false}
           className="w-full bg-[#030917] border border-blue-900/40 sm:rounded-full rounded-3xl p-6 sm:p-7 lg:px-10 lg:py-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden group"
         >
           {/* Glowing accent backdrop */}

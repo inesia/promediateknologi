@@ -8,10 +8,10 @@ import { homeHero } from '@/lib/homeContent'
 import HeroEcosystemBackground from '@/components/HeroEcosystemBackground'
 
 export default function Hero() {
+  // No opacity:0 entrance — Safari iOS can leave hero text invisible / feel "stuck"
   const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
+    initial: false as const,
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   }
 
   return (
@@ -22,37 +22,42 @@ export default function Hero() {
       {/* Dynamic Network Particles & Light Background Canvas */}
       <HeroEcosystemBackground />
 
-      {/* Desktop Background Image Layer (100% intact as praised by user) */}
+      {/* Desktop Background Image Layer */}
       <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="relative w-full h-full opacity-100">
           <Image
             src="/images/banner-hero1.webp"
             alt="Digital Media Ecosystem Background Wave"
             fill
-            priority
+            sizes="100vw"
             className="object-cover object-right"
           />
         </div>
         <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[#F4F8FC] via-[#F4F8FC]/70 to-transparent z-10" />
       </div>
 
-      {/* Mobile-Optimized Background Layer (Retina Sharp, No 4x Stretched Zoom, Zero Pixelation) */}
+      {/* Mobile-Optimized Background Layer */}
       <div className="block lg:hidden absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#F4F8FC]">
-        {/* Top Wave Graphic aligned cleanly behind illustration artwork */}
         <div className="absolute top-0 right-0 left-0 h-[420px] xs:h-[460px] sm:h-[520px]">
           <Image
             src="/images/banner-hero1.webp"
             alt="Digital Media Ecosystem Mobile Background Wave"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-right-top opacity-95"
           />
-          {/* Smooth fade into solid #F4F8FC light backdrop behind text for 100% text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F4F8FC]/50 to-[#F4F8FC]" />
         </div>
 
-        {/* Ambient Cyan Spotlight Glow for Mobile depth */}
-        <div className="absolute top-4 right-[-10%] w-[320px] h-[320px] bg-[#00AEEF]/25 rounded-full blur-[85px]" />
+        {/* Soft glow without CSS filter blur (Safari iOS safe) */}
+        <div
+          className="absolute top-4 right-[-10%] w-[280px] h-[280px] rounded-full"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(0,174,239,0.25) 0%, rgba(0,174,239,0) 70%)',
+          }}
+        />
       </div>
 
       {/* Hero Main Content Container */}
@@ -111,25 +116,17 @@ export default function Hero() {
 
               {/* Right Column Image for Mobile (Mobile: 5 Cols | Desktop: Hidden, handled by desktop column) */}
               <div className="col-span-5 min-w-0 block lg:hidden relative w-full flex items-center justify-center">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
-                  transition={{
-                    opacity: { duration: 0.8, delay: 0.1 },
-                    scale: { duration: 0.8, delay: 0.1 },
-                    y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
-                  }}
-                  className="relative z-20 w-full max-w-[160px] xs:max-w-[190px] sm:max-w-[240px] mx-auto"
-                >
+                <div className="relative z-20 w-full max-w-[160px] xs:max-w-[190px] sm:max-w-[240px] mx-auto">
                   <Image
                     src="/images/banner-hero2-m2.png"
                     alt="Promedia Ecosystem - Web & Mobile Platform"
-                    width={950}
-                    height={760}
+                    width={271}
+                    height={417}
                     priority
+                    sizes="(max-width: 640px) 160px, 240px"
                     className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,174,239,0.22)]"
                   />
-                </motion.div>
+                </div>
               </div>
 
             </div>
@@ -191,25 +188,16 @@ export default function Hero() {
           <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 relative w-full items-center justify-center py-2 lg:py-0">
             
             {/* Main Visual Image (banner-hero2.png - Phone & Social Media Illustration) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-              transition={{
-                opacity: { duration: 0.8, delay: 0.1 },
-                scale: { duration: 0.8, delay: 0.1 },
-                y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
-              }}
-              className="relative z-20 w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] md:max-w-lg lg:max-w-2xl mx-auto"
-            >
+            <div className="relative z-20 w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] md:max-w-lg lg:max-w-2xl mx-auto">
               <Image
                 src="/images/banner-hero2.webp"
                 alt="Promedia Ecosystem - Web & Mobile Platform"
                 width={950}
                 height={760}
-                priority
+                sizes="(max-width: 1024px) 0px, 640px"
                 className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,174,239,0.28)] hover:scale-[1.02] transition-transform duration-500"
               />
-            </motion.div>
+            </div>
 
           </div>
 

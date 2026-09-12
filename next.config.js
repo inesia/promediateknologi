@@ -20,7 +20,8 @@ const nextConfig = {
 
   
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // Prefer WebP only — AVIF decode can stall Safari iOS on first paint
+    formats: ['image/webp'],
     remotePatterns: [
       {
         protocol: 'https',

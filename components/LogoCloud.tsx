@@ -30,10 +30,7 @@ function PartnerLogo({
   return (
     <motion.div
       className={`flex items-center justify-center transition-all duration-300 ${className ?? ''}`}
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: (index % 8) * 0.05 }}
+      initial={false}
     >
       <div className="relative w-full aspect-[3/2] rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 hover:shadow-lg hover:shadow-slate-100 transition-shadow overflow-hidden group">
         {logo ? (
@@ -97,10 +94,7 @@ export default function LogoCloud({ clients }: { clients: any[] }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={false}
         >
           <h2 className="text-3xl lg:text-4xl font-black text-[#001A2C] mb-4">
             Ekosistem Media & Jaringan Kami
