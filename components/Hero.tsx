@@ -30,7 +30,6 @@ export default function Hero() {
             alt="Digital Media Ecosystem Background Wave"
             fill
             priority
-            quality={100}
             className="object-cover object-right"
           />
         </div>
@@ -46,7 +45,6 @@ export default function Hero() {
             alt="Digital Media Ecosystem Mobile Background Wave"
             fill
             priority
-            quality={100}
             className="object-cover object-right-top opacity-95"
           />
           {/* Smooth fade into solid #F4F8FC light backdrop behind text for 100% text readability */}
@@ -129,7 +127,6 @@ export default function Hero() {
                     width={950}
                     height={760}
                     priority
-                    quality={100}
                     className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,174,239,0.22)]"
                   />
                 </motion.div>
@@ -210,7 +207,6 @@ export default function Hero() {
                 width={950}
                 height={760}
                 priority
-                quality={100}
                 className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(0,174,239,0.28)] hover:scale-[1.02] transition-transform duration-500"
               />
             </motion.div>

@@ -19,6 +19,15 @@ function DigitalGridCanvas() {
     if (!ctx) return
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    let isVisible = true
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting
+      },
+      { threshold: 0 }
+    )
+    observer.observe(canvas)
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -45,6 +54,11 @@ function DigitalGridCanvas() {
     let frameId = 0
 
     const draw = () => {
+      if (!isVisible) {
+        frameId = requestAnimationFrame(draw)
+        return
+      }
+
       const w = canvas.getBoundingClientRect().width
       const h = canvas.getBoundingClientRect().height
       ctx.clearRect(0, 0, w, h)
@@ -89,6 +103,7 @@ function DigitalGridCanvas() {
     return () => {
       cancelAnimationFrame(frameId)
       window.removeEventListener('resize', resize)
+      observer.disconnect()
     }
   }, [mounted])
 

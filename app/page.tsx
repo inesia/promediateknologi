@@ -1,13 +1,14 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import EcosystemPillars from '@/components/EcosystemPillars'
-import FeaturesGrid from '@/components/FeaturesGrid'
-import EcosystemStats from '@/components/EcosystemStats'
-import LatestNews from '@/components/LatestNews'
-import EcosystemServices from '@/components/EcosystemServices'
-import LogoCloud from '@/components/LogoCloud'
-import FinalCTA from '@/components/FinalCTA'
-import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
+
+const EcosystemPillars = dynamic(() => import('@/components/EcosystemPillars'))
+const FeaturesGrid = dynamic(() => import('@/components/FeaturesGrid'))
+const EcosystemStats = dynamic(() => import('@/components/EcosystemStats'))
+const LatestNews = dynamic(() => import('@/components/LatestNews'))
+const LogoCloud = dynamic(() => import('@/components/LogoCloud'))
+const FinalCTA = dynamic(() => import('@/components/FinalCTA'))
+const Footer = dynamic(() => import('@/components/Footer'))
 import { getClient, getNetworkLivePulse } from '@/controllers/base.controller'
 
 export const fetchCache = 'force-cache'
