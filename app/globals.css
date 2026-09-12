@@ -188,13 +188,3 @@ html {
 .animate-marquee-logos:hover {
   animation-play-state: paused;
 }
-
-/* Disable slow entrance animations on Safari iOS so sections display instantly */
-@supports (-webkit-touch-callout: none) {
-  .safari-no-anim {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
-  }
-}

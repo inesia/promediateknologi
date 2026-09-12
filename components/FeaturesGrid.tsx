@@ -1,7 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { Globe, Server, Settings, TrendingUp, BookOpen, Users } from 'lucide-react'
 
 const features = [
@@ -32,48 +30,17 @@ const features = [
 ]
 
 export default function FeaturesGrid() {
-  const [isSafariIOS, setIsSafariIOS] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const ua = window.navigator.userAgent
-      const isIOS =
-        /iPad|iPhone|iPod/.test(ua) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-      const isSafari =
-        /Safari/i.test(ua) && !/CriOS|FxiOS|OPiOS|EdgiOS/i.test(ua)
-
-      if (isIOS && isSafari) {
-        setIsSafariIOS(true)
-      }
-    }
-  }, [])
-
   return (
     <section className="py-20 sm:py-24 bg-white relative z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={isSafariIOS ? false : { opacity: 0, y: 20 }}
-          whileInView={isSafariIOS ? undefined : { opacity: 1, y: 0 }}
-          animate={isSafariIOS ? { opacity: 1, y: 0 } : undefined}
-          viewport={{ once: true }}
-          transition={isSafariIOS ? { duration: 0 } : { duration: 0.6 }}
-          className="text-center mb-10 sm:mb-12 safari-no-anim"
-        >
+        <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#001A2C] mb-4 tracking-tight">
             Semua yang Anda Butuhkan untuk Tumbuh
           </h2>
           <div className="w-10 h-1 bg-[#00AEEF] rounded-full mx-auto mb-6" />
           
           {/* Highlighted Wording for 100% Gratis */}
-          <motion.div
-            initial={isSafariIOS ? false : { opacity: 0, scale: 0.9 }}
-            whileInView={isSafariIOS ? undefined : { opacity: 1, scale: 1 }}
-            animate={isSafariIOS ? { opacity: 1, scale: 1 } : undefined}
-            viewport={{ once: true }}
-            transition={isSafariIOS ? { duration: 0 } : { duration: 0.5, delay: 0.2 }}
-            className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl sm:rounded-full shadow-sm safari-no-anim"
-          >
+          <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl sm:rounded-full shadow-sm">
             <div className="flex items-center gap-2">
               <span className="flex h-2.5 w-2.5 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00AEEF] opacity-75"></span>
@@ -86,17 +53,10 @@ export default function FeaturesGrid() {
             <span className="text-sm sm:text-base text-slate-600 font-medium text-center">
               Kami investasi di awal. Anda cukup siapkan domain dan fokus berkarya.
             </span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div
-          initial={isSafariIOS ? false : { opacity: 0, y: 20 }}
-          whileInView={isSafariIOS ? undefined : { opacity: 1, y: 0 }}
-          animate={isSafariIOS ? { opacity: 1, y: 0 } : undefined}
-          viewport={{ once: true }}
-          transition={isSafariIOS ? { duration: 0 } : { duration: 0.6 }}
-          className="bg-white border border-slate-100 rounded-[28px] shadow-[0_12px_40px_rgba(0,174,239,0.06)] overflow-hidden relative safari-no-anim"
-        >
+        <div className="bg-white border border-slate-100 rounded-[28px] shadow-[0_12px_40px_rgba(0,174,239,0.06)] overflow-hidden relative">
           <div className="flex flex-wrap lg:flex-nowrap w-full">
             {features.map((feature, idx) => {
               const Icon = feature.icon
@@ -141,8 +101,9 @@ export default function FeaturesGrid() {
               )
             })}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
 }
+
