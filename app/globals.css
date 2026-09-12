@@ -200,5 +200,6 @@ html {
     opacity: 1 !important;
     transition: none !important;
     animation: none !important;
+    transform: none !important;
   }
 }

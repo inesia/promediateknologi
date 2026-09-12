@@ -32,7 +32,7 @@ const influencerSyaratOther = [
 
 export default function EcosystemPillars() {
   return (
-    <section className="relative bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 text-slate-900 overflow-hidden w-full">
+    <section className="relative bg-white pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-28 lg:pb-32 text-slate-900 overflow-hidden w-full safari-no-anim">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
         {/* Section Heading */}
