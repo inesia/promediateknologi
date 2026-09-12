@@ -203,3 +203,17 @@ html {
     transform: none !important;
   }
 }
+
+/* Global disable of all animations, transitions, transforms */
+* {
+  transition: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+*::before,
+*::after {
+  transition: none !important;
+  animation: none !important;
+}
+
