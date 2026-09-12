@@ -78,14 +78,14 @@ export default function Hero() {
             <div className="grid grid-cols-12 lg:flex lg:flex-col items-center lg:items-start gap-2 sm:gap-4 mb-2 sm:mb-6">
               
               {/* Left Column (Mobile: 7 Cols | Desktop: Full Width) */}
-              <div className="col-span-7 lg:w-full flex flex-col justify-center text-left">
+              <div className="col-span-7 min-w-0 lg:w-full flex flex-col justify-center text-left">
                 {/* Headline - Larger Font on Mobile to Match Image Height */}
                 <motion.div
                   {...fadeInUp}
                   transition={{ delay: 0.1, duration: 0.6 }}
                   className="space-y-1 w-full"
                 >
-                  <h1 className="w-full text-[2.5rem] leading-[1.08] sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#001A2C]">
+                  <h1 className="w-full text-[1.85rem] xs:text-[2.25rem] sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#001A2C] break-words">
                     {/* Line 1: Building Indonesia's */}
                     <span className="block w-full">
                       <span className="text-[#001A2C]">Building </span>
@@ -112,7 +112,7 @@ export default function Hero() {
               </div>
 
               {/* Right Column Image for Mobile (Mobile: 5 Cols | Desktop: Hidden, handled by desktop column) */}
-              <div className="col-span-5 block lg:hidden relative w-full flex items-center justify-center">
+              <div className="col-span-5 min-w-0 block lg:hidden relative w-full flex items-center justify-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}

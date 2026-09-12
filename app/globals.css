@@ -24,6 +24,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 
 @layer utilities {
@@ -32,9 +36,11 @@ body {
   }
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling & prevent horizontal overflow */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Performance optimizations */
