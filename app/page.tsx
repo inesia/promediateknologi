@@ -11,6 +11,7 @@ const LogoCloud = dynamic(() => import('@/components/LogoCloud'))
 const FinalCTA = dynamic(() => import('@/components/FinalCTA'))
 const Footer = dynamic(() => import('@/components/Footer'))
 import { getClient } from '@/controllers/base.controller'
+import NoMotion from '@/components/NoMotion'
 
 export const fetchCache = 'force-cache'
 
@@ -19,19 +20,21 @@ export default async function Home() {
   const clients = await getClient()
 
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden w-full max-w-full">
-      <Header />
-      <Hero />
-      <FeaturesGrid />
-      <EcosystemPillars />
-      {/* <EcosystemServices /> */}
-      <EcosystemStats />
-      <LogoCloud clients={clients} />
-      <Suspense fallback={<LatestNewsSkeleton />}>
-        <LatestNewsServer />
-      </Suspense>
-      <FinalCTA />
-      <Footer />
-    </main>
+    <NoMotion>
+      <main className="min-h-screen bg-white overflow-x-hidden w-full max-w-full">
+        <Header />
+        <Hero />
+        <FeaturesGrid />
+        <EcosystemPillars />
+        {/* <EcosystemServices /> */}
+        <EcosystemStats />
+        <LogoCloud clients={clients} />
+        <Suspense fallback={<LatestNewsSkeleton />}>
+          <LatestNewsServer />
+        </Suspense>
+        <FinalCTA />
+        <Footer />
+      </main>
+    </NoMotion>
   )
 }

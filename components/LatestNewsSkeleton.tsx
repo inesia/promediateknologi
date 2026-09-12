@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function LatestNewsSkeleton() {
   return (
-    <section className="py-12 sm:py-24 bg-slate-50 overflow-hidden safari-no-anim">
+    <section className="py-12 sm:py-24 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>

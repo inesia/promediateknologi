@@ -43,7 +43,7 @@ export default function EcosystemStats() {
   const { primaryStats } = homeDalamAngka
 
   return (
-    <section ref={sectionRef} className="relative py-8 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden w-full safari-no-anim">
+    <section ref={sectionRef} className="relative py-8 sm:py-20 lg:py-28 bg-[#001A2C] overflow-hidden w-full">
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
