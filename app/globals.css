@@ -194,3 +194,11 @@ html {
 .animate-marquee-logos:hover {
   animation-play-state: paused;
 }
+/* Safari iOS – show content instantly, disable transitions */
+@supports (-webkit-touch-callout: none) {
+  .safari-no-anim * {
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
