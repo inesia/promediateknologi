@@ -22,13 +22,13 @@ const pillars = [
     href: 'https://go.promediateknologi.id/VoxProCreators',
     ctaText: 'Daftar Sekarang',
   },
-  {
-    title: 'Contentpreneur',
-    description:
-      'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
-    icon: PenTool,
-    gradient: 'from-[#2D74B3] to-[#00AEEF]',
-  }
+  // {
+  //   title: 'Contentpreneur',
+  //   description:
+  //     'Ubah tulisan jadi pendapatan. Ruang bagi jurnalis dan kreator untuk berkarya, berkembang, dan terhubung dengan ekosistem media digital.',
+  //   icon: PenTool,
+  //   gradient: 'from-[#2D74B3] to-[#00AEEF]',
+  // }
 ]
 
 export default function FourPillarsGrid() {
@@ -110,8 +110,8 @@ export default function FourPillarsGrid() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all ${isDarkCard
-                          ? 'bg-white text-[#001A2C] hover:bg-slate-100 shadow-lg'
-                          : 'bg-[#001A2C] text-white hover:bg-[#002b4a]'
+                        ? 'bg-white text-[#001A2C] hover:bg-slate-100 shadow-lg'
+                        : 'bg-[#001A2C] text-white hover:bg-[#002b4a]'
                         }`}
                     >
                       {pillar.ctaText}
