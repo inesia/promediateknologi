@@ -18,17 +18,9 @@ const nextConfig = {
     ]
   },
 
-  
+
   images: {
-    // Prefer WebP only — AVIF decode can stall Safari iOS on first paint
-    formats: ['image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '*',
-        pathname: '/**',
-      },
-    ],
+    unoptimized: true
   },
   poweredByHeader: false,
 }
