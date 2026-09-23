@@ -229,15 +229,17 @@ export default function ProductCatalog() {
   const active = pillars.find((p) => p.id === activePillar)!
 
   return (
-    <section className="py-16 lg:py-24 bg-white -mt-px">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white border-t border-slate-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <div className="text-center mb-10 lg:mb-12">
-          <p className="text-xs font-semibold text-[#00AEEF] uppercase tracking-wide mb-2">
-            Penawaran
+        <div className="text-center mb-8 sm:mb-10">
+          <p className="text-xs font-bold text-[#00AEEF] uppercase tracking-wider mb-2">
+            Solusi Kustom &amp; Korporat
           </p>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#001A2C] mb-3">Katalog Produk</h2>
-          <p className="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
-            Empat pilar penawaran iklan. Pilih kategori untuk melihat format dan opsi.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#001A2C] mb-3">
+            Katalog Format Iklan Khusus
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed">
+            Butuh kampanye spesifik? Jelajahi 4 pilar format periklanan Promedia untuk kebutuhan advertorial tematik, display banner, kampanye video, hingga aktivasi event.
           </p>
         </div>
 

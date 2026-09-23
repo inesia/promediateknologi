@@ -27,8 +27,8 @@ const successStories = [
 
 export default function ClientsSuccessSection() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-20 lg:space-y-24">
+    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50 border-t border-slate-200">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-12 sm:space-y-16">
         <ClientLogoSlider embedded />
 
         <div>

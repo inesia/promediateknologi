@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Product & Success Story Campaign | Promedia Ad Solutions',
+  title: 'Paket Iklan Multiplatform (Web, IG, TikTok) | Promedia Ad Solutions',
   description:
-    'Katalog produk iklan Promedia Group: Native/Article, Sosmed Media Network, Banner Display, dan Event/Partnership. Jangkau audiens di 1.000+ media partner.',
+    'Paket iklan multiplatform terintegrasi di Website portal berita, Instagram, dan TikTok jaringan media Promedia Group. SEO friendly, tayang selamanya, dan tingkatkan trust brand.',
   keywords:
-    'promedia ad solutions, product campaign, advertorial, display banner, sosmed media network, success story, promedia teknologi',
+    'paket iklan multiplatform, iklan promedia, pasang iklan media online, advertorial website, promosi tiktok, promosi instagram media, promedia teknologi',
   openGraph: {
-    title: 'Product & Success Story Campaign | Promedia',
-    description: 'Katalog produk periklanan dan dokumentasi kampanye sukses Promedia Group',
+    title: 'Paket Iklan Multiplatform | Promedia Ad Solutions',
+    description: 'Solusi iklan terintegrasi Website, Instagram, dan TikTok di jaringan media Promedia Group',
     type: 'website',
   },
 }
