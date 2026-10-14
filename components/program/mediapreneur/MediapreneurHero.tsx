@@ -13,7 +13,7 @@ export default function MediapreneurHero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-20">
+    <section className="relative flex items-center bg-white overflow-hidden pt-24 pb-6 lg:pt-28">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#00AEEF]/[0.02] rounded-full blur-3xl" />

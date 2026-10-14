@@ -11,13 +11,13 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50">
+      <section className="pt-24 pb-6 lg:pt-28 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center mb-16"
+            className="max-w-4xl mx-auto text-center mb-10 sm:mb-12"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#001A2C] mb-6">
               Hubungi Promedia Group
@@ -28,7 +28,7 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
              {/* Phone */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 href="mailto:marcomm@promediateknologi.id"
                 className="text-lg font-semibold text-purple-600 hover:underline"
               >
-                marcomm@promediateknologi.id
+                marcomm@<wbr />promediateknologi.id
               </a>
               <p className="text-slate-500 text-sm mt-1">Pertanyaan & Kolaborasi</p>
             </motion.div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mt-16 text-center"
+            className="mt-10 text-center"
           >
              <div className="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 rounded-full text-slate-600 font-medium">
                 <Clock className="w-5 h-5 text-[#00AEEF]" />

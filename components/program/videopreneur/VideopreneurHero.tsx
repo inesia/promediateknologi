@@ -12,7 +12,7 @@ export default function VideopreneurHero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#000F1A] overflow-hidden pt-20">
+    <section className="relative flex items-center bg-[#000F1A] overflow-hidden pt-24 pb-6 lg:pt-28">
       {/* Abstract Video Background (Blur) */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated gradient background */}

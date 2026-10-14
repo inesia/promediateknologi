@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import os from 'os';
 import path from 'path';
 
 export interface TokenDetail {
@@ -29,7 +30,8 @@ const BASE_URL = process.env.NEXT_BASE_URL_GO24 || '';
 const API_KEY = process.env.NEXT_API_KEY_GO24;
 const SECRET_KEY = process.env.NEXT_SECRET_KEY_GO24;
 const TOKEN_FILE_NAME = '.promedia-token.json';
-const TOKEN_FILE_PATH = path.join(process.cwd(), TOKEN_FILE_NAME);
+// Vercel serverless filesystem is read-only except for the OS temp directory
+const TOKEN_FILE_PATH = path.join(process.env.VERCEL ? os.tmpdir() : process.cwd(), TOKEN_FILE_NAME);
 
 const TOKEN_URL = `${BASE_URL.replace(/\/$/, '')}/oauth/token/`;
 
@@ -130,8 +132,12 @@ export async function saveToken(detail: TokenDetail): Promise<void> {
         detail,
         fetchedAt: Date.now(),
     };
-    await fs.writeFile(TOKEN_FILE_PATH, JSON.stringify(dataToStore, null, 2), 'utf-8');
-    console.log(`[Promedia Auth] Saved token to ${TOKEN_FILE_PATH}`);
+    try {
+        await fs.writeFile(TOKEN_FILE_PATH, JSON.stringify(dataToStore, null, 2), 'utf-8');
+        console.log(`[Promedia Auth] Saved token to ${TOKEN_FILE_PATH}`);
+    } catch (error) {
+        console.warn(`[Promedia Auth] Could not persist token to ${TOKEN_FILE_PATH}:`, error);
+    }
 }
 
 /**

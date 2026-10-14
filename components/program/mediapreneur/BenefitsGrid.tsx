@@ -51,7 +51,7 @@ export default function BenefitsGrid() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section className="relative py-24 lg:py-32 bg-white">
+    <section className="relative py-6 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
