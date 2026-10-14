@@ -5,7 +5,7 @@ import { MessageCircle } from 'lucide-react'
 
 export default function DalamAngkaCTA() {
   return (
-    <section className="py-16 lg:py-20 bg-white border-t border-slate-100">
+    <section className="py-6 bg-white border-t border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

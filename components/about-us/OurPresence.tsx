@@ -7,7 +7,7 @@ import { officeLocations } from '@/lib/officeLocations'
 
 export default function OurPresence() {
   return (
-    <section id="lokasi" className="relative py-32 lg:py-40 bg-white overflow-hidden">
+    <section id="lokasi" className="relative py-6 scroll-mt-16 lg:scroll-mt-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

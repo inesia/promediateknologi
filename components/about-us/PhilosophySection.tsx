@@ -18,8 +18,8 @@ export default function PhilosophySection() {
   return (
     <section 
       ref={sectionRef}
-      id="tentang-kami"
-      className="relative py-32 lg:py-40 bg-white overflow-hidden"
+      id="tentang-perusahaan"
+      className="relative py-6 scroll-mt-16 lg:scroll-mt-20 bg-white overflow-hidden"
     >
       {/* Background "Expanding Universe" text */}
       <motion.div

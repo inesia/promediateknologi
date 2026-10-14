@@ -33,7 +33,7 @@ const pillars = [
 
 export default function FourPillarsGrid() {
   return (
-    <section className="relative py-32 lg:py-40 bg-gradient-to-b from-white to-slate-50/50">
+    <section id="pilar" className="relative py-6 scroll-mt-16 lg:scroll-mt-20 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

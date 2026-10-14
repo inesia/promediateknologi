@@ -19,7 +19,7 @@ const platformVisuals: Record<string, { iconBg: string; textColor: string }> = {
 
 export default function SocialPlatformSection() {
   return (
-    <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100">
+    <section className="py-6 bg-slate-50 border-y border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

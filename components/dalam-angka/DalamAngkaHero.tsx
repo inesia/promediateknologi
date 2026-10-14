@@ -7,7 +7,7 @@ import MetricCard from './MetricCard'
 
 export default function DalamAngkaHero() {
   return (
-    <section className="relative pt-28 pb-16 lg:pt-32 lg:pb-24 bg-[#001A2C] overflow-hidden">
+    <section className="relative pt-28 pb-6 lg:pt-32 bg-[#001A2C] overflow-hidden">
       <div
         className="absolute inset-0 opacity-40"
         style={{

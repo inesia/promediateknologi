@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function FinalStatement() {
   return (
-    <section className="relative py-32 lg:py-40 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
+    <section className="relative py-6 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#00AEEF]/[0.03] rounded-full blur-3xl" />
