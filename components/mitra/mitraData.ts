@@ -3,7 +3,6 @@ export const scrapedMitraData = [
   { id: 2, name: 'KRJogja.com', logo: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia-2/network/124/desktop/images/logo.png?v=85', category: 'regional' },
   { id: 3, name: 'HarianHaluan.com', logo: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/10/desktop/images/logo_top.png?v=1256', category: 'regional' },
   { id: 4, name: 'Jatimnetwork.com', logo: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/43/desktop/images/logo.png?v=1256', category: 'regional' },
-  { id: 5, name: 'Pojoksatu.id', logo: 'https://static.promediateknologi.id/promedia-2/network/108/desktop/images/logo.png?v=54', category: 'regional' },
   { id: 6, name: 'Kilat.com', logo: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/promedia/network/844/desktop/images/logo.png?v=1033', category: 'regional' },
   { id: 7, name: 'Suara Merdeka Banyumas', logo: 'https://static.promediateknologi.id/promedia/network/09/desktop/images/logo_top.jpeg?v=97', category: 'regional' },
   { id: 8, name: 'Harian Haluan', logo: 'https://static.promediateknologi.id/promedia/network/10/desktop/images/logo_top.png?v=97', category: 'regional' },

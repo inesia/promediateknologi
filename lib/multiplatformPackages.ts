@@ -133,7 +133,6 @@ export const MULTIPLATFORM_PACKAGES: PackageTier[] = [
         id: 'B',
         title: 'Paket B (18 Media)',
         mediaList: [
-          { name: 'Pojoksatu.id', domain: 'pojoksatu.id', isHighlight: true },
           { name: 'SuaraMerdeka.com', domain: 'suaramerdeka.com', isHighlight: true },
           { name: 'METROPOLITAN.id', domain: 'metropolitan.id' },
           { name: 'Info Indonesia', domain: 'infoindonesia.id' },
